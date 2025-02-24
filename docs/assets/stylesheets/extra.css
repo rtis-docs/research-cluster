@@ -1,0 +1,65 @@
+.md-header {
+    background-color: #060d87;
+};
+
+@font-face {
+    font-family: "wickliffe-sans";
+    /* src: url("../fonts/WickliffeSans-Regular.otf") format('opentype'); */
+    src: url(https://www.otago.ac.nz/__data/assets/git_bridge/0013/1363/dist/mysource_files/WickliffeSansWEB-Regular..woff2) format("opentype")
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: "wickliffe-serif";
+    src: url("https://www.otago.ac.nz/__data/assets/git_bridge/0013/1363/dist/mysource_files/WickliffeWEB-Regular..woff2") format("opentype");
+    /* src: url("../fonts/Wickliffe-Regular.otf") format('opentype'); */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+.md-header__topic {
+    font-family: 'wickliffe-serif', sans-serif !important;
+    font-size: 2.5em;
+    color: white;
+}
+
+/* :root {
+    --md-text-font: "wickliffe-sans" !important;
+    --md-heading-font: "wickliffe-serif" !important; 
+  }
+
+:body {
+  --md-text-font: "wickliffe-sans" !important;
+  --md-heading-font: "wickliffe-serif" !important; 
+}
+
+/* Ensure the entire page uses the font */
+/*html, body, .md-typeset {
+  font-family: 'wickliffe-serif', sans-serif !important;
+} */
+
+  .md-header__button.md-logo > img {
+    
+    height: 100px;
+  }
+
+
+  :root {
+    --md-admonition-icon--terminal: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 41.4 86.6zM288 416H576c17.7 0 32 14.3 32 32s-14.3 32-32 32H288c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg>')
+  }
+  .md-typeset .admonition.terminal,
+  .md-typeset details.terminal {
+    border-color: rgb(105,105,105);
+  }
+  .md-typeset .terminal > .admonition-title,
+  .md-typeset .terminal > summary {
+    color:rgb(105,105,105);
+    background-color: rgba(105,105,105);
+  }
+  .md-typeset .terminal > .admonition-title::before,
+  .md-typeset .terminal > summary::before {
+    background-color: rgb(124,252,0);
+    -webkit-mask-image: var(--md-admonition-icon--terminal);
+            mask-image: var(--md-admonition-icon--terminal);
+  }

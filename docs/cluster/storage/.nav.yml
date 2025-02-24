@@ -1,0 +1,7 @@
+nav:
+  - storage_options.md
+  - homes.md
+  - projects.md
+  - weka.md
+  - "HCS": hcs.md
+  - "*"

@@ -1,0 +1,5 @@
+nav:
+  - "Storage":
+    - "storage/*"
+  - "Workflows":
+    - "workflows/*"

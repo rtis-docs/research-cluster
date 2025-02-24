@@ -1,0 +1,6 @@
+nav:
+  - index.md
+  - training.md
+  - data_storage.md
+  - "Cluster":
+    - "cluster/*"
