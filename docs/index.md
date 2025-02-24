@@ -34,5 +34,3 @@ The Research and Teaching IT Support (RTIS) team can help with your specific *re
 
 
 #### Scientific Programming
-
-[Download font](assets/fonts/WickliffeSans-Regular.otf)
