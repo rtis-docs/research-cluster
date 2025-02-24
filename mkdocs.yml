@@ -2,7 +2,7 @@ site_name: Research and Teaching IT Support
 theme : 
   name: material
   custom_dir: overrides
-  logo: "./assets/images/wordmark-English-digital-white.png"
+  logo: "./assets/images/UoO_Logo_RGB_Horz_Gold-REV.svg"
   font: 
     text: 'wickliffe-sans'
     code: 'Roboto Mono'
