@@ -1,8 +1,14 @@
 # About
 
-The Research and Teaching IT Support (RTIS) team can help with your specific *research* IT needs in three areas:
+## Contact
 
-### Teams
+For all enquiries please email <a href="mailto:rtis.support@otago.ac.nz">rtis.support@otago.ac.nz</a>
+
+
+
+## Teams
+
+The Research and Teaching IT Support (RTIS) team can help with your specific *research* IT needs in three areas:
 
 <div class="grid cards" markdown>
 
@@ -14,13 +20,13 @@ The Research and Teaching IT Support (RTIS) team can help with your specific *re
 
     Computing and system integration
 
--   :fontawesome-solid-microscope: __Research Equipment Team__
+-   <a href="#research-equipment">:fontawesome-solid-microscope: __Research Equipment Team__
 
     ---
 
     Support for IT-connected specialist research **Equipment**.
 
--   :octicons-code-review-16: __Scientific Programming Team__
+-   <a href="#scientific-programming">:octicons-code-review-16: __Scientific Programming Team__</a>
 
     ---
 
@@ -28,11 +34,9 @@ The Research and Teaching IT Support (RTIS) team can help with your specific *re
 
 </div>
 
-### Contact
 
-For all enquiries please email <a href="mailto:rtis.support@otago.ac.nz">rtis.support@otago.ac.nz</a>
 
-#### <a id="solutions"></a>Solutions
+### Solutions
 
 The solutions group looks after research servers and server software, e.g. the Aoraki cluster. They can provide:
 
@@ -40,7 +44,7 @@ The solutions group looks after research servers and server software, e.g. the A
 - Software installs for servers.
 - Data storage and management.
 
-#### Research Equipment
+### Research Equipment
 
 The equipment group looks after software and computer hardware that is attached to lab equipment. They can provide:
 
@@ -48,7 +52,7 @@ The equipment group looks after software and computer hardware that is attached 
 - advice and quotes on new equipment.
 - advice and setup of data managment.
 
-#### Scientific Programming
+### Scientific Programming
 
 
 The programming group looks after peoples programming needs. They can provide:
