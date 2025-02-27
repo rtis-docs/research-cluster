@@ -1,7 +1,7 @@
 Storage Overview
 =======
 
-RTIS provides high-performance storage solutions for researchers at the University of Otago. These storage solutions are available on :doc:`the Research Cluster  </cluster>` to all researchers at the University of Otago upon application approval.
+RTIS provides high-performance storage solutions for researchers at the University of Otago. These storage solutions are available on [the Research Cluster](../../overview/) to all researchers at the University of Otago upon application approval.
 
 
 ``` mermaid

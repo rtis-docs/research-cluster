@@ -38,7 +38,7 @@ The Auks Slurm plugin enables users to save their Kerberos ticket from the login
 Whenever a user logs in to the Aoraki login node using their password, a new krbtgt (Kerberos Ticket-Granting Ticket) is issued. However, if the user logs in via SSH keys or accesses nodes through the OnDemand shell, they must manually obtain a new valid ticket by running the ``kinit`` command. When you type your password after running the ``kinit`` command, the terminal intentionally suppresses any visible feedback. Confirm your password by pressing Enter key. 
 
 
-=== "For Staff"
+=== "STAFF"
 
     !!! terminal "code"
 
@@ -47,7 +47,7 @@ Whenever a user logs in to the Aoraki login node using their password, a new krb
         Password for userx01p@REGISTRY.OTAGO.AC.NZ:
         ```
 
-=== "For students (students have to use domain):" 
+=== "STUDENTS" 
 
     !!! terminal "code"
 
@@ -72,9 +72,10 @@ Check if you have a valid krbtgt ticket:
     ```output
     Ticket cache: KCM:40005987:63840
     Default principal: studx012@STUDENT.OTAGO.AC.NZ
+
     Valid starting Expires Service principal
     11/26/2024 08:56:14 11/26/2024 18:56:14 krbtgt/STUDENT.OTAGO.AC.NZ@STUDENT.OTAGO.AC.NZ
-    renew until 12/03/2024 08:56:14
+        renew until 12/03/2024 08:56:14
     ```
 
     ```bash
@@ -85,9 +86,10 @@ Check if you have a valid krbtgt ticket:
     ```output
     Ticket cache: KCM:40005987:63840
     Default principal: studx012@STUDENT.OTAGO.AC.NZ
+
     Valid starting Expires Service principal
     11/26/2024 11:22:40 11/26/2024 21:22:40 krbtgt/STUDENT.OTAGO.AC.NZ@STUDENT.OTAGO.AC.NZ
-    renew until 12/03/2024 08:56:14
+        renew until 12/03/2024 08:56:14
     ```
 
 Ping server to verify connection:
@@ -125,30 +127,90 @@ HCS shares are automatically mounted on each node when requested. The user's krb
 
 To mitigate this, it is recommended to include a command such as sleep 20 in batch scripts before accessing the automounted share. 
 
-Generating Auto Renewal Kerberos Tickets
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#### Generating Auto Renewal Kerberos Tickets
 
-.. tip::
+
+!!! info
+
     If you want to keep using your data over hours or days you will need to renew your Kerberos ticket.  Kerberos tickets are only valid for 1 hour and then need to be renewed either by generating one via the command line or 
     automatically by generating a keytab file and setting a cronjob to renew the ticket at a specified interval.
 
-To see if you have a valid Kerberos ticket you can type ``klist`` 
+    To see if you have a valid Kerberos ticket you can type ``klist`` 
 
-1. You do not have a valid ticket if you get a message like: *klist: Credentials cache 'KCM:51776880' not found*
-2. You do have a ticket if you get a message similar to:\ *Ticket cache: KCM:51776880 Default principal: higje06p@REGISTRY.OTAGO.AC.NZ*
-  *Valid starting     Expires            Service principal
-  27/09/23 15:01:57  28/09/23 01:01:57  krbtgt/REGISTRY.OTAGO.AC.NZ@REGISTRY.OTAGO.AC.NZ*
-        *renew until 04/10/23 15:01:57\ *
+    1. You do not have a valid ticket if you get a message like: *klist: Credentials cache 'KCM:51776880' not found*
+    2. You do have a ticket if you get a message similar to:
 
 
-  **To generate an auto renewing ticket (so as to not expire):**
+=== "STAFF"
+
+    !!! terminal
+
+    ```bash
+    klist
+    ```
+
+    ```output
+    Ticket cache: KCM:51776880 Default principal: higje06p@REGISTRY.OTAGO.AC.NZ
+
+    Valid starting     Expires            Service principal
+    27/09/23 15:01:57  28/09/23 01:01:57  krbtgt/REGISTRY.OTAGO.AC.NZ@REGISTRY.OTAGO.AC.NZ
+        renew until 04/10/23 15:01:57
+    ```
+
+    **To generate an auto renewing ticket (so as to not expire):**
+
     - *Create a keytab file - replace *username* *with your otago username:*
-  - ktutil
-  - ktutil:  addent -password -p  ``*username*@REGISTRY.OTAGO.AC.NZ -k 1 -e aes256-cts`` (enter your password)
-  - Ktutil: wkt /home/\ *username*/\ *username*.keytab
-  - Ktutil: quit
-  - To test: ``kinit  *username*@REGISTRY.OTAGO.AC.NZ -k -t 'username'.keytab``
-  - ``klist`` (to check if ticket is valid)
-  - Then create a cronjob to renew your ticket ``crontab -e`` then enter the following line to renew your ticket every hour:
+
+    !!! terminal
+
+    ```bash
+    ktutil
+
+    ktutil: addent -password -p <username>@REGISTRY.OTAGO.AC.NZ -k 1 -e aes256-cts (enter your password)
+    Ktutil: wkt /home/<username>/<username>.keytab
+    Ktutil: quit
+    ```
+
+
+    - To test: ``kinit  *username*@REGISTRY.OTAGO.AC.NZ -k -t 'username'.keytab``
+    - ``klist`` (to check if ticket is valid)
+    - Then create a cronjob to renew your ticket ``crontab -e`` then enter the following line to renew your ticket every hour:
     ``0 * * * * kinit  *username*@REGISTRY.OTAGO.AC.NZ -k -t /home/*username*/*username*.keytab``
-  - Ensure the permissions on your .keytab file are ``0600`` to keep it secure!
+    - Ensure the permissions on your .keytab file are ``0600`` to keep it secure!
+
+=== "STUDENTS"
+
+    !!! terminal
+
+    ```bash
+    klist
+    ```
+
+    ```output
+    Ticket cache: KCM:51776880 Default principal: higje06p@STUDENT.OTAGO.AC.NZ
+
+    Valid starting     Expires            Service principal
+    27/09/23 15:01:57  28/09/23 01:01:57  krbtgt/STUDENT.OTAGO.AC.NZ@STUDENT.OTAGO.AC.NZ
+        renew until 04/10/23 15:01:57
+    ```
+    
+    **To generate an auto renewing ticket (so as to not expire):**
+
+    - *Create a keytab file - replace *username* *with your otago username:*
+
+    !!! terminal
+
+    ```bash
+    ktutil
+
+    ktutil: addent -password -p <username>@STUDENT.OTAGO.AC.NZ -k 1 -e aes256-cts (enter your password)
+    Ktutil: wkt /home/<username>/<username>.keytab
+    Ktutil: quit
+    ```
+
+
+    - To test: ``kinit  <username>@STUDENT.OTAGO.AC.NZ -k -t 'username'.keytab``
+    - ``klist`` (to check if ticket is valid)
+    - Then create a cronjob to renew your ticket ``crontab -e`` then enter the following line to renew your ticket every hour:
+    ``0 * * * * kinit  <username>@STUDENT.OTAGO.AC.NZ -k -t /home/<username>/<username>.keytab``
+    - Ensure the permissions on your .keytab file are ``0600`` to keep it secure!
