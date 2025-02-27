@@ -20,9 +20,29 @@
 
 .md-header__topic {
     font-family: 'wickliffe-serif', sans-serif !important;
-    font-size: 2.5em;
+    font-size: 2em;
     color: white;
 }
+
+
+.md-nav--primary {
+  border-left: #ee8a07 solid 3px;
+}
+
+
+.tabbed-set {
+  border: 1px solid #317bff;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+
+li.md-nav__item--active:not(li.md-nav__item--nested) {
+  font-weight: bold;
+  }
+
 
 /* :root {
     --md-text-font: "wickliffe-sans" !important;
