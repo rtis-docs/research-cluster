@@ -1,7 +1,7 @@
 Storage Overview
 =======
 
-RTIS provides high-performance storage solutions for researchers at the University of Otago. These storage solutions are available on [the Research Cluster](../../overview/) to all researchers at the University of Otago upon application approval.
+RTIS provides high-performance storage solutions for researchers at the University of Otago. These storage solutions are available on the [Research Cluster](../overview.md) to all researchers at the University of Otago upon application approval.
 
 
 ``` mermaid
@@ -60,7 +60,7 @@ Projects storage is organised per department and group ``/projects/<division>/<d
 The projects storage is high-performance and is ideal for temporarily storing data that is **in use** for individuals and sharing within groups using the research infrastructure. 
 Note that this storage is not backed up and is the responsibility of the user to ensure their important data is backed up. We recommend having a copy of your data on HCS, and transferring a copy to `/projects/` for working on, then removing this working copy once finished and transferring results back to HCS. 
 
-To apply for a projects directory, please fill out the :ref:`storage-signup-form` form.
+To apply for a projects directory, please fill out the [storage-signup-form](../access/signup.md) form.
 
 
 #### When to use /projects/ storage
