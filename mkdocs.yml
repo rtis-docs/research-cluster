@@ -10,7 +10,7 @@ theme :
     - navigation.instant
     - navigation.tracking
     - navigation.sections
-    - navigation.expand
+#    - navigation.expand # auto expands all sections
     - navigation.path
     - navigation.indexes
     - toc.follow
