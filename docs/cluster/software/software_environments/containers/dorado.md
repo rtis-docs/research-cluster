@@ -8,6 +8,7 @@ Dorado is made available on the cluster as a shared [Apptainer](../apptainer) co
 You can use the `apptainer/dorado` module to add a convenient alias to running `dorado` within the container:
 
 !!! terminal
+
     ```bash
     module avail dorado
     module load apptainer/dorado/0.7.1
@@ -22,6 +23,7 @@ command with `apptainer -s run --nv <$APPTAINER_IMG/apptainer_image.sif>`.
 Make sure to specify `--nv` to enable NVIDIA GPU support. e.g. 
 
 !!! terminal
+
     ```bash
     apptainer -s run --nv $APPTAINER_IMG/dorado-<version>.sif dorado basecaller /models/dna_r10.4.1_e8.2_400bps_hac@v4.1.0 ~/pod5s/
     ```
@@ -31,6 +33,7 @@ Also note that `-s / --silent` is required here to suppress the verbose containe
 * To list the available basecaller models, run
 
 !!! terminal
+
     ```bash
     $APPTAINER_IMG/dorado-<version>.sif ls -1 /models
     ```

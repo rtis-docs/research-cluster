@@ -5,10 +5,11 @@ While the requirements for the HUMAnN pipeline (MetaPhlAn etc.) could be satisfi
 To enter an interactive shell in the container (with your home directory automatically mounted):
 
 !!! terminal 
+    
     ```bash
 
     humann3.sif /bin/bash
     humann_test
-```
+    ```
 
 For usage, refer the tutorials at https://github.com/biobakery/biobakery/wiki/humann
