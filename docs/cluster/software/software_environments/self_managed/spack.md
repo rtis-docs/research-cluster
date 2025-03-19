@@ -4,7 +4,7 @@
 [Spack](https://spack.io/) is a package manager that simplifies installing and running customised scientific software stacks. With Spack, you can build a package with multiple versions, 
 configurations, platforms, and compilers, and all of these builds can coexist in parallel.
 
-A shared library of common software has been preinstalled on the Research Cluster, available to use via a [Shared read-only Spack](#shared-read-only-spack) instance or via [environment modules](../modules). 
+A shared library of common software has been preinstalled on the Research Cluster, available to use via a [Shared read-only Spack](#shared-read-only-spack) instance or via [environment modules]({{modules}}). 
 
 Users wanting to install their own Spack packages should install and manage their own local Spack instance (See [User-local Spack installation](#user-local-spack-installation)).
 
@@ -12,7 +12,7 @@ Users wanting to install their own Spack packages should install and manage thei
 
 
 !!! note
-    All pre-installed Spack packages are also available by default via [environment module](../modules) without needing to use Spack.
+    All pre-installed Spack packages are also available by default via [environment module]({{modules}}) without needing to use Spack.
 
 
 To initialise use of the read-only shared Spack instance, run:

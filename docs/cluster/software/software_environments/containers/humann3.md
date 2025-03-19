@@ -7,7 +7,6 @@ To enter an interactive shell in the container (with your home directory automat
 !!! terminal 
     
     ```bash
-
     humann3.sif /bin/bash
     humann_test
     ```

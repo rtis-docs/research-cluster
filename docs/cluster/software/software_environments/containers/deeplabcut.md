@@ -7,7 +7,7 @@ It is highly recommended to run this on a **GPU compute/CUDA** partition.
 
 ## Command line interface
 
-DeepLabCut is made available on the cluster as a shared [Apptainer](../apptainer) container image. Scripted/commandline access requires Python to be run within the context of the container.
+DeepLabCut is made available on the cluster as a shared [Apptainer]({{apptainer}}) container image. Scripted/commandline access requires Python to be run within the context of the container.
 
   * Open a terminal on one of the GPU nodes.
  
@@ -26,5 +26,5 @@ DeepLabCut is made available on the cluster as a shared [Apptainer](../apptainer
 
 ### Slurm
 
-DeepLabCut is made available on the cluster as a shared [Apptainer](../apptainer) container image. Scripted/commandline access requires Python to be run within the context of the container.
+DeepLabCut is made available on the cluster as a shared [Apptainer]({{apptainer}}) container image. Scripted/commandline access requires Python to be run within the context of the container.
 

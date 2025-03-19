@@ -10,4 +10,4 @@ XDSGUI is [available as an Open OnDemand app](https://ondemand.otago.ac.nz/pun/s
 
 ### via SBGrid
 
-See [SBGrid](../../sbgrid)
+See [SBGrid]({{sbgrid}})

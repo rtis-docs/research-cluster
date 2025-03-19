@@ -3,7 +3,7 @@
 _[AlphaFold](https://github.com/deepmind/alphafold)_ is an AI system developed by DeepMind that makes 
 state-of-the-art accurate predictions of a protein's structure from its amino-acid sequence.
 
-AlphaFold is made available on the cluster as a shared [Apptainer](../apptainer) container image. 
+AlphaFold is made available on the cluster as a shared [Apptainer]({{apptainer}}) container image. 
 This should be run on a **GPU Compute** partition.
 
 You can use the `apptainer/alphafold2` module to add a convenient alias: `run_alphafold_apptainer`, which will run 

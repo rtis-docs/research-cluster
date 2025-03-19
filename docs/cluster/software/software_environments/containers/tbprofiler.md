@@ -1,6 +1,6 @@
 # TBProfiler
 
-TBProfiler is made available as an [Apptainer](../apptainer) container.
+TBProfiler is made available as an [Apptainer]({{apptainer}}) container.
 
 You can use the `apptainer/TBProfiler` module which will add convenient aliases to `tb-profiler`, which will run within the container.
 

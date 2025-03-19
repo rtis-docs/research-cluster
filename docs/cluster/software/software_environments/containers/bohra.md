@@ -2,7 +2,7 @@
 
 [Bohra](https://github.com/MDU-PHL/bohra) is a microbial genomics pipeline.
 
-Bohra is made available on the cluster as a shared [Apptainer](../apptainer) container image. 
+Bohra is made available on the cluster as a shared [Apptainer]({{apptainer}}) container image. 
 
 You can use the `apptainer/bohra` module which will add convenient aliases to the `bohra` binary, which will run within the container.
 

@@ -1,10 +1,10 @@
-Storage Overview
-=======
+# Storage Overview
+
 
 RTIS provides high-performance storage solutions for researchers at the University of Otago. These storage solutions are available on the [Research Cluster](../overview.md) to all researchers at the University of Otago upon application approval.
 
 
-``` mermaid
+```mermaid
 graph TD;
     root("/")
     root --> home
@@ -99,11 +99,6 @@ Setting up Globus to automatically transfer data between the two storage solutio
 If you need assistance with backing up your data, please :doc:`get in touch </support>`.
 
 
-
-
-
-
-.. _storage-signup-form:
 
 ## Research Storage Signup
 

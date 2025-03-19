@@ -3,7 +3,7 @@
 Dorado is a high-performance, easy-to-use, open source basecaller for Oxford Nanopore reads. 
 It needs to be run on a partition/node with **GPU compute/CUDA** support, and is heavily-optimised for Nvidia A100 and H100 GPUs.
 
-Dorado is made available on the cluster as a shared [Apptainer](../apptainer) container image.
+Dorado is made available on the cluster as a shared [Apptainer]({{apptainer}}) container image.
 
 You can use the `apptainer/dorado` module to add a convenient alias to running `dorado` within the container:
 

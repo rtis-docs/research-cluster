@@ -39,7 +39,7 @@ The GUI can be accessed [via the Open OnDemand Applications](https://ondemand.ot
 
 ## Commandline tools
 
-GLOBEClaritas is made available on the cluster as a shared [Apptainer](../apptainer) container image. Commandline tools have to be run within the context of the container.
+GLOBEClaritas is made available on the cluster as a shared [Apptainer]({{apptainer}}) container image. Commandline tools have to be run within the context of the container.
 
 You can use the `apptainer/GLOBEClaritas` module to add convenient wrapper aliases to any of the Claritas binaries. i.e.
 
