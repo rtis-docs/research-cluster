@@ -51,4 +51,10 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
 
-      
+extra:
+  apptainer: "/cluster/software/software_environments/self_managed/apptainer"
+  nextflow: "/cluster/workflows/nextflow"
+  conda: "/cluster/software/software_environments/self_managed/conda"
+  spack: "/cluster/software/software_environments/self_managed/spack"
+  modules: "/cluster/software/software_environments/self_managed/modules.md"
+  sbgrid: "/cluster/software/software_environments/self_managed/sbgrid.md"
