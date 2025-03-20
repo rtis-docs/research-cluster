@@ -1,4 +1,4 @@
-# Fiji
+## Fiji
 
 [Fiji](https://fiji.sc/) is an image processing package — a "batteries-included" distribution of [ImageJ](https://imagej.net/), bundling many plugins which facilitate scientific image analysis. .
 

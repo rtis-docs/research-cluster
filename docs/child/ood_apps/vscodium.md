@@ -1,4 +1,4 @@
-# VSCodium
+## VSCodium
 
 
 VSCodium is a community-driven, freely-licensed distribution of Microsoft's editor VSCode.

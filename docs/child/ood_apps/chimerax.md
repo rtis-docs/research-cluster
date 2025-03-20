@@ -1,4 +1,4 @@
-# ChimeraX
+## ChimeraX
 
 
 The ChimeraX GUI can be accessed via the Open OnDemand Applications.

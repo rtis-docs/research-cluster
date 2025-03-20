@@ -1,4 +1,4 @@
-# Jupyter Lab
+## Jupyter Lab
 
 
 Jupyter Lab can be accessed via the Open OnDemand applications.

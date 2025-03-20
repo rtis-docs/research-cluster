@@ -1,4 +1,4 @@
-# CLC genomics Workbench
+## CLC genomics Workbench
 
 
 QIAGEN [CLC genomics Workbench](https://digitalinsights.qiagen.com/products-overview/discovery-insights-portfolio/analysis-and-visualization/qiagen-clc-genomics-workbench/) is a user-friendly sequence 

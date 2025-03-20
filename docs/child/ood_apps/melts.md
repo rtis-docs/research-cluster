@@ -1,4 +1,4 @@
-# MELTS
+## MELTS
 
 
 Legacy software for thermodynamic modeling of phase equilibria in magmatic systems experimental

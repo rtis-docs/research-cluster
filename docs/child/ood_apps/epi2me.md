@@ -1,4 +1,4 @@
-# EPI2ME Desktop
+## EPI2ME Desktop
 
 Oxford Nanopore's [EPI2ME Desktop](https://labs.epi2me.io/about/) is a data analysis platform providing a user-friendly graphical interface to running various bioinformatics pipelines.
 

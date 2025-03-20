@@ -1,4 +1,4 @@
-# UGENE
+## UGENE
 
 [https://ugene.net](https://ugene.net)
 

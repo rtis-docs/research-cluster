@@ -1,5 +1,5 @@
-Research HPC Cluster (Aoraki)
-===============================
+# Research HPC Cluster (Aoraki)
+
 
 Shared computing resources available to Otago researchers include high performance computing, fast storage, GPUs and virtual servers.
 
