@@ -1,7 +1,21 @@
+ignore:
+  - "child/*"
+  - access/coldfront.md
 nav:
-  - index.md
-  - training.md
-  - data_storage.md
-  - support.md
-  - "Cluster":
-    - "cluster/*"
+  - "index.md"
+  - "General":
+    - general/overview.md
+    - general/announcements.md
+    - general/policies.md
+    - general/faq.md
+
+  - "Getting Started":
+    - "getting_started/*"
+  - "Access":
+    - "access/*"
+  - "Running Jobs":
+    - "running/*"
+  - "Storage":
+    - "storage/*"
+  - "Workflows":
+    - "workflows/*"

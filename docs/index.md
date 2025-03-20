@@ -1,9 +1,31 @@
-# About
+# Home
 
 ## Contact
 
-For all enquiries please email <a href="mailto:rtis.support@otago.ac.nz">rtis.support@otago.ac.nz</a>
+For all enquiries please email {{support_email}}
 
+
+## Quick Start
+
+<div class="grid cards" markdown>
+
+-    Access
+
+    ---
+
+-    Storage
+
+    ---
+
+-   Running jobs
+
+    ---
+
+-   Data transfer
+
+    ---
+
+</div>
 
 
 ## Teams
