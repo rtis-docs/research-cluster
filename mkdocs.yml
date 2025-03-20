@@ -2,7 +2,8 @@ site_name: Research and Teaching IT Support
 theme : 
   name: material
   custom_dir: overrides
-  logo: "./assets/images/UoO_Logo_RGB_Horz_Gold-REV.svg"
+  logo: "assets/images/UoO_Logo_RGB_Horz_Gold-REV.svg"
+  favicon: "assets/images/uoo-favicon-32x32.png"
   font: 
     text: 'wickliffe-sans'
     code: 'Roboto Mono'
@@ -52,9 +53,10 @@ markdown_extensions:
       alternate_style: true
 
 extra:
-  apptainer: "/cluster/software/software_environments/self_managed/apptainer"
-  nextflow: "/cluster/workflows/nextflow"
-  conda: "/cluster/software/software_environments/self_managed/conda"
-  spack: "/cluster/software/software_environments/self_managed/spack"
-  modules: "/cluster/software/software_environments/self_managed/modules.md"
-  sbgrid: "/cluster/software/software_environments/self_managed/sbgrid.md"
+  support_email: '<a href="mailto:rtis.support@otago.ac.nz">rtis.support@otago.ac.nz</a>'
+  apptainer: "/software/software_environments/self_managed/apptainer"
+  nextflow: "/workflows/nextflow"
+  conda: "/software/software_environments/self_managed/conda"
+  spack: "/software/software_environments/self_managed/spack"
+  modules: "/software/software_environments/self_managed/modules.md"
+  sbgrid: "/software/software_environments/self_managed/sbgrid.md"
