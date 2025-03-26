@@ -249,4 +249,43 @@ Submit a slurm batch job:
   echo "Script end"
   ```
 
+Submit a slurm array batch job:
+
+!!! terminal
+
+  ```bash
+
+  [userxyz@aoraki-login]$ cat /projects/userxyz/matlab-array.sh
+  #!/bin/bash
+  
+  #SBATCH --job-name="matlab-array                        # job name
+  #SBATCH --partition=aoraki                              # partition to which job should be submitted aoraki_gpu...
+  ##SBATCH --nodelist=aoraki15                            # optional node 
+  ##SBATCH --gres=gpu:1                                   # optional gpu if running a gpu job on the gpu partition
+  #SBATCH --nodes=1                                       # node count
+  #SBATCH --ntasks=1                                      # total number of tasks across all nodes
+  #SBATCH --cpus-per-task=1                               # cpu-cores per task
+  #SBATCH --mem=20G                                       # total memory per node
+  #SBATCH --array=1-8                                     # run 8 array jobs
+  #SBATCH --time=0-01:00                                  # wall time DD-HH:MM
+  ##SBATCH --auks=yes                                     # optional if using HCS
+  ##SBATCH --output=/projects/.../userxyz/%x/%x_%j_%a.out # optional output folder
+  #SBATCH --mail-user userxyz@otago.ac.nz                 # optional email
+  #SBATCH --mail-type BEGIN
+  #SBATCH --mail-type END
+  #SBATCH --mail-type FAIL
+  
+  echo "Script start"
+  
+  ## Export matlab licence
+  export MLM_LICENSE_FILE=27001@slo-licence-svr.registry.otago.ac.nz
+  
+  ## GPU job
+  ## apptainer exec --nv --bind "$(pwd)":/opt/workspace --pwd /opt/workspace /opt/apptainer_img/matlab-r2024a-GL.sif matlab -nodisplay -nodesktop -r "process_input(${SLURM_ARRAY_TASK_ID}); exit;"
+  
+  ## CPU job
+  apptainer exec --bind "$(pwd)":/opt/workspace --pwd /opt/workspace /opt/apptainer_img/matlab-r2024a-GL.sif matlab -nodisplay -nodesktop -r "process_input(${SLURM_ARRAY_TASK_ID}); exit;"
+  
+  echo "Script end"
+  ```
 
