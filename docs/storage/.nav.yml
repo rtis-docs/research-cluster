@@ -1,3 +1,4 @@
 nav:
-  - "Overview": overview
+  - "storage_options.md"
+  - "file_permissions.md"
   - "Data Locations": data_locations

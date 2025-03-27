@@ -5,5 +5,4 @@ nav:
   - "index.md"
   - "Getting Started": "getting_started"
   - "general"
-  - "Storage":
-    - "storage"
+  - "storage"
