@@ -1,7 +1,3 @@
 nav:
-  - storage_options.md
-  - homes.md
-  - projects.md
-  - weka.md
-  - "HCS": hcs.md
-  - "*"
+  - "Overview": overview
+  - "Data Locations": data_locations

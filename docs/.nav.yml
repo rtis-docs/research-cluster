@@ -3,19 +3,7 @@ ignore:
   - access/coldfront.md
 nav:
   - "index.md"
-  - "General":
-    - general/overview.md
-    - general/announcements.md
-    - general/policies.md
-    - general/faq.md
-
-  - "Getting Started":
-    - "getting_started/*"
-  - "Access":
-    - "access/*"
-  - "Running Jobs":
-    - "running/*"
+  - "Getting Started": "getting_started"
+  - "general"
   - "Storage":
-    - "storage/*"
-  - "Workflows":
-    - "workflows/*"
+    - "storage"

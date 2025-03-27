@@ -1,2 +1,7 @@
 ignore:
   - coldfront.md
+
+nav:
+  - access_overview.md
+  - signup.md
+  - "*"

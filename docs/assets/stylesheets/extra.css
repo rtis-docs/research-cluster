@@ -35,7 +35,7 @@
   border-radius: 5px;
   padding: 10px;
   margin: 10px 0;
-  border-radius: 5px;
+  border-radius: 5%;
 }
 
 
@@ -43,6 +43,11 @@ li.md-nav__item--active:not(li.md-nav__item--nested) {
   font-weight: bold;
   }
 
+.nt-card {
+  background-color: #daebfc;
+  border-radius: 5px;
+
+}
 
 /* :root {
     --md-text-font: "wickliffe-sans" !important;

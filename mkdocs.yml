@@ -32,6 +32,7 @@ plugins:
 
 extra_css:
   - assets/stylesheets/extra.css
+  - assets/stylesheets/neoteroi-mkdocs.css
 
 markdown_extensions: 
   - attr_list
@@ -51,6 +52,7 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+  - neoteroi.cards
 
 extra:
   support_email: '<a href="mailto:rtis.support@otago.ac.nz">rtis.support@otago.ac.nz</a>'
@@ -60,3 +62,4 @@ extra:
   spack: "/software/software_environments/self_managed/spack"
   modules: "/software/software_environments/self_managed/modules.md"
   sbgrid: "/software/software_environments/self_managed/sbgrid.md"
+  home_quota: "40 GB"
