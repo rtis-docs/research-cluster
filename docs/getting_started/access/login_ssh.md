@@ -1,5 +1,8 @@
 # Accessing the login node (ssh)
 
+Use of the login node should be limited to 'lightweight' tasks such as file browsing/copying/moving or submitting jobs into the SLURM scheduler.
+
+You can access the Research Cluster login node remotely through the two below mechanisms.
 
 ## SSH through a terminal
 
