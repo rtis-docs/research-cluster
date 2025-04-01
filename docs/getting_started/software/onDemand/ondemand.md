@@ -27,27 +27,23 @@ Create and delete files and directories.
 (need to add section on HCS and Globus)
 After you login you should see the OOD home page. 
 
-.. image:: ./images/ood_files_app.png
-  :width: 600
-  :alt: OOD files app
+![Open OnDemand Files App](/assets/images/ood_files_app.png){width="600px"}
 
 ### View Active Jobs
 
 
 View and cancel active Slurm jobs from Jobs > Active Jobs. This includes jobs started via sbatch and srun as well as jobs started (implicitly) via Open OnDemand (as discussed above).
 
-.. image:: ./images/ood_activejobs.png
-  :width: 600
-  :alt: Active Jobs
+![Active Jobs](/assets/images/ood_activejobs.png){width="600px"}
+
 
 
 ### Shell Access
 
 Open OnDemand allows Aoraki shell access from the top menu bar under Clusters > Aoraki Cluster Shell Access.
 
-.. image:: ./images/ood_shell.png
-  :width: 600
-  :alt: OOD Shell
+![Open OnDemand Shell](/assets/images/ood_shell.png){width="600px"}
+
 
 ### Interactive Apps
 
@@ -57,9 +53,8 @@ Desktop App (for working with GUI-based programs)
 Jupyter Server (for working with Jupyter notebooks)
 RStudio Server (for working in RStudio sessions)
 
-.. image:: ./images/ood_interactive.png
-  :width: 600
-  :alt: OOD files app
+![Open OnDemand Files App](/assets/images/ood_interactive.png){width="600px"}
+
 
 ### Desktop App
 
@@ -114,13 +109,12 @@ This will mount your HCS share on the local machine and allow you to access and 
 
 #### Copy your HCS data to your project directory
 
-1. Naviagate to your hcs data and copy it to your user projecy directory
+1\. Naviagate to your hcs data and copy it to your user projecy directory
 
-.. image:: ./images/copydata.png
-  :width: 600
-  :alt: Connect to HCS 
+![Connect to HCS](/assets/images/copydata.png){width="600px}
 
-2. When you have finished processing copy your data back to your HCS Share.
+
+2\. When you have finished processing copy your data back to your HCS Share.
 
 
 

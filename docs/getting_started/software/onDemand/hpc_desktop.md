@@ -11,22 +11,18 @@
   7. When the authentication window appears type in the domain "registry" if staff or "student" if you are using a student account, and your password  
   8. Press connect and wait a few seconds for authentication and your HCS files to appear in the window.  
 
-.. image:: ./images/kinit.png
-  :width: 600
-  :alt: Connect to HCS
+![Connecting to HCS - create kerberos ticket with `kinit`](/assets/images/kinit.png){width="600px"}
 
-.. raw:: html
 
-   <br><br>
 
-.. image:: ./images/smbauth.png
-  :width: 600
-  :alt: Connect to HCS
 
-.. raw:: html
 
-   <br><br>
 
-.. image:: ./images/files.png
-  :width: 600
-  :alt: Connect to HCS
+![Connect to HCS - authenticating using samba in the file browser](/assets/images/smbauth.png){width="600px"}
+
+
+
+
+
+![Connect to HCS - browsing hcs files in file browser](/assets/images/files.png){width="600px"}
+
