@@ -3,15 +3,36 @@
 
 ## Conda
 
+For the most up-to-date and detailed documentation please refer to the official conda documentation at [https://docs.conda.io/en/latest/](https://docs.conda.io/en/latest/)
 
-### Installation
+If you are looking to only manage python packages, consider the use of [venv](../venv) which can be simpler.
 
-We recommend using _[Miniforge](https://conda-forge.org/miniforge)_ to manage conda environments and packages.
-Miniforge is a community-led, minimal conda/mamba installer that uses _[conda-forge](https://conda-forge.org/)_ as the default channel.
+!!!note "Mamba"
+    Mamba is a drop in replacement for conda which has a faster package and dependency resolver. Mamba is available if you self-install using the _miniforge_ instructions below.
+
+### Loading Conda
+
+Conda is available through the [module system](../modules)
+
+!!! terminal
+    ```bash
+    module load miniconda3
+    source $(conda info --base)/etc/profile.d/conda.sh
+    ```
+
+This will load the latest version of conda installed on the system.
 
 !!! note
 
-    **Due to licensing restrictions, we no longer endorse using Miniconda**. Use of Miniconda without removing the Main channel may be in violation of Anaconda's Terms of Service.
+    After loading conda, `source $(conda info --base)/etc/profile.d/conda.sh` is needed to load the conda functions into your environment and needs to be done everytime the miniconda module is loaded. This is done instead of using `conda init`. The use of `conda init` is not recommended as it hard codes a specific version of conda into your bashrc which can cause issues if you are not managing the installation of conda yourself.
+
+    This also mirrors the requirement for when using conda in a slurm script as your bashrc is not parsed as part of a SLURM job.
+
+#### Self installing
+
+If you would prefer to install and manage your own version of conda you can do so, we recommend using _[Miniforge](https://conda-forge.org/miniforge)_ to manage conda environments and packages.
+Miniforge is a community-led, minimal conda/mamba installer that uses _[conda-forge](https://conda-forge.org/)_ as the default channel.
+
 
 To install Miniforge under your user account, you can use the following commands:
 
@@ -21,23 +42,62 @@ To install Miniforge under your user account, you can use the following commands
     bash Miniforge3-Linux-x86_64.sh -b -u
     ```
 
+Once installed (the default location is `/home/<user>/miniforge3`), load conda using:
 
-## Conda environments
+!!! terminal
 
+    ```bash
+    source ~/miniforge3/etc/profile.d/conda.sh
+    ```
 
-Activating the base environment.
+!!! note
+
+    Installing miniforge and loading as above will also give you access to `mamba` which is a drop in faster replacement to `conda`.
+
+### Extra Configuration
+
+#### Cache location
+
+By default conda will download the code for packages into a cache in your home directory. It is a good idea to change this to instead be your project directory (if you have one)
+
+!!! terminal
+
+    ```bash
+    conda config --add pkgs_dirs /path/to/project/conda_pkgs
+    ```
+
+#### Bioconda
+
+Bioconda ([https://bioconda.github.io](https://bioconda.github.io)) is a popular repository for bioinformatic software. To be able to make use of the bioconda repository you must configure conda to know about it. The following commands are from [https://bioconda.github.io/#usage](https://bioconda.github.io/#usage) and will configure conda to search and download from the bioconda repositiory when installing into enivronments.
 
 !!! terminal
     ```bash
-    source ~/miniforge3/bin/activate
+    conda config --add channels bioconda
+    conda config --add channels conda-forge
+    conda config --set channel_priority strict
     ```
 
-Your command prompt will then change to include "(base) " at the start, in order to remind you that this environment is activated.  You can deactivate the environment by typing:
+These commands modify your `~/.condarc` file.
 
-!!! terminal
-    ```
-    conda deactivate
-    ```
+## Conda environments
+
+Conda environments let you manage software (and it's dependencies). Ultimately, conda install software into specific directories and then alters your `PATH` for you to make them accessible. To utilise an environment it must first exist, and then be activated. 
+
+There are two types of environments: _named_ and _prefix_. 
+
+- _Named_ environments are installed within your home directory (subdirectories within `~/.conda/envs`) and will let you activiate by `conda activate <environment_name>`.
+
+- _Prefix_ environments are installed into the location you specify at creation. If this location is accessible by others, they too can use the environment. For reproducibility it is useful to create an environment in a project directory and use that for operating on data there. When you change to a different project, you can activate the corresponding environment. This lets you manage your software at the project level.
+
+!!!note
+    As named environments are stored in your home directory these can take up a large portion of your home directory storage quota. They are also not accessible to others.
+
+    The use of _prefix_ environments is encouraged as you can specify the location to store these (ideally in your project directory)
+
+
+!!! warning
+    We strongly recommend against using conda init. It inserts a snippet in your `~/.bashrc` file that will freeze the version of conda used, bypassing the environment module system.
+
 
 **Creating and activating a sub-environment**
  |
@@ -46,25 +106,39 @@ Although once you have activated the base conda environment, you can in principl
 To create a named environment (for example, called "myenv"), ensure that the base environment is activated (the command prompt should start with "(base) "), and type:
 
 
-!!! terminal
-    ```bash
-    # to create a named environment that will live in ~/.conda/envs
-    conda create -n myenv
+!!! terminal "Creating Conda Environments"
 
-    # or you can create an environment in any* directory with
-    conda create -p /path/to/put/your/environment
-    ```
+    === "Prefix"
+        ```bash
+        conda create -p /path/to/create/environment/
+        ```
+
+    === "Named"
+        ```bash
+        conda create -n myenv
+        ```
+
+
 
 It will show the proposed installation location, and once you answer the prompt to proceed, will do the installation.  If you have followed these instruction, this location should be `/home/users/<your_username>/miniconda3/envs/myenv`.  You can alternatively give it a different location using the option `-p <path>` instead of `-n <name>`.
- *Note* do not create conda environments in subdirectories of `/mnt/auto-hcs/` - conda will either fail or have it will have issues.
+
+!!! warning
+    Do not create conda environments in subdirectories of `/mnt/auto-hcs/` - conda will either fail or have it will have issues.
 
 
 Once you have created your sub-environment, you can activate it using `conda activate <name>` for example:
 
 !!! terminal
-    ```bash
-    conda activate myenv
-    ```
+
+    === "Prefix"
+        ```bash
+        conda activate /path/to/conda/environment
+        ```
+
+    === "Named"
+        ```bash
+        conda activate myenv
+        ```
 
 The command prompt will then change (e.g. to start with "(myenv) ") to reflect this.  Typing conda deactivate once will return you to the base environment; typing it a second time will deactivate conda completely (as above).
  | To List your conda environments type the following:
@@ -76,7 +150,7 @@ The command prompt will then change (e.g. to start with "(myenv) ") to reflect t
 
 #### Installing conda packages
 
-Once you have activated a named environment, you can install packages with the conda install command, for example:
+Once you have activated an environment, you can install packages with the conda install command, for example:
 
 !!! terminal
     ```bash
@@ -87,6 +161,35 @@ You can also force particular versions to be installed.  See the conda cheat she
 
 To list the packages installed in the currently activated environment, you can type conda list.
 
+#### Cleaning up
+
+##### Cleaning Cache
+
+Once you've made your environments it can be a good idea to clean up your cache 
+
+!!! terminal
+
+    ```bash
+    # remove index cache, lock files, unused cache packages, tarballs, and logfiles
+    conda clean --all
+    ```
+
+##### Removing environments
+
+If you no longer need an environment the easiest way to remove it is:
+
+!!! terminal
+
+    === "Prefix"
+        ```bash
+        conda env remove -p /path/to/env
+        ```
+
+    === "Named"
+        ```bash
+        conda env remove -n env_name
+        ```
+
 #### Running packages from your conda environment
 
 In order to run packages from a conda environment that you installed previously, you will first need to activate the environment in the session that you are using.  This means repeating some of the commands typed above.  Of course, you will not need to repeat the steps to create the environment or install the software, but the following may be needed again:
@@ -95,7 +198,7 @@ In order to run packages from a conda environment that you installed previously,
 !!! terminal
 
     ```bash
-    source activate
+    conda deactivate
 
     conda activate myenv
     ```
@@ -133,15 +236,44 @@ In order to use conda environments within your slurm script you need to source t
 
 !!! terminal
     
-    ```bash
-    source ~/miniforge3/etc/profile.d/conda.sh
-    export PYTHONNOUSERSITE=1 # don't add python user site library to path
+    === "Modules"
 
-    conda activate myenv
-    ```
+        ```bash
+        module load miniconda3
+        source $(conda info --base)/etc/profile.d/conda.sh
+        export PYTHONNOUSERSITE=1 # don't add python user site library to path
+
+        conda activate /path/to/env/
+        ```
+
+    === "Self installed miniforge"
+
+        ```bash
+        source ~/miniforge3/etc/profile.d/conda.sh
+        export PYTHONNOUSERSITE=1 # don't add python user site library to path
+
+        conda activate /path/to/env/
+        ```
 
 ### Adding custom conda environments to Jupyter
 
-.. include:: /common/jupyter_kernels.rst
-  :start-line: 2
+On the commandline, first create a conda environment and install the packages/software you wish into it. 
+Then add the `ipykernel` and register it with Juptyer.
+
+!!! terminal
+    
+    ```bash
+
+    conda create --path /path/to/env
+
+    conda activate /path/to/env
+
+    conda install <packages/software of interest>
+
+    conda install ipykernel
+
+    python -m ipykernel install --user --name=myCondaEnvironment
+    ```
+    
+Then in Jupyter the custom environment can be loaded by Kernel -> Change Kernel
   
