@@ -8,19 +8,40 @@
 - title: Getting an account
   content: Information about getting access
   url: /getting_started/access/signup
-  image: assets/images/icons/lock_open_right_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
+  image: /assets/images/icons/person_add_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: OnDemand (Web)
   content: Logging into the Research Cluster through the OnDemand web portal
   url: /getting_started/access/ondemand_web
-  image: assets/images/icons/folder_open_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
+  image: /assets/images/icons/web_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: SSH
   content: Logging into the Research Cluster using SSH
-  image: assets/images/icons/folder_match_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
+  image: /assets/images/icons/login_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 ::/cards::
 
+
+## Storage
+
+
+::cards::
+
+
+- title: Storage locations
+  content: Where to put your data
+  url: /getting_started/software/onDemand/available_apps
+  image: /assets/images/icons/document_search_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
+
+- title: Moving data on and off the Research Cluster
+  content: How to transfer data onto and off of the cluster
+  image: /assets/images/icons/sync_desktop_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
+
+- title: File Permissions
+  content: How to manage file permissions on the cluster
+  image: /assets/images/icons/key_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
+
+::/cards::
 
 ## OnDemand
 
@@ -30,20 +51,20 @@
 - title: OnDemand (Web)
   content: Logging into the Research Cluster through the OnDemand web portal
   url: /getting_started/access/ondemand_web
-  image: assets/images/icons/folder_open_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
+  image: /assets/images/icons/web_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Available Web Apps
-  content: Logging into the Research Cluster using SSH
+  content: Pre-installed apps available within Open OnDemand
   url: /getting_started/software/onDemand/available_apps
-  image: assets/images/icons/folder_match_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
+  image: /assets/images/icons/grid_view_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Using HPC Desktop
-  content: Logging into the Research Cluster using SSH
-  image: assets/images/icons/folder_match_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
+  content: How to use the virtual desktop environment
+  image: /assets/images/icons/desktop_windows_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Managing files with OnDemand
-  content: Logging into the Research Cluster using SSH
-  image: assets/images/icons/folder_match_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
+  content: How to manage files through the Open OnDemand web interface
+  image: /assets/images/icons/folder_match_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 ::/cards::
 
@@ -54,46 +75,26 @@
 
 
 - title: Available Web Apps
-  content: Logging into the Research Cluster using SSH
+  content: Pre-installed apps available within Open OnDemand
   url: /getting_started/software/onDemand/available_apps
-  image: assets/images/icons/folder_match_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
+  image: /assets/images/icons/grid_view_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Using HPC Desktop
-  content: Logging into the Research Cluster using SSH
-  image: assets/images/icons/folder_match_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
+  content: How to use the virtual desktop environment
+  image: /assets/images/icons/desktop_windows_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Installing and managing software
-  content: Logging into the Research Cluster using SSH
-  image: assets/images/icons/folder_match_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
+  content: How to install and configure software for yourself
+  image: /assets/images/icons/build_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Interactive jobs
-  content: Logging into the Research Cluster using SSH
+  content: Options for interactive jobs
   url: /getting_started/software/onDemand/available_apps
-  image: assets/images/icons/folder_match_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
+  image: /assets/images/icons/interactive_space_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Using the scheduler
-  content: Logging into the Research Cluster using SSH
-  image: assets/images/icons/folder_match_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
+  content: Submitting and managing jobs through the SLURM scheduler
+  image: /assets/images/icons/add_to_queue_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 ::/cards::
 
-## Storage
-
-
-::cards::
-
-
-- title: Storage locations
-  content: Logging into the Research Cluster using SSH
-  url: /getting_started/software/onDemand/available_apps
-  image: assets/images/icons/folder_match_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
-
-- title: Moving data on and off the Research Cluster
-  content: Logging into the Research Cluster using SSH
-  image: assets/images/icons/folder_match_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
-
-- title: File Permissions
-  content: Logging into the Research Cluster using SSH
-  image: assets/images/icons/folder_match_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
-
-::/cards::
