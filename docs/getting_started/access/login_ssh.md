@@ -10,10 +10,17 @@ To SSH to the login node from your local computer, first open a terminal/command
 
 !!! terminal
 
-    ```bash
-    ssh <otago-username>@aoraki-login.otago.ac.nz
-    ```
+    === "Staff Network"
 
+        ```bash
+        ssh <otago-username>@aoraki-login.otago.ac.nz
+        ```
+
+    === "Student Wifi/VPN"
+
+        ```bash
+        ssh <otago-username>@aoraki-login-stu.uod.otago.ac.nz
+        ```
 
 !!! note
 

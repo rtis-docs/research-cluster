@@ -1,7 +1,7 @@
 # Storage Overview
 
 
-RTIS provides high-performance storage solutions for researchers at the University of Otago. These storage solutions are available on the [Research Cluster](../overview.md) to all researchers at the University of Otago upon application approval.
+RTIS provides high-performance storage solutions for researchers at the University of Otago. These storage solutions are available on the [Research Cluster](../../general/overview) to all researchers at the University of Otago upon application approval.
 
 
 ```mermaid
@@ -44,7 +44,7 @@ graph TD;
 
 !!! warning
 
-    Note that the **Research storage is not backed up** and it is the responsibility of the user to ensure their important data is safe. See :ref:`backup` for tips. If you need assistance with backing up your data, please email {{support_email}}.
+    Note that the **Research storage is not backed up** and it is the responsibility of the user to ensure their important data is safe. See [data transfer](../../getting_started/data_transfer/data_transfer_overview) for options to move data you want to retain. If you need assistance with backing up your data, please email {{support_email}}.
 
 
 ### Home directory
@@ -76,7 +76,7 @@ To apply for a projects directory, please fill out the [storage-signup-form](../
 
 !!! warning
 
-    Note that the **Research storage is not backed up** and it is the responsibility of the user to ensure their important data is safe. See :ref:`backup` for tips. If you need assistance with backing up your data, please email {{support_email}}.
+    Note that the **Research storage is not backed up** and it is the responsibility of the user to ensure their important data is safe. See [data transfer](../../getting_started/data_transfer/data_transfer_overview) for options to move data you want to retain. If you need assistance with backing up your data, please email {{support_email}}.
 
 
 
@@ -96,7 +96,7 @@ The Research Storage (anything within /home, /projects, /weka) is not backed up.
 
 Setting up Globus to automatically transfer data between the two storage solutions is a great way to ensure your data is backed up.
 
-If you need assistance with backing up your data, please :doc:`get in touch </support>`.
+If you need assistance with backing up your data, please email {{support_email}}.
 
 
 
@@ -105,7 +105,7 @@ If you need assistance with backing up your data, please :doc:`get in touch </su
 
 Submit the form below to request a projects folder on the Research Storage (Ohau). 
 
- Please :doc:`contact the RTIS Solutions team </support>` if you have any questions.
+ Please contact the RTIS Solutions team ({{support_email}}) if you have any questions.
 
 
 

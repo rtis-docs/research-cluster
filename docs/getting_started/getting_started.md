@@ -17,6 +17,7 @@
 
 - title: SSH
   content: Logging into the Research Cluster using SSH
+  url: /getting_started/access/login_ssh
   image: /assets/images/icons/login_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 ::/cards::
@@ -30,11 +31,12 @@
 
 - title: Storage locations
   content: Where to put your data
-  url: /getting_started/software/onDemand/available_apps
+  url: /storage/storage_options
   image: /assets/images/icons/document_search_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Moving data on and off the Research Cluster
   content: How to transfer data onto and off of the cluster
+  url: /getting_started/data_transfer/data_transfer_overview
   image: /assets/images/icons/sync_desktop_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: File Permissions
