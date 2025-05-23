@@ -80,7 +80,7 @@ To open a command line terminal, right click anywhere on the Desktop and select 
 #### Using Otago HCS Data
 
 1. Connect to the HCS Share
-2. Copy your dats to your projects directory
+2. Copy your data to your projects directory
 3. Process your data with the cluster
 4. Copy your results back to the HCS Share 
 

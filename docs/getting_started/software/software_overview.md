@@ -30,11 +30,15 @@ What is Apptainer Good For?
 - Sharing pre-configured environments.
 - Moving workloads between different systems easily (laptop → HPC → cloud).
 
+For more information see the [Apptainer page](../software_environments/self_managed/apptainer)
+
 #### Environments
 
 ##### LMOD/Modules
 
 Lmod (Lua Modules) is an environment module system commonly used on High-Performance Computing (HPC) systems, clusters, and supercomputers. It helps users easily manage and switch between different software environments.
+
+For more information see the [Modules (LMOD) page](../software_environments/modules/modules)
 
 ##### Conda/Mamba
 
@@ -46,11 +50,14 @@ Conda/mamba is an open-source package management and environment management syst
 - Install non-Python libraries (like TensorFlow, OpenCV, etc.) easily.
     - bioconda is a great source of bioinformatic tools
 
+For more information see the [Conda/Mamba page](../software_environments/self_managed/conda)
 
 
 ##### Spack
 
 Spack is a flexible, open-source package manager designed specifically for supercomputers, HPC clusters, and scientific computing. It helps users build, install, and manage multiple versions of scientific software and their complex dependencies.
+
+For more information see the [Spack page](../software_environments/self_managed/spack)
 
 ##### SBGrid
 
@@ -60,6 +67,8 @@ SBGrid is a specialized software distribution and management system designed pri
 - Cryo-electron microscopy (Cryo-EM)
 - NMR spectroscopy
 - Molecular modeling and visualization
+
+For more information see the [SBGrid page](../software_environments/sbgrid)
 
 ##### venv
 
@@ -81,6 +90,8 @@ What is venv Good For?
 - Preventing changes to system-wide Python packages.
 - Making projects easier to share & reproduce.
 
+For more information see the [venv page](../software_environments/self_managed/venv)
+
 ##### renv
 
 `{renv}` is an R library that is used to create virtual environments of R packages. These environments can be at the user or project level and help to isolate the packages used for a project from the versions installed at a system level.
@@ -92,3 +103,5 @@ What is renv Good For?
 - Keeping project dependencies separate.
 - Preventing changes to system-wide R packages.
 - Making projects easier to share & reproduce.
+
+For more information see the [renv page](../software_environments/self_managed/renv)

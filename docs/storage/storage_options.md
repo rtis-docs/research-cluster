@@ -51,7 +51,9 @@ graph TD;
 
 All users of the Otago Research Cluster have a home directory that is mounted  at ``/home/<username>``. The home storage is intended for storing configuration files, scripts, and other smaller datasets that are used for computations.
 
-The quota for home directories is 40 GB.
+The hard quota for home directories is **40GB**. When you reach this limit you will not be able to write anymore data to your home directory.
+A warning will be sent when the you have 30GB of data stored in your home directory.
+ 
 
 
 ### Projects directory

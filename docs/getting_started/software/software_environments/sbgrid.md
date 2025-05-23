@@ -34,7 +34,7 @@ To use SBGrid via modules, use the following command `export MODULEPATH=/program
 Module Examples:
 Once the modulepath is loaded as above `module avail` will list all modules including SBGrid, Spack, and RTIS custom modules 
 
-`module spider alphafold` will seach for all module packages include the SBGrid packages
+`module spider alphafold` will search for all module packages include the SBGrid packages
 
 !!! terminal
 
