@@ -62,10 +62,12 @@
 
 - title: Using HPC Desktop
   content: How to use the virtual desktop environment
+  url: /getting_started/software/onDemand/hpc_desktop
   image: /assets/images/icons/desktop_windows_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Managing files with OnDemand
   content: How to manage files through the Open OnDemand web interface
+  url: /getting_started/software/onDemand/ood_file_manager
   image: /assets/images/icons/folder_match_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 ::/cards::
@@ -83,10 +85,12 @@
 
 - title: Using HPC Desktop
   content: How to use the virtual desktop environment
+  url: /getting_started/software/onDemand/hpc_desktop
   image: /assets/images/icons/desktop_windows_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Installing and managing software
   content: How to install and configure software for yourself
+  url: /getting_started/software/software_overview#managing-your-own-software
   image: /assets/images/icons/build_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Interactive jobs
