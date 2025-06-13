@@ -12,13 +12,12 @@ Macaulay2 can run in a regular CPU environment by default. No additional configu
 
 Loading the Module:
 
-!!! terminal 
+!!! terminal
 
     ```bash
     module load macaulay2
     M2
-   ```
-
+    ```
 Helper commands:
 
 - ``M2-help`` – Show help information
@@ -27,22 +26,23 @@ Helper commands:
 
 Inside Macaulay2:
 
-```m2
+!!! terminal
 
-   R = QQ[x, y]
-   I = ideal(x^3 + y^2 - 1)
-   gens gb I
-```
+    ```m2
+    R = QQ[x, y]
+    I = ideal(x^3 + y^2 - 1)
+    gens gb I
+    ```
 
 Interactive CPU Access with srun:
 
 To start an interactive session on a general compute node (CPU-only):
 
 !!! terminal
+
     ```bash
     srun --partition=aoraki --mem=4G --cpus-per-task=2 --time=00:30:00 --pty bash
     ```
-
 Once on the node:
 
 !!! terminal
@@ -57,14 +57,14 @@ Once on the node:
 
 To use GPU acceleration, you must be on a GPU-capable node and request a GPU using SLURM.
 
-Set ``USE_GPU=1`` before loading the module to enable GPU support:
+Set `USE_GPU=1` before loading the module to enable GPU support:
 
 Interactive GPU Access with srun:
 
-To run interactively on the ``aoraki_gpu`` partition:
+To run interactively on the `aoraki_gpu` partition:
 
-!!! terminal 
-    
+!!! terminal
+
     ```bash
     srun --partition=aoraki_gpu --gres=gpu:1 --mem=8G --cpus-per-task=2 --time=00:30:00 --pty bash
     ```
@@ -96,8 +96,8 @@ Create a file named ``macaulay2_gpu.slurm`` with the following content:
     #SBATCH --output=m2-gpu-%j.out
 
     export USE_GPU=1
-    module load macaulay2   
-    
+    module load macaulay2
+
     M2 <<'EOF'
     R = QQ[a,b]
     I = ideal(a^4 + b^4 - 1)
@@ -125,7 +125,7 @@ Submit the job:
 - To verify GPU access inside the container:
 
 !!! terminal
-    
+
     ```bash
     apptainer exec --nv /opt/macaulay2/1.24.11/macaulay2.sif nvidia-smi
     ```

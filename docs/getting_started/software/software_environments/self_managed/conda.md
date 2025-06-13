@@ -96,12 +96,19 @@ There are two types of environments: _named_ and _prefix_.
 
 
 !!! warning
-    We strongly recommend against using conda init. It inserts a snippet in your `~/.bashrc` file that will freeze the version of conda used, bypassing the environment module system.
+    We strongly recommend against using `conda init`. It inserts a snippet in your `~/.bashrc` file that will freeze the version of conda used, bypassing the environment module system.
 
 
 **Creating and activating a sub-environment**
- |
+
 Although once you have activated the base conda environment, you can in principle start to install packages immediately, your use of conda will generally be better organised if you do not install packages directly into the base environment, but instead use a named sub-environment.  You can have multiple sub-environments under a single base environment, and activate the one that is required at any one time.  Unless you install packages directly into the base environment, your sub-environments will work independently.
+
+!!! information "Managing Conda Environments to Conserve Home Directory Storage"
+
+    To save home directory storage space, it is recommended to create Conda environments in a shared project directory. 
+    This approach allows you to manage your Conda environments within your project directory and if needed share them with collaborators.
+    If you do not yet have a shared project directory, please contact RTIS Solutions to request one.
+
 
 To create a named environment (for example, called "myenv"), ensure that the base environment is activated (the command prompt should start with "(base) "), and type:
 
@@ -173,6 +180,56 @@ Once you've made your environments it can be a good idea to clean up your cache
     # remove index cache, lock files, unused cache packages, tarballs, and logfiles
     conda clean --all
     ```
+
+#### Migrating an Existing Conda Environment
+
+
+To move an existing Conda environment to a new location:
+
+1. Export your current environment to a YAML file:
+
+    !!! terminal
+
+        ```bash
+        conda env export --name existing_env > environment.yml
+        ```
+
+2. Create a new environment from the exported YAML file at your chosen location:
+
+    !!! terminal
+
+        ```bash
+        conda env create --prefix /path/to/project_directory/env/conda_envs/myenv --file environment.yml
+        ```
+
+3. Activate the newly created environment:
+
+    !!! terminal
+    
+        ```bash
+        conda activate /path/to/project_directory/env/conda_envs/myenv
+        ```
+
+#### Creating an Alias for Easy Activation
+
+
+To simplify environment activation, consider adding an alias to your shell configuration file (e.g., ``.bashrc`` or ``.bash_profile``):
+
+!!! terminal
+
+    ```bash
+    alias activate_myenv="conda activate /path/to/project_directory/env"
+    ```
+
+Activate your environment using the alias:
+
+!!! terminal
+
+    ```bash
+    activate_myenv
+    ```
+
+This method is Python-version agnostic and provides a convenient way to manage Conda environments in shared or collaborative project directories.
 
 ##### Removing environments
 
