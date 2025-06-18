@@ -5,27 +5,31 @@ To determine the efficiency of your SLURM job, you can follow these steps:
 
 1. **Submit Your Job**: First, submit your job to the SLURM scheduler using the `sbatch` command.
 
-    ```bash
-    sbatch my_job_script.sh
-    ```
+    !!! terminal
+        ```bash
+        sbatch my_job_script.sh
+        ```
 
 2. **Monitor Job Progress**: Use the `squeue` command to monitor the progress of your job.
 
-    ```bash
-    squeue -u your_username
-    ```
+    !!! terminal
+        ```bash
+        squeue -u your_username
+        ```
 
 3. **Check Job Completion**: Once your job is completed, you can check the job details using the `sacct` command.
 
-    ```bash
-    sacct -j job_id --format=JobID,JobName,Partition,Account,AllocCPUS,State,ExitCode
-    ```
+    !!! terminal
+        ```bash
+        sacct -j job_id --format=JobID,JobName,Partition,Account,AllocCPUS,State,ExitCode
+        ```
 
 4. **Analyze Job Efficiency**: To analyze the efficiency of your job, you can use the `seff` command, which provides a summary of the job's resource usage.
 
-    ```bash
-    seff job_id
-    ```
+    !!! terminal
+        ```bash
+        seff job_id
+        ```
 
     The `seff` command will output information such as:
 

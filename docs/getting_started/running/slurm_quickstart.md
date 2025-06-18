@@ -26,71 +26,66 @@ Full documentation for slurm is available at [https://slurm.schedmd.com/document
 
 What follows is a high-level overview of how Slurm works:
 
-  1. Users submit jobs to Slurm using the ``sbatch`` command. A job is a set of
-     instructions for running a particular program or set of programs.
-  2. Slurm assigns resources to the job based on the requested resources and
-     the availability of resources on the cluster. 
-     This includes CPU cores, memory, GPUs, and other resources.
-  3. Slurm creates a job step for each task in the job. 
-     A job step is a subunit of a job that runs on a single node.
-  4. Slurm schedules the job steps to run on the assigned resources. 
-     It takes into account the job's dependencies, priorities, and other 
-     factors to ensure that jobs run in the most efficient way possible.
-  5. Once a job step is running, Slurm monitors it and manages it throughout 
-     its lifecycle. 
-     This includes managing I/O, handling errors, and collecting job
-     statistics.
-  6. When a job is complete Slurm notifies the user and provides them with the
-     output and any error messages that were generated.
+1. Users submit jobs to Slurm using the ``sbatch`` command. A job is a set of
+    instructions for running a particular program or set of programs.
+2. Slurm assigns resources to the job based on the requested resources and
+    the availability of resources on the cluster. 
+    This includes CPU cores, memory, GPUs, and other resources.
+3. Slurm creates a job step for each task in the job. 
+    A job step is a subunit of a job that runs on a single node.
+4. Slurm schedules the job steps to run on the assigned resources. 
+    It takes into account the job's dependencies, priorities, and other 
+    factors to ensure that jobs run in the most efficient way possible.
+5. Once a job step is running, Slurm monitors it and manages it throughout 
+    its lifecycle. 
+    This includes managing I/O, handling errors, and collecting job
+    statistics.
+6. When a job is complete Slurm notifies the user and provides them with the
+    output and any error messages that were generated.
 
 Slurm provides a powerful set of tools for managing large-scale compute
 resources which allows users to run complex simulations and data analyses more
-efficiently and effectively.
-
-
-
+efficiently and effectively. 
 
 ### Interacting with the SLURM scheduler
 
-
-
-
 The following are commands that are used to find out information about the status of the scheduler and jobs that have been submitted
 
-  ``sinfo``
-     View the status of the cluster's compute nodes.
-     The output includes how many nodes and of what types are currently 
-     available for running jobs
-  ``squeue``
-     Check the current jobs in the batch queue system. 
-     Use ``squeue --me`` to view your own jobs.
-  ``scancel``
-     Cancel a job based on its job ID. 
-     ``scancel 123`` would cancel the job with ID ``123``. It is only possible to cancel your own jobs.
-     ``scancel --me`` will cancel all of your jobs.
-  ``sacct``
-     Display the job usage metrics after a job has run. This is useful to see resource usage of a job, or determine if it failed.
-     ``sacct -j <jobid>``
-
-.. hint::
-   ``sinfo`` will quickly tell you the state of the cluster and ``squeue`` 
-   will show you all of the jobs running and in the queue. 
+- ``sinfo``
+    View the status of the cluster's compute nodes.
+    The output includes how many nodes and of what types are currently 
+    available for running jobs
+- ``squeue``
+    Check the current jobs in the batch queue system. 
+    Use ``squeue --me`` to view your own jobs.
+- ``scancel``
+    Cancel a job based on its job ID. 
+    ``scancel 123`` would cancel the job with ID ``123``. It is only possible to cancel your own jobs.
+    ``scancel --me`` will cancel all of your jobs.
+- ``sacct``
+    Display the job usage metrics after a job has run. This is useful to see resource usage of a job, or determine if it failed.
+    ``sacct -j <jobid>``
 
 
+
+!!! hint
+
+    ``sinfo`` will quickly tell you the state of the cluster and ``squeue`` will show you all of the jobs running and in the queue. 
 
 
 ### Submitting Jobs
 
 
 The following are commands that are used for submission of jobs
-  ``sbatch``
+  
+-  ``sbatch``
       Submit a job to the batch queue system. 
       Use ``sbatch myjob.sh`` to submit the Slurm job script ``myjob.sh``.
       You can also provide or override the slurm parameters by supplying them at submission e.g. ``sbatch --job-name=my_job myjob.sh``. 
       The values supplied on the commandline will override the values inside your script.
-  ``scancel``
+- ``scancel``
       Cancel a job based on its job ID. 
-  ``scancel 123`` would cancel the job with ID ``123``. It is only possible to cancel your own jobs.
+- ``scancel 123`` would cancel the job with ID ``123``. It is only possible to cancel your own jobs.
   ``scancel --me`` will cancel all of your jobs.
 
 
@@ -119,9 +114,11 @@ and ends with the actual command(s) needed to run your job.
 The job script file looks much like a standard shell script (``.sh``) file, but at the top also includes one or more lines that specify options for the SLURM scheduler.
 These lines take the form of
 
-.. code-block:: bash
+!!! terminal
 
-  #SBATCH --some-option-here
+    ```bash
+    #SBATCH --some-option-here
+    ```
 
 Although these lines start with hash signs (``#``), and thus are regarded as
 comments by the shell, they are nonetheless read and interpreted by the SLURM
@@ -171,40 +168,42 @@ The full list of parameters and their descriptions is available at [https://slur
 
 Here is an example slurm script that would request a single cpu with an allocation of 4 GB of memory, and run for a maximum of 1 minute:
 
-.. code-block:: bash
-  
-  #!/bin/bash
-  #SBATCH --job-name=my_job # define the job name
-  #SBATCH --mem=4GB # request an allocation with 4GB of ram
-  #SBATCH --time=00:01:00 # job time limit of 1 minute (hh:mm:ss)
-  #SBATCH --partition=aoraki # 'aoraki' or 'aoraki_gpu' (for gpu access)
-  
-  # usual bash commands go below here:
-  echo "my example script will now start"
-  sleep 10 # pretend to do something
-  echo "my example script has finished"
+!!! terminal
+
+    ```bash
+    
+    #!/bin/bash
+    #SBATCH --job-name=my_job # define the job name
+    #SBATCH --mem=4GB # request an allocation with 4GB of ram
+    #SBATCH --time=00:01:00 # job time limit of 1 minute (hh:mm:ss)
+    #SBATCH --partition=aoraki # 'aoraki' or 'aoraki_gpu' (for gpu access)
+    
+    # usual bash commands go below here:
+    echo "my example script will now start"
+    sleep 10 # pretend to do something
+    echo "my example script has finished"
+    ```
 
 
+!!! hint "Finding Output"
 
-.. hint:: Finding Output
+    Output from running a SLURM batch job is, by default, placed in a file named
+    ``slurm-%j.out``, where the job's ID is substituted for ``%j``; e.g.
+    ``slurm-478012.out``.
+    This file will be created in your current directory; i.e. the directory from
+    within which you entered the ``sbatch`` command.
+    Also by default, both command output and error output (to stdout and stderr,
+    respectively) are combined in this file.
 
-  Output from running a SLURM batch job is, by default, placed in a file named
-  ``slurm-%j.out``, where the job's ID is substituted for ``%j``; e.g.
-  ``slurm-478012.out``.
-  This file will be created in your current directory; i.e. the directory from
-  within which you entered the ``sbatch`` command.
-  Also by default, both command output and error output (to stdout and stderr,
-  respectively) are combined in this file.
+    To specify alternate files for command and error output use:
 
-  To specify alternate files for command and error output use:
-
-  ``--output``
-    destination file for stdout
-  ``--error``
-    destination file for stderr
+    ``--output``
+      destination file for stdout
+    ``--error``
+      destination file for stderr
 
 
-## Slurm Scheduler Example
+### Slurm Scheduler Example
 
 
 Here is a minimal example of a job script file. 
@@ -212,8 +211,9 @@ It will run unattended for up to 30 seconds on one of the compute nodes in the
 ``aoraki`` partition, and will simply print out the text ``hello world``.
 
 
-.. code-block:: bash
+!!! terminal
 
+    ```bash
     #!/bin/bash
     # Job name:
     #SBATCH --job-name=test
@@ -234,27 +234,30 @@ It will run unattended for up to 30 seconds on one of the compute nodes in the
     #SBATCH --time=00:00:30
     #
     echo "hello world"  
+    ```
 
 If the text of this file is stored in ``hello_world.sh`` you could run and
 retrieve the result at the Linux prompt as follows
 
-.. code-block:: 
+!!! terminal
 
-  $ sbatch hello_world.sh
-  Submitted batch job 716
-  $ cat slurm-716.out
-  hello world
+    ```bash
+    $ sbatch hello_world.sh
+    Submitted batch job 716
+    $ cat slurm-716.out
+    hello world
+    ```
 
-.. note::
+!!! note
 
-  By default the output will be stored in a file called ``slurm-<number>.out``
-  where ``<number>`` is the job ID assigned by Slurm
-
-
+    By default the output will be stored in a file called ``slurm-<number>.out``
+    where ``<number>`` is the job ID assigned by Slurm
 
 
-Memory Available
-^^^^^^^^^^^^^^^^
+
+
+## Memory Available
+
 Also note that in all partitions except for GPU and HTC partitions, by default
 the full memory on the node(s) will be available to your job. 
 
@@ -270,8 +273,8 @@ have access to 16 GB memory.
 
 
 
-Parallelization
-'''''''''''''''
+## Parallelization
+
 When submitting parallel code, you usually need to specify the number of tasks,
 nodes, and CPUs to be used by your job in various ways.
 For any given use case, there are generally multiple ways to set the options to
@@ -280,13 +283,13 @@ be best practices.
 
 The key options for parallelization are:
 
-    ``--nodes`` (or ``-N``)
-      indicates the number of nodes to use
-    ``--ntasks-per-node``
-      indicates the number of tasks (i.e., processes one wants to run on each
-      node)
-    ``--cpus-per-task`` (or ``-c``)
-      indicates the number of cpus to be used for each task
+- ``--nodes`` (or ``-N``)
+  indicates the number of nodes to use
+- ``--ntasks-per-node``
+  indicates the number of tasks (i.e., processes one wants to run on each
+  node)
+- ``--cpus-per-task`` (or ``-c``)
+  indicates the number of cpus to be used for each task
 
 In addition, in some cases it can make sense to use the ``--ntasks`` (or
 ``-n``) option to indicate the total number of tasks and let the scheduler
@@ -302,8 +305,9 @@ we give them explicitly to be clear.
 Here's an example script that requests an entire Otago node and specifies 20
 cores per task.
 
-.. code-block:: bash
+!!! terminal
 
+    ```bash
     #!/bin/bash
     #SBATCH --job-name=test
     #SBATCH --account=account_name
@@ -314,7 +318,8 @@ cores per task.
     #SBATCH --time=00:00:30
     ## Command(s) to run:
     echo "hello world" 
-    
+    ```
+
 Only the partition, time, and account flags are required.
 
 ## GPU Jobs
