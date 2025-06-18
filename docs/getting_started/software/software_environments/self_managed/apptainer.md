@@ -1,13 +1,13 @@
 # Apptainer (Singularity)
 
 
-Apptainer (formerly: Singularity) is a secure, HPC-friendly alternative to :doc:`Docker </common/containers/docker>`. 
+Apptainer (formerly: Singularity) is a secure, HPC-friendly alternative to [Docker](https://docker.com). 
 
 Apptainer has its own container image format, but is generally compatible with Docker images.
  
 ## Basic usage
 
-The Apptainer user guide may be found at https://apptainer.org/docs/user/main/ , which explains, amongst other things, how to pull down Docker images from public repositories (such as Dockerhub) and make them work with Apptainer. :ref:`Let us know<Support>` if you need any help with this. 
+The Apptainer user guide may be found at [https://apptainer.org/docs/user/main/](https://apptainer.org/docs/user/main/) , which explains, amongst other things, how to pull down Docker images from public repositories (such as Dockerhub) and make them work with Apptainer. Email {{support_email}} if you need any help with this. 
 
 On the Research Cluster and other RTIS-managed shared servers, pre-existing shared Apptainer images (.sif) are generally located at `$APPTAINER_IMG`. 
 
@@ -16,9 +16,9 @@ For convenience, shared Apptainer images may have been wrapped in a **modulefile
 !!! terminal 
 
     ```bash
-        module avail foo
-        module load apptainer/foo/0.1
-        foo_bin -v
+    module avail foo
+    module load apptainer/foo/0.1
+    foo_bin -v
     ```
 
 where `foo_bin` will actually be an alias to `apptainer run $APPTAINER_IMG/foo_0.1.sif foo_bin`. 
