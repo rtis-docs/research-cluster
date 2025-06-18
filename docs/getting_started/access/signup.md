@@ -6,9 +6,9 @@ Submit the form below to request an account on the Otago compute cluster. You wi
  Please contact the RTIS team if you have any questions.
  rtis.solutions@otago.ac.nz
 
+<a href="https://ask.otago.ac.nz/otagoresearchcluster/?stepid=c74d92b7-2b35-f011-8c4c-000d3ae024aa&sessionid=6b4238f7-f847-f011-8779-002248115659">Account Creation Form</a>
 
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScMRn86h1DcdrX9kKruAnFZOuAW6yGm-EEjvg7sUU6j5H0CwQ/viewform?embedded=true" width="640" height="2400" frameborder="0" marginheight="0" marginwidth="0" scrolling="no">Loading…</iframe>
 
 
 

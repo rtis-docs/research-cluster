@@ -102,19 +102,6 @@ If you need assistance with backing up your data, please email {{support_email}}
 
 
 
-## Research Storage Signup
-
-
-Submit the form below to request a projects folder on the Research Storage (Ohau). 
-
- Please contact the RTIS Solutions team ({{support_email}}) if you have any questions.
-
-
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSer6mso8lNGE5jdv44Sbs6TvwA8oPOJNwcDtf6Jk_LFg3_NhA/viewform?embedded=true" width="800" height="2000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-
-
-&nbsp;
 
 
 
