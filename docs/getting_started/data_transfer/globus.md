@@ -6,7 +6,7 @@
 It is a great way to transfer large amounts of data between Otago HCS and the Research Storage, as well as to external institutes.
 
 !!! note
-    If you do not yet have a Globus-connected HCS share, please fill out the _[HCS High Speed Data Transfer Service Access Form](<https://www.otago.ac.nz/its/forms/hcs-high-speed-data-transfer-service-access-form)_ and wait for ITS to contact you. You will also need to contact RTIS Solutions to have your Research Storage set up with Globus. For assistance, please email `rtis.solutions@otago.ac.nz <mailto:rtis.solutions@otago.ac.nz>`_ with your university username, HCS share names you would like to connect, and whether you are already a Globus user.
+    If you do not yet have a Globus-connected HCS share, please fill out the _[HCS High Speed Data Transfer Service Access Form](<https://www.otago.ac.nz/its/forms/hcs-high-speed-data-transfer-service-access-form)_ and wait for ITS to contact you. You will also need to contact RTIS Solutions to have your Research Storage set up with Globus. For assistance, please email {{support_email}} with your university username, HCS share names you would like to connect, and whether you are already a Globus user.
 
 
 ### How To Log in to Globus and transfer data
@@ -16,7 +16,7 @@ If you have used Globus before, this process will look a little bit different th
 
 You will need to ensure you are logging in to Globus via your University of Otago login.
 
-Go to `app.globus.org <https://app.globus.org/>`_ and search for "University of Otago" in the "Use your existing organizational login" section of the page.
+Go to [app.globus.org](https://app.globus.org/) and search for "University of Otago" in the "Use your existing organizational login" section of the page.
 
 This will redirect you to a University of Otago login page. Please sign in with your Otago username and password.
 
@@ -89,16 +89,16 @@ You can now transfer files between the two collections by selecting the Director
 
 
 
-If you have any issues with Globus, please :doc:`contact us </support>`.
+If you have any issues with Globus, please contact us at {{support_email}}.
 
 
 ### Transferring Data between Research Storage and your Desktop
 
 
-The RTIS Globus endpoint works with `Globus Connect Personal <https://www.globus.org/globus-connect-personal>`_ and will transfer data to and from your desktop or lab computer.
+The RTIS Globus endpoint works with [Globus Connect Personal](https://www.globus.org/globus-connect-personal) and will transfer data to and from your desktop or lab computer.
 
 *Note - the **HCS endpoint** does not work with Globus Connect Personal on campus, but does allow you to share and receive data from other Globus users off campus*
 
-To transfer data between your desktop and Research Storage, you will need to install the Globus Connect Personal application on your desktop. Follow the instructions on the `Globus Connect Personal <https://www.globus.org/globus-connect-personal>`_ page to install it.
+To transfer data between your desktop and Research Storage, you will need to install the Globus Connect Personal application on your desktop. Follow the instructions on the [Globus Connect Personal](https://www.globus.org/globus-connect-personal) page to install it.
 
 Once you have installed Globus Connect Personal, you can connect your desktop endpoint to the RTIS Globus endpoint and transfer data between your desktop and Research Storage.
