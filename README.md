@@ -3,10 +3,15 @@
 
 ## Developing locally
 
-### Clone repo
-- Make a local copy with `git clone git@github.com:rtis-docs/research-cluster.git && cd research-cluster`
-- Switch to the `dev` branch `git switch dev`
+
+
+### Fork or Clone repo (if you have write permissions)
+- Make a fork of the repo if you don't have direct write access
+- Clone the fork or original (if write access)
+- Switch to the `dev` branch
 - Make changes to `dev` branch and once happy push to github and create a pull request to main
+
+
 
 ### Make and serve locally
 
