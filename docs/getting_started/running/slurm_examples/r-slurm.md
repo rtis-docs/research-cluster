@@ -1,6 +1,6 @@
 # Using R with Slurm
 
-These examples can be found at [https://appsgit.otago.ac.nz/projects/RTIS-SP/repos/slurm-code-examples/browse](https://appsgit.otago.ac.nz/projects/RTIS-SP/repos/slurm-code-examples/browse)
+These examples can be found at [https://appsgit.otago.ac.nz/projects/RTIS-SP/repos/slurm-code-examples/browse](https://appsgit.otago.ac.nz/projects/RTIS-SP/repos/slurm-code-examples/browse) (need to be on the campus network to access)
 
 Or downloaded and browsed on the cluster by:
 
@@ -44,9 +44,8 @@ Create the slurm script ``run_hello_rscript.sh`` with the following contents:
     #SBATCH --cpus-per-task=1
     #SBATCH --ntasks=1
 
-    # load R v4.2.2 through spack
-    # `spack install r@4.2.2` will need to have been run first
-    spack load r@4.2.2
+    # load R v4.4.3 through the modules
+    module load r/4.4.3
 
     # run the rscript
     Rscript hello_rscript.R
@@ -107,15 +106,14 @@ It will create and register a 'cluster' of 'workers' within R and then pass each
 !!! terminal 
     
     ```bash
-
     #!/bin/bash
     #SBATCH --mem=512MB
     #SBATCH --time=00:01:00
     #SBATCH --cpus-per-task=4
     #SBATCH --ntasks=1
 
-    # load R v4.2.2 through spack
-    spack load r@4.2.2
+    # load R v4.4.3 through the modules
+    module load r/4.4.3
 
     # run the rscript
     Rscript r_multicore_example-parallel.R
@@ -167,8 +165,8 @@ The following is same example as above but insetad implemented using the ``furrr
     #SBATCH --cpus-per-task=4
     #SBATCH --ntasks=1
 
-    # load R v4.2.2 through spack
-    spack load r@4.2.2
+    # load R v4.4.3 through the modules
+    module load r/4.4.3
 
     # run the rscript
     Rscript r_multicore_example-furrr.R 
@@ -230,8 +228,8 @@ Here is an example of running 3 jobs in parallel using a slurm array passing the
     #SBATCH --ntasks=1
     #SBATCH --array=1-3 # run three of this job with the indexes 1,2,3
 
-    # load R v4.2.2 through spack
-    spack load r@4.2.2
+    # load R v4.4.3 through the modules
+    module load r/4.4.3
 
     # run the rscript
     Rscript r_array_job_example-args.R ${SLURM_ARRAY_TASK_ID}
@@ -277,8 +275,8 @@ And here is an example of the same job but instead accessing the system environm
     #SBATCH --ntasks=1
     #SBATCH --array=1-3 # run three of this job with the indexes 1,2,3
 
-    # load R v4.2.2 through spack
-    spack load r@4.2.2
+    # load R v4.4.3 through the modules
+    module load r/4.4.3
 
     # run the rscript
     Rscript r_array_job_example-env.R 
@@ -337,8 +335,8 @@ work flow is often referred to as a scatter-gather as there is a scattering phas
     #SBATCH --ntasks=1
 
 
-    # load R v4.2.2 through spack
-    spack load r@4.2.2
+    # load R v4.4.3 through the modules
+    module load r/4.4.3
 
     # run the rscript
     Rscript r_combine_results.R
