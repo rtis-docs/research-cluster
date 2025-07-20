@@ -324,9 +324,27 @@ Only the partition, time, and account flags are required.
 
 ## GPU Jobs
 
+Requesting a GPU for a SLURM job requires that your job specifies **both**
 
-Please see example job script for such jobs.
+- a GPU partition
+- includes the `--gres` flag
 
+
+The partition is used to specify a specific GPU, or how much GPU memory is needed
+
+- `aoraki_gpu` will get you any free GPU
+- `aoraki_gpu_H100` will get you an entire H100 with 80 GB of GPU memory
+- `aoraki_gpu_L40` will get you an entire L40 with 48GB of GPU memory
+- `aoraki_gpu_A100_80GB` will get you an A100 with 80GB of GPU memory to use
+- `aoraki_gpu_A100_40GB` will get you an A100 with 40GB of GPU memory to use
+
+ Make sure to request at least two CPUs for each GPU requested, using ``--cpus-per-task``
+ 
+ You can request multiple GPUs with syntax like this (in this case for two
+   GPUs): ``--gpus-per-node=2``
+
+
+Please see the [SLURM GPU examples page](../slurm_examples/gpu-slurm) for examples of how to submit SLURM jobs that require a GPU.
 
 
 
