@@ -1,3 +1,3 @@
 # Available Apps
 
-{{ include_all("child/ood_apps/") }}
+{% include  "child/ood_apps/*" %}
