@@ -24,7 +24,7 @@ Create a python virtual environment and install the needed packages
 
 
 ```bash
-# create a pythong virtual environment
+# create a python virtual environment
 python -m venv venv/
 
 # activate it
