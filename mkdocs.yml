@@ -57,10 +57,10 @@ markdown_extensions:
 
 extra:
   support_email: '<a href="mailto:rtis.support@otago.ac.nz">rtis.support@otago.ac.nz</a>'
-  apptainer: "/software/software_environments/self_managed/apptainer"
-  nextflow: "/workflows/nextflow"
-  conda: "/software/software_environments/self_managed/conda"
-  spack: "/software/software_environments/self_managed/spack"
-  modules: "/software/software_environments/self_managed/modules.md"
-  sbgrid: "/software/software_environments/self_managed/sbgrid.md"
+  apptainer: "/getting_started/software/software_environments/self_managed/apptainer.md"
+  nextflow: "/getting_started/workflows/nextflow.md"
+  conda: "/getting_started/software/software_environments/self_managed/conda.md"
+  spack: "/getting_started/software/software_environments/self_managed/spack.md"
+  modules: "/getting_started/software/software_environments/modules/modules.md"
+  sbgrid: "/getting_started/software/software_environments/self_managed/sbgrid.md"
   home_quota: "40 GB"
