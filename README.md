@@ -24,14 +24,17 @@ Create a python virtual environment and install the needed packages
 
 
 ```bash
-# create a python virtual environment
+# create a pythong virtual environment
 python -m venv venv/
 
 # activate it
 source venv/bin/activate
+# If the above line doesn't work then navigate to the folder with activate.ps1 in it then run
+.\\activate.ps1
 
 # install the requirements into it
 pip install -r requirements.txt
+#you may need to make sure you are in the directory that contains this file
 ```
 
 To build and serve locally:
