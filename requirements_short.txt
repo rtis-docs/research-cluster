@@ -3,9 +3,10 @@ mkdocs
 mkdocs-awesome-nav
 mkdocs-caption
 mkdocs-get-deps
+mkdocs-include-markdown-plugin
 mkdocs-macros-plugin
 mkdocs-material
 mkdocs-material-extensions
 mkdocs-table-reader-plugin
 neoteroi-mkdocs
-
+pymdown-extensions

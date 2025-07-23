@@ -11,4 +11,4 @@ Examples of tasks that the login node is suitable for:
 - moving or copying data on the file system (durations < 30min)
 - compressing/tarring data small amounts of data (durations < 30min)
 
-For the more intensive tasks we ask that you make use of either the [OnDemand HPC Desktop](/getting_started/software/onDemand/hpc_desktop) or create an interactive allocation through the scheduler so that resources can be allocated and dedicated to you.
+For the more intensive tasks we ask that you make use of either the [OnDemand HPC Desktop](../../getting_started/software/onDemand/hpc_desktop.md) or create an interactive allocation through the scheduler so that resources can be allocated and dedicated to you.

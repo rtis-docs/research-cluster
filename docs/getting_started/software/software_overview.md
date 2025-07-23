@@ -99,7 +99,7 @@ What is Apptainer Good For?
 - Sharing pre-configured environments.
 - Moving workloads between different systems easily (laptop → HPC → cloud).
 
-For more information see the [Apptainer page](../software_environments/self_managed/apptainer)
+For more information see the [Apptainer page](software_environments/self_managed/apptainer.md)
 
 #### Environments
 
@@ -107,7 +107,7 @@ For more information see the [Apptainer page](../software_environments/self_mana
 
 Lmod (Lua Modules) is an environment module system commonly used on High-Performance Computing (HPC) systems, clusters, and supercomputers. It helps users easily manage and switch between different software environments.
 
-For more information see the [Modules (LMOD) page](../software_environments/modules/modules)
+For more information see the [Modules (LMOD) page](software_environments/modules/modules.md)
 
 ##### Conda/Mamba
 
@@ -119,14 +119,14 @@ Conda/mamba is an open-source package management and environment management syst
 - Install non-Python libraries (like TensorFlow, OpenCV, etc.) easily.
     - bioconda is a great source of bioinformatic tools
 
-For more information see the [Conda/Mamba page](../software_environments/self_managed/conda)
+For more information see the [Conda/Mamba page](software_environments/self_managed/conda.md)
 
 
 ##### Spack
 
 Spack is a flexible, open-source package manager designed specifically for supercomputers, HPC clusters, and scientific computing. It helps users build, install, and manage multiple versions of scientific software and their complex dependencies.
 
-For more information see the [Spack page](../software_environments/self_managed/spack)
+For more information see the [Spack page](software_environments/self_managed/spack.md)
 
 ##### SBGrid
 
@@ -137,7 +137,7 @@ SBGrid is a specialized software distribution and management system designed pri
 - NMR spectroscopy
 - Molecular modeling and visualization
 
-For more information see the [SBGrid page](../software_environments/sbgrid)
+For more information see the [SBGrid page](software_environments/sbgrid.md)
 
 ##### venv
 
@@ -159,7 +159,7 @@ What is venv Good For?
 - Preventing changes to system-wide Python packages.
 - Making projects easier to share & reproduce.
 
-For more information see the [venv page](../software_environments/self_managed/venv)
+For more information see the [venv page](software_environments/self_managed/venv.md)
 
 ##### renv
 
@@ -173,4 +173,4 @@ What is renv Good For?
 - Preventing changes to system-wide R packages.
 - Making projects easier to share & reproduce.
 
-For more information see the [renv page](../software_environments/self_managed/renv)
+For more information see the [renv page](software_environments/self_managed/renv.md)

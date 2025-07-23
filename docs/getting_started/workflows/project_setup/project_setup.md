@@ -6,7 +6,7 @@ TODO
 Where will your data live? 
 
 
-For how to move data into this structure see [globus](moving_data/globus.md)
+For how to move data into this structure see [globus](../../data_transfer/globus.md)
 
 ### Software
 

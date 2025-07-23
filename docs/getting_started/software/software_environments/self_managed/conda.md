@@ -5,14 +5,14 @@
 
 For the most up-to-date and detailed documentation please refer to the official conda documentation at [https://docs.conda.io/en/latest/](https://docs.conda.io/en/latest/)
 
-If you are looking to only manage python packages, consider the use of [venv](../venv) which can be simpler.
+If you are looking to only manage python packages, consider the use of [venv](venv.md) which can be simpler.
 
 !!!note "Mamba"
     Mamba is a drop in replacement for conda which has a faster package and dependency resolver. Mamba is available if you self-install using the _miniforge_ instructions below.
 
 ### Loading Conda
 
-Conda is available through the [module system](../modules)
+Conda is available through the [module system]( {{modules}} )
 
 !!! terminal
     ```bash

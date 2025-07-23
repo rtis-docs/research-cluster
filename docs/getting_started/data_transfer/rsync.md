@@ -2,7 +2,7 @@
 
 The `scp` or `rsync` commands can be used to transfer data on or off the Research Cluster using a local terminal. For transferring data through a web interface the OnDemand File Manager can be used.
 
-This method is recommended for small numbers/sizes of files. For transferring large amounts of data [Globus](../globus) is the recommended solution.
+This method is recommended for small numbers/sizes of files. For transferring large amounts of data [Globus](globus.md) is the recommended solution.
 
 
 ## scp
