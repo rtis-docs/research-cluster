@@ -17,7 +17,12 @@
 
 These commands will let you build and serve the mkdocs website locally for development
 
+
 Create a python virtual environment and install the needed packages
+
+- **The requirements were last updated 23-07-2025** - local enviroment recreation may be needed
+
+
 ```bash
 # create a pythong virtual environment
 python -m venv venv/
