@@ -29,6 +29,10 @@ To SSH to the login node from your local computer, first open a terminal/command
         ```output
         <otago-username>@aoraki-login-stu.uod.otago.ac.nz's password:
         ```
+    !!! info
+
+        If you are using **Student Wi-Fi or VPN**, you will need to use the alternate address **aoraki-login-stu**: ``ssh <otago-username>@aoraki-login-stu.uod.otago.ac.nz``
+
 
 !!! info "First time connecting"
 
@@ -53,9 +57,7 @@ To SSH to the login node from your local computer, first open a terminal/command
 
     Type 'yes' and <kbd>Enter</kbd>, where you will then be prompted for your password (or need to re-`ssh`) depending on your `ssh` client.
 
-!!! info
 
-    If you are using **Student Wi-Fi or VPN**, you will need to use the alternate address **aoraki-login-stu**: ``ssh <otago-username>@aoraki-login-stu.uod.otago.ac.nz``
 
 !!! warning "Password not showing"
 
@@ -65,7 +67,8 @@ To SSH to the login node from your local computer, first open a terminal/command
 
 To use the cluster shell access within OnDemand, first [connect to the **Otago OnDemand** web portal](/getting_started/access/ondemand_web#logging-in) and then from the top menu bar select the menu `Clusters` > `Aoraki Cluster Shell Access`.
 
-You will then be prompted for input your password, similar to [SSH through the terminal](#ssh-through-a-terminal)
+You will then be prompted to input your password, similar to [SSH through the terminal](#ssh-through-a-terminal)
 
 ![Open OnDemand Shell](/assets/images/ood_shell.png){width="600px"}
 
+<!-- TODO update screenshot -->
