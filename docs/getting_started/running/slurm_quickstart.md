@@ -24,30 +24,29 @@ Full documentation for slurm is available at [https://slurm.schedmd.com/document
 
 ## Slurm Workflow
 
-What follows is a high-level overview of how Slurm works:
+Below is a high-level overview of how Slurm schedules and runs your jobs:
 
-1. Users submit jobs to Slurm using the ``sbatch`` command. A job is a set of
-    instructions for running a particular program or set of programs.
-2. Slurm assigns resources to the job based on the requested resources and
-    the availability of resources on the cluster. 
-    This includes CPU cores, memory, GPUs, and other resources.
-3. Slurm creates a job step for each task in the job. 
-    A job step is a subunit of a job that runs on a single node.
-4. Slurm schedules the job steps to run on the assigned resources. 
-    It takes into account the job's dependencies, priorities, and other 
-    factors to ensure that jobs run in the most efficient way possible.
-5. Once a job step is running, Slurm monitors it and manages it throughout 
-    its lifecycle. 
-    This includes managing I/O, handling errors, and collecting job
-    statistics.
-6. When a job is complete Slurm notifies the user and provides them with the
-    output and any error messages that were generated.
+### 1. Define Job and Submit  
+   You submit your job to Slurm using the `sbatch` command. Your job is typically a script that specifies what program(s) to run and what resources are needed (e.g., CPUs, memory, time limit).
 
-Slurm provides a powerful set of tools for managing large-scale compute
-resources which allows users to run complex simulations and data analyses more
-efficiently and effectively. 
+### 2. Resource Request and Queueing  
+   Slurm places your job in a queue and waits until the requested resources (CPU cores, memory, GPUs, etc.) become available. The scheduler considers all jobs in the queue and allocates resources based on availability and job priority.
 
-### Interacting with the SLURM scheduler
+### 3. Resource Allocation
+   Once resources are available, Slurm allocates them to your job. This includes assigning nodes, CPUs, memory, and any other requested resources.
+
+### 4. Job Execution  
+   Slurm starts your job on the assigned resources. If your job has multiple tasks or steps, Slurm manages these as job steps, which may run in parallel or sequence depending on your script.
+
+### 5. Monitoring and Management  
+   While your job is running, Slurm monitors its progress, manages input/output, and handles any errors. You can check the status of your job at any time using commands like `squeue` or `sacct`.
+
+### 6. Job Completion and Output  
+   When your job finishes, Slurm collects the output and error messages and writes them to files (by default, `slurm-<jobid>.out`). You are notified of completion (if enabled), and you can review the results and resource usage.
+
+Slurm's workflow ensures that jobs are run efficiently and fairly, making the best use of available cluster resources. 
+
+## Interacting with the SLURM scheduler
 
 The following are commands that are used to find out information about the status of the scheduler and jobs that have been submitted
 
@@ -73,21 +72,45 @@ The following are commands that are used to find out information about the statu
     ``sinfo`` will quickly tell you the state of the cluster and ``squeue`` will show you all of the jobs running and in the queue. 
 
 
-### Submitting Jobs
+## Submitting Jobs
 
+To run your work on the cluster, you need to submit a job script to Slurm. Here’s how:
 
-The following are commands that are used for submission of jobs
-  
--  ``sbatch``
-      Submit a job to the batch queue system. 
-      Use ``sbatch myjob.sh`` to submit the Slurm job script ``myjob.sh``.
-      You can also provide or override the slurm parameters by supplying them at submission e.g. ``sbatch --job-name=my_job myjob.sh``. 
-      The values supplied on the commandline will override the values inside your script.
-- ``scancel``
-      Cancel a job based on its job ID. 
-- ``scancel 123`` would cancel the job with ID ``123``. It is only possible to cancel your own jobs.
-  ``scancel --me`` will cancel all of your jobs.
+- **Write a job script**: Create a text file (e.g., `myjob.sh`) with your commands and resource requests using `#SBATCH` lines at the top.
+- **Submit your job**: Use the `sbatch` command to send your script to the scheduler.
 
+    !!! terminal
+        ```bash
+        sbatch myjob.sh
+        ```
+
+    Slurm will respond with a job ID. Make a note of this number.
+
+- **Override script options at submission**: You can provide or override Slurm parameters on the command line. For example:
+
+    !!! terminal
+        ```bash
+        sbatch --job-name=my_job myjob.sh
+        ```
+
+    Command-line options take precedence over those in your script.
+
+- **Cancel a job**: If you need to stop a job, use the `scancel` command with your job ID.
+
+    !!! terminal
+        ```bash
+        scancel 123
+        ```
+
+    You can only cancel your own jobs. To cancel all your jobs:
+
+    !!! terminal
+        ```bash
+        scancel --me
+        ```
+
+!!! warning "If you do not specify a time limit, your job will not run."
+     At a minimum, you must specify a time limit for your job using `--time=hh:mm:ss`. This can be set in your script or on the command line. 
 
 
 Here we give details on job submission for various kinds of jobs in both batch
@@ -104,7 +127,7 @@ These are all described further below.
 **At a minimum, a time limit must be provided when submitting a job** with ``--time=hh:mm:ss`` (replacing hh,mm, and ss with number values). This can be provided either be as part of your jobscript or as a commandline parameter.
 
 
-### Defining Jobs
+## Defining Jobs
 
 
 In order to submit a job to the scheduler using ``sbatch`` you first need to define the job through a script. 
@@ -131,36 +154,39 @@ override the values in your job script.
 Common parameters include:
 
 **Meta**
-  ``--time=``
-    (**required**) Time limit to be applied to the job. Supplied in format hh:mm:ss.
-  ``--job-name=`` / ``-J``
+
+  - ``--time=``
+    (**required**) Time limit to be applied to the job. Supplied in format hh\:mm:ss.
+  - ``--job-name=`` / ``-J``
     Custom job name
-  ``--partition=``
+  - ``--partition=``
     aoraki (default) or aoraki_gpu
-  ``--output=`` / ``-o``
+  - ``--output=`` / ``-o``
     File to save output from stdout
-  ``--error=``/ ``-e``
+  - ``--error=``/ ``-e``
     File to save output from stderr
-  ``--dependency=``/ ``-d``
+  - ``--dependency=``/ ``-d``
     Depends on a specified jobid finishing. Can be modifed by completion status. See documentation.
-  ``--chdir=`` / ``-D``
+  - ``--chdir=`` / ``-D``
     Directory to change into before running the job
  
-**Memory**\ - Only need to supply one of these.
-  ``--mem=`` 
+**Memory** - Only need to supply one of these.
+
+  - ``--mem=`` 
     (default 8GB) Total memory for the job per node. Specify with units (MB, GB)
-  ``--mem-per-cpu=`` 
+  - ``--mem-per-cpu=`` 
     amount of memory for each cpu (slurm will total this). Specify with units (MB, GB)
     
   
 **Parallelism**
-  ``--cpus-per-task=`` / ``-c``
+
+  - ``--cpus-per-task=`` / ``-c``
     Number of cores being requested (default = 1)
-  ``--ntasks=``
+  - ``--ntasks=``
     Number of tasks (default = 1)
-  ``--array=``
+  - ``--array=``
     defines an array task
-  ``--nodes=``/ ``-N``
+  - ``--nodes=``/ ``-N``
     (default = 1). Number of nodes to run jobs across.
   
 
