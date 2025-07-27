@@ -3,7 +3,7 @@
 **SMB Local Mount from HPC Desktop GUI**  
 
   1. Start an Otago HPC Desktop 
-  2. Open a Termal window on the desktop
+  2. Open a Terminal window on the desktop
   3. Type "kdestroy" to remove invalid older tickets
   4. Type "kinit" and Enter your password 
   5. Open File browser window  
