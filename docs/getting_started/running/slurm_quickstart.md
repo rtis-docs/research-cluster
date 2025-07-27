@@ -72,59 +72,7 @@ The following are commands that are used to find out information about the statu
     ``sinfo`` will quickly tell you the state of the cluster and ``squeue`` will show you all of the jobs running and in the queue. 
 
 
-## Submitting Jobs
 
-To run your work on the cluster, you need to submit a job script to Slurm. Here’s how:
-
-- **Write a job script**: Create a text file (e.g., `myjob.sh`) with your commands and resource requests using `#SBATCH` lines at the top.
-- **Submit your job**: Use the `sbatch` command to send your script to the scheduler.
-
-    !!! terminal
-        ```bash
-        sbatch myjob.sh
-        ```
-
-    Slurm will respond with a job ID. Make a note of this number.
-
-- **Override script options at submission**: You can provide or override Slurm parameters on the command line. For example:
-
-    !!! terminal
-        ```bash
-        sbatch --job-name=my_job myjob.sh
-        ```
-
-    Command-line options take precedence over those in your script.
-
-- **Cancel a job**: If you need to stop a job, use the `scancel` command with your job ID.
-
-    !!! terminal
-        ```bash
-        scancel 123
-        ```
-
-    You can only cancel your own jobs. To cancel all your jobs:
-
-    !!! terminal
-        ```bash
-        scancel --me
-        ```
-
-!!! warning "If you do not specify a time limit, your job will not run."
-     At a minimum, you must specify a time limit for your job using `--time=hh:mm:ss`. This can be set in your script or on the command line. 
-
-
-Here we give details on job submission for various kinds of jobs in both batch
-(i.e., non-interactive or background) mode and interactive mode.
-
-In addition to the key options of account, partition, and time limit (see
-below), your job script files can also contain options to request various
-numbers of cores, nodes, and/or computational tasks. 
-There are also a variety of additional options you can specify in your batch
-files, if desired, such as email notification options when a job has completed.
-These are all described further below.
-
-
-**At a minimum, a time limit must be provided when submitting a job** with ``--time=hh:mm:ss`` (replacing hh,mm, and ss with number values). This can be provided either be as part of your jobscript or as a commandline parameter.
 
 
 ## Defining Jobs
@@ -279,7 +227,59 @@ retrieve the result at the Linux prompt as follows
     By default the output will be stored in a file called ``slurm-<number>.out``
     where ``<number>`` is the job ID assigned by Slurm
 
+## Submitting Jobs
 
+To run your work on the cluster, you need to submit a job script to Slurm. Here’s how:
+
+- **Write a job script**: Create a text file (e.g., `myjob.sh`) with your commands and resource requests using `#SBATCH` lines at the top.
+- **Submit your job**: Use the `sbatch` command to send your script to the scheduler.
+
+    !!! terminal
+        ```bash
+        sbatch myjob.sh
+        ```
+
+    Slurm will respond with a job ID. Make a note of this number.
+
+- **Override script options at submission**: You can provide or override Slurm parameters on the command line. For example:
+
+    !!! terminal
+        ```bash
+        sbatch --job-name=my_job myjob.sh
+        ```
+
+    Command-line options take precedence over those in your script.
+
+- **Cancel a job**: If you need to stop a job, use the `scancel` command with your job ID.
+
+    !!! terminal
+        ```bash
+        scancel 123
+        ```
+
+    You can only cancel your own jobs. To cancel all your jobs:
+
+    !!! terminal
+        ```bash
+        scancel --me
+        ```
+
+!!! warning "If you do not specify a time limit, your job will not run."
+     At a minimum, you must specify a time limit for your job using `--time=hh:mm:ss`. This can be set in your script or on the command line. 
+
+
+Here we give details on job submission for various kinds of jobs in both batch
+(i.e., non-interactive or background) mode and interactive mode.
+
+In addition to the key options of account, partition, and time limit (see
+below), your job script files can also contain options to request various
+numbers of cores, nodes, and/or computational tasks. 
+There are also a variety of additional options you can specify in your batch
+files, if desired, such as email notification options when a job has completed.
+These are all described further below.
+
+
+**At a minimum, a time limit must be provided when submitting a job** with ``--time=hh:mm:ss`` (replacing hh,mm, and ss with number values). This can be provided either be as part of your jobscript or as a commandline parameter.
 
 
 ## Memory Available
