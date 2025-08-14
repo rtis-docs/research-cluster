@@ -1,60 +1,61 @@
 # Open OnDemand 
 
+<!-- TODO add initial OOD page screenshot -->
+Open OnDemand is a web portal that lets you launch applications, access files, and interact with the cluster—all from your browser, with no software installation needed. When you start an application or session, Open OnDemand submits a Slurm job for you. These are called "interactive sessions." You can also use the portal to view files, check job status, and open a shell.
 
+**Key points:**
 
-Open OnDemand launches applications as scheduled Slurm jobs on your behalf when requested, right in your browser without installing any software. This load balances your job across a cluster of computers and allows for shared access with users. 
-Open OnDemand refers to these jobs as "interactive sessions." You can also access your files, view past jobs, and get shell access.
+- Interactive sessions are Slurm jobs managed for you by Open OnDemand.
+- Sessions will stay running even if you close your browser; you can see and manage them under "My Interactive Sessions."
+- To end a session, click "Delete" next to it.
 
+**Ways to monitor usage:**
 
-Slurm "Job time" is counted for interactive sessions as the total time the job runs. The job starts running as soon as a node is allocated for the job. The interactive session may still be running even if you do not have it open in your web browser. You can view all currently running interactive sessions under My Interactive Sessions. When you are done, you may stop an interactive session by clicking "Delete" on the session.
-
-**There are several ways to monitor usage:**
-
-- Since Open OnDemand submits jobs through Slurm, you can monitor usage as you would monitor your regular Slurm jobs.
-- View currently running (and recent) sessions launched by Open OnDemand under My Interactive Sessions.
-- View all currently running jobs under Jobs > Active Jobs.
+- Use the Open OnDemand dashboard to see your running and recent sessions.
+- Check **Jobs > Active Jobs** for all jobs (including those started by sbatch, srun, or Open OnDemand).
+- Use standard Slurm commands (like `squeue`, `sacct`) in a shell session for more details.
 
 ## Using Open OnDemand
 
-Here are the services provided via Open OnDemand.
-
+Open OnDemand provides several services:
 
 ### Files App
 
-Access the Files App from the top menu bar under Files > Home Directory. Using the Files App, you can use your web browser to:
+Access your files from the top menu: **Files > Home Directory**. You can:
 
-Create and delete files and directories.
-(need to add section on HCS and Globus)
-After you login you should see the OOD home page. 
+- Create, delete, and move files and folders.
+- Upload and download files.
+- (Section on HCS and Globus to be added.)
+
+<!--TODO section on HCS and globus -->
+
+After logging in, you'll see the Open OnDemand home page.
 
 ![Open OnDemand Files App](/assets/images/ood_files_app.png){width="600px"}
 
 ### View Active Jobs
 
-
-View and cancel active Slurm jobs from Jobs > Active Jobs. This includes jobs started via sbatch and srun as well as jobs started (implicitly) via Open OnDemand (as discussed above).
+See and cancel your Slurm jobs from **Jobs > Active Jobs**. This includes jobs started via `sbatch`, `srun`, and Open OnDemand.
 
 ![Active Jobs](/assets/images/ood_activejobs.png){width="600px"}
 
-
-
 ### Shell Access
 
-Open OnDemand allows Aoraki shell access from the top menu bar under Clusters > Aoraki Cluster Shell Access.
+Get command-line access to the cluster from the top menu bar options: **Clusters > Aoraki Cluster Shell Access**.
 
 ![Open OnDemand Shell](/assets/images/ood_shell.png){width="600px"}
 
-
 ### Interactive Apps
 
-Open OnDemand provides additional interactive apps. You can launch interactive apps from the Interactive Apps menu on the top menu bar. The available interactive apps include:
+Launch interactive applications from the **Interactive Apps** menu:
 
-Desktop App (for working with GUI-based programs)
-Jupyter Server (for working with Jupyter notebooks)
-RStudio Server (for working in RStudio sessions)
+- **Desktop App**: For GUI-based programs.
+- **Jupyter Server**: For Jupyter notebooks.
+- **RStudio Server**: For RStudio sessions.
 
 ![Open OnDemand Files App](/assets/images/ood_interactive.png){width="600px"}
 
+<!-- TODO update this image -->
 
 ### Desktop App
 
@@ -109,12 +110,12 @@ This will mount your HCS share on the local machine and allow you to access and 
 
 #### Copy your HCS data to your project directory
 
-1\. Naviagate to your hcs data and copy it to your user projecy directory
+1. Naviagate to your hcs data and copy it to your user projecy directory
 
-![Connect to HCS](/assets/images/copydata.png){width="600px}
+    ![Connect to HCS](/assets/images/copydata.png){width="600px}
 
 
-2\. When you have finished processing copy your data back to your HCS Share.
+2. When you have finished processing copy your data back to your HCS Share.
 
 
 

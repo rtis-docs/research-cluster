@@ -24,10 +24,10 @@ Create a python virtual environment and install the needed packages
 
 
 ```bash
-# create a pythong virtual environment
+# create a python virtual environment
 python -m venv venv/
 
-# activate it
+# activate it (might not work on Windows - see below)
 source venv/bin/activate
 # If the above line doesn't work then navigate to the folder with activate.ps1 in it then run
 .\\activate.ps1

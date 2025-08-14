@@ -1,3 +1,0 @@
-# Heterogeneous Jobs
-
-TODO
