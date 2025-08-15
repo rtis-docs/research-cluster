@@ -4,7 +4,7 @@
 
 ### Support channels
 
-Email the RTIS team at rtis.support@otago.ac.nz 
+Email the RTIS team at {{ support_email }} 
 or find support on [the Research Computing Teams Channel](https://teams.microsoft.com/l/team/19%3AwY-QPCGhXz_nHt4-0C7Ltz7gdVAmE_1fDfmgFO4bnHs1%40thread.tacv2/conversations?groupId=de270594-2da5-4354-b319-57f8894c89f3&tenantId=0225efc5-78fe-4928-b157-9ef24809e9ba>)
 
 ### Technical support
