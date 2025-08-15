@@ -16,7 +16,8 @@ theme :
     - navigation.indexes
     - toc.follow
 
-
+watch:
+  - includes/
 
 plugins:
   - search
@@ -36,6 +37,7 @@ extra_css:
   - assets/stylesheets/neoteroi-mkdocs.css
 
 markdown_extensions: 
+  - abbr
   - attr_list
   - admonition
   - tables
@@ -53,6 +55,9 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
   - neoteroi.cards
 
 extra:
