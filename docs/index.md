@@ -1,14 +1,16 @@
-# Home
-
-## Contact
-
-For all enquiries please email {{support_email}}
+# Research HPC Cluster (Aoraki) Documentation
 
 
-## Quick Start
 
 
-### Overview
+
+## Overview
+
+!!! info
+    The RTIS Research cluster provides researchers with access to shared resources, such as **CPUs, GPUs, and high-speed storage**. 
+    Also available are specialised software and libraries optimised for scientific and datascience computing. 
+
+    For all support enquiries please email {{support_email}} or check out the [Support page](general/support.md).
 
 ::cards::
 
@@ -18,6 +20,9 @@ For all enquiries please email {{support_email}}
   image: /assets/images/icons/person_add_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 ::/cards::
+
+## Quick Start
+
 
 ### Access
 
