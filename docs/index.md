@@ -13,7 +13,7 @@ For all enquiries please email {{support_email}}
 ::cards::
 
 - title: Cluster Overview
-  content: General information about the cluster
+  content: What is the Research HPC Cluster (Aoraki)?
   url: general/overview.md
   image: /assets/images/icons/person_add_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
