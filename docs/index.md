@@ -17,7 +17,7 @@
 - title: Cluster Overview
   content: What is the Research HPC Cluster (Aoraki)?
   url: general/overview.md
-  image: /assets/images/icons/person_add_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
+  image: /assets/images/icons/preview_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 ::/cards::
 
