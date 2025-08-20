@@ -1,7 +1,7 @@
 # Access Overview
 
 
-!!! overview "Overview or On this page"
+!!! overview "On this page"
     - How to access the Aoraki Research Cluster
     - Getting an account
     - OnDemand Web portal
@@ -10,7 +10,8 @@
 ## How to access the Aoraki Research Cluster
 
 ### Getting an account
-If you do not have an account already please follow the link and request one:
+
+By default your University account will need to be provisioned for access. Please follow the link to request access:
 
 ::cards::
 
@@ -23,6 +24,7 @@ If you do not have an account already please follow the link and request one:
 ::/cards::
 
 ### Ways to access the Aoraki Research Cluster
+
 In order to access the resources of the Aoraki Research Cluster:
 
 
@@ -45,7 +47,7 @@ In order to access the resources of the Aoraki Research Cluster:
 ::/cards::
 
 !!! related-pages "What next?"
-    Where to store your data and what your options are [Storage Overview](/storage/storage_options/)
+    Where to store your data and what your options are found on our [Storage Overview](../../storage/storage_options.md)
   
 
     
