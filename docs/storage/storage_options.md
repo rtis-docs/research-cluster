@@ -125,7 +125,10 @@ If you need assistance with backing up your data, please email {{support_email}}
 
 !!! related-pages "What Next?"
 
-    Find more information go to [Data Transfer](../access/login_ssh.md) 
+    Find more information on [Data Transfer](../access/login_ssh.md) 
+    
+    
+<!--This will need changing if the pages layout and content changes --> 
   <!-- TODO Are these pages the next step or relevant? -->
 
 

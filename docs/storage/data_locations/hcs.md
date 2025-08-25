@@ -1,5 +1,11 @@
 ## Otago HCS (High Capacity Storage) 
-
+!!! overview "On this Page"
+      - To see where HCS fits within Storage check out [Storage Overview](../storage/storage_options.md)
+      - What is HCS (High Capacity Storage)
+      - How to mount HCS on the Login node
+      - How to mount HCS on the cluster nodes
+      - How to Generate Auto Renewal Kereberos Tickets.
+  <!-- TODO Fill out -->
 
 HCS is the main data storage pool on the Otago campus. HCS is able to be mounted on desktop and lab computers. It is possible to mount HCS shares on the Cluster Login node to transfer data across but the connection is sub-optimal for high-speed computing and cannot (easily) be mounted across nodes in the cluster. We recommend that you use the HCS for your primary storage needs and transfer your data to your working area in `/projects/` when you want to work on it, and transfer results back to HCS for long term storage. 
 
@@ -214,3 +220,8 @@ To mitigate this, it is recommended to include a command such as sleep 20 in bat
     - Then create a cronjob to renew your ticket ``crontab -e`` then enter the following line to renew your ticket every hour:
     ``0 * * * * kinit  <username>@STUDENT.OTAGO.AC.NZ -k -t /home/<username>/<username>.keytab``
     - Ensure the permissions on your .keytab file are ``0600`` to keep it secure!
+
+
+!!! related-pages "What's next?"
+    Find out how to move Data on and off the Research Cluster on [Data Transfer](../access/login_ssh.md) 
+  <!-- TODO Are these pages the next step or relevant? -->
