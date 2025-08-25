@@ -1,5 +1,10 @@
 # Storage Overview
+!!! overview "On this Page"
+      - What storage locations are available 
+      - When to use each storage location
+      - Backing up your data
 
+  <!-- TODO See if overview is in line with content -->
 
 RTIS provides high-performance storage solutions for researchers at the University of Otago. These storage solutions are available on the [Research Cluster](../general/overview.md) to all researchers at the University of Otago upon application approval.
 
@@ -54,6 +59,9 @@ All users of the Otago Research Cluster have a home directory that is mounted  a
 The hard quota for home directories is **40GB**. When you reach this limit you will not be able to write anymore data to your home directory.
 A warning will be sent when the you have 30GB of data stored in your home directory.
  
+!!! related-pages "What Next?"
+
+    Find more information on [Homes](../storage/data_locations/homes.md) or for information on how to move your data on and off the Research cluster go to [Data Transfer](../access/login_ssh.md)
 
 
 ### Projects directory
@@ -81,12 +89,25 @@ To apply for a projects directory, please fill out the [storage-signup-form](../
     Note that the **Research storage is not backed up** and it is the responsibility of the user to ensure their important data is safe. See [data transfer](../getting_started/data_transfer/data_transfer_overview.md) for options to move data you want to retain. If you need assistance with backing up your data, please email {{support_email}}.
 
 
+!!! related-pages "What Next?"
+
+    Find more information on [Projects](../storage/data_locations/projects.md) or for information on how to move your data on and off the Research cluster go to [Data Transfer](../access/login_ssh.md)
 
 
 
+### Weka directory
+<!-- TODO Content -->
 
+!!! related-pages "What Next?"
 
+    Find more information on [Weka](../storage/data_locations/weka.md) or for information on how to move your data on and off the Research cluster go to [Data Transfer](../access/login_ssh.md)
 
+### HCS directory
+<!-- TODO Content -->
+
+!!! related-pages "What Next?"
+
+    Find more information on [HCS](../storage/data_locations/hcs.md) or for information on how to move your data on and off the Research cluster go to [Data Transfer](../access/login_ssh.md)
 
 
 
@@ -102,9 +123,9 @@ If you need assistance with backing up your data, please email {{support_email}}
 
 
 
+!!! related-pages "What Next?"
 
-
-
-
+    Find more information go to [Data Transfer](../access/login_ssh.md) 
+  <!-- TODO Are these pages the next step or relevant? -->
 
 
