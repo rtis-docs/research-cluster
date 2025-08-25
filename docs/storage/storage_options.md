@@ -61,7 +61,7 @@ A warning will be sent when the you have 30GB of data stored in your home direct
  
 !!! related-pages "What Next?"
 
-    Find more information on [Homes](../storage/data_locations/homes.md) or for information on how to move your data on and off the Research cluster go to [Data Transfer](../access/login_ssh.md)
+    Find more information on [Homes](../storage/data_locations/homes.md) or for information on how to move your data on and off the Research cluster go to [Data Transfer](../getting_started/data_transfer/data_transfer_overview.md)
 
 
 ### Projects directory
@@ -91,7 +91,7 @@ To apply for a projects directory, please fill out the [storage-signup-form](../
 
 !!! related-pages "What Next?"
 
-    Find more information on [Projects](../storage/data_locations/projects.md) or for information on how to move your data on and off the Research cluster go to [Data Transfer](../access/login_ssh.md)
+    Find more information on [Projects](../storage/data_locations/projects.md) or for information on how to move your data on and off the Research cluster go to [Data Transfer](../getting_started/data_transfer/data_transfer_overview.md)
 
 
 
@@ -100,14 +100,14 @@ To apply for a projects directory, please fill out the [storage-signup-form](../
 
 !!! related-pages "What Next?"
 
-    Find more information on [Weka](../storage/data_locations/weka.md) or for information on how to move your data on and off the Research cluster go to [Data Transfer](../access/login_ssh.md)
+    Find more information on [Weka](../storage/data_locations/weka.md) or for information on how to move your data on and off the Research cluster go to [Data Transfer](../getting_started/data_transfer/data_transfer_overview.md)
 
 ### HCS directory
 <!-- TODO Content -->
 
 !!! related-pages "What Next?"
 
-    Find more information on [HCS](../storage/data_locations/hcs.md) or for information on how to move your data on and off the Research cluster go to [Data Transfer](../access/login_ssh.md)
+    Find more information on [HCS](../storage/data_locations/hcs.md) or for information on how to move your data on and off the Research cluster go to [Data Transfer](../getting_started/data_transfer/data_transfer_overview.md)
 
 
 
@@ -125,7 +125,7 @@ If you need assistance with backing up your data, please email {{support_email}}
 
 !!! related-pages "What Next?"
 
-    Find more information on [Data Transfer](../access/login_ssh.md) 
+    Find more information on [Data Transfer](../getting_started/data_transfer/data_transfer_overview.md) 
     
     
 <!--This will need changing if the pages layout and content changes --> 
