@@ -1,5 +1,9 @@
 !!! overview "On this Page"
-      - 
+      - What Globus is used for
+      - How to use Globus to transfer data from and onto HCS
+      - How to transfer data to and from your research computer
+
+  <!-- TODO See if overview is in line with content -->
 
 ## Initial Set up
 
@@ -107,5 +111,7 @@ To transfer data between your desktop and Research Storage, you will need to ins
 Once you have installed Globus Connect Personal, you can connect your desktop endpoint to the RTIS Globus endpoint and transfer data between your desktop and Research Storage.
 
 !!! related-pages "What's next?"
-    Find out how to move Data on and off the Research Cluster on [Data Transfer](../access/login_ssh.md) 
+    -  To transfer data between your desktop and Research Storage go to [Globus Connect Personal](https://www.globus.org/globus-connect-personal)
+    - For software available on the cluster go to [Software](../software/software_overview.md)
+    -  For how to run a job on the cluster go to [Running Jobs]() <!-- TODO Fix link -->
   <!-- TODO Are these pages the next step or relevant? -->
