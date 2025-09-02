@@ -1,4 +1,10 @@
 # Software Overview
+!!! overview "On this Page"
+      - What Software Options are available
+      - When to use each Software Options
+      - What Software Environments are available and what they are used for
+ 
+  <!-- TODO See if overview is in line with content -->
 
 ## Available Software
 
@@ -99,7 +105,12 @@ What is Apptainer Good For?
 - Sharing pre-configured environments.
 - Moving workloads between different systems easily (laptop → HPC → cloud).
 
-For more information see the [Apptainer page](software_environments/self_managed/apptainer.md)
+
+!!! related-pages "What's next?"
+      - For more information see the [Apptainer page](software_environments/self_managed/apptainer.md)
+      -  For how to run a job on the cluster go to [Running Jobs]() <!-- TODO Fix link -->
+      
+  <!-- TODO Are these pages the next step or relevant? -->
 
 #### Environments
 
@@ -107,8 +118,12 @@ For more information see the [Apptainer page](software_environments/self_managed
 
 Lmod (Lua Modules) is an environment module system commonly used on High-Performance Computing (HPC) systems, clusters, and supercomputers. It helps users easily manage and switch between different software environments.
 
-For more information see the [Modules (LMOD) page](software_environments/modules/modules.md)
 
+!!! related-pages "What's next?"
+      - For more information see the [Modules (LMOD) page](software_environments/modules/modules.md)
+      -  For how to run a job on the cluster go to [Running Jobs]() <!-- TODO Fix link -->
+      
+  <!-- TODO Are these pages the next step or relevant? -->
 ##### Conda/Mamba
 
 Conda/mamba is an open-source package management and environment management system. It was developed to simplify installing, running, and managing software packages and their dependencies, especially for data science, machine learning, and scientific computing.
@@ -119,15 +134,23 @@ Conda/mamba is an open-source package management and environment management syst
 - Install non-Python libraries (like TensorFlow, OpenCV, etc.) easily.
     - bioconda is a great source of bioinformatic tools
 
-For more information see the [Conda/Mamba page](software_environments/self_managed/conda.md)
 
+!!! related-pages "What's next?"
+      - For more information see the [Conda/Mamba page](software_environments/self_managed/conda.md)
+      -  For how to run a job on the cluster go to [Running Jobs]() <!-- TODO Fix link -->
+      
+  <!-- TODO Are these pages the next step or relevant? -->
 
 ##### Spack
 
 Spack is a flexible, open-source package manager designed specifically for supercomputers, HPC clusters, and scientific computing. It helps users build, install, and manage multiple versions of scientific software and their complex dependencies.
 
 For more information see the [Spack page](software_environments/self_managed/spack.md)
-
+!!! related-pages "What's next?"
+      - For more information see the [Spack page](software_environments/self_managed/spack.md)
+      -  For how to run a job on the cluster go to [Running Jobs]() <!-- TODO Fix link -->
+      
+  <!-- TODO Are these pages the next step or relevant? -->
 ##### SBGrid
 
 SBGrid is a specialized software distribution and management system designed primarily for the structural biology community. It provides a curated collection of scientific software used in fields like:
@@ -137,8 +160,11 @@ SBGrid is a specialized software distribution and management system designed pri
 - NMR spectroscopy
 - Molecular modeling and visualization
 
-For more information see the [SBGrid page](software_environments/sbgrid.md)
-
+!!! related-pages "What's next?"
+      - For more information see the [SBGrid page](software_environments/sbgrid.md)
+      -  For how to run a job on the cluster go to [Running Jobs]() <!-- TODO Fix link -->
+      
+  <!-- TODO Are these pages the next step or relevant? -->
 ##### venv
 
 venv is a built-in Python tool (since Python 3.3) used to create virtual environments. A virtual environment is like a self-contained Python workspace — it has its own Python interpreter and its own set of installed packages, completely separate from the system Python.
@@ -159,8 +185,12 @@ What is venv Good For?
 - Preventing changes to system-wide Python packages.
 - Making projects easier to share & reproduce.
 
-For more information see the [venv page](software_environments/self_managed/venv.md)
 
+!!! related-pages "What's next?"
+      - For more information see the [venv page](software_environments/self_managed/venv.md)
+      -  For how to run a job on the cluster go to [Running Jobs]() <!-- TODO Fix link -->
+      
+  <!-- TODO Are these pages the next step or relevant? -->
 ##### renv
 
 `{renv}` is an R library that is used to create virtual environments of R packages. These environments can be at the user or project level and help to isolate the packages used for a project from the versions installed at a system level.
@@ -173,4 +203,10 @@ What is renv Good For?
 - Preventing changes to system-wide R packages.
 - Making projects easier to share & reproduce.
 
-For more information see the [renv page](software_environments/self_managed/renv.md)
+
+
+!!! related-pages "What's next?"
+      - For more information see the [renv page](software_environments/self_managed/renv.md)
+      -  For how to run a job on the cluster go to [Running Jobs]() <!-- TODO Fix link -->
+      
+  <!-- TODO Are these pages the next step or relevant? -->
