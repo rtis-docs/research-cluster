@@ -1,5 +1,10 @@
 # Spack
-
+!!! overview "On this Page"
+      - What is Spack
+      - How to use Spack
+      - More information on Spack
+ 
+  <!-- TODO See if overview is in line with content -->
 
 [Spack](https://spack.io/) is a package manager that simplifies installing and running customised scientific software stacks. With Spack, you can build a package with multiple versions, 
 configurations, platforms, and compilers, and all of these builds can coexist in parallel.
@@ -85,3 +90,8 @@ be installed there or [set up as an alternative prefix](https://spack.readthedoc
 Please refer to the [Basic usage documentation on the Spack website](https://spack.readthedocs.io/en/latest/basic_usage.html) for a comprehensive overview and 
 examples of how to query, install, load and use packages and Spack environments.
 
+!!! related-pages "What's next?"
+      - Looking for something else? See [Software Overview page](../../software_overview.md)
+      -  For how to run a job on the cluster go to [Running Jobs](../../../running/running_jobs_overview.md)
+      
+  <!-- TODO Are these pages the next step or relevant? -->

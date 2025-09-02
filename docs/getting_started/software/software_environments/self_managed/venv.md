@@ -1,5 +1,11 @@
 # Python virtual environments
 
+!!! overview "On this Page"
+      - What is Venv used for
+      - How to use Venv
+      - Use of Venv vs Conda
+ 
+  <!-- TODO See if overview is in line with content -->
 
 ## Venv
 
@@ -91,3 +97,11 @@ The purpose of venv is to create isolated Python environments for individual pro
 | **Environment Reproducibility** | Via `requirements.txt`                                | Via `environment.yml`                                      |
 | **Cross-Platform Consistency**  | Less consistent (due to pip building from source)     | More consistent across OSes                                |
 | **Footprint**                   | Lightweight (just Python + pip)                       | Heavier (especially full Anaconda distribution)            |
+
+
+!!! related-pages "What's next?"
+      - See [Conda](../self_managed/conda.md) for managing environments and packages
+      - Looking for something else? See [Software Overview page](../../software_overview.md)
+      -  For how to run a job on the cluster go to [Running Jobs](../../../running/running_jobs_overview.md)
+      
+  <!-- TODO Are these pages the next step or relevant? -->

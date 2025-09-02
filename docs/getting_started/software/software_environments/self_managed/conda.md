@@ -1,5 +1,12 @@
 # Conda/Mamba
-
+!!! overview "On this Page"
+      - About Conda and alternatives
+      - How to install Conda
+      - How to do additional configurations
+      - What are Conda Environments
+      - How to use CUDA (GPU comupte) in Apptainer
+ 
+  <!-- TODO See if overview is in line with content -->
 
 ## Conda
 
@@ -334,3 +341,9 @@ Then add the `ipykernel` and register it with Juptyer.
     
 Then in Jupyter the custom environment can be loaded by Kernel -> Change Kernel
   
+!!! related-pages "What's next?"
+      - Go to [Venv](../self_managed/venv.md) for creating isolated Python environments.
+      - Looking for something else? See [Software Overview page](../../software_overview.md)
+      -  For how to run a job on the cluster go to [Running Jobs](../../../running/running_jobs_overview.md)
+      
+  <!-- TODO Are these pages the next step or relevant? -->
