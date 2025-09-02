@@ -26,8 +26,7 @@ The file browser within Open OnDemand can be used to upload files directly into 
 !!! related-pages "What's next?"
     -  [File browser within Open OnDemand](../software/onDemand/ondemand.md#using-open-ondemand)
     -  For software available on the cluster go to [Software](../software/software_overview.md)
-    -  For how to run a job on the cluster go to [Running Jobs]()
-      <!-- TODO Fix link -->
+    -  For how to run a job on the cluster go to [Running Jobs](../running/running_jobs_overview.md)
   <!-- TODO Are these pages the next step or relevant? -->
 
 
@@ -41,6 +40,6 @@ When it comes to transferring many files, or files that are large this is best d
 
 !!! related-pages "What's next?"
       - For software available on the cluster go to [Software](../software/software_overview.md)
-      -  For how to run a job on the cluster go to [Running Jobs]() <!-- TODO Fix link -->
+      -  For how to run a job on the cluster go to [Running Jobs](../running/running_jobs_overview.md)
       
   <!-- TODO Are these pages the next step or relevant? -->
