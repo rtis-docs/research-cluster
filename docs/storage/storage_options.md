@@ -16,13 +16,13 @@ graph TD;
     home --> username
  
     root --> projects
-    projects --> div1[div]
+    projects --> div1[division]
     div1 --> school1[school]
     school1 --> dept1[dept]
     dept1 --> group1[group]
  
     root --> weka
-    weka --> div2[div]
+    weka --> div2[division]
     div2 --> school2[school]
     school2 --> dept2[dept]
     dept2 --> group2[group]
@@ -56,7 +56,7 @@ graph TD;
  
 All users of the Otago Research Cluster have a home directory that is mounted  at ``/home/<username>``. The home storage is intended for storing configuration files, scripts, and other smaller datasets that are used for computations.
  
-The hard quota for home directories is **40GB**. When you reach this limit you will not be able to write anymore data to your home directory.
+The hard quota for home directories is **{{ home_quota }}**. When you reach this limit you will not be able to write anymore data to your home directory.
 A warning will be sent when the you have 30GB of data stored in your home directory.
  
 !!! related-pages "What Next?"
@@ -101,7 +101,15 @@ To apply for a projects directory, please fill out the [storage-signup-form](../
  
 ### Weka directory
 <!-- TODO Content -->
- 
+
+WEKA is a high speed/throughput file storage system that can be utilised for workloads that need high throughput of data. Data stored on WEKA is intended to be only of a temporary nature while being processed.
+
+To make use of of WEKA during a job, read or write data to `/tmp/` which has a shared 5TB limit across all users per node. Make sure to copy or move files you want to keep from `/tmp` to another location as all files created in `/tmp/` by your job will automatically be deleted upon the job ending.
+
+For continued access between jobs, a separate path on WEKA storage can be allocated with a quota upon request to {{ support_email }}.
+
+<!-- The WEKA storage is mounted on the Aoraki compute cluster at ``/weka/<Research Group>`` or ``/weka/<user>``. The `WEKA platform <https://www.weka.io/>`_ is a high-performance storage solution ideal for **temporary data** used in high-performance computing jobs. -->
+
 !!! related-pages "What Next?"
  
     - Find more information on [Weka](../storage/data_locations/weka.md)
@@ -111,7 +119,11 @@ To apply for a projects directory, please fill out the [storage-signup-form](../
  
 ### HCS directory
 <!-- TODO Content -->
- 
+
+If you have an HCS share this is accessible from the cluster.
+
+
+
 !!! related-pages "What Next?"
  
     - Find more information on [HCS](../storage/data_locations/hcs.md)
