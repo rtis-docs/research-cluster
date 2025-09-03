@@ -1,7 +1,10 @@
 # OnDemand HPC Desktop
-
+!!! overview "On this Page"
+    - 
+ 
+<!-- TODO Overview unclear -->
 **SMB Local Mount from HPC Desktop GUI**  
-
+<!-- TODO what does SMB stand for?-->
   1. Start an Otago HPC Desktop 
   2. Open a Terminal window on the desktop
   3. Type "kdestroy" to remove invalid older tickets
@@ -26,3 +29,9 @@
 
 ![Connect to HCS - browsing hcs files in file browser](/assets/images/files.png){width="600px"}
 
+!!! related-pages "What's next?"
+      - For more information about on Demand see [Open OnDemand](../onDemand/ondemand.md)
+      - Looking for something else? See [Software Overview page](../software_overview.md)
+      -  For how to run a job on the cluster go to [Running Jobs](../../running/running_jobs_overview.md)
+      
+  <!-- TODO Are these pages the next step or relevant? -->
