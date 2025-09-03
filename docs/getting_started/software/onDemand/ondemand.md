@@ -1,7 +1,7 @@
 # Open OnDemand 
 
 <!-- TODO add initial OOD page screenshot -->
-Open OnDemand is a web portal that lets you launch applications, access files, and interact with the cluster—all from your browser, with no software installation needed. When you start an application or session, Open OnDemand submits a Slurm job for you. These are called "interactive sessions." You can also use the portal to view files, check job status, and open a shell.
+Open OnDemand (OoD) is a web portal that lets you launch applications, access files, and interact with the cluster—all from your browser, with no software installation needed. When you start an application or session, Open OnDemand submits a Slurm job for you. These are called "interactive sessions." You can also use the portal to view files, check job status, and open a shell.
 
 **Key points:**
 
