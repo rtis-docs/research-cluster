@@ -3,6 +3,6 @@ ignore:
   - access/coldfront.md
 nav:
   - "index.md"
-  - "Getting Started": "getting_started"
+  - "Getting Started": "getting_started/"
   - "general"
   - "storage"

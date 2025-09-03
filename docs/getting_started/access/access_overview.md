@@ -17,7 +17,7 @@ By default your University account will need to be provisioned for access. Pleas
 
 - title: Getting an account
   content: Information about getting access
-  url: getting_started/access/signup.md
+  url: signup.md
   image: /assets/images/icons/person_add_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 

@@ -368,7 +368,7 @@ The partition is used to specify a specific GPU, or how much GPU memory is neede
    GPUs): ``--gpus-per-node=2``
 
 
-Please see the [SLURM GPU examples page](../slurm_examples/gpu-slurm) for examples of how to submit SLURM jobs that require a GPU.
+Please see the [SLURM GPU examples page](slurm_examples/gpu-slurm.md) for examples of how to submit SLURM jobs that require a GPU.
 
 
 
