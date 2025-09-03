@@ -93,7 +93,7 @@ To apply for a projects directory, please fill out the [storage-signup-form](../
  
 !!! related-pages "What Next?"
  
-    - Find more information on [Projects](../storage/data_locations/projects.md)
+    - Find more information on [Projects](data_locations/projects.md)
     - Information on how to move your data on and off the Research cluster on [Data Transfer](../getting_started/data_transfer/data_transfer_overview.md)
  
  
@@ -112,7 +112,7 @@ For continued access between jobs, a separate path on WEKA storage can be alloca
 
 !!! related-pages "What Next?"
  
-    - Find more information on [Weka](../storage/data_locations/weka.md)
+    - Find more information on [Weka](data_locations/weka.md)
     - Information on how to move your data on and off the Research cluster on [Data Transfer](../getting_started/data_transfer/data_transfer_overview.md)
  
 <!-- TODO Are these pages the next step or relevant? -->
