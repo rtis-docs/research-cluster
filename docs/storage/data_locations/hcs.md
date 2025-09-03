@@ -1,6 +1,6 @@
 ## Otago HCS (High Capacity Storage) 
 !!! overview "On this Page"
-      - To see where HCS fits within Storage check out [Storage Overview](../storage/storage_options.md)
+      - To see where HCS fits within Storage check out [Storage Overview](../storage_options.md)
       - What is HCS (High Capacity Storage)
       - How to mount HCS on the Login node
       - How to mount HCS on the cluster nodes
@@ -223,5 +223,5 @@ To mitigate this, it is recommended to include a command such as sleep 20 in bat
 
 
 !!! related-pages "What's next?"
-    Find out how to move Data on and off the Research Cluster on [Data Transfer](../access/login_ssh.md) 
+    Find out how to move Data on and off the Research Cluster on [Data Transfer](../../getting_started/data_transfer/data_transfer_overview.md) 
   <!-- TODO Are these pages the next step or relevant? -->

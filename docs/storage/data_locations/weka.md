@@ -1,5 +1,5 @@
 !!! overview "On this Page"
-      - To see where Weka fits within Storage check out [Storage Overview](../storage/storage_options.md)
+      - To see where Weka fits within Storage check out [Storage Overview](../storage_options.md)
       - What is Weka
       - When to use Weka
   <!-- TODO See if overview is in line with content -->
@@ -18,5 +18,5 @@ The WEKA cluster, with its all-flash array and 100Gb networking, is ideal for hi
 
 
 !!! related-pages "What's next?"
-    Find out how to move Data on and off the Research Cluster on [Data Transfer](../access/login_ssh.md) 
+    Find out how to move Data on and off the Research Cluster on [Data Transfer](../../getting_started/data_transfer/data_transfer_overview.md) 
 <!-- TODO Are these pages the next step or relevant? -->
