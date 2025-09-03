@@ -1,2 +1,9 @@
 ignore:
   - Apps/*
+
+nav:
+ - ondemand.md
+ - ood_file_manager.md
+ - hpc_desktop.md
+ - ood_shell.md
+ - available_apps.md
