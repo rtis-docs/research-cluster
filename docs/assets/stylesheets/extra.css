@@ -82,7 +82,7 @@ li.md-nav__item--active:not(li.md-nav__item--nested) {
   }
   .md-typeset .terminal > .admonition-title,
   .md-typeset .terminal > summary {
-    color:rgb(105,105,105);
+    color:rgb(255, 255, 255);
     background-color: rgba(105,105,105);
   }
   .md-typeset .terminal > .admonition-title::before,
