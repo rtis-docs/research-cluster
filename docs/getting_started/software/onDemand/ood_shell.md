@@ -1,5 +1,12 @@
 # Accessing the Shell through Open OnDemand
 
+!!! overview "On this Page"
+    - What is Open OnDemand in relation to Accessing the Shell
+    - How to Open a Shell Session on Open OnDemand
+    - Tips related to Shell Sessions on Open OnDemand 
+ 
+<!-- TODO See if overview is in line with content -->
+
 Open OnDemand provides a convenient way to access a shell on the cluster directly from your web browser, without needing to install or configure an SSH client.
 
 ## How to Open a Shell Session
@@ -25,3 +32,11 @@ The Open OnDemand shell is a quick and user-friendly way to interact with the cl
 
 
 <!-- TODO link with the getting started section -->
+
+
+!!! related-pages "What's next?"
+      - For more information about on Demand see [Open OnDemand](../onDemand/ondemand.md)
+      - Looking for something else? See [Software Overview page](../software_overview.md)
+      -  For how to run a job on the cluster go to [Running Jobs](../../running/running_jobs_overview.md)
+      
+  <!-- TODO Are these pages the next step or relevant? -->

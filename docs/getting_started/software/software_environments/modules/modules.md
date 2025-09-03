@@ -20,7 +20,7 @@ Basic usage
 * `module list` will show which modules/versions are loaded
 
 !!! related-pages "What's next?"
-      - Looking for something else? See [Software Overview page](/docs/getting_started/software/software_overview.md)
-      -  For how to run a job on the cluster go to [Running Jobs]() <!-- TODO Fix link -->
+      - Looking for something else? See [Software Overview page](../../software_overview.md)
+      -  For how to run a job on the cluster go to [Running Jobs](../../../running/running_jobs_overview.md) 
       
   <!-- TODO Are these pages the next step or relevant? -->
