@@ -17,7 +17,9 @@ This is what the HPC Desktop Overviews look like there are 2 versions XFCE and G
 === "XFCE Desktop"
     ### Taskbar
     Where you can switch between open application i.e. Firefox and Terminal. The grey boxes on the left allow you to switch between desktops.
+    
     ![XFCE - HPC Desktop Taskbar](../../../assets/images/hpc_taskbar_XFCE.png){width="700px"}
+
     The applications button on the left opens to access different applications and settings available on the HPC Desktop.
     ![XFCE - HPC Desktop Taskbar applications button](../../../assets/images/hpc_applications_button_XFCE.png){width="200px"}
 
