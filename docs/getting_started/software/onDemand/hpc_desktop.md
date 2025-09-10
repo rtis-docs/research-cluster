@@ -1,10 +1,25 @@
 # OnDemand HPC Desktop
 !!! overview "On this Page"
+    - Key information when launching HPC Desktop
     - What the 2 different types of Desktops look like
     - Features available on each Desktop
     - Feature available on both Desktops
  
 <!-- TODO See if overview is in line with content -->
+
+## Launching HPC Desktop
+
+When launching the desktop you can customise the computational components to suit your needs by clicking Advanced options. You can choose between 2 desktop environments XFCE and GNOME. If you have GPU intensive tasks select the "Request GPU" button.
+
+When adjusting other components like cores and memory please refer to the guidelines <!--FIXME make a guidelines page or see if Nesi ones apply https://docs.nesi.org.nz/Getting_Started/Next_Steps/Finding_Job_Efficiency/ https://docs.nesi.org.nz/Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions/#initial-python-script https://docs.nesi.org.nz/Getting_Started/Next_Steps/MPI_Scaling_Example/--> or compare the job you want to run to previous jobs you have run.
+
+
+![HPC Desktop Launch Settings](../../../assets/images/hpc_desktop_launch.png){width="400px"}
+
+Increasing compression will increase input lag but is better for low bandwidth connections. For image quality you want to decrease if you have a low bandwidth.
+
+![noVNC Compression & Image Quality](../../../assets/images/hpc_noVNC_adjustments.png){width="600px"}
+
 ## HPC Desktop Overview
 
 This is what the HPC Desktop Overviews look like there are 2 versions XFCE and GNOME.
@@ -13,11 +28,47 @@ This is what the HPC Desktop Overviews look like there are 2 versions XFCE and G
 
 ![GNOME - HPC Desktop Overview](../../../assets/images/hpc_desktop_overview_GNOME.png){width="600px"}
 
+## Both Desktops - Sidebar
+
+The arrow to the left of the desktop opens the side bar.
+
+![HPC Desktop Sidebar button](../../../assets/images/hpc_side_button.png){width="100px"}
+
+### Extra Buttons
+
+The Extra Buttons allow you to 'hold' down one or multiple buttons while using the desktop.
+
+![HPC Desktop Sidebar Clipboard](../../../assets/images/hpc_side_extra_buttons.png){width="200px"}
+
+### Clipboard
+
+Clipboard allows you to see what you last copied.
+
+![HPC Desktop Sidebar Clipboard](../../../assets/images/hpc_side_clipboard.png){width="600px"}
+
+### Fullscreen
+
+Puts the HPC Desktop into fullscreen mode.
+
+![HPC Desktop Sidebar Fullscreen](../../../assets/images/hpc_side_fullscreen.png){width="100px"}
+
+### Settings
+
+Settings allows you to adjust settings for connecting to the HPC Desktop. 
+
+![HPC Desktop Sidebar Settings](../../../assets/images/hpc_side_settings.png){width="200px"}
+
+### Disconnect
+
+Disconnects you from the HPC Desktop, you may need to relaunch the Desktop from Open OnDemand if you click this option.
+
+![HPC Desktop Sidebar Disconnect](../../../assets/images/hpc_side_disconnect.png){width="100px"}
+
 ## HPC Desktop Features
 === "XFCE Desktop"
     ### Taskbar
     Where you can switch between open application i.e. Firefox and Terminal. The grey boxes on the left allow you to switch between desktops.
-    
+
     ![XFCE - HPC Desktop Taskbar](../../../assets/images/hpc_taskbar_XFCE.png){width="700px"}
 
     The applications button on the left opens to access different applications and settings available on the HPC Desktop.
@@ -94,43 +145,6 @@ This is what the HPC Desktop Overviews look like there are 2 versions XFCE and G
     ![GNOME - HPC Desktop Application Finder](../../../assets/images/hpc_show_applications_GNOME.png){width="600px"}
 
 
-<!--FIXME software section and help section-->
-
-## Both Desktops - Sidebar
-
-The arrow to the left of the desktop opens the side bar.
-
-![HPC Desktop Sidebar button](../../../assets/images/hpc_side_button.png){width="100px"}
-
-### Extra Buttons
-
-The Extra Buttons allow you to 'hold' down one or multiple buttons while using the desktop.
-
-![HPC Desktop Sidebar Clipboard](../../../assets/images/hpc_side_extra_buttons.png){width="200px"}
-
-### Clipboard
-
-Clipboard allows you to see what you last copied.
-
-![HPC Desktop Sidebar Clipboard](../../../assets/images/hpc_side_clipboard.png){width="600px"}
-
-### Fullscreen
-
-Puts the HPC Desktop into fullscreen mode.
-
-![HPC Desktop Sidebar Fullscreen](../../../assets/images/hpc_side_fullscreen.png){width="100px"}
-
-### Settings
-
-Settings allows you to adjust settings for connecting to the HPC Desktop. 
-
-![HPC Desktop Sidebar Settings](../../../assets/images/hpc_side_settings.png){width="200px"}
-
-### Disconnect
-
-Disconnects you from the HPC Desktop, you may need to relaunch the Desktop from Open OnDemand if you click this option.
-
-![HPC Desktop Sidebar Disconnect](../../../assets/images/hpc_side_disconnect.png){width="100px"}
 
 !!! related-pages "What's next?"
       - For more information about on Demand see [Open OnDemand](../onDemand/ondemand.md)
