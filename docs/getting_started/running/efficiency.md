@@ -1,5 +1,12 @@
 # Job Efficiency
 
+!!! overview "On this Page"
+    - Determining your SLURM job efficiency
+    - How to interpret efficiency metrics
+    - Tips to improve efficiency
+
+<!-- TODO See if overview is in line with content -->
+
 Efficient use of cluster resources helps you get results faster and reduces wait times for everyone. Here are the steps you can follow to determine how efficient your SLURM job was:
 
 To determine the efficiency of your SLURM job, you can follow these steps:
@@ -90,3 +97,10 @@ Memory Efficiency: 50.00% of 4.00 GB
 *What to look for*: Adjust your job scripts based on the efficiency metrics to optimize future runs.
 
 By following these steps and checking the suggested outputs, you can assess and improve the efficiency of your SLURM jobs.
+
+
+!!! related-pages "What's next?"
+    - [Running Jobs Overview](../running/running_jobs_overview.md)
+    - [Writing Slurm Job Scripts](slurm_quickstart.md)
+
+  <!-- TODO Are these pages the next step or relevant? -->
