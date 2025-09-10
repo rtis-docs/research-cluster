@@ -12,3 +12,10 @@ Examples of tasks that the login node is suitable for:
 - compressing/tarring data small amounts of data (durations < 30min)
 
 For the more intensive tasks we ask that you make use of either the [OnDemand HPC Desktop](../../getting_started/software/onDemand/hpc_desktop.md) or create an interactive allocation through the scheduler so that resources can be allocated and dedicated to you.
+
+!!! related-pages "What's next?"
+      - [OnDemand HPC Desktop](../../getting_started/software/onDemand/hpc_desktop.md) 
+      - [Slurm Overview](../../getting_started/software/onDemand/hpc_desktop.md) 
+      
+  <!-- TODO Are these pages the next step or relevant? -->
+  <!--Slurm link potentially needs changing to a specific page about interactive allocation when it's complete-->

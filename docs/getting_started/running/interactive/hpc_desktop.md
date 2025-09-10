@@ -18,7 +18,7 @@ When adjusting other components like cores and memory please refer to the guidel
 
 Increasing compression will increase input lag but is better for low bandwidth connections. For image quality you want to decrease if you have a low bandwidth.
 
-![noVNC Compression & Image Quality](../../../assets/images/hpc_noVNC_adjustments.png){width="600px"}
+![noVNC Compression and Image Quality](../../../assets/images/hpc_noVNC_adjustments.png){width="600px"}
 
 ## HPC Desktop Overview
 
