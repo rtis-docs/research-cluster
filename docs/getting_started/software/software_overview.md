@@ -6,6 +6,9 @@
  
   <!-- TODO See if overview is in line with content -->
 
+
+<!-- TODO add an explanatory paragraph about how software is managed to provide context -->
+
 ## Available Software
 
 ## Managing your own Software

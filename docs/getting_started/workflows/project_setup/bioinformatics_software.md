@@ -1,5 +1,5 @@
 ## General Bioinformatics Tools
-TODO convert to markdown
+<!-- TODO re-write to better explain--> 
 
 The following categories of bioinformatics tools are available through conda:
 
@@ -11,50 +11,54 @@ The following categories of bioinformatics tools are available through conda:
 * RNA-seq / transcriptomics (e.g., kallisto, salmon)
 * Assemblers (e.g., spades, megahit)
 
-Finding Bioinformatics Tools
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Finding Bioinformatics Tools
 
-  There are several ways to find bioinformatics tools in conda:
 
-  1. Search online (recommended for discovery)
-     * Use the Anaconda package search or browse specific channels:
-       * Bioconda: https://anaconda.org/bioconda
-       * Conda-Forge: https://anaconda.org/conda-forge
-     * You can search for tools like:
-       * plink
-       * bcftools
-       * samtools
+There are several ways to find bioinformatics tools in conda:
 
-  2. Command-line search
-     From your terminal:
+1. Search online (recommended for discovery)
+    * Use the Anaconda package search or browse specific channels:
+      * Bioconda: https://anaconda.org/bioconda
+      * Conda-Forge: https://anaconda.org/conda-forge
+    * You can search for tools like:
+      * plink
+      * bcftools
+      * samtools
 
-     .. code-block:: bash
+2. Command-line search
+    From your terminal:
 
-         # Search all channels (if configured)
-         conda search <package-name>
+    !!! terminal
+        ```bash
+        # Search all channels (if configured)
+        conda search <package-name>
 
-         # Example:
-         conda search plink
+        # Example:
+        conda search plink
 
-         # If using Mamba (faster alternative to conda)
-         mamba search plink
+        # If using Mamba (faster alternative to conda)
+        mamba search plink
+        ```
 
-     To restrict search to a specific channel:
+    To restrict search to a specific channel:
 
-     .. code-block:: bash
+    !!! terminal
+        ```bash
+        conda search -c bioconda plink
+        ```
 
-         conda search -c bioconda plink
+3. Get full list (advanced)
+    You can list everything in a channel, but it's very large:
 
-  3. Get full list (advanced)
-     You can list everything in a channel, but it's very large:
+    !!! terminal
+        ```bash
+          # List all bioconda packages
+          conda search --channel bioconda "*" | less
+        ```
 
-     .. code-block:: bash
+    Tip: pipe it through grep to find specific tools:
 
-         # List all bioconda packages
-         conda search --channel bioconda "*" | less
-
-     Tip: pipe it through grep to find specific tools:
-
-     .. code-block:: bash
-
-         conda search -c bioconda "*" | grep vcftools
+    !!! terminal
+        ```bash
+        conda search -c bioconda "*" | grep vcftools
+        ```
