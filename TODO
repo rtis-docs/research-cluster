@@ -1,0 +1,18 @@
+FIXME: RTIS -> eResearch Support
+TODO: migrate OoD apps/modules/containers -> "Available Software"
+
+TODO: getting started with slurm
+
+
+TODO: template for gpu job
+TODO: template for array job
+
+
+TODO: improve flow of access/signup from landing page
+TODO: links to outside of document should open in new tab
+TODO: more direct linking for flow
+
+TODO: fix "terminal" so that it shows up in the formatting
+TODO: check if html abbreviation tags can be used
+TODO: top of each page should have a context paragraph
+TODO: add R and python admonitions
