@@ -26,7 +26,7 @@ This pair of scripts represents how an Rscript can be run using the SLURM schedu
 
 Create the R script ``hello_rscript.R`` with the following contents:
 
-!!! R
+!!! r-code "Script: `hello_script.R`"
 
     ```r
     print("hello")
@@ -35,7 +35,7 @@ Create the R script ``hello_rscript.R`` with the following contents:
 
 Create the slurm script ``run_hello_rscript.sh`` with the following contents:
 
-!!! terminal
+!!! terminal "Script: `run_hello_rscript.sh`"
 
     ```bash
     #!/bin/bash
@@ -75,9 +75,8 @@ The overall task demonstrated is to calculate the means for sub-groups of a data
 The first approach uses the packages ``parallel`` and ``doParallel`` to create and manage the parallelism within R.
 It will create and register a 'cluster' of 'workers' within R and then pass each sub-task to a worker.
 
-``r_multicore_example-parallel.R``:
 
-!!! R
+!!! r-code "Script: `r_multicore_example-parallel.R`"
 
     ```r
     library(parallelly)
@@ -101,9 +100,9 @@ It will create and register a 'cluster' of 'workers' within R and then pass each
     ```
 
 
-``run_multicore_r_example-parallel.sh:``
 
-!!! terminal 
+
+!!! terminal "Script: `run_multicore_r_example-parallel.sh:`"
     
     ```bash
     #!/bin/bash
@@ -131,9 +130,8 @@ Submitting the job:
 
 The following is same example as above but insetad implemented using the ``furrr`` package to parallelise ``purrr`` using ``future``.
 
-``r_multicore_example-furrr.R``:
 
-!!! R
+!!! r-code "Script: `r_multicore_example-furrr.R`"
 
     ```r
     library(parallelly)
@@ -154,9 +152,9 @@ The following is same example as above but insetad implemented using the ``furrr
     print(mean_petal_lengths)
     ```
 
-``run_multicore_r_example-furrr.sh``
 
-!!! terminal
+
+!!! terminal "Script: `run_multicore_r_example-furrr.sh`"
     
     ```bash
     #!/bin/bash
@@ -198,9 +196,8 @@ The scenario for the example will be again calculating the mean for each species
 
 Here is an example of running 3 jobs in parallel using a slurm array passing the array index as a commandline argument to R
 
-``r_array_job_args.R``:
 
-!!! R
+!!! r-code "Script: `r_array_job_args.R`"
 
     ```r
     args <- commandArgs(trailingOnly = TRUE)
@@ -216,9 +213,8 @@ Here is an example of running 3 jobs in parallel using a slurm array passing the
     ```
 
 
-``run_array_job_example-args.sh``:
 
-!!! terminal
+!!! terminal "Script: `run_array_job_example-args.sh`"
 
     ```bash
     #!/bin/bash
@@ -246,9 +242,9 @@ Submitting the job:
 
 And here is an example of the same job but instead accessing the system environment variable from within R:
 
-``r_array_job_example-env.R``:
 
-!!! R
+
+!!! r-code "Script: `r_array_job_example-env.R`"
 
     ```r
     # read the environment varible SLURM_ARRAY_TASK_ID and convert to numeric data type
@@ -263,9 +259,9 @@ And here is an example of the same job but instead accessing the system environm
     ```
 
 
-``run_array_job_example-env.sh``:
 
-!!! terminal
+
+!!! terminal "Script: `run_array_job_example-env.sh`"
 
     ```bash
     #!/bin/bash
@@ -309,9 +305,9 @@ In the previous example we outputted the mean for each group but it would be goo
 create a second job that was dependant on the previous job compeleting before it ran to take the results and combine them together. This type of 
 work flow is often referred to as a scatter-gather as there is a scattering phase to calculate results per group and a gathering phase to combine them back together.
 
-``r_combine_results.R``:
 
-!!! R
+
+!!! r-code "Script: `r_combine_results.R`"
 
     ```r
     results_list <-list()
@@ -323,9 +319,8 @@ work flow is often referred to as a scatter-gather as there is a scattering phas
     ```
 
 
-``run_combine_example.sh``
 
-!!! terminal
+!!! terminal "Script: `run_combine_example.sh`"
 
     ```bash
     #!/bin/bash
@@ -358,9 +353,9 @@ e.g.
 
 This requires you to pay attention the job number however, so instead we can wrap the submission in a bash script to automatically grab the jobid:
 
-``run_scatter_gather.sh``
 
-!!! terminal
+
+!!! terminal "Script: `run_scatter_gather.sh`"
 
     ```bash
     # store the output from sbatch into a variable
