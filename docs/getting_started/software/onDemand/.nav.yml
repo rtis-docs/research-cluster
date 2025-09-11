@@ -1,5 +1,6 @@
+# Navigation for "onDemand/"
 ignore:
-  - Apps/*
+  - Apps/* # this contains the app cards which are embedded into "available.md"
 
 nav:
  - ondemand.md

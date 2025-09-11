@@ -1,5 +1,8 @@
+# navigation for "data_locations/"
 nav:
   - homes.md
   - projects.md
   - weka.md
   - hcs.md
+
+# this directory should contain pages with the details for the individual storage locations

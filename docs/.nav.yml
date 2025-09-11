@@ -1,3 +1,5 @@
+# first level navigation
+
 ignore:
   - "child/*"
   - access/coldfront.md
@@ -6,3 +8,5 @@ nav:
   - "Getting Started": "getting_started/"
   - "general"
   - "storage"
+
+# TODO un-ignore coldfront once it is ready
