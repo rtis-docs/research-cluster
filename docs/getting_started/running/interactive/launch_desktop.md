@@ -1,5 +1,17 @@
 ## Launching HPC Desktop
 
+<!-- TODO 
+This page should cover 
+some common reasons/uses for using the hpc deskop to do work
+suggested resources for common tasks
+how to get an HPC desktop session
+how to run something in the terminal
+how to access HCS
+moving data around
+
+
+-->
+
 When launching the desktop you can customise the computational components to suit your needs by clicking Advanced options. You can choose between 2 desktop environments XFCE and GNOME. If you have GPU intensive tasks select the "Request GPU" button.
 
 When adjusting other components like cores and memory please refer to the guidelines <!--FIXME make a guidelines page or see if Nesi ones apply https://docs.nesi.org.nz/Getting_Started/Next_Steps/Finding_Job_Efficiency/ https://docs.nesi.org.nz/Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions/#initial-python-script https://docs.nesi.org.nz/Getting_Started/Next_Steps/MPI_Scaling_Example/--> or compare the job you want to run to previous jobs you have run.
@@ -10,3 +22,12 @@ When adjusting other components like cores and memory please refer to the guidel
 Increasing compression will increase input lag but is better for low bandwidth connections. For image quality you want to decrease if you have a low bandwidth.
 
 ![noVNC Compression and Image Quality](../../../assets/images/hpc_noVNC_adjustments.png){width="600px"}
+
+
+## Running a commandline program
+
+## Moving Data to/from HCS
+
+### Access HCS
+
+### Copying/Moving

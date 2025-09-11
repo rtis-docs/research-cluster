@@ -5,6 +5,8 @@
     - Batch Jobs (Slurm)
     - How to Choose
 
+<!-- TODO this page should provide an overview that the system is managed by a scheduler to manage resources equitibally, what this then means for users wantint to make use of it, of what a job is, how to categorise the job type, when to choose particular job types  -->
+
 When deciding how to run your job on the cluster, you have two main options: interactive jobs (often launched through Open OnDemand) and batch jobs (submitted directly to Slurm).
 
 ## How Jobs Are Managed on a Cluster
@@ -19,6 +21,8 @@ All jobs on a cluster are managed by a scheduler, such as Slurm. The scheduler k
 - **Advantages:** Immediate feedback, easy access to files and applications, no need to write a job script.
 - **Limitations:** Not ideal for long-running or large-scale jobs. Resources may be limited compared to batch jobs.
 
+<!-- TODO what's next that links to the software ondemand page, running interactive jobs, and interactive job efficiency -->
+
 ## Batch Jobs (Slurm)
 
 - **Best for:** Large-scale computations, production runs, jobs that can run unattended, or when you need to process many files or parameters.
@@ -26,7 +30,11 @@ All jobs on a cluster are managed by a scheduler, such as Slurm. The scheduler k
 - **Advantages:** Suitable for automation, reproducibility, and running many jobs at once. Can request more resources and run for longer periods.
 - **Limitations:** Requires writing a job script and waiting for resources to become available.
 
+<!-- TODO what's next that links to the slurm quickstart and overview, and job efficiency pages -->
+
 ## How to Choose
+
+<!-- TODO decide if this should be before the sections on interactive or batch -->
 
 - Use **interactive jobs** for short, hands-on tasks, testing, or when you need a graphical interface.
 - Use **batch jobs** for longer, automated, or resource-intensive work.
