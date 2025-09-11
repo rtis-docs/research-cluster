@@ -1,6 +1,6 @@
 # Reasonable Usage
 
-<!-- TODO -->
+<!-- FIXME this is not really going to be relevant once the QoS limits are in place but this page should explain how the limits help-->
 
 
 Remember the Aoraki cluster is a shared resource and as such the following guidelines will help ensure resources are available to everyone

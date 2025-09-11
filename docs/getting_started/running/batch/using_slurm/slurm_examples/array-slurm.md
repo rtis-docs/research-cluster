@@ -2,11 +2,27 @@
 
 Slurm array jobs allow you to submit many similar jobs at once, each with a unique task ID. This is useful for running the same script with different input parameters, files, or configurations. Each array task runs independently and can access its own task ID using the environment variable `SLURM_ARRAY_TASK_ID`.
 
+## When Are Array Jobs Useful?
+
+- **Parameter sweeps:** Testing different values for a parameter.
+- **Batch processing:** Running the same analysis on multiple files.
+- **Simulations:** Running many independent simulations.
+
 ## How Array Jobs Work
 
 When you submit an array job, Slurm schedules multiple tasks, each with a different value of `SLURM_ARRAY_TASK_ID`. You specify the range of task IDs when submitting the job. For example, `--array=1-10` will run 10 tasks with IDs from 1 to 10.
 
 Inside your job script, you can use the task ID to select input files, set parameters, or control the behavior of each task.
+
+## Useful SLURM Variables
+
+Slurm provides several environment variables you can use in your scripts:
+
+- `$SLURM_JOB_ID`: The unique identifier for your job submission.
+- `$SLURM_ARRAY_JOB_ID`: The job ID for the array job (same as `$SLURM_JOB_ID` for array jobs).
+- `$SLURM_ARRAY_TASK_ID`: The index of the current array task (e.g., 1, 2, ...).
+- `$SLURM_JOB_NAME`: The name of your job.
+- `$SLURM_SUBMIT_DIR`: The directory where you submitted the job.
 
 ## Example Array Job Script
 

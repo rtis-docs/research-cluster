@@ -122,6 +122,7 @@ For continued access between jobs, a separate path on WEKA storage can be alloca
 
 If you have an HCS share this is accessible from the cluster.
 
+<!-- TODO add link to knowledgebase about HCS -->
 
 
 !!! related-pages "What Next?"

@@ -1,5 +1,11 @@
 # Job Efficiency
 
+<!-- TODO this page should go through why job efficency is important (shared resources, poor efficiency leads to resources not being available leads to longer wait times for all).
+How to check a job is efficient and how you might then improve for next time
+-->
+
+<!-- TODO include link to cluster utilisation somewhere and highlight importance of tryinng to match what is requested with actually used and how that helps improve availability/reduce wait times -->
+
 !!! overview "On this Page"
     - Determining your SLURM job efficiency
     - How to interpret efficiency metrics

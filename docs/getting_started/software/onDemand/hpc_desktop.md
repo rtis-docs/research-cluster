@@ -7,6 +7,8 @@
  
 <!-- TODO See if overview is in line with content -->
 
+<!-- FIXME the ToC seems to not work properly for the "HPC Desktop Features" sub links -->
+
 ## Launching HPC Desktop
 
 When launching the desktop you can customise the computational components to suit your needs by clicking Advanced options. You can choose between 2 desktop environments XFCE and GNOME. If you have GPU intensive tasks select the "Request GPU" button.
