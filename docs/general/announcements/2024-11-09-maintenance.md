@@ -47,7 +47,7 @@ As part of the scheduled maintenance for the Aoraki Research Cluster over the we
       - The AUKS SLURM plugin extends the Kerberos authentication system in HPC environments. By integrating AUKS with SLURM, jobs can access network resources (HCS) that require Kerberos authentication without user intervention during job execution. After the initial user's Kerberos ticket is obtained on the login node and added to the SLURM AUKS repository, network resources are accessible on all cluster nodes for 7 days.
 
 !!! related-pages "What's next?"
-    - [Slurm Overview](../../getting_started/running/slurm_quickstart.md)
+    - [Slurm Overview](../../getting_started/running/batch/slurm_quickstart.md)
     - [Weka](../../storage/data_locations/weka.md)
 
   <!-- TODO Are these pages the next step or relevant? -->

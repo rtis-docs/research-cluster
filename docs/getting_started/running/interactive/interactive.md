@@ -16,8 +16,8 @@ The RStudio server or Juptyer Server OnDemand Apps provide common data analysis 
 
 
 !!! related-pages "What's next?"
-    - [Open OnDemand Guide](../software/onDemand/ondemand.md)
-    - [Writing Slurm Job Scripts](slurm_quickstart.md)
+    - [Open OnDemand Guide](../..//software/onDemand/ondemand.md)
+    - [Writing Slurm Job Scripts](../batch/slurm_quickstart.md)
     - [Current Cluster Utilisation](../current_utilisation.md)
 
 <!-- TODO Unknown Next Page -->

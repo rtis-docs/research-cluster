@@ -16,3 +16,4 @@ TODO: fix "terminal" so that it shows up in the formatting
 TODO: check if html abbreviation tags can be used
 TODO: top of each page should have a context paragraph
 TODO: add R and python admonitions
+FIXME: admonition heading text for terminal/r-project/python is same colour as the box

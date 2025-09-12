@@ -106,7 +106,7 @@ By following these steps and checking the suggested outputs, you can assess and 
 
 
 !!! related-pages "What's next?"
-    - [Running Jobs Overview](../running/running_jobs_overview.md)
+    - [Running Jobs Overview](../running_jobs_overview.md)
     - [Writing Slurm Job Scripts](slurm_quickstart.md)
 
   <!-- TODO Are these pages the next step or relevant? -->

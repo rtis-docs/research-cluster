@@ -45,5 +45,5 @@ If you’re unsure, start with an interactive session to explore your workflow, 
 
 !!! related-pages "What's next?"
     - [Open OnDemand Guide](../software/onDemand/ondemand.md)
-    - [Writing Slurm Job Scripts](slurm_quickstart.md)
-    - [Job Efficiency](efficiency.md)
+    - [Writing Slurm Job Scripts](batch/slurm_quickstart.md)
+    - [Job Efficiency](batch/efficiency.md)

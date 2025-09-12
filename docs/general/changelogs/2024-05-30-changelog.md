@@ -19,7 +19,7 @@ Other changes/fixes:
 
 !!! related-pages "What's next?"
     - [Login node SSH](../../getting_started/access/login_ssh.md)
-    - [Slurm Overview](../../getting_started/running/slurm_quickstart.md)
+    - [Slurm Overview](../../getting_started/running/batch/slurm_quickstart.md)
     - [Research HPC Cluster (Aoraki)](../../general/overview.md)
 
   <!-- TODO Are these pages the next step or relevant? -->

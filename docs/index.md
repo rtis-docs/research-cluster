@@ -125,7 +125,7 @@
 
 - title: Using the scheduler
   content: Submitting and managing jobs through the SLURM scheduler
-  url: getting_started/running/slurm_quickstart.md
+  url: getting_started/running/batch/slurm_quickstart.md
   image: /assets/images/icons/add_to_queue_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 ::/cards::
