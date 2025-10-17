@@ -26,9 +26,7 @@ hooks:
 plugins:
   - search
   - awesome-nav
-  - macros:
-        module_name: macro_hooks
-        include_dir: overrides
+  - macros
   - include-markdown
   - table-reader
   - caption:

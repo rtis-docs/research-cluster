@@ -33,33 +33,6 @@
     font-family: "Material Icons";
   	margin-right: 0.2em;
 }
-.btn-cluster {
-    padding: 0.4em 0.4em 0.4em 0.4em;
-    margin: 0 0.2em 0 0.2em;
-    border-radius: .25rem;
-    border: 1px var(--md-default-fg-color--light) solid;
-}
-.btn-cluster:before {
-    content: " \f233 ";
-    font-family: "FontAwesome";
-  	margin-right: 0.2em;
-}
-.btn-cluster-maui {
-  	color: #3c816e;
-    border-color: #3c816e;
-}
-.btn-cluster-mahuika {
-    color: #972220;
-    border-color: #972220;
-}
-.active.btn-cluster-maui {
-    color:  var(--md-primary-bg-color);
-  	background-color: #3c816e;
-}
-.active.btn-cluster-mahuika {
-    color:  var(--md-primary-bg-color);
-    background-color: #972220;
-}
 
 .grid.flex-card-parent {
     display: flex;
@@ -161,19 +134,7 @@ li {
 .badge-closeable {
     cursor: default;
 }
-.badge-cluster {
-    float: right;
-    border-style: double; 
-}
-.badge-cluster-maui {
-    background-color: #3c816e;
-}
-.badge-cluster-maui_ancil {
-    background-color: #3600b3;
-}
-.badge-cluster-mahuika {
-   background-color: #972220;
-}
+/*This is what customises the buttons like "biology" or "mathematics" */
 .badge-domain-biology{
     background-color: #28a745;
 }
