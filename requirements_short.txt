@@ -10,3 +10,4 @@ mkdocs-material-extensions
 mkdocs-table-reader-plugin
 neoteroi-mkdocs
 pymdown-extensions
+proselint
