@@ -31,16 +31,16 @@
                     {% if app.support -%}
                     <li> 
                         <span class="twemoji">{% include ".icons/material/book-open-page-variant-outline.svg" %}</span>
-                        <a href="{{ app.support }}">NeSI Documentation</a>
+                        <a href="{{ app.support }}">eResearch Solutions Documentation</a>
                     </li>
                     {% endif -%}    
                     </ul>
                 </div>
-                {% if app.modules %}
+                {% if app.module %}
                 <div class="flex-card">
                     <h5>Module Available</h5>
                     {% if not app -%}{% set app = applications[app_name] -%}{% endif -%}
-                    <pre><code id="mod_{{app_name | lower}}_code">module load {{app_name}}/{{app.default}}</code></pre>
+                    <pre><code id="mod_{{app_name | lower}}_code">module load {{app_name}}/{{app.module}}</code></pre>
                 </div>
                 {% endif %}
             
