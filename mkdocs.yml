@@ -40,6 +40,9 @@ extra_css:
   - assets/stylesheets/extra.css
   - assets/stylesheets/neoteroi-mkdocs.css
 
+extra_javascript:
+    - assets/javascripts/general.js
+
 markdown_extensions: 
   - abbr
   - attr_list
