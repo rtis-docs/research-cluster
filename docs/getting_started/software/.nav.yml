@@ -2,4 +2,5 @@
 nav:
  - 'software_overview.md'
  - onDemand
+ - applications
  - software_environments

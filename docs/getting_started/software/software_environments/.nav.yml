@@ -1,6 +1,5 @@
 # navigation for "software_environments/"
 nav:
- - software_environments.md
  - modules/
  - self_managed/
  - containers/

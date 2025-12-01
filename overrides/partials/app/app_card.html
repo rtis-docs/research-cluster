@@ -16,7 +16,12 @@
         <div class="card-body card-app">
             <p class="cardbody cardbody-description">{{ app.description }}</p>
             <div class="grid flex-card-parent">
-                
+
+                <div class="flex-card">
+                    <h5>Available Modules</h5>
+                    {% include "partials/app/app_version.html" -%}
+                </div>
+
                 <div class="flex-card">
                     <h5>Links</h5>
                     <ul class="docLinks-list">
@@ -37,11 +42,11 @@
                     </ul>
                 </div>
                 {% if app.module %}
-                <div class="flex-card">
+                <!-- <div class="flex-card">
                     <h5>Module Available</h5>
                     {% if not app -%}{% set app = applications[app_name] -%}{% endif -%}
                     <pre><code id="mod_{{app_name | lower}}_code">module load {{app_name}}/{{app.module}}</code></pre>
-                </div>
+                </div> -->
                 {% endif %}
             
         </div>

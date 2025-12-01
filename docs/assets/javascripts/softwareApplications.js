@@ -1,5 +1,5 @@
 // Copied from module list repo.
-DOMAIN_WHITELIST=["astronomy","biology","chemistry", "data_analytics", "earth_science", "engineering", "language", "machine_learning", 
+DOMAIN_WHITELIST=["OnDemand","astronomy","biology","chemistry", "data_analytics", "earth_science", "engineering", "language", "machine_learning", 
 "mathematics","medical_science","physics","social_science","visualisation","climate_science","workflow_management"]
 
 $(document).ready(function() {
