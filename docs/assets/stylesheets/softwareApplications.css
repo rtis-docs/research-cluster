@@ -4,6 +4,24 @@
   	margin-right: 0.2em;
 }
 
+/* Version table stuff */
+.md-tag.md-tag-ver{
+  color: var(--md-code-fg-color);
+}
+.md-tag.md-tag-ver-shown {
+    outline: var(--md-primary-fg-color) 2px solid;
+}
+
+.md-tag-ver-warn {
+  text-decoration: line-through;
+}
+.md-typeset__table {
+  width: 100%;
+}
+.md-typeset__table table:not([class]) {
+  display: table
+}
+
 /* Custom admonation for software list */
 
 .md-typeset .admonition.software,
