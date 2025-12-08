@@ -1,66 +1,74 @@
-<!-- FIXME convert from rst to md -->
+# PyTorch via module
 
-PyTorch via module
---------------------
 
 This guide shows how to run **PyTorch with GPU acceleration** using the official
 NVIDIA container.
 
-Why use this setup?
-^^^^^^^^^^^^^^^^^^
+## Why use this setup?
+
 
 - Preinstalled PyTorch (v2.2+) with CUDA, cuDNN, and NCCL
 - No need to install Conda or pip packages
 - Reproducible containerized environment
 
-Loading the PyTorch Module
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+## Loading the PyTorch Module
+
 
 To load the PyTorch container module:
 
-.. code-block:: bash
+!!! terminal
 
+   ```bash
    module load apptainer/pytorch
+   ```
 
 This provides the following helper commands:
 
 - ``pytorch_exec``: Run a command inside the container
 - ``pytorch_shell``: Open an interactive shell inside the container
 
-Interactive GPU Session
-^^^^^^^^^^^^^^^^^^^^^^^
+### Interactive GPU Session
+
 
 To run PyTorch interactively on a GPU node:
 
 1. **Request a GPU node**
 
-.. code-block:: bash
+!!! terminal
 
+   ```bash
    srun --partition=aoraki_gpu \
         --gres=gpu:1 \
         --cpus-per-task=4 \
         --mem=8G \
         --time=00:10:00 \
         --pty bash
+   ```
 
 2. **Load the module inside the GPU shell**
 
-.. code-block:: bash
+!!! terminal
 
+   ```bash
    module load apptainer/pytorch/24.04
+   ```
 
 3. **Test PyTorch inside the container**
 
-.. code-block:: bash
+!!! terminal
 
+   ```bash
    pytorch_exec python3 -c "import torch; print('PyTorch:', torch.__version__); print('CUDA:', torch.cuda.is_available()); print('GPU:', torch.cuda.get_device_name(0))"
+   ```
 
-SLURM Batch Job Example
-^^^^^^^^^^^^^^^^^^^^^^^
+### SLURM Batch Job Example
+
 
 To submit a test job to SLURM, save this to ``pytorch_test.slurm``:
 
-.. code-block:: bash
+!!! terminal
+   
+   ```bash
 
    #!/bin/bash
    #SBATCH --job-name=pytorch-test
@@ -80,21 +88,25 @@ To submit a test job to SLURM, save this to ``pytorch_test.slurm``:
    print('cuDNN:', torch.backends.cudnn.enabled)
    print('NCCL:', torch.distributed.is_nccl_available())
    "
+   ```
 
 Submit with:
 
-.. code-block:: bash
+!!! terminal
 
+   ```bash
    sbatch pytorch_test.slurm
+   ```
 
-Running Your Own Scripts
-^^^^^^^^^^^^^^^^^^^^^^^^
+### Running Your Own Scripts
+
 
 To run your own PyTorch scripts inside the container:
 
-.. code-block:: bash
+!!! terminal
 
+   ```bash
    pytorch_exec python3 my_training_script.py
-
+   ```
 
 

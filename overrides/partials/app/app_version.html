@@ -17,7 +17,7 @@
         {% endfor -%}     
     {% endif -%}
 </nav></p>
-<pre><code id="mod_{{app_name | lower}}_code">module load {{app_name}}/{{app.default}}</code></pre>
+<pre><code id="mod_{{app_name | lower}}_code">module load {{app.module}}/{{app.default}}</code></pre>
 <div id="mod_{{app_name | lower}}_warn" class="admonition warning" style="display: {% if v.default_has_warning -%}block{% else -%}none{% endif -%}">
     <p class="admonition-title">Warning</p>
     <p class="warning-text">{{ v.warning_message }}</p>

@@ -2,14 +2,142 @@
     "4ti2":{
         "description": "4ti2 is a software suite for algebraic, geometric, and combinatorial problems on linear spaces. It is available on the cluster via a module.",
         "domains":[
-            "math",
             "mathematics"
         ],
-        "homepage": "https://facebook.github.io/zstd",
-        "support": "",
-
-        "module": "1.5.5-GCCcore-12.3.0"
+        "homepage": "https://4ti2.github.io/",
+        "support": "../4ti2/",
+        "versions": [
+           "1.6.11"
+        ],
+        "default": "1.6.11",
+        "module": "4ti2"
     },
+    "Crystal":{
+        "description": "",
+        "domains":["chemistry", "physics"],
+        "homepage": "https://www.crystal.unito.it",
+        "support": "../crystal/",
+        "versions": [
+           "23.1.0.1"
+        ],
+        "default": "23.1.0.1",
+        "module": "crystal"
+    },
+    "Gaussian":{
+        "description": "",
+        "domains":["apptainer", "chemistry"],
+        "homepage": "https://gaussian.com/",
+        "support": "../gaussian/",
+        "versions": [
+           "16"
+        ],
+        "default": "16",
+        "module": "gaussian"
+    },
+    "Macaulay2":{ 
+        "description": "Macaulay2 is a software system for research in algebraic geometry and commutative algebra. It is designed to be easy to use and provides a powerful programming environment. It is particularly well-suited for computations in algebraic geometry, commutative algebra, and related areas.",
+        "domains":["apptainer",
+                    "mathematics"],
+        "homepage": "https://macaulay2.com",
+        "support": "../macaulay2/",
+        "versions": [
+           "1.24.11"
+        ],
+        "default": "1.24.11",
+        "module": "macaulay2"
+    },
+     "Mathematica":{ 
+        "description": "",
+        "domains":["mathematics"],
+        "homepage": "https://www.wolfram.com/mathematica/",
+        "support": "../mathmatica/",
+        "versions": [
+           "14.2.1"
+        ],
+        "default": "14.2.1",
+        "module": "mathematica"
+    },
+
+    "AFNI (Analysis of Functional NeuroImages)":{ 
+        "description": "AFNI (Analysis of Functional NeuroImages) is a leading software suite of C, Python, R programs and shell scripts primarily developed for the analysis and display of multiple MRI modalities",
+        "domains":["apptainer"],
+        "homepage": "https://afni.nimh.nih.gov",
+        "support": "../afni/",
+        "versions": [
+           "24.2.03"
+        ],
+        "default": "24.2.03",
+        "module": "afni"
+    },
+
+    "Alphafold":{ 
+        "description": "AlphaFold can predict protein structures with atomic accuracy even where no similar structure is known.",
+        "domains":["apptainer", "biology"],
+        "homepage": "https://alphafold.com",
+        "support": "../alphafold/",
+        "versions": [
+           "alphafold2"
+        ],
+        "default": "alphafold2",
+        "module": "apptainer"
+    },
+    "Alphafold3":{ 
+        "description": "AlphaFold can predict protein structures with atomic accuracy even where no similar structure is known.",
+        "domains":["apptainer", "biology"],
+        "homepage": "https://alphafold.com",
+        "support": "../alphafold3/",
+        "versions": [
+           "3.0.1"
+        ],
+        "default": "3.0.1",
+        "module": "alphafold3"
+    },
+    "Ansys Fluent":{ 
+        "description": "Ansys Fluent is proprietary fluid simulation software",
+        "domains":[""],
+        "homepage": "https://www.ansys.com/products/fluids/ansys-fluent/",
+        "support": "../ansys_fluent/",
+        "versions": [
+           "2022R2"
+        ],
+        "default": "",
+        "module": ""
+    },"ORCA":{ 
+        "description": "ORCA is a general-purpose quantum chemistry program package that features virtually all modern electronic structure methods.",
+        "domains":["chemistry"],
+        "homepage": "https://orcaforum.kofo.mpg.de/",
+        "support": "../orca/",
+        "versions": [
+           "6.1.0"
+        ],
+        "default": "6.1.0",
+        "module": "orca"
+    },"Pytorch":{ 
+        "description": "Provides PyTorch 2.2 with CUDA and cuDNN via NVIDIA NGC container",
+        "domains":["apptainer"],
+        "homepage": "https://pytorch.org",
+        "support": "../pytorch/",
+        "versions": [
+           "24.04"
+        ],
+        "default": "24.04",
+        "module": "apptainer/pytorch"
+    },
+    "bohra": {
+        "description": "Bohra",
+        "domains": [
+            "container",
+            "biology"
+        ],
+        "homepage": "https://github.com/MDU-PHL/bohra) is a microbial genomics pipeline.",
+        "support": "",
+        "versions": [
+           ""
+        ],
+        "default": "",
+        "module": "bohra"
+    },
+
     "zstd": {
         "description": "Zstandard is a real-time compression algorithm, providing high compression ratios.\n It offers a very wide range of compression/speed trade-off, while being backed by a very fast decoder.\n It also offers a special mode for small data, called dictionary compression, and can create dictionaries\n from any sample set.",
         "domains": [
@@ -36,51 +164,9 @@
         "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/COMSOL",
         "module":""
        
-    },"AFNI (Analysis of Functional NeuroImages)": {
-        "description": "AFNI (Analysis of Functional NeuroImages) is a leading software suite of C, Python, R programs and shell scripts primarily developed for the analysis and display of multiple MRI modalities",
-        "domains": [
-            "container"
-        ],
-        "homepage": "https://afni.nimh.nih.gov",
-        "support": "",
-        "module": ""
     },
-    "alphafold": {
-        "description": "AlphaFold",
-        "domains": [
-            "container"
-        ],
-        "homepage": "",
-        "support": "",
-        "module": ""
-    },
-    "alphafold3": {
-        "description": "",
-        "domains": [
-            "container"
-        ],
-        "homepage": "",
-        "support": "",
-        "module": ""
-    },
-    "ansys_fluent": {
-        "description": "Ansys Fluent",
-        "domains": [
-            "container"
-        ],
-        "homepage": "https://ansyshelp.ansys.com/public/account/secured?returnurl=//Views/Secured/corp/v242/en/flu_ug/flu_ug_parallel_start_linux_unix.html",
-        "support": "",
-        "module": ""
-    },
-    "bohra": {
-        "description": "Bohra",
-        "domains": [
-            "container"
-        ],
-        "homepage": "https://github.com/MDU-PHL/bohra) is a microbial genomics pipeline.",
-        "support": "",
-        "module": ""
-    },
+    
+    
     "ccp4": {
         "description": "CCP4",
         "domains": [

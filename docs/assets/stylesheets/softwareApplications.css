@@ -152,7 +152,12 @@ li {
 .badge-closeable {
     cursor: default;
 }
+
+
 /*This is what customises the buttons like "biology" or "mathematics" */
+.badge-domain-apptainer{
+    background-color: #56dcee;
+}
 .badge-domain-biology{
     background-color: #28a745;
 }
@@ -170,6 +175,9 @@ li {
 }
 .badge-domain-medical_science {
     background-color: #d10000;
+}
+.badge-domain-onDemand{
+    background-color: #f1aa0f;
 }
 .badge-domain-physics {
     background-color: #6495ed;
