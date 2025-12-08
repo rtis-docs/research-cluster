@@ -1,5 +1,5 @@
 // Copied from module list repo.
-DOMAIN_WHITELIST=["OnDemand","astronomy","biology","chemistry", "data_analytics", "earth_science", "engineering", "language", "machine_learning", 
+DOMAIN_WHITELIST=["ondemand", "apptainer","astronomy","biology","chemistry", "data_analytics", "earth_science", "engineering", "language", "machine_learning", 
 "mathematics","medical_science","physics","social_science","visualisation","climate_science","workflow_management"]
 
 $(document).ready(function() {
@@ -70,7 +70,7 @@ function filterSearch() {
 
     function matchSearch(comptxt){
         if (search_string){
-            return (comptxt.indexOf(search_string) > -1)
+            return (comptxt.toLowerCase().indexOf(search_string.toLowerCase()) > -1) // added .toLowerCase() to make search case-insensitive
         }
         return true
     }
