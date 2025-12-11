@@ -1,9 +1,9 @@
 # SBGrid
 
 !!! overview "On this Page"
-      - What is Spack
-      - How to use Spack
-      - More information on Spack
+      - What is SBGrid
+      - How to use SBGrid
+      - More information on SBGrid
  
   <!-- TODO See if overview is in line with content -->
 
@@ -93,7 +93,7 @@ Once you are in the SBGrid environment you can use all SBGrid commands.
 [SBGrid youtube](https://www.youtube.com/user/SBGridTV)
  
 !!! related-pages "What's next?"
-      - Looking for something else? See [Software Overview page](../software_overview.md)
+      - Looking for something else? See [Software Overview page](../)
       -  For how to run a job on the cluster go to [Running Jobs](../../running/running_jobs_overview.md)
       
   <!-- TODO Are these pages the next step or relevant? -->

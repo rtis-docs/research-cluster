@@ -11,9 +11,9 @@ and **Intel oneMKL 2024.2**, exposed via the module ``crystal/23.1.0.1``.
 
 !!! important
 
-   This Open MPI build is **not Slurm-PMI enabled**. Use ``mpirun`` to launch MPI ranks.
-   You can still use ``srun``/**salloc** to obtain an allocation or an interactive shell,
-   then invoke ``mpirun`` inside that allocation.
+      This Open MPI build is **not Slurm-PMI enabled**. Use ``mpirun`` to launch MPI ranks.
+      You can still use ``srun``/**salloc** to obtain an allocation or an interactive shell,
+      then invoke ``mpirun`` inside that allocation.
 
 ## Environment
 
@@ -36,66 +36,68 @@ InfiniBand-related flags.
 * Always use shell redirection:
 
 !!! terminal
-   ```bash
-   mpirun -np <RANKS> Pcrystal < INPUT > OUTPUT
-   ```
+   
+      ```bash
+      mpirun -np <RANKS> Pcrystal < INPUT > OUTPUT
+      ```
 
 * Keep OpenMP threads to one (MPI-first code):
 
 !!! terminal
-   ```bash
-   export OMP_NUM_THREADS=1
-   ```
+      ```bash
+      export OMP_NUM_THREADS=1
+      ```
 
 ## Interactive Runs (via srun allocation)
 
 Obtain a node allocation with ``srun --pty`` (or ``salloc``), then call ``mpirun``:
 
 !!! terminal
-   ```bash
-   # 1 node, 8 MPI ranks example (edit partition/time as needed)
-   srun --pty -N 1 --ntasks-per-node=8 -t 00:30:00 -p <partition> bash -l
+      ```bash
+      # 1 node, 8 MPI ranks example (edit partition/time as needed)
+      srun --pty -N 1 --ntasks-per-node=8 -t 00:30:00 -p <partition> bash -l
 
-   # inside the interactive shell:
-   module load crystal/23.1.0.1
-   export OMP_NUM_THREADS=1
+      # inside the interactive shell:
+      module load crystal/23.1.0.1
+      export OMP_NUM_THREADS=1
 
-   # CPU binding and mapping: adjust to your node size
-   mpirun --bind-to core --map-by ppr:8:node -np 8 \
-          Pcrystal < INPUT > OUTPUT
-   ```
+      # CPU binding and mapping: adjust to your node size
+      mpirun --bind-to core --map-by ppr:8:node -np 8 \
+            Pcrystal < INPUT > OUTPUT
+      ```
 
 ## Batch Runs (sbatch)
 
 Save the following to ``crystal23.sbatch`` and submit with ``sbatch crystal23.sbatch``.
 
 !!! terminal
-   ```bash
-   #!/bin/bash
-   #SBATCH -J crystal23
-   #SBATCH --ntasks-per-node=16        # MPI ranks per node (edit)
-   #SBATCH -t 02:00:00                 # wall time (edit)
-   #SBATCH -p <partition>              # partition/queue (edit)
-   #SBATCH -o crystal23.%j.out
-   #SBATCH -e crystal23.%j.err
 
-   set -euo pipefail
+      ```bash
+      #!/bin/bash
+      #SBATCH -J crystal23
+      #SBATCH --ntasks-per-node=16        # MPI ranks per node (edit)
+      #SBATCH -t 02:00:00                 # wall time (edit)
+      #SBATCH -p <partition>              # partition/queue (edit)
+      #SBATCH -o crystal23.%j.out
+      #SBATCH -e crystal23.%j.err
 
-   module load crystal/23.1.0.1
-   export OMP_NUM_THREADS=1
+      set -euo pipefail
 
-   # Work in the submission directory
-   cd "${SLURM_SUBMIT_DIR:-$PWD}"
+      module load crystal/23.1.0.1
+      export OMP_NUM_THREADS=1
 
-   # Check input deck is present
-   test -s INPUT || { echo "Missing INPUT deck"; exit 2; }
+      # Work in the submission directory
+      cd "${SLURM_SUBMIT_DIR:-$PWD}"
 
-   # Launch ranks with mpirun (Open MPI not built with Slurm PMI)
-   mpirun --bind-to core --map-by ppr:${SLURM_NTASKS_PER_NODE}:node \
-          -np ${SLURM_NTASKS} Pcrystal < INPUT > OUTPUT
+      # Check input deck is present
+      test -s INPUT || { echo "Missing INPUT deck"; exit 2; }
 
-   echo "CRYSTAL23 finished. See OUTPUT and slurm logs."
-   ```
+      # Launch ranks with mpirun (Open MPI not built with Slurm PMI)
+      mpirun --bind-to core --map-by ppr:${SLURM_NTASKS_PER_NODE}:node \
+            -np ${SLURM_NTASKS} Pcrystal < INPUT > OUTPUT
+
+      echo "CRYSTAL23 finished. See OUTPUT and slurm logs."
+      ```
 
 ## Resource Selection & Binding
 
