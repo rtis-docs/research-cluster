@@ -1,0 +1,447 @@
+{
+    "4ti2":{
+        "description": "4ti2 is a software suite for algebraic, geometric, and combinatorial problems on linear spaces. It is available on the cluster via a module.",
+        "domains":[
+            "mathematics"
+        ],
+        "homepage": "https://4ti2.github.io/",
+        "support": "../applications/4ti2/",
+        "versions": [
+           "1.6.11"
+        ],
+        "default": "1.6.11",
+        "module": "4ti2"
+    },
+    "Crystal":{
+        "description": "",
+        "domains":["chemistry", "physics"],
+        "homepage": "https://www.crystal.unito.it",
+        "support": "../applications/crystal/",
+        "versions": [
+           "23.1.0.1"
+        ],
+        "default": "23.1.0.1",
+        "module": "crystal"
+    },
+    "Gaussian":{
+        "description": "",
+        "domains":["apptainer", "chemistry"],
+        "homepage": "https://gaussian.com/",
+        "support": "../applications/gaussian/",
+        "versions": [
+           "16"
+        ],
+        "default": "16",
+        "module": "gaussian"
+    },
+    "Macaulay2":{ 
+        "description": "Macaulay2 is a software system for research in algebraic geometry and commutative algebra. It is designed to be easy to use and provides a powerful programming environment. It is particularly well-suited for computations in algebraic geometry, commutative algebra, and related areas.",
+        "domains":["apptainer",
+                    "mathematics"],
+        "homepage": "https://macaulay2.com",
+        "support": "../applications/macaulay2/",
+        "versions": [
+           "1.24.11"
+        ],
+        "default": "1.24.11",
+        "module": "macaulay2"
+    },
+     "Mathematica":{ 
+        "description": "",
+        "domains":["mathematics"],
+        "homepage": "https://www.wolfram.com/mathematica/",
+        "support": "../applications/mathmatica/",
+        "versions": [
+           "14.2.1"
+        ],
+        "default": "14.2.1",
+        "module": "mathematica"
+    },
+
+    "AFNI (Analysis of Functional NeuroImages)":{ 
+        "description": "AFNI (Analysis of Functional NeuroImages) is a leading software suite of C, Python, R programs and shell scripts primarily developed for the analysis and display of multiple MRI modalities",
+        "domains":["apptainer"],
+        "homepage": "https://afni.nimh.nih.gov",
+        "support": "../applications/afni/",
+        "versions": [
+           "24.2.03"
+        ],
+        "default": "24.2.03",
+        "module": "afni"
+    },
+
+    "Alphafold":{ 
+        "description": "AlphaFold can predict protein structures with atomic accuracy even where no similar structure is known.",
+        "domains":["apptainer", "biology"],
+        "homepage": "https://alphafold.com",
+        "support": "../applications/alphafold/",
+        "versions": [
+           "alphafold2"
+        ],
+        "default": "alphafold2",
+        "module": "apptainer"
+    },
+    "Alphafold3":{ 
+        "description": "AlphaFold can predict protein structures with atomic accuracy even where no similar structure is known.",
+        "domains":["apptainer", "biology"],
+        "homepage": "https://alphafold.com",
+        "support": "../applications/alphafold3/",
+        "versions": [
+           "3.0.1"
+        ],
+        "default": "3.0.1",
+        "module": "alphafold3"
+    },
+    "Ansys Fluent":{ 
+        "description": "Ansys Fluent is proprietary fluid simulation software",
+        "domains":[""],
+        "homepage": "https://www.ansys.com/products/fluids/ansys-fluent/",
+        "support": "../applications/ansys_fluent/",
+        "versions": [
+           "2022R2"
+        ],
+        "default": "",
+        "module": ""
+    },"ORCA":{ 
+        "description": "ORCA is a general-purpose quantum chemistry program package that features virtually all modern electronic structure methods.",
+        "domains":["chemistry"],
+        "homepage": "https://orcaforum.kofo.mpg.de/",
+        "support": "../applications/orca/",
+        "versions": [
+           "6.1.0"
+        ],
+        "default": "6.1.0",
+        "module": "orca"
+    },"Pytorch":{ 
+        "description": "Provides PyTorch 2.2 with CUDA and cuDNN via NVIDIA NGC container",
+        "domains":["apptainer"],
+        "homepage": "https://pytorch.org",
+        "support": "../applications/pytorch/",
+        "versions": [
+           "24.04"
+        ],
+        "default": "24.04",
+        "module": "apptainer/pytorch"
+    },
+    "Bohra": {
+        "description": "Bohra",
+        "domains": [
+            "container",
+            "biology"
+        ],
+        "homepage": "https://github.com/MDU-PHL/bohra) is a microbial genomics pipeline.",
+        "support": "../applications/bohra/",
+        "versions": [
+           "2.3.6",
+           "2.3.7"
+        ],
+        "default": "2.3.7",
+        "module": "apptainer/bohra"
+    },
+    "CCP4": {
+        "description": "CCP4",
+        "domains": [
+            "apptainer", 
+            "sbgrid"
+        ],
+        "homepage": "https://www.ccp4.ac.uk/",
+        "support": "../applications/ccp4/",
+        "versions": [
+           ""
+        ],
+        "default": "",
+        "module": ""
+    },
+    "Circulator": {
+        "description": "",
+        "domains": [
+            "apptainer"
+        ],
+        "homepage": "https://sanger-pathogens.github.io/circlator/",
+        "support": "../applications/circulator/",
+        "versions": [
+           "1.5.5"
+        ],
+        "default": "",
+        "module": ""
+    },
+
+    "Claritas": {
+        "description": "GLOBEClaritas is a proprietary software package for 2D and 3D land and marine seismic data processing.",
+        "domains": [
+            "ondemand",
+            "apptainer"
+        ],
+        "homepage": "https://www.petrosys.com.au/claritas",
+        "support": "../applications/claritas/",
+        "versions": [
+           "2024.1.2"
+        ],
+        "default": "2024.1.2",
+        "module": "apptainer/GLOBEClaritas"
+    },
+
+
+    "ColabfFold": {
+        "description": "AlphaFold2 using MMseqs2. Easy to use protein structure and complex prediction using AlphaFold2 and Alphafold2-multimer",
+        "domains": [
+            "apptainer"
+        ],
+        "homepage": "https://github.com/sokrypton/ColabFold",
+        "support": "../applications/colabfold/",
+        "versions": [
+           "1.5.3"
+        ],
+        "default": "1.5.3",
+        "module": "apptainer/colabfold/1.5.3"
+    },
+
+    "Connectome Workbench": {
+        "description": "Visualization and discovery tool used to map neuroimaging data, especially data generated by the Human Connectome Project",
+        "domains": [
+            "apptainer",
+            "ondemand"
+        ],
+        "homepage": "https://humanconnectome.org/software/get-connectome-workbench",
+        "support": "../applications/connectome_workbench/",
+        "versions": [
+           "2.0.1"
+        ],
+        "default": "2.0.1",
+        "module": "apptainer/connectome_workbench"
+    },
+    "Deeplabcut": {
+        "description": "",
+        "domains": [
+            "ondemand"
+        ],
+        "homepage": "https://deeplabcut.github.io/DeepLabCut",
+        "support": "../applications/deeplabcut/",
+        "versions": [
+           ""
+        ],
+        "default": "",
+        "module": ""
+    },
+    "DeepPoseKit": {
+        "description": "DeepPoseKit is a Python toolkit with a high-level API for 2D pose estimation of user-defined keypoints using deep learning",
+        "domains": [
+            "ondemand",
+            "apptainer"
+        ],
+        "homepage": "https://github.com/jgraving/DeepPoseKit)",
+        "support": "../applications/deeposekit/",
+        "versions": [
+           "0.3.9"
+        ],
+        "default": "0.3.9",
+        "module": "apptainer/deepposekit"
+    },
+        "Dorado": {
+        "description": "Dorado is a high-performance, easy-to-use, open source basecaller for Oxford Nanopore reads.",
+        "domains": [
+            "apptainer",
+            "biology"
+        ],
+        "homepage": "https://github.com/nanoporetech/dorado",
+        "support": "../applications/dorado/",
+        "versions": [
+            "0.5.0",
+            "0.5.3",
+            "0.7.1",
+            "0.7.3",
+            "0.8.1",
+            "0.9.1"
+        ],
+        "default": "0.9.1",
+        "module": "apptainer/dorado"
+    },
+    "FSL": {
+        "description": "FSL is a library of analysis tools for FMRI, MRI and diffusion brain imaging data",
+        "domains": [
+            "ondemand",
+            "apptainer",
+            "biology"
+        ],
+        "homepage": "https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/",
+        "support": "../applications/fsl/",
+        "versions": [
+            "6.0.7.1",
+            "6.0.7.6",
+            "6.0.7.12"
+        ],
+        "default": "6.0.7.12",
+        "module": "apptainer/FSL"
+    },
+    "Gubbins": {
+        "description": "Genealogies Unbiased By recomBinations In Nucleotide Sequences - Rapid phylogenetic analysis of large samples of recombinant bacterial whole genome sequences.",
+        "domains": [
+            "apptainer",
+            "biology"
+        ],
+        "homepage": "https://github.com/nickjcroucher/gubbins",
+        "support": "../applications/gubbins/",
+        "versions": [
+            "3.3.1",
+            "3.3.5"
+        ],
+        "default": "3.3.5",
+        "module": "apptainer/gubbins"
+    },
+    "Guppy": {
+        "description": "Guppy is a data processing toolkit that contains the Oxford Nanopore Technologies' basecalling algorithms, and several bioinformatic post-processing features.",
+        "domains": [
+            "apptainer",
+            "biology"
+        ],
+        "homepage": "https://nanoporetech.com/document/Guppy-protocol#guppy-software-overview",
+        "support": "../applications/guppy/",
+        "versions": [
+            "6.4.6"
+        ],
+        "default": "6.4.6",
+        "module": "apptainer/guppy-gpu"
+    },
+    "HUMAnN": {
+        "description": "HUMAnN (the HMP Unified Metabolic Analysis Network) is a method for efficiently and accurately profiling the abundance of microbial metabolic pathways and other molecular functions from metagenomic or metatranscriptomic sequencing data.",
+        "domains": [
+            "apptainer",
+            "biology"
+        ],
+        "homepage": "https://github.com/biobakery/biobakery/wiki/humann",
+        "support": "../applications/humann/",
+        "versions": [
+            ""
+        ],
+        "default": "",
+        "module": ""
+    },
+    "Matlab": {
+        "description": "",
+        "domains": [
+            "ondemand",
+            "apptainer"
+        ],
+        "homepage": "https://matlab.mathworks.com",
+        "support": "../applications/matlab/",
+        "versions": [
+            "r2024b"
+        ],
+        "default": "r2024b",
+        "module": "matlab"
+    },
+    "Ollama": {
+        "description": "Ollama is a free and open source inference runtime for large language model (LLM) applications.",
+        "domains": [
+
+        ],
+        "homepage": "https://ollama.com/",
+        "support": "../applications/ollama/",
+        "versions": [
+            ""
+        ],
+        "default": "",
+        "module": ""
+    },
+    "OpenPose": {
+        "description": "OpenPose is a real-time multi-person keypoint detection library developed by the CMU Perceptual Computing Lab. It supports body, face, hand, and foot pose estimation using deep learning.",
+        "domains": [
+            "ondemand",
+            "apptainer"
+        ],
+        "homepage": "https://github.com/CMU-Perceptual-Computing-Lab/openpose",
+        "support": "../applications/openpose/",
+        "versions": [
+            "1.7"
+        ],
+        "default": "1.7",
+        "module": "apptainer/openpose"
+    },
+    "Samtools": {
+        "description": "",
+        "domains": [
+            "biology"
+        ],
+        "homepage": "https://www.htslib.org",
+        "support": "../applications/samtools/",
+        "versions": [
+            "1.16.1-leckcdr",
+            "1.19.2-eymmh4o"
+        ],
+        "default": "1.20",
+        "module": "samtools"
+    },
+    "Space Ranger": {
+        "description": "Space Ranger is a set of analysis pipelines that process 10x Genomics Visium data with brightfield or fluorescence microscope images, allowing users to map the whole transcriptome in a variety of tissues.",
+        "domains": [
+            "biology"
+        ],
+        "homepage": "https://www.10xgenomics.com/support/software/space-ranger/latest",
+        "support": "../applications/spaceranger",
+        "versions": [
+            ""
+        ],
+        "default": "",
+        "module": ""
+    },
+    "TBProfiler": {
+        "description": "Profiling tool for Mycobacterium tuberculosis to detect ressistance and strain type from WGS data",
+        "domains": [
+            "apptainer",
+            "biology"
+        ],
+        "homepage": "",
+        "support": "",
+        "versions": [
+            "6.2.1"
+        ],
+        "default": "6.2.1",
+        "module": "apptainer/TBProfiler"
+    },
+    "Whisper": {
+        "description": "Whisper (speech-to-text)",
+        "domains": [
+            "ondemand"
+        ],
+        "homepage": "https://github.com/openai/whisper",
+        "support": "../applications/whisper/",
+        "versions": [
+            ""
+        ],
+        "default": "",
+        "module": ""
+    },
+    "XDSGUI": {
+        "description": "XDSGUI is a graphical user interface for XDS, SHELX and ARCIMBOLDO for processing and phasing results for X-ray, neutron and electron diffraction data.",
+        "domains": [
+            "ondemand",
+            "sbgrid",
+            "apptainer"
+        ],
+        "homepage": "https://wiki.uni-konstanz.de/xds/index.php/XDSGUI",
+        "support": "../applications/xdsgui/",
+        "versions": [
+            ""
+        ],
+        "default": "",
+        "module": ""
+    },
+
+    "zstd": {
+        "description": "Zstandard is a real-time compression algorithm, providing high compression ratios.\n It offers a very wide range of compression/speed trade-off, while being backed by a very fast decoder.\n It also offers a special mode for small data, called dictionary compression, and can create dictionaries\n from any sample set.",
+        "domains": [
+            "lib",
+            "biology"
+        ],
+        "homepage": "https://facebook.github.io/zstd",
+        "support": "",
+        "versions": [
+            "1.5.4-jo7gokm",
+            "1.5.6-e7rjt2q"
+
+        ],
+        "default": "1.5.6-e7rjt2q",
+        "module": "zstd/"
+    }
+
+}

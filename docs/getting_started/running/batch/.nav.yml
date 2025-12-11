@@ -1,0 +1,5 @@
+# Navigation for "batch/"
+nav:
+ - slurm_quickstart.md
+ - using_slurm/
+ - efficiency.md

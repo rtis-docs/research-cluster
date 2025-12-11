@@ -1,9 +1,25 @@
-# Home
+# Research HPC Cluster (Aoraki) Documentation
 
-## Contact
 
-For all enquiries please email {{support_email}}
 
+
+
+## Overview
+
+!!! info
+    The RTIS Research cluster provides researchers with access to shared resources, such as **CPUs, GPUs, and high-speed storage**. 
+    Also available are specialised software and libraries optimised for scientific and datascience computing. 
+
+    For all support enquiries please email {{support_email}} or check out the [Support page](general/support.md).
+
+::cards::
+
+- title: Cluster Overview
+  content: What is the Research HPC Cluster (Aoraki)?
+  url: general/overview.md
+  image: /assets/images/icons/graph_5_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
+
+::/cards::
 
 ## Quick Start
 
@@ -109,7 +125,7 @@ For all enquiries please email {{support_email}}
 
 - title: Using the scheduler
   content: Submitting and managing jobs through the SLURM scheduler
-  url: getting_started/running/slurm_quickstart.md
+  url: getting_started/running/batch/slurm_quickstart.md
   image: /assets/images/icons/add_to_queue_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 ::/cards::

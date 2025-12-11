@@ -1,0 +1,57 @@
+{% extends "base.html" -%}<!--overriding and extending template blocks, needs to be stored under overrides file-->
+
+{% block libs %}<!--link to JavaScript library/s from HTML-->
+    {{ super() }}<!--call super so it dosn't override existing library links in parent block-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="{{ base_url }}/assets/javascripts/softwareApplications.js"></script>
+{% endblock -%}
+
+{% block styles %}<!--linking to formatting of custom template -->
+{{ super() }}
+<link rel="stylesheet" href="{{ base_url }}/assets/stylesheets/softwareApplications.css">
+{% endblock -%}
+
+{% block content -%} <!--Contains the page content and table of contents for the page-->
+    {{ super() }}
+    <div class="article__body markdown" itemprop="articleBody">
+        <!--Search bar-->
+        <div class="md-search-aux">
+            <div class="md-search-aux__inner" role="search">
+                <form class="md-search-aux__form md-search__form"> 
+                    <!--updates search string and triggers filtering softwareApplications.js-->
+                    <input id="__search-aux" name="search" onkeyup="srchFunc(event)" type="text" 
+                        class="md-search__input md-search-aux__input" aria-label="Search for Applications"
+                        placeholder="Search for Applications">
+                    <label class="md-search-aux__icon md-search__icon md-icon" for="__search-aux">
+                        {% set icon = config.theme.icon.search or "material/magnify" %} <!--sets variable icon if not defaults to material/magnify (I think both are default in the materials theme)-->
+                        {% include ".icons/" ~ icon ~ ".svg" %}
+                    </label>
+                    <!-- container for application info drop downs-->
+                    <nav class="md-search__options" id="srchbar-badge-party">
+                        <span id="srchbar-badge-party-domains"></span><!--placeholder to be dynamically filled domain names-->
+                    </div>
+                </form>
+            </div>
+            <!--Layout of application accordion-->
+            <div class="layoutrow">
+                <div class="article-div">
+                    <div id="mainList" class="label_data data-labelsection">
+                        {% if applications|length > 1 %}
+                        {% for app_name in applications %}
+                        {% set app = applications[app_name] %}<!--Retrieves the full application data-->
+                        {% include "partials/app/app_card.html" %}<!--Loads and displays the HTMl card for each application-->
+                        {% endfor %}
+                        {% else %}
+                        <p>Whoops, something has gone wrong loading the software list. Please contact support.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+        <p>
+    If the application you are looking for is not here, please contact us visit 
+    <a href="{{ base_url }}/general/support/">Support </a> to see how.
+            </p>
+        </div>
+{% endblock %}

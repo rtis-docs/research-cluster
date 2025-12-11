@@ -1,5 +1,9 @@
 # Getting an Account
+!!! overview "On this Page"
+    - Link to sign up for an Otago compute cluster account
 
+    <!-- TODO See if overview is in line with content -->
+    
 Access to the Otago compute cluster is by request. Submit the form below to request an account on the Otago compute cluster. You will be emailed when your account is available for use.
 
 Please contact the RTIS team ({{support_email}}) if you have any questions.
@@ -8,9 +12,8 @@ Please contact the RTIS team ({{support_email}}) if you have any questions.
 
 
 
-!!! tip "What Next?"
+!!! related-pages "What Next?"
 
-    Log in to the cluster through either the [Open OnDemand Web portal](ondemand_web.md) or [commandline access with ssh](login_ssh.md)
-
+    Log in to the cluster through either the [Open OnDemand Web portal](../access/ondemand_web.md) or [Commandline Access with SSH](../access/login_ssh.md)
 
     

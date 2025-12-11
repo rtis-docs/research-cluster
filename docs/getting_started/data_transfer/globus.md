@@ -1,3 +1,10 @@
+!!! overview "On this Page"
+      - What Globus is used for
+      - How to use Globus to transfer data from and onto HCS
+      - How to transfer data to and from your research computer
+
+  <!-- TODO See if overview is in line with content -->
+
 ## Initial Set up
 
 ## Transferring data between Research Storage (Ohau) and HCS with Globus
@@ -102,3 +109,9 @@ The RTIS Globus endpoint works with [Globus Connect Personal](https://www.globus
 To transfer data between your desktop and Research Storage, you will need to install the Globus Connect Personal application on your desktop. Follow the instructions on the [Globus Connect Personal](https://www.globus.org/globus-connect-personal) page to install it.
 
 Once you have installed Globus Connect Personal, you can connect your desktop endpoint to the RTIS Globus endpoint and transfer data between your desktop and Research Storage.
+
+!!! related-pages "What's next?"
+    -  To transfer data between your desktop and Research Storage go to [Globus Connect Personal](https://www.globus.org/globus-connect-personal)
+    - For software available on the cluster go to [Software](../software/software_overview.md)
+    -  For how to run a job on the cluster go to [Running Jobs](../running/running_jobs_overview.md)
+  <!-- TODO Are these pages the next step or relevant? -->

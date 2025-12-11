@@ -1,5 +1,5 @@
+# navigation for "getting_started/"
 nav:
-  - getting_started.md
   - access
   - data_transfer
   - software

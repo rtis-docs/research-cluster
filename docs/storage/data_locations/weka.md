@@ -1,3 +1,8 @@
+!!! overview "On this Page"
+      - To see where Weka fits within Storage check out [Storage Overview](../storage_options.md)
+      - What is Weka
+      - When to use Weka
+  <!-- TODO See if overview is in line with content -->
 ## Faster Scratch Storage (WEKA Storage Pool)
 
 
@@ -10,3 +15,8 @@ The WEKA Storage cluster is mounted on the Aoraki compute cluster at ``/weka/<Re
 
 
 The WEKA cluster, with its all-flash array and 100Gb networking, is ideal for high-speed data handling and ensures optimal performance for your high-performance computing tasks.
+
+
+!!! related-pages "What's next?"
+    Find out how to move Data on and off the Research Cluster on [Data Transfer](../../getting_started/data_transfer/data_transfer_overview.md) 
+<!-- TODO Are these pages the next step or relevant? -->
