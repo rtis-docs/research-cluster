@@ -26,17 +26,17 @@ HCS is the main data storage pool on the Otago campus. HCS is able to be mounted
   8. Press connect and wait a few seconds for authentication and your HCS files to appear in the window.  
 
 <!-- TODO add paragraphs explaining the images -->
-![Connecting to HCS - create kerberos ticket with `kinit`](/assets/images/kinit.png){width="600px"}
+![Connecting to HCS - create kerberos ticket with `kinit`](../../assets/images/kinit.png){width="600px"}
 
 
 
 
 
 
-![Connect to HCS - authenticating using samba in the file browser](/assets/images/smbauth.png){width="600px"}
+![Connect to HCS - authenticating using samba in the file browser](../../assets/images/smbauth.png){width="600px"}
 
 
-![Connect to HCS - browsing hcs files in file browser](/assets/images/files.png){width="600px"}
+![Connect to HCS - browsing hcs files in file browser](../../assets/images/files.png){width="600px"}
 
 
 ### Accessing HCS on the Login node

@@ -32,7 +32,7 @@ Visit [https://ondemand.otago.ac.nz](https://ondemand.otago.ac.nz) in your web b
 
 After you login you should see the OOD home page. 
 
-![Open onDemand Home Page](/assets/images/oodhomepage.png){width="600px"}
+![Open onDemand Home Page](../../assets/images/oodhomepage.png){width="600px"}
 
 !!! related-pages "What's next?"
     Where to store your data and what your options are found on our [Storage Overview](../../storage/storage_options.md)

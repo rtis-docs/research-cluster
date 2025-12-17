@@ -12,7 +12,7 @@
 
 !!! related-pages "What's next?"
       - Unsure how to access OnDemand see [Open OnDemand](../onDemand/ondemand.md)
-      - Looking for something else? See [Software Overview page](../software_overview.md)
+      - Looking for something else? See [Software Overview page](../applications/index.md)
       -  For how to run a job on the cluster go to [Running Jobs](../../running/running_jobs_overview.md)
       
   <!-- TODO Are these pages the next step or relevant? -->

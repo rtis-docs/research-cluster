@@ -342,8 +342,8 @@ Then add the `ipykernel` and register it with Juptyer.
 Then in Jupyter the custom environment can be loaded by Kernel -> Change Kernel
   
 !!! related-pages "What's next?"
-      - Go to [Venv](../self_managed/venv.md) for creating isolated Python environments.
-      - Looking for something else? See [Software Overview page](../../software_overview.md)
-      -  For how to run a job on the cluster go to [Running Jobs](../../../running/running_jobs_overview.md)
+      - Go to [Venv](venv.md) for creating isolated Python environments.
+      - Looking for something else? See [Software Overview page](../applications/index.md)
+      -  For how to run a job on the cluster go to [Running Jobs](../../running/running_jobs_overview.md)
       
   <!-- TODO Are these pages the next step or relevant? -->

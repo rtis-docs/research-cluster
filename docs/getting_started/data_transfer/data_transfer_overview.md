@@ -24,9 +24,9 @@ There are several methods for moving data onto and off of the [research storage]
 The file browser within Open OnDemand can be used to upload files directly into either your home or a project directory. It can't be used for accessing data on the Otago HCS.
 
 !!! related-pages "What's next?"
-    -  [File browser within Open OnDemand](../software/onDemand/ondemand.md#using-open-ondemand)
-    -  For software available on the cluster go to [Software](../software/software_overview.md)
-    -  For how to run a job on the cluster go to [Running Jobs](../running/running_jobs_overview.md)
+    -  [File browser within Open OnDemand](../../getting_started/software/onDemand/ondemand.md#using-open-ondemand)
+    -  For software available on the cluster go to [Software](../../getting_started/software/applications/index.md)
+    -  For how to run a job on the cluster go to [Running Jobs](../../getting_started/running/running_jobs_overview.md)
   <!-- TODO Are these pages the next step or relevant? -->
 
 
@@ -39,7 +39,7 @@ When it comes to transferring many files, or files that are large this is best d
 
 
 !!! related-pages "What's next?"
-      - For software available on the cluster go to [Software](../software/software_overview.md)
-      -  For how to run a job on the cluster go to [Running Jobs](../running/running_jobs_overview.md)
+      - For software available on the cluster go to [Software](../../getting_started/software/applications/index.md)
+      -  For how to run a job on the cluster go to [Running Jobs](../../getting_started/running/running_jobs_overview.md)
       
   <!-- TODO Are these pages the next step or relevant? -->
