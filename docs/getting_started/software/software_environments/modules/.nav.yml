@@ -1,4 +1,0 @@
-# navigation for "modules/"
-nav:
- - modules.md
- - '*.md'
