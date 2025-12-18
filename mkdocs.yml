@@ -1,4 +1,7 @@
 site_name: eResearch Support
+site_url: https://rtis-docs.github.io/research-cluster/
+repo_url: https://github.com/rtis-docs/research-cluster
+repo_name: "Cluster Documentation"
 theme : 
   name: material
   custom_dir: overrides
