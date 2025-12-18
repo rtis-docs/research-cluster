@@ -113,9 +113,9 @@
   url: getting_started/software/onDemand/hpc_desktop.md
   image: assets/images/icons/desktop_windows_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
-- title: Installing and managing software
+- title: Managing Software
   content: How to install and configure software for yourself
-  url: getting_started/software/software_environments/index.md#managing-your-own-software
+  url: getting_started/software/index.md#managing-your-own-software
   image: assets/images/icons/build_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Interactive jobs
