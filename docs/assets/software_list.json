@@ -256,6 +256,20 @@
         "default": "0.9.1",
         "module": "apptainer/dorado"
     },
+    "fMRIPrep": {
+        "description": "fMRIPrep neuroimaging preprocessing via Apptainer container",
+        "domains": [
+            "apptainer",
+            "biology"
+        ],
+        "homepage": "https://fmriprep.org",
+        "support": "../applications/fmriprep/",
+        "versions": [
+            "25.1.2"
+        ],
+        "default": "25.1.2",
+        "module": "fmriprep"
+    },
     "FSL": {
         "description": "FSL is a library of analysis tools for FMRI, MRI and diffusion brain imaging data",
         "domains": [
