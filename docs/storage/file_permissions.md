@@ -1,8 +1,8 @@
 TODO
 
 !!! overview "On this Page"
-      -
-  <!-- TODO Overview unclear -->
+      - Viewing and modifying file permissions
+
 
 The storage on Aoraki uses 2 systems of file permissioning. 
 

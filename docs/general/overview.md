@@ -19,7 +19,7 @@ If you need special software or configurations please ask the RTIS team at rtis.
 
 ## Cluster Overview
 
-![](/assets/images/cluster_photo.jpg)
+![Photo of the cluster](../assets/images/cluster_photo.jpg)
 
 
 We offer a variety of SLURM partitions based on different resource needs. The default partition provides balanced compute and memory capabilities. Additional partitions include those optimized for GPU usage and those with expanded memory capacity. On every cluser node there are 2 cores reseved for the OS (weka storage), reducing the available compute cores by 2.  

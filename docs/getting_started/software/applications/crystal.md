@@ -11,7 +11,7 @@ and **Intel oneMKL 2024.2**, exposed via the module ``crystal/23.1.0.1``.
 
 !!! important
 
-      This Open MPI build is **not Slurm-PMI enabled**. Use ``mpirun`` to launch MPI ranks.
+      This Open MPI build is **not Slurm-MPI enabled**. Use ``mpirun`` to launch MPI ranks.
       You can still use ``srun``/**salloc** to obtain an allocation or an interactive shell,
       then invoke ``mpirun`` inside that allocation.
 
@@ -19,12 +19,13 @@ and **Intel oneMKL 2024.2**, exposed via the module ``crystal/23.1.0.1``.
 
 Load the CRYSTAL23 module before running:
 
+
 !!! terminal
 
-   ```bash
-   module load crystal/23.1.0.1
-   which Pcrystal   # -> /opt/crystal/23/1.0.1/bin/Pcrystal
-   ```
+      ```bash
+      module load crystal/23.1.0.1
+      which Pcrystal   # -> /opt/crystal/23/1.0.1/bin/Pcrystal
+      ```
 
 The module also sets Open MPI to use **TCP over Ethernet** by default
 (``OMPI_MCA_btl=self,tcp`` and ``OMPI_MCA_oob=tcp``), so you do not need to add
@@ -44,6 +45,7 @@ InfiniBand-related flags.
 * Keep OpenMP threads to one (MPI-first code):
 
 !!! terminal
+
       ```bash
       export OMP_NUM_THREADS=1
       ```

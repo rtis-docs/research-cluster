@@ -70,11 +70,11 @@ To SSH to the login node from your local computer, first open a terminal/command
 
 ## SSH within OnDemand
 
-To use the cluster shell access within OnDemand, first [connect to the **Otago OnDemand** web portal](/getting_started/access/ondemand_web#logging-in) and then from the top menu bar select the menu `Clusters` > `Aoraki Cluster Shell Access`.
+To use the cluster shell access within OnDemand, first [connect to the **Otago OnDemand** web portal](ondemand_web.md#logging-in) and then from the top menu bar select the menu `Clusters` > `Aoraki Cluster Shell Access`.
 
 You will then be prompted to input your password, similar to [SSH through the terminal](#ssh-through-a-terminal)
 
-![Open OnDemand Shell](/assets/images/ood_shell.png){width="600px"}
+![Open OnDemand Shell](../../assets/images/ood_shell.png){width="600px"}
 
 <!-- TODO update screenshot -->
 

@@ -110,8 +110,8 @@ What is Apptainer Good For?
 
 
 !!! related-pages "What's next?"
-      - For more information see the [Apptainer page](../software/software_environments/self_managed/apptainer.md)
-      -  For how to run a job on the cluster go to [Running Jobs](../running/running_jobs_overview.md)
+      - For more information see the [Apptainer page](apptainer.md)
+      -  For how to run a job on the cluster go to [Running Jobs](../../running/running_jobs_overview.md)
       
   <!-- TODO Are these pages the next step or relevant? -->
 
@@ -123,8 +123,8 @@ Lmod (Lua Modules) is an environment module system commonly used on High-Perform
 
 
 !!! related-pages "What's next?"
-      - For more information see the [Modules (LMOD) page](../software/software_environments/modules/modules.md)
-      -  For how to run a job on the cluster go to [Running Jobs](../running/running_jobs_overview.md)
+      - For more information see the [Modules (LMOD) page](modules.md)
+      -  For how to run a job on the cluster go to [Running Jobs](../../running/running_jobs_overview.md)
       
   <!-- TODO Are these pages the next step or relevant? -->
 ##### Conda/Mamba
@@ -139,8 +139,8 @@ Conda/mamba is an open-source package management and environment management syst
 
 
 !!! related-pages "What's next?"
-      - For more information see the [Conda/Mamba page](../software/software_environments/self_managed/conda.md)
-      -  For how to run a job on the cluster go to [Running Jobs](../running/running_jobs_overview.md)
+      - For more information see the [Conda/Mamba page](conda.md)
+      -  For how to run a job on the cluster go to [Running Jobs](../../running/running_jobs_overview.md)
       
   <!-- TODO Are these pages the next step or relevant? -->
 
@@ -150,8 +150,8 @@ Spack is a flexible, open-source package manager designed specifically for super
 
 
 !!! related-pages "What's next?"
-      - For more information see the [Spack page](../software/software_environments/self_managed/spack.md)
-      -  For how to run a job on the cluster go to [Running Jobs](../running/running_jobs_overview.md)
+      - For more information see the [Spack page](spack.md)
+      -  For how to run a job on the cluster go to [Running Jobs](../../running/running_jobs_overview.md)
       
   <!-- TODO Are these pages the next step or relevant? -->
 ##### SBGrid
@@ -164,8 +164,8 @@ SBGrid is a specialized software distribution and management system designed pri
 - Molecular modeling and visualization
 
 !!! related-pages "What's next?"
-      - For more information see the [SBGrid page](../software/software_environments/sbgrid.md)
-      -  For how to run a job on the cluster go to [Running Jobs](../running/running_jobs_overview.md)
+      - For more information see the [SBGrid page](sbgrid.md)
+      -  For how to run a job on the cluster go to [Running Jobs](../../running/running_jobs_overview.md)
       
   <!-- TODO Are these pages the next step or relevant? -->
 ##### venv
@@ -190,8 +190,8 @@ What is venv Good For?
 
 
 !!! related-pages "What's next?"
-      - For more information see the [venv page](../software/software_environments/self_managed/venv.md)
-      -  For how to run a job on the cluster go to [Running Jobs](../running/running_jobs_overview.md)
+      - For more information see the [venv page](venv.md)
+      -  For how to run a job on the cluster go to [Running Jobs](../../running/running_jobs_overview.md)
       
   <!-- TODO Are these pages the next step or relevant? -->
 ##### renv
@@ -209,7 +209,7 @@ What is renv Good For?
 
 
 !!! related-pages "What's next?"
-      - For more information see the [renv page](../software/software_environments/self_managed/renv.md)
-      -  For how to run a job on the cluster go to [Running Jobs](../running/running_jobs_overview.md)
+      - For more information see the [renv page](renv.md)
+      -  For how to run a job on the cluster go to [Running Jobs](../../running/running_jobs_overview.md)
       
   <!-- TODO Are these pages the next step or relevant? -->

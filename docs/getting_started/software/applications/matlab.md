@@ -9,22 +9,28 @@ OnDemand features a [MATLAB application](https://ondemand.otago.ac.nz/pun/sys/da
 
 Toolboxes and addons included:
 
-    * Image_Processing_Toolbox
-    * Mapping_Toolbox Optimization_Toolbox
-    * Parallel_Computing_Toolbox
-    * Signal_Processing_Toolbox
-    * Statistics_and_Machine_Learning_Toolbox
-    * Wavelet_Toolbox
-    * MATLAB_Compiler
-    * MATLAB_Compiler_SDK
-    * Deep_Learning_Toolbox
-    * Computer_Vision_Toolbox
-    * Simulink
-    * DSP_System_Toolbox
-    * Sensor_Fusion_and_Tracking_Toolbox
-    * Image_Acquisition_Toolbox
-    * Navigation_Toolbox
+* Communications_Toolbox
+* Computer_Vision_Toolbox
+* Deep_Learning_Toolbox
+* DSP_System_Toolbox
+* Image_Acquisition_Toolbox
+* Image_Processing_Toolbox
+* Mapping_Toolbox
+* MATLAB_Compiler
+* MATLAB_Compiler_SDK
+* Navigation_Toolbox
+* Optimization_Toolbox
+* Parallel_Computing_Toolbox
+* Partial_Differential_Equation_Toolbox
+* Sensor_Fusion_and_Tracking_Toolbox
+* Signal_Processing_Toolbox
+* Simulink
+* Statistics_and_Machine_Learning_Toolbox
+* Wavelet_Toolbox
 
+### License
+
+Use of MATLAB on the cluster is covered by the University's campus license.
 
 ### Hardware-accelerated display
 

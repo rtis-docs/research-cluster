@@ -1,3 +1,8 @@
+---
+tags:
+  - onDemand
+---
+
 # Open OnDemand 
 
 !!! overview "On this Page"
@@ -37,10 +42,10 @@ Access your files from the top menu: **Files > Home Directory**. You can:
 
 After logging in, you'll see the Open OnDemand home page.
 
-![Open OnDemand Files App](/assets/images/ood_files_app.png){width="600px"}
+![Open OnDemand Files App](../../../assets/images/ood_files_app.png){width="600px"}
 
 !!! related-pages "What's next?"
-      - Find more information on [Using the Open OnDemand File Manager](../onDemand/ood_file_manager.md)
+      - Find more information on [Using the Open OnDemand File Manager](ood_file_manager.md)
       
   <!-- TODO Are these pages the next step or relevant? -->
 
@@ -48,16 +53,16 @@ After logging in, you'll see the Open OnDemand home page.
 
 See and cancel your Slurm jobs from **Jobs > Active Jobs**. This includes jobs started via `sbatch`, `srun`, and Open OnDemand.
 
-![Active Jobs](/assets/images/ood_activejobs.png){width="600px"}
+![Active Jobs](../../../assets/images/ood_activejobs.png){width="600px"}
 
 ### Shell Access
 
 Get command-line access to the cluster from the top menu bar options: **Clusters > Aoraki Cluster Shell Access**.
 
-![Open OnDemand Shell](/assets/images/ood_shell.png){width="600px"}
+![Open OnDemand Shell](../../../assets/images/ood_shell.png){width="600px"}
 
 !!! related-pages "What's next?"
-      - Find more information on [Accessing the Shell through Open OnDemand](../onDemand/ood_shell.md)
+      - Find more information on [Accessing the Shell through Open OnDemand](ood_shell.md)
       
   <!-- TODO Are these pages the next step or relevant? -->
 
@@ -70,7 +75,7 @@ Launch interactive applications from the **Interactive Apps** menu:
 - **Jupyter Server**: For Jupyter notebooks.
 - **RStudio Server**: For RStudio sessions.
 
-![Open OnDemand Files App](/assets/images/ood_interactive.png){width="600px"}
+![Open OnDemand Files App](../../../assets/images/ood_interactive.png){width="600px"}
 
 <!-- TODO update this image -->
 
@@ -87,7 +92,7 @@ Before getting started, make sure you have access to the Research Cluster (by co
 Fill out the form presented to you and then press "Launch". (Note, as of this time, that the only partition that the Desktop app can be launched on when computing via Slurm is otago1, as we assume that most GUI usage would be for programs using one or a small number of cores). After a moment, the Desktop session will be initialized and allow you to specify the image compression and quality options. If you are unhappy with the default values, you can relaunch the session from this page with different choices. Then, press "Launch Desktop" and the Desktop will open in a new tab.
 
 !!! related-pages "What's next?"
-      - Find more information on [OnDemand HPC Desktop](../onDemand/hpc_desktop.md)
+      - Find more information on [OnDemand HPC Desktop](hpc_desktop.md)
       
   <!-- TODO Are these pages the next step or relevant? -->
 
@@ -133,7 +138,7 @@ This will mount your HCS share on the local machine and allow you to access and 
 
 1. Naviagate to your hcs data and copy it to your user projecy directory
 
-    ![Connect to HCS](/assets/images/copydata.png){width="600px}
+    ![Connect to HCS](../../../assets/images/copydata.png){width="600px}
 
 
 2. When you have finished processing copy your data back to your HCS Share.
@@ -144,7 +149,7 @@ This will mount your HCS share on the local machine and allow you to access and 
 
 
 !!! related-pages "What's next?"
-      - Looking for something else? See [Software Overview page](../software_overview.md)
+      - Looking for something else? See [Software Overview page](../applications/index.md)
       -  For how to run a job on the cluster go to [Running Jobs](../../running/running_jobs_overview.md)
       
   <!-- TODO Are these pages the next step or relevant? -->

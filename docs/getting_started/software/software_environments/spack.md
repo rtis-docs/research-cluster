@@ -91,7 +91,7 @@ Please refer to the [Basic usage documentation on the Spack website](https://spa
 examples of how to query, install, load and use packages and Spack environments.
 
 !!! related-pages "What's next?"
-      - Looking for something else? See [Software Overview page](../../software_overview.md)
-      -  For how to run a job on the cluster go to [Running Jobs](../../../running/running_jobs_overview.md)
+      - Looking for something else? See [Software Overview page](../applications/index.md)
+      -  For how to run a job on the cluster go to [Running Jobs](../../running/running_jobs_overview.md)
       
   <!-- TODO Are these pages the next step or relevant? -->
