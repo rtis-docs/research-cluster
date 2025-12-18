@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: 3.x
       - name: Install system dependencies
-        run: sudo apt-get update && apt-get install -y libxml2-dev libxslt1-dev
+        run: sudo apt-get update && sudo apt-get install -y libxml2-dev libxslt1-dev
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
       - uses: actions/cache@v4
         with:
