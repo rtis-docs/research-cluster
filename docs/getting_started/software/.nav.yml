@@ -1,6 +1,6 @@
 # navigation for "software/"
 nav:
- - 'software_applications.md'
+ - 'index.md'
  - onDemand
  - applications
  - software_environments

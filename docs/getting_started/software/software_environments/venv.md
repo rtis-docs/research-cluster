@@ -100,8 +100,8 @@ The purpose of venv is to create isolated Python environments for individual pro
 
 
 !!! related-pages "What's next?"
-      - See [Conda](../software_environments/conda.md) for managing environments and packages
-      - Looking for something else? See [Software Overview page](../software_environments/index.md)
+      - See [Conda](conda.md) for managing environments and packages
+      - Looking for something else? See [Software Overview page](../index.md)
       -  For how to run a job on the cluster go to [Running Jobs](../../running/running_jobs_overview.md)
       
   <!-- TODO Are these pages the next step or relevant? -->

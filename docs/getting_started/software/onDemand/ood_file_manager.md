@@ -40,7 +40,7 @@ The Open OnDemand File Manager is a convenient tool for everyday file operations
 
 !!! related-pages "What's next?"
       - For more information about on Demand see [Open OnDemand](../onDemand/ondemand.md)
-      - Looking for something else? See [Software Overview page](../applications/index.md)
+      - Looking for something else? See [Software Overview page](../index.md)
       -  For how to run a job on the cluster go to [Running Jobs](../../running/running_jobs_overview.md)
       
   <!-- TODO Are these pages the next step or relevant? -->
