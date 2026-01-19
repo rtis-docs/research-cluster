@@ -1,12 +1,16 @@
 Number,Node type,CPU,RAM,Extra
-1,"aoraki-login","2x 64 cores AMD EPYC 7763","1TB DDR4 3200 MT/s",
-9,"aoraki[01-9]","2x 64 cores AMD EPYC 7763","1TB DDR4 3200 MT/s",
-2,"aoraki[11,12]","2x 64 cores AMD EPYC 7763","1TB DDR4 3200 MT/s","2x A100 80GB PCIe GPU per node cuda12.5"
-2,"aoraki[27,28]","2x 32 cores AMD EPYC 7543","1TB DDR4 3200 MT/s","2x A100 40GB PCIe GPU per node cuda12.5"
-5,"aoraki[14,17,24-26]","2x 64 cores AMD EPYC 7763","2TB DDR4 2933 MT/s",
-5,"aoraki[15,20-23]","2x 128 cores AMD EPYC 9754","1.5TB DDR5 4800 MT/s",
-1,"aoraki16","2x 56 cores Intel Xeon 8480+","1TB DDR5 4800 MT/s","4x H100 80GB HBM3 GPU per node cuda12.4"
-2,"aoraki[18,19]","2x 32 cores AMD EPYC 7543","1TB DDR4 3200 MT/s","3x L40 48GB PCIe GPU per node cuda12.5"
+1,"aoraki-login","2x 64 cores AMD EPYC 7763","1TB DDR4 3200 MT/s","CPU 2.4GHz"
+9,"aoraki[01-9]","2x 64 cores AMD EPYC 7763","1TB DDR4 3200 MT/s","CPU 2.4GHz"
+2,"aoraki[11,12]","2x 64 cores AMD EPYC 7763","1TB DDR4 3200 MT/s","2x A100 80GB PCIe GPU per node cuda12.5 NVLink 20.55GB/s"
+2,"aoraki[27,28]","2x 32 cores AMD EPYC 7543","1TB DDR4 3200 MT/s","2x A100 40GB PCIe GPU per node cuda12.5 NVLink 16.21GB/s"
+5,"aoraki[14,17,24-26]","2x 64 cores AMD EPYC 7763","2TB DDR4 2933 MT/s","CPU 2.4GHz"
+10,"aoraki[15,20-23,34-38]","2x 128 cores AMD EPYC 9754","1.5TB DDR5 4800 MT/s","CPU 2.2GHz"
+5,"aoraki[39-43]","2x 48 cores AMD EPYC 9474F","1.5TB DDR5 4800 MT/s","CPU 3.6GHz"
+1,"aoraki16","2x 56 cores Intel Xeon 8480+","1TB DDR5 4800 MT/s","4x H100 80GB HBM3 GPU per node cuda12.4 NVLink 121.29GB/s"
+1,"aoraki30","2x 32 cores Intel Xeon 8562Y+","1TB DDR5 4800 MT/s","4x H100 96GB NVL GPU per node cuda12.5 NVLink 237.16GB/s"
+2,"aoraki[18,19]","2x 32 cores AMD EPYC 7543","1TB DDR4 3200 MT/s","3x L40 48GB PCIe GPU per node cuda12.5 NVLink 24.37GB/s"
+3,"aoraki[31-33]","1x 64 cores AMD EPYC 9554P","768GB DDR5 4800 MT/s","3x L40S 48GB PCIe GPU per node cuda12.5 NVLink 24.48GB/s"
+1,"aoraki29","2x 32 cores Intel Xeon 8562Y+","1TB DDR5 4800 MT/s","7x L4 24GB GPU per node cuda12.5 NVLink 21.05GB/s"
 2,standalone,32 cores AMD Ryzen Threadripper PRO 3975WX,128 GB DDR4 3200 MT/s,1x RTX 3090 24GB cuda12.5
 3,standalone,16 cores AMD Ryzen 9 5950X,64 GB DDR4 3200 MT/s,1x RTX 3090 24GB cuda12.5
 2,standalone,2x 6 cores Intel Xeon CPU E5-2620 v3,256GB DDR4 3200 MT/s,2x RTX A6000 48GB GPU per node
