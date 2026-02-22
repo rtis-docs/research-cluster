@@ -1,11 +1,12 @@
 # scp or rsync
 
 !!! overview "On this Page"
-    - What the scp or rsync is used for
+
+    - What the `scp` or `rsync` programs do
     - How to use scp to move data on and off the cluster
     - How to use rsync to move data on and off the cluster
 
-  <!-- TODO See if overview is in line with content -->      
+
 
 The `scp` or `rsync` commands can be used to transfer data on or off the Research Cluster using a local terminal. For transferring data through a web interface the OnDemand File Manager can be used.
 
