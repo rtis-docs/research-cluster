@@ -4,5 +4,5 @@
 nav:
   - access_overview.md
   - signup.md
-  - "User management": coldfront.md
+  - "Account and Allocation Management": coldfront
   - "*"
