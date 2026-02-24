@@ -173,4 +173,54 @@ li.md-nav__item--active:not(li.md-nav__item--nested) {
     -webkit-mask-image: var(--md-admonition-icon--python);
             mask-image: var(--md-admonition-icon--python);
   }
-  
+ 
+/* control TOC below here*/
+
+/* ================================
+   Reduce sidebar widths globally
+   (Material 9.6.15)
+   ================================ */
+
+/* ================================
+   Shrink sidebars
+   ================================ */
+
+/* Navigation (left) */
+.md-sidebar--primary {
+  width: 13rem;
+}
+
+/* Page TOC (right) */
+.md-sidebar--secondary {
+  width: 11rem;
+}
+
+/* ================================
+   Expand content area
+   ================================ */
+
+
+/* Remove Material's content max-width clamp */
+/* and keep lines readable */
+.md-content__inner {
+    max-width: none;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Allow the menus to follow the window edge and the content area to expand */
+.md-main__inner {
+  max-width: none;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* .md-content__inner {
+  max-width: 80rem;
+} */
+/* Make TOC links wrap more tightly */
+/* .md-sidebar--secondary .md-nav__link {
+  white-space: normal;
+  font-size: 0.85rem;
+} */
+

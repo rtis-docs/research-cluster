@@ -7,7 +7,6 @@
  
 <!-- TODO See if overview is in line with content -->
 
-<!-- FIXME the ToC seems to not work properly for the "HPC Desktop Features" sub links -->
 
 ## Launching HPC Desktop
 
@@ -67,6 +66,7 @@ Disconnects you from the HPC Desktop, you may need to relaunch the Desktop from 
 ![HPC Desktop Sidebar Disconnect](../../../assets/images/hpc_side_disconnect.png){width="100px"}
 
 ## HPC Desktop Features
+
 === "XFCE Desktop"
     ### Taskbar
     Where you can switch between open application i.e. Firefox and Terminal. The grey boxes on the left allow you to switch between desktops.
@@ -102,6 +102,7 @@ Disconnects you from the HPC Desktop, you may need to relaunch the Desktop from 
 
 
 === "GNOME Desktop"
+
     ### Toolbar to Taskview
     To access the toolbar click the activites button in the top left corner.
     ![GNOME - HPC Desktop Activities button](../../../assets/images/hpc_activies_GNOME_arrow.png){width="600px"}

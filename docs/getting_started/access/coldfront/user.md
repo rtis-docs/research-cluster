@@ -1,0 +1,22 @@
+# Viewing Current Status
+
+As a cluster user you can log into Coldfont ([https://coldfront.otago.ac.nz](https://coldfront.otago.ac.nz)) to see the status of your account and details of projects it is associated with.
+
+!!! note
+    Coldfront is accessible only from the campus network (or VPN)
+
+## Logging in to Coldfront
+
+Click the login button to proceed to the login page.
+
+![Coldfront Login Page](../../../assets/images/coldfront_login.png){width="800px"}
+
+Use your University credentials to login.
+
+![Coldfront 365 Login Button](../../..//assets/images/coldfront_365.png){width="800px"}
+
+## Viewing Projects
+
+### Allocations and Quotas
+
+### Group Membership
