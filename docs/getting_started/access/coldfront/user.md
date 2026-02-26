@@ -19,8 +19,13 @@ Use your University credentials to login.
 
 ![List of Projects](../../../assets/images/coldfront/coldfront_project_list.png){width="800px"}
 
-
+![Project Overview Page](../../../assets/images/coldfront/coldfront_project_overview_user.png){width="800px"}
 
 ### Allocations and Quotas
 
-### Group Membership
+![Attributes for a Storage Allocation](../../../assets/images/coldfront/coldfront_allocation_attributes.png){width="800px}
+
+
+
+
+

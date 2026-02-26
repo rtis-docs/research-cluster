@@ -11,7 +11,12 @@ If you do not have a current project allocation, please get your group leader to
 
 ## Adding or Removing users
 
-After logging in select the project you would like to add or remove a user from
+After logging in to [https://coldfront.otago.ac.nz](https://coldfront.otago.ac.nz) select the project you would like to add or remove a user from
+
+![Projects list](../../../assets/images/coldfront/coldfront_project_list.png)
+
+
+![Project page](../../../assets/images/coldfront/coldfront_project_page.png)
 
 ### Adding a User
 
@@ -28,6 +33,8 @@ After logging in select the project you would like to add or remove a user from
 
 ![The added members are now displayed as users on the project.](../../../assets/images/coldfront/coldfront_user_populated.png)
 
+
+
 ### Editing a User Role
 
 If you would like to reassign the role of a user, this is done clicking the person icon in the row with their name.
@@ -36,6 +43,7 @@ If you would like to reassign the role of a user, this is done clicking the pers
 
 ![Select the new Role for the user, then click "Update".](../../../assets/images/coldfront/coldfront_edit_user_page.png)
 
+![The Role for the user is now updated.](../../../assets/images/coldfront/coldfront_user_populated_manager.png)
 
 ### Removing a User
 
@@ -48,5 +56,14 @@ Find the Users panel for the Project
 ![The removed users should no longer be displayed as part of the project.](../../../assets/images/coldfront/coldfront_users_empty.png)
 
 ## Applying for an Increased Quota
+
+![Click on the folder icon in the row of the allocation you would like to have changed.](../../../assets/images/coldfront/coldfront_allocation_panel.png)
+
+![Click "Request Change"](../../../assets/images/coldfront/coldfront_allocation_request_change.png)
+
+![Fill in the value for the new quota and justification for the increase. Then click "Submit"](../../../assets/images/coldfront/coldfront_request_allocation_change_page.png)
+
+!!! info
+    You may be contacted to discuss your data currrent and proposed usage before a decision is made on the quota change.
 
 ## Applying for WEKA
