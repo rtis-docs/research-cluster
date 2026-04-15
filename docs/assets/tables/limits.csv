@@ -1,4 +1,4 @@
-"Partition","TimeLimit (Days)","MaxRunningJobs","MaxCPU","MaxMem","MaxGPUs","NumNodes","NodeList"
+"Partition","Time Limit (Days)","Max Running Jobs","Max CPU","Max Mem","Max GPUs","Num Nodes","NodeList"
 "aoraki*",7,100,126,"1000G","-",27,"aoraki[01-09,14-15,17,20-26,34-41]"
 "aoraki_bigcpu",14,50,252,"1500G","-",10,"aoraki[15,20-23,34-38]"
 "aoraki_bigmem",14,10,126,"2000G","-",5,"aoraki[14,17,24-26]"

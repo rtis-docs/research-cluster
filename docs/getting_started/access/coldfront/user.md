@@ -9,14 +9,23 @@ As a cluster user you can log into Coldfont ([https://coldfront.otago.ac.nz](htt
 
 Click the login button to proceed to the login page.
 
-![Coldfront Login Page](../../../assets/images/coldfront_login.png){width="800px"}
+![Coldfront Login Page](../../../assets/images/coldfront/coldfront_login.png){width="800px"}
 
 Use your University credentials to login.
 
-![Coldfront 365 Login Button](../../..//assets/images/coldfront_365.png){width="800px"}
+![Coldfront 365 Login Button](../../../assets/images/coldfront/coldfront_365.png){width="800px"}
 
 ## Viewing Projects
 
+![List of Projects](../../../assets/images/coldfront/coldfront_project_list.png){width="800px"}
+
+![Project Overview Page](../../../assets/images/coldfront/coldfront_project_overview_user.png){width="800px"}
+
 ### Allocations and Quotas
 
-### Group Membership
+![Attributes for a Storage Allocation](../../../assets/images/coldfront/coldfront_allocation_attributes.png){width="800px}
+
+
+
+
+
