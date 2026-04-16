@@ -14,3 +14,6 @@ Number,Node type,CPU,RAM,Extra
 2,standalone,32 cores AMD Ryzen Threadripper PRO 3975WX,128 GB DDR4 3200 MT/s,1x RTX 3090 24GB cuda12.5
 3,standalone,16 cores AMD Ryzen 9 5950X,64 GB DDR4 3200 MT/s,1x RTX 3090 24GB cuda12.5
 2,standalone,2x 6 cores Intel Xeon CPU E5-2620 v3,256GB DDR4 3200 MT/s,2x RTX A6000 48GB GPU per node
+2,standalone, 2x 6 cores Intel Xeon CPU E5-2620 v3,256GB DDR4 3200 MT/s,2x RTX A6000 48GB GPU per node
+1,aoraki44,2x 64core AMD EPYC 9575F,2.2TB DDR5 6400 MT/s,8 H200 144GB GPU
+2,aoraki[45-46],2x 64core AMD EPYC 9575F1.5TB DDR5 6400 MT/s,8 RTX6000 PRO 98GB GPU
