@@ -1,7 +1,8 @@
 # Research HPC Cluster (Aoraki) Documentation
 
 
-
+!!! warning "Old Documentation Site"
+    The old documentation can still be found at [https://rtis.cspages.otago.ac.nz/research-computing/](https://rtis.cspages.otago.ac.nz/research-computing/) but is no longer being updated.
 
 
 ## Overview
