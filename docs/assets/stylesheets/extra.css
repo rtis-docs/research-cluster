@@ -83,16 +83,27 @@ li.md-nav__item--active:not(li.md-nav__item--nested) {
   .md-typeset details.terminal {
     border-color: rgb(105,105,105);
   }
-  .md-typeset .terminal > .admonition-title,
-  .md-typeset .terminal > summary {
-    color:rgb(255, 255, 255);
+  .md-typeset .admonition.terminal > .admonition-title,
+  .md-typeset .admonition.terminal > summary {
+    color: rgb(255, 255, 255);
     background-color: rgba(105,105,105);
   }
-  .md-typeset .terminal > .admonition-title::before,
-  .md-typeset .terminal > summary::before {
+  .md-typeset .admonition.terminal > .admonition-title::before,
+  .md-typeset .admonition.terminal > summary::before {
     background-color: rgb(124,252,0);
     -webkit-mask-image: var(--md-admonition-icon--terminal);
             mask-image: var(--md-admonition-icon--terminal);
+  }
+
+  /* Ensure code blocks inside terminal admonitions are readable */
+  .md-typeset .admonition.terminal .admonition-content pre,
+  .md-typeset .admonition.terminal .admonition-content code,
+  .md-typeset .admonition.terminal .admonition-content .highlight {
+    background-color: #1f1f1f;
+    color: #e6e6e6;
+    border-radius: 4px;
+    padding: 0.6rem;
+    overflow: auto;
   }
   
   .md-typeset .admonition.overview,
