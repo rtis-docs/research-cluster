@@ -1,10 +1,10 @@
-## Stata
+### Stata
 
 
 The Stata GUI can be accessed via the [Open OnDemand Applications](https://ondemand.otago.ac.nz/pun/sys/dashboard/batch_connect/sys/ood_stata_apptainer/session_contexts/new)
 
 
-### Using Stata on the Cluster
+#### Using Stata on the Cluster
 
 
 To use **Stata** on the cluster, a valid license file must be installed.  
@@ -12,7 +12,7 @@ This requires authorization details provided by the University’s software proc
 
 Follow the steps below to obtain and configure your Stata license.
 
-#### Steps to Request a License
+##### Steps to Request a License
 
 
 1. Go to the following page: [https://www.otago.ac.nz/its/services/software/stata](https://www.otago.ac.nz/its/services/software/stata)
@@ -29,7 +29,7 @@ Follow the steps below to obtain and configure your Stata license.
 
 5. Once you receive the PDF, **forward it to {{ support_email }}**.
 
-#### Setting Up the License File
+##### Setting Up the License File
 
 
 After you provide your Stata authorization details, the HPC team will:
@@ -40,7 +40,7 @@ After you provide your Stata authorization details, the HPC team will:
 
 Once complete, you will be able to launch Stata directly from your cluster environment.
 
-### Notes
+#### Notes
 
 
 - Stata will not function until a valid license file is in place.
