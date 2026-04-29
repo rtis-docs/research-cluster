@@ -6,9 +6,16 @@
  
 <!-- TODO See if overview is in line with content -->
 
+## List of Available Apps
+
 {% include  "child/ood_apps/*" %}
 
+## Legacy Apps
 
+!!! info
+    Legacy apps are available for continued access through [https://ondemand-legacy.otago.ac.nz](https://ondemand-legacy.otago.ac.nz)
+
+{% include  "child/ood_apps_legacy/*" %}
 
 !!! related-pages "What's next?"
       - Unsure how to access OnDemand see [Open OnDemand](../onDemand/ondemand.md)
