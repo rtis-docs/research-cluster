@@ -19,5 +19,5 @@ The WEKA cluster, with its all-flash array and 100Gb networking, is ideal for hi
 
 !!! related-pages "What's next?"
     - To see where Weka fits within Storage check out [Storage Overview](../storage_options.md)
-    - Find out how to move Data on and off the Research Cluster on [Data Transfer](../../getting_started/data_transfer/data_transfer_overview.md) 
+    - Find out how to move Data on and off the Research Cluster on [Data Transfer](../data_transfer/data_transfer_overview.md) 
 <!-- TODO Are these pages the next step or relevant? -->

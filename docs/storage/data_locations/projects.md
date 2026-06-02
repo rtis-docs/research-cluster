@@ -36,14 +36,14 @@ Temporary Data Processing:
  
 !!! warning
  
-    Note that the **Research storage is not backed up** and it is the responsibility of the user to ensure their important data is safe. See [data transfer](../../getting_started/data_transfer/data_transfer_overview.md) for options to move data you want to retain. If you need assistance with backing up your data, please email {{support_email}}.
+    Note that the **Research storage is not backed up** and it is the responsibility of the user to ensure their important data is safe. See [data transfer](../data_transfer/data_transfer_overview.md) for options to move data you want to retain. If you need assistance with backing up your data, please email {{support_email}}.
  
 
 
 
 !!! related-pages "What's next?"
     - To see where Projects fits within Storage check out [Storage Overview](../storage_options.md)
-    - Find out how to move Data on and off the Research Cluster on [Data Transfer](../../getting_started/data_transfer/data_transfer_overview.md)
+    - Find out how to move Data on and off the Research Cluster on [Data Transfer](../data_transfer/data_transfer_overview.md)
     - Your home directory
     - WEKA 
   <!-- TODO Are these pages the next step or relevant? -->

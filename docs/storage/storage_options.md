@@ -49,9 +49,7 @@ graph TD;
  
 !!! warning
  
-    Note that the **Research storage is not backed up** and it is the responsibility of the user to ensure their important data is safe. See [data transfer](../getting_started/data_transfer/data_transfer_overview.md) for options to move data you want to retain. If you need assistance with backing up your data, please email {{support_email}}.
- 
- 
+    Note that the **Research storage is not backed up** and it is the responsibility of the user to ensure their important data is safe. See [data transfer](data_transfer/data_transfer_overview.md) for options to move data you want to retain. If you need assistance with backing up your data, please email {{support_email}}.
 ### Home directory
  
 All users of the Otago Research Cluster have a home directory that is mounted  at ``/home/<username>``. The home storage is intended for storing configuration files, scripts, and other smaller datasets that are used for computations.
@@ -62,10 +60,7 @@ A warning will be sent when the you have 30GB of data stored in your home direct
 !!! related-pages "What Next?"
  
     - Find more information on [Homes](../storage/data_locations/homes.md)
-    - Information on how to move your data on and off the Research cluster on [Data Transfer](../getting_started/data_transfer/data_transfer_overview.md)
- 
-<!-- TODO Are these pages the next step or relevant? -->
- 
+    - Information on how to move your data on and off the Research cluster on [Data Transfer](data_transfer/data_transfer_overview.md)
 ### Projects directory
  
 Projects storage is organised per department and group ``/projects/<division>/<department>/<Research_Group>``.
@@ -88,15 +83,13 @@ To apply for a projects directory, please fill out the [storage-signup-form](../
  
 !!! warning
  
-    Note that the **Research storage is not backed up** and it is the responsibility of the user to ensure their important data is safe. See [data transfer](../getting_started/data_transfer/data_transfer_overview.md) for options to move data you want to retain. If you need assistance with backing up your data, please email {{support_email}}.
- 
- 
+    Note that the **Research storage is not backed up** and it is the responsibility of the user to ensure their important data is safe. See [data transfer](data_transfer/data_transfer_overview.md) for options to move data you want to retain. If you need assistance with backing up your data, please email {{support_email}}.
+
+
 !!! related-pages "What Next?"
- 
+
     - Find more information on [Projects](data_locations/projects.md)
-    - Information on how to move your data on and off the Research cluster on [Data Transfer](../getting_started/data_transfer/data_transfer_overview.md)
- 
- 
+    - Information on how to move your data on and off the Research cluster on [Data Transfer](data_transfer/data_transfer_overview.md)
 <!-- TODO Are these pages the next step or relevant? -->
  
 ### Weka directory
@@ -113,10 +106,7 @@ For continued access between jobs, a separate path on WEKA storage can be alloca
 !!! related-pages "What Next?"
  
     - Find more information on [Weka](data_locations/weka.md)
-    - Information on how to move your data on and off the Research cluster on [Data Transfer](../getting_started/data_transfer/data_transfer_overview.md)
- 
-<!-- TODO Are these pages the next step or relevant? -->
- 
+    - Information on how to move your data on and off the Research cluster on [Data Transfer](data_transfer/data_transfer_overview.md)
 ### HCS directory
 <!-- TODO Content -->
 
@@ -128,10 +118,7 @@ If you have an HCS share this is accessible from the cluster.
 !!! related-pages "What Next?"
  
     - Find more information on [HCS](../storage/data_locations/hcs.md)
-    - Information on how to move your data on and off the Research cluster on [Data Transfer](../getting_started/data_transfer/data_transfer_overview.md)
- 
-<!-- TODO Are these pages the next step or relevant? -->
- 
+    - Information on how to move your data on and off the Research cluster on [Data Transfer](data_transfer/data_transfer_overview.md)
  
  
 ## Backing up your data
@@ -147,7 +134,7 @@ If you need assistance with backing up your data, please email {{support_email}}
  
 !!! related-pages "What Next?"
  
-    Find more information on [Data Transfer](../getting_started/data_transfer/data_transfer_overview.md)
+    Find more information on [Data Transfer](data_transfer/data_transfer_overview.md)
    
    
 <!--This will need changing if the pages layout and content changes -->

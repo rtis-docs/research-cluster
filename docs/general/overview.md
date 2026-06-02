@@ -67,6 +67,6 @@ Within the cluster there are different hardware configurations to accommodate a 
 !!! related-pages "What's next?"
 
     * [Get access to the cluster](../getting_started/access/access_overview.md)
-    * [Move transfer data](../getting_started/data_transfer/data_transfer_overview.md)
+    * [Move transfer data](../storage/data_transfer/data_transfer_overview.md)
     * [Run a job](../getting_started/running/running_jobs_overview.md)
 
