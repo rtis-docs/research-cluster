@@ -2,7 +2,7 @@
 
 Submit the form below to request an account on the Otago Aoraki compute cluster. Account requests are typically processed within 1 business day, and you will receive an email confirmation to your university email address when your account is ready.
 
-Please contact the RTIS team ({{support_email}}) if you have any questions.
+Please contact the eResearch Support team ({{support_email}}) if you have any questions.
 
 
 
@@ -15,7 +15,7 @@ Please contact the RTIS team ({{support_email}}) if you have any questions.
   frameborder="0" 
   marginwidth="0" 
   marginheight="0" 
-  style="border: none; max-width:100%;" 
+  style="border: none; max-width:100%; display: block; margin-left: 0;" 
   allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen>
 </iframe>
 

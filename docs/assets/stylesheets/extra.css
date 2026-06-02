@@ -2,6 +2,12 @@
     background-color: #060d87;
 };
 
+/* Force figures to be left-aligned */
+figure {
+  text-align: left !important;
+  margin-left: 0 !important;
+}
+
 @font-face {
     font-family: "wickliffe-sans";
     /* src: url("../fonts/WickliffeSans-Regular.otf") format('opentype'); */
