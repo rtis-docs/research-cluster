@@ -1,7 +1,6 @@
 # navigation for "getting_started/"
 nav:
   - access
-  - data_transfer
   - software
   - Running Jobs: running
   - workflows

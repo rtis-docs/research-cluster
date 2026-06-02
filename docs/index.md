@@ -64,7 +64,7 @@
 
 - title: Moving data on and off the Research Cluster
   content: How to transfer data onto and off of the cluster
-  url: getting_started/data_transfer/data_transfer_overview.md
+  url: storage/data_transfer/data_transfer_overview.md
   image: assets/images/icons/sync_desktop_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: File Permissions
