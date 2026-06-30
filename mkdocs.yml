@@ -40,8 +40,8 @@ plugins:
         position: top
 
 extra_css:
-  - assets/stylesheets/extra.css
   - assets/stylesheets/neoteroi-mkdocs.css
+  - assets/stylesheets/extra.css
 
 extra_javascript:
     - assets/javascripts/general.js
