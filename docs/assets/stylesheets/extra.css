@@ -8,6 +8,12 @@ figure {
   margin-left: 0 !important;
 }
 
+.md-typeset img.left {
+  display: block;
+  margin-left: 0 !important;
+  margin-right: auto;
+}
+
 @font-face {
     font-family: "wickliffe-sans";
     /* src: url("../fonts/WickliffeSans-Regular.otf") format('opentype'); */
@@ -49,10 +55,38 @@ li.md-nav__item--active:not(li.md-nav__item--nested) {
   font-weight: bold;
   }
 
+.nt-cards.nt-grid {
+  max-width: 780px;
+}
+
 .nt-card {
   background-color: #daebfc;
   border-radius: 5px;
+  padding: 3px;
+  margin-bottom: 0.3rem;
+}
 
+.nt-card .nt-card-image {
+  min-height: 72px;
+}
+
+.nt-card .nt-card-image img {
+  height: 56px;
+  margin-top: 4px;
+}
+
+.nt-card-content {
+  padding: 0.2rem 0.6rem 0.5rem 0.6rem;
+}
+
+.nt-card-title {
+  font-size: 0.875rem;
+  margin: 2px 0 4px 0;
+  line-height: 1.2;
+}
+
+.nt-card-text {
+  font-size: 12px;
 }
 
 /* :root {

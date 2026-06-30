@@ -6,26 +6,6 @@
 
 OOD launches applications as [Slurm](https://slurm.schedmd.com/) jobs on your behalf. These are called **interactive sessions** and consume cluster resources in the same way as any other Slurm job, so the usual fair-use policies apply.
 
----
-
-## Available Applications
-
-| Application | Description |
-|---|---|
-| **HPC Desktop** | A full graphical desktop environment running on the cluster |
-| **RStudio** | Interactive R development environment |
-| **Jupyter Notebook** | Browser-based Python (and other kernel) notebooks |
-| **MATLAB** | Interactive MATLAB environment |
-| **WhisperX** | Web UI for transcribing audio and video using OpenAI's Whisper AI models |
-
-OOD also provides:
-
-- **Slurm job scheduling** — submit and monitor batch jobs from the browser
-- **File browser** — view, upload, download, and manage files on the cluster
-- **Shell access** — open a terminal directly in your browser
-
----
-
 ## Logging In
 
 ### Before you start
@@ -45,7 +25,29 @@ Log in using your **University of Otago email address and password**. If your ac
 
 After a successful login, you will be taken to the OOD home page:
 
-![Open OnDemand Home Page](../../assets/images/OnDemand/ood4_homepage.png){width="600px"}
+<figure markdown="span" style="display: block; margin-left: 0; margin-right: auto;">
+  ![Open OnDemand Home Page](../../assets/images/OnDemand/ood4_homepage.png){ width="600px" }
+</figure>
+
+---
+
+## Available Applications
+
+| Application | Description |
+|---|---|
+| **HPC Desktop** | A full graphical desktop environment running on the cluster |
+| **RStudio** | Interactive R development environment |
+| **Jupyter Notebook** | Browser-based Python (and other kernel) notebooks |
+| **MATLAB** | Interactive MATLAB environment |
+| **WhisperX** | Web UI for transcribing audio and video using OpenAI's Whisper AI models |
+
+OOD also provides:
+
+- **Slurm job scheduling** — submit and monitor batch jobs from the browser
+- **File browser** — view, upload, download, and manage files on the cluster
+- **Shell access** — open a terminal directly in your browser
+
+---
 
 ---
 
