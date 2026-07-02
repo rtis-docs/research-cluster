@@ -4,34 +4,50 @@
 !!! info
     Please refer to the University's **[AI Governance Policy](https://www.otago.ac.nz/administration/policies/policy-collection/ai-governance-policy)** and related **[AI Tools Guidance](https://www.otago.ac.nz/__data/assets/pdf_file/0027/631836/AI-Tool-Guidance-V3.1-1st-Dec-25.pdf)** document for general advice on responsible use of AI across the University.
 
-This is a fast-moving field; We are currently trialling a number of different tools and deployment models for research-related LLM/genAI.
+This is a fast-moving field; We are currently trialling a number of different tools and deployment models for research-related LLM/genAI use.
 
 
+## Access
 Email {{ support_email }} to discuss how we can help you support your particular usecase.
+When you are onboarded, you will receive a personal API access key. This should give you access to a relevant set of LLM models.
+
+The eResearch Solutions LLM gateway is exposed as an OpenAI-compatible endpoint.
+
+* API base URL: `https://llm.uod.otago.ac.nz/v1`
+
+Most OpenAI-compatible SDKs or tools should be able to interface with this. This is accessible on-campus/via VPN only. 
+
+
+
 
 ## Models
 
 ### Cloud models
-A selection of cloud LLM models can be made available for research usecases. Please contact us to discuss your requirements.
+A selection of [cloud LLM models on MS Foundry](https://ai.azure.com/catalog/models) can be made available via our LLM gateway for research usecases. Please contact us to discuss your requirements.
+
+The current set includes `gpt-oss-120b`, `gpt-5.4`, `claude-opus-4-6`, `Kimi-K2.5`, `DeepSeek-V3.2`, `text-embedding-3-small`.
 
 Cloud-hosted models should not be used for processing of any input/data that is considered sensitive, subject to data sovereignty, etc. Please refer to the **[AI Tools Guidance](https://www.otago.ac.nz/__data/assets/pdf_file/0027/631836/AI-Tool-Guidance-V3.1-1st-Dec-25.pdf)** document.
 
 ### Local on-campus models
 
-We have a few models hosted entirely on-campus without dependencies on external cloud services, available for select research trial usecases via an OpenAI-compatible API or 'ChatGPT-style' user interface.
+We have a few small models hosted entirely on-campus without dependencies on external cloud services, available for select research trial usecases.
 
-Running these models locally within the campus environment necessitates significant resources that are currently **limited** due to our present hardware capabilities. Therefore usage should focus on research scenarios where **on-campus processing** is absolutely necessary (e.g. sensitive data).
+Running these models locally within the campus environment requires significant resources that are currently **limited** due to our present hardware capabilities. Therefore usage should focus on research scenarios where **on-campus processing** is absolutely necessary (e.g. sensitive data).
 
 #### Local Model list
 
-The selection of available models may change, depending on specific demand, usecases and on available hardware resources.
+Local models are prefixed with `ONCAMPUS/`.
+The selection of available models is subject to change, depending on specific demand, usecases and on available hardware resources.
 
-Currently eResearch Solutions makes the following models available on-campus:
+Currently, eResearch Solutions makes the following models available for inference on-campus:
 
-* [Qwen 3.6 27B FP8](https://huggingface.co/Qwen/Qwen3.6-27B-FP8)
-* [Qwen 3.5 9B BF16](https://huggingface.co/Qwen/Qwen3.5-9B)
-* [Google Gemma 4 12B IT BF16](https://huggingface.co/google/gemma-4-12B-it)
-* [BAAI/bge-m3](https://huggingface.co/BAAI/bge-m3)
+|name                    |model                                                                     |input                      |license|
+|------------------------|--------------------------------------------------------------------------|---------------------------|-------|
+|ONCAMPUS/Qwen3.6-27B-FP8|[Qwen 3.6 27B FP8](https://huggingface.co/Qwen/Qwen3.6-27B-FP8)           |text-only                  |[Apache-2.0](https://choosealicense.com/licenses/apache-2.0/)|
+|ONCAMPUS/Qwen3.5-9B     |[Qwen 3.5 9B BF16](https://huggingface.co/Qwen/Qwen3.5-9B)                |text-only                  |[Apache-2.0](https://choosealicense.com/licenses/apache-2.0/)|
+|ONCAMPUS/gemma-4-12B-it |[Google Gemma 4 12B IT BF16](https://huggingface.co/google/gemma-4-12B-it)|multimodal                 |[Apache-2.0](https://choosealicense.com/licenses/apache-2.0/)|
+|ONCAMPUS/BAAI/bge-m3    |[BAAI/bge-m3](https://huggingface.co/BAAI/bge-m3)                         |multilingual text embedding|[MIT](https://choosealicense.com/licenses/mit/)|
 
 
 
@@ -65,7 +81,7 @@ Most models can be prompted to employ CoT reasoning (e.g. by adding "Let's think
 Note that this is a **simulated reasoning-like process** that quickly breaks down once confronted with out-of-domain logical problems that don't match the specific logical patterns found in the model's training data. (See 'Limitations' below)
 
 
-### LLM limitations and considerations
+## LLM limitations and considerations
 
 Large language models (LLMs) have gained significant attention due to their impressive capabilities. However there is also a lot of confusion and marketing hype surrounding LLMs and GenAI. 
 
