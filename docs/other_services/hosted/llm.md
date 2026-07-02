@@ -4,30 +4,34 @@
 !!! info
     Please refer to the University's **[AI Governance Policy](https://www.otago.ac.nz/administration/policies/policy-collection/ai-governance-policy)** and related **[AI Tools Guidance](https://www.otago.ac.nz/__data/assets/pdf_file/0027/631836/AI-Tool-Guidance-V3.1-1st-Dec-25.pdf)** document for general advice on responsible use of AI across the University.
 
-This is a fast-moving field; We are currently trialling a number of different tools and deployment models for on-premises LLM/genAI.
+This is a fast-moving field; We are currently trialling a number of different tools and deployment models for research-related LLM/genAI.
 
-We have a few models hosted entirely on-campus without dependencies on external cloud services, available for select trial usecases via an OpenAI-compatible API or 'ChatGPT-style' user interface.
-
-Running these models locally within the campus environment necessitates significant resources that are currently **limited** due to our present hardware capabilities. Therefore usage should focus on scenarios where **on-campus processing** is absolutely necessary (e.g. sensitive data).
 
 Email {{ support_email }} to discuss how we can help you support your particular usecase.
 
 ## Models
 
+### Cloud models
+A selection of cloud LLM models can be made available for research usecases. Please contact us to discuss your requirements.
 
-### Model list
+Cloud-hosted models should not be used for processing of any input/data that is considered sensitive, subject to data sovereignty, etc. Please refer to the **[AI Tools Guidance](https://www.otago.ac.nz/__data/assets/pdf_file/0027/631836/AI-Tool-Guidance-V3.1-1st-Dec-25.pdf)** document.
+
+### Local on-campus models
+
+We have a few models hosted entirely on-campus without dependencies on external cloud services, available for select research trial usecases via an OpenAI-compatible API or 'ChatGPT-style' user interface.
+
+Running these models locally within the campus environment necessitates significant resources that are currently **limited** due to our present hardware capabilities. Therefore usage should focus on research scenarios where **on-campus processing** is absolutely necessary (e.g. sensitive data).
+
+#### Local Model list
 
 The selection of available models may change, depending on specific demand, usecases and on available hardware resources.
 
 Currently eResearch Solutions makes the following models available on-campus:
 
-
-Name | Parameters | Precision | License | Usecases
----|---|---|---|---
-DeepSeek-R1-Distill-Qwen-32B (DeepSeek, Alibaba Cloud) | 32B | bf16 | open source; MIT, Apache 2.0 | tasks requiring efficient reasoning, such as mathematical problem-solving, logical reasoning, and coding tasks; text-only
-DeepSeek-R1-Distill-Qwen-32B (DeepSeek, Alibaba Cloud) | 32B | bf16 | open source; MIT, Apache 2.0 | tasks requiring efficient reasoning, such as mathematical problem-solving, logical reasoning, and coding tasks; text-only
-Gemma3-12B-it (Google) | 12B | bf16 | custom; restrictions on use and training | question answering, summarisation; multi-modal input
-bge-m3 (BAAI) | 1.5B | fp16 | open source; MIT | embeddings (e.g. in RAG pipelines)
+* [Qwen 3.6 27B FP8](https://huggingface.co/Qwen/Qwen3.6-27B-FP8)
+* [Qwen 3.5 9B BF16](https://huggingface.co/Qwen/Qwen3.5-9B)
+* [Google Gemma 4 12B IT BF16](https://huggingface.co/google/gemma-4-12B-it)
+* [BAAI/bge-m3](https://huggingface.co/BAAI/bge-m3)
 
 
 
@@ -35,7 +39,6 @@ bge-m3 (BAAI) | 1.5B | fp16 | open source; MIT | embeddings (e.g. in RAG pipelin
 
 
 ### Parameters
-
 
 More parameters allow the model to capture more complex patterns in the data at training, potentially improving accuracy, but at the cost of increased resource use and speed; It's a trade-off between complexity and performance.
 
@@ -77,5 +80,6 @@ The effectiveness of LLMs lies in their ability to generate the most plausible r
 Other considerations
 
 * **LLMs may confidently produce plausible-sounding but factually incorrect or nonsensical responses**
-* **Bias** can be a problem and should be considered in training and deployment
-* LLMs are **expensive** to train and run, and consume lots of resources
+* LLMs are **costly**, **resource-intensive**, **ethically complex**, and carry a heavy **environmental** burden
+
+We trust our researchers to thoughtfully balance the use of our LLMs (and their associated cost) against the value they deliver to their work, the University, and the broader community.
