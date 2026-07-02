@@ -4,7 +4,7 @@
 !!! info
     Please refer to the University's **[AI Governance Policy](https://www.otago.ac.nz/administration/policies/policy-collection/ai-governance-policy)** and related **[AI Tools Guidance](https://www.otago.ac.nz/__data/assets/pdf_file/0027/631836/AI-Tool-Guidance-V3.1-1st-Dec-25.pdf)** document for general advice on responsible use of AI across the University.
 
-This is a fast-moving field; We are currently trialling a number of different tools and deployment models for on-premises LLM/genAI.
+This is a fast-moving field; We are currently trialling a number of different tools and deployment models for research-related LLM/genAI.
 
 
 Email {{ support_email }} to discuss how we can help you support your particular usecase.
@@ -14,7 +14,7 @@ Email {{ support_email }} to discuss how we can help you support your particular
 ### Cloud models
 A selection of cloud LLM models can be made available for research usecases. Please contact us to discuss your requirements.
 
-* Cloud-hosted models should not be used for processing of any input/data that is considered sensitive, subject to data sovereignty, etc. Please refer to the **[AI Tools Guidance](https://www.otago.ac.nz/__data/assets/pdf_file/0027/631836/AI-Tool-Guidance-V3.1-1st-Dec-25.pdf)** document.
+Cloud-hosted models should not be used for processing of any input/data that is considered sensitive, subject to data sovereignty, etc. Please refer to the **[AI Tools Guidance](https://www.otago.ac.nz/__data/assets/pdf_file/0027/631836/AI-Tool-Guidance-V3.1-1st-Dec-25.pdf)** document.
 
 ### Local on-campus models
 
