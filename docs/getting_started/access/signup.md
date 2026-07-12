@@ -1,21 +1,27 @@
 # Getting an Account
 
-!!! overview "On this Page"
-    - Link to sign up for an Otago compute cluster account
+Submit the form below to request an account on the Otago Aoraki compute cluster. Account requests are typically processed within 1 business day, and you will receive an email confirmation to your university email address when your account is ready.
 
-    
-Access to the Otago compute cluster is by request. Submit the form below to request an account on the Otago compute cluster. You will be emailed when your account is available for use.
+Please contact the eResearch Support team ({{support_email}}) if you have any questions.
 
-Please contact the RTIS team ({{support_email}}) if you have any questions.
 
-[Account Creation Form](https://forms.office.com/pages/responsepage.aspx?id=xe8lAv54KEmxV57ySAnpuklJ-oAsUjlEj9BHqdUHZWtUN0xCOVhOSEdUS1ZNNllUNENWVEpBSUtEUS4u&route=shorturl){target="_blank"}
 
-<!-- <a href="https://ask.otago.ac.nz/otagoresearchcluster/?stepid=c74d92b7-2b35-f011-8c4c-000d3ae024aa&sessionid=6b4238f7-f847-f011-8779-002248115659" target="_blank">Account Creation Form</a> -->
+<!-- [Account Creation Form](https://forms.office.com/pages/responsepage.aspx?id=xe8lAv54KEmxV57ySAnpuklJ-oAsUjlEj9BHqdUHZWtUN0xCOVhOSEdUS1ZNNllUNENWVEpBSUtEUS4u&route=shorturl){target="_blank"}-->
 
+<iframe 
+  width="80%"
+  height="2300px" 
+  src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=xe8lAv54KEmxV57ySAnpuklJ-oAsUjlEj9BHqdUHZWtUN0xCOVhOSEdUS1ZNNllUNENWVEpBSUtEUS4u&embed=true" 
+  frameborder="0" 
+  marginwidth="0" 
+  marginheight="0" 
+  style="border: none; max-width:100%; display: block; margin-left: 0;" 
+  allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen>
+</iframe>
 
 
 !!! related-pages "What Next?"
 
-    Log in to the cluster through either the [Open OnDemand Web portal](../access/ondemand_web.md) or [Commandline Access with SSH](../access/login_ssh.md)
+    Once you have received your confirmation email, login to the cluster through either the [Open OnDemand Web portal](../access/ondemand_web.md) or [Commandline Access with SSH](../access/login_ssh.md)
 
     

@@ -74,6 +74,28 @@ This page shows the current ultilistion of resources across the cluster and can 
 <iframe src="https://research-monitoring.otago.ac.nz/d-solo/Oxed_c6Wz/nvidia-dcgm-exporter?orgId=1&var-instance=rtis-hpc-r29.uod.otago.ac.nz%3A9400&var-gpu=All&from=now-7d&to=no&refresh=30s&theme=light&panelId=6" width="850" height="400" frameborder="0"></iframe>
 
 
+
+#### aoraki44 - 8x H200 144GB
+
+<iframe src="https://research-monitoring.otago.ac.nz/d-solo/Oxed_c6Wz/nvidia-dcgm-exporter?orgId=1&var-instance=rtis-hpc-r44.uod.otago.ac.nz%3A9400&var-gpu=All&from=now-7d&to=no&refresh=30s&theme=light&panelId=6" width="850" height="400" frameborder="0"></iframe>
+
+
+
+#### aoraki45 - 8x RTX6000 98GB
+
+<iframe src="https://research-monitoring.otago.ac.nz/d-solo/Oxed_c6Wz/nvidia-dcgm-exporter?orgId=1&var-instance=rtis-hpc-r45.uod.otago.ac.nz%3A9400&var-gpu=All&from=now-7d&to=no&refresh=30s&theme=light&panelId=6" width="850" height="400" frameborder="0"></iframe>
+
+
+
+#### aoraki46 - 8x RTX6000 98GB
+
+<iframe src="https://research-monitoring.otago.ac.nz/d-solo/Oxed_c6Wz/nvidia-dcgm-exporter?orgId=1&var-instance=rtis-hpc-r46.uod.otago.ac.nz%3A9400&var-gpu=All&from=now-7d&to=no&refresh=30s&theme=light&panelId=6" width="850" height="400" frameborder="0"></iframe>
+
+
+
+
+
+
 !!! related-pages "What's next?"
     - [Running Jobs Overview](running_jobs_overview.md)
     - [Writing Slurm Job Scripts](batch/slurm_quickstart.md)

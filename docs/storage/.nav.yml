@@ -2,3 +2,4 @@ nav:
   - "storage_options.md"
   - "file_permissions.md"
   - "Data Locations": data_locations
+  - "Data Transfer": data_transfer

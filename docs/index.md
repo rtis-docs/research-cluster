@@ -1,8 +1,5 @@
 # Research HPC Cluster (Aoraki) Documentation
 
-!!! bug "VPN connectivity to Aoraki"
-    25/05/2026: There are currently some networking issues for users trying to connect to the cluster while on the VPN. If this is affecting your, or for updates please refer to the [eResearch Support Teams Channel](https://teams.cloud.microsoft/l/channel/19%3AwY-QPCGhXz_nHt4-0C7Ltz7gdVAmE_1fDfmgFO4bnHs1%40thread.tacv2/General?groupId=de270594-2da5-4354-b319-57f8894c89f3&tenantId=0225efc5-78fe-4928-b157-9ef24809e9ba)
-
 
 !!! warning "Old Documentation Site"
     The old documentation can still be found at [https://rtis.cspages.otago.ac.nz/research-computing/](https://rtis.cspages.otago.ac.nz/research-computing/) but is no longer being updated.
@@ -64,7 +61,7 @@
 
 - title: Moving data on and off the Research Cluster
   content: How to transfer data onto and off of the cluster
-  url: getting_started/data_transfer/data_transfer_overview.md
+  url: storage/data_transfer/data_transfer_overview.md
   image: assets/images/icons/sync_desktop_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: File Permissions

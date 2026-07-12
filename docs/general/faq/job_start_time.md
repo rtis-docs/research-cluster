@@ -1,11 +1,12 @@
-# How long do I have to wait for my job to start?
+# Job Queuing and Cluster Utilization
 
+## How long do I have to wait for my job to start?
 
 There is no guaranteed way to know the exact wait time for a SLURM job, but you can get a good estimate using SLURM commands and by checking cluster utilisation.
 
-## Check your job in the queue:
+### Check your job in the queue
 
-  Use the following command to see your jobs and their status:
+Use the following command to see your jobs and their status:
 
 !!! terminal
     
@@ -13,29 +14,43 @@ There is no guaranteed way to know the exact wait time for a SLURM job, but you 
     squeue -u $USER
     ```
 
-  Look for the ``ST`` (state) and ``START_TIME`` columns. ``PD`` means "pending," and ``R`` means "running."
+Look for the `ST` (state) and `START_TIME` columns. `PD` means "pending," and `R` means "running."
 
-## Estimated start time:
+### Estimated start time
 
-  After submitting a job, you can check its estimated start time (if available):
+After submitting a job, you can check its estimated start time (if available):
 
 !!! terminal
 
     ```bash
-     scontrol show job <jobid> | grep StartTime
+    scontrol show job <jobid> | grep StartTime
     ```
 
-  This shows SLURM's estimated start time, but be aware that this can change as other jobs are submitted or finish.
+This shows SLURM's estimated start time, but be aware that this can change as other jobs are submitted or finish.
 
+### Tips for faster job start
 
-## Tip:
+If you need your jobs to start quickly, consider:
 
-  If you need your jobs to start quickly, consider requesting fewer resources (such as fewer CPUs, less memory, or a shorter time limit) or being flexible with which partition you use.
+- Requesting fewer resources (such as fewer CPUs, less memory, or a shorter time limit)
+- Being flexible with which partition you use
 
-- This command can be useful to list configured and allocated resources for all nodes:
+This command can be useful to list configured and allocated resources for all nodes:
 
 !!! terminal
     
     ```bash
     for i in {01..09} {11..12} {14..43}; do echo aoraki$i; scontrol show node aoraki$i | grep TRES; done
     ```
+
+## How do I check cluster/node usage and availability?
+
+Use:
+
+!!! terminal
+
+    ```bash
+    sinfo
+    ```
+
+This displays the status of partitions and nodes.

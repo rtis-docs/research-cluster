@@ -269,5 +269,5 @@ To mitigate this, it is recommended to include a command such as sleep 20 in bat
 
 
 !!! related-pages "What's next?"
-    Find out how to move Data on and off the Research Cluster on [Data Transfer](../../getting_started/data_transfer/data_transfer_overview.md) 
+    Find out how to move Data on and off the Research Cluster on [Data Transfer](../data_transfer/data_transfer_overview.md) 
 
