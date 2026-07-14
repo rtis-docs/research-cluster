@@ -1,5 +1,8 @@
 # User and Allocation Management
 
+!!! info
+    Groups are being onboarded one-by-one and you will be contacted when your group is transitioning.
+
 [Coldfront](https://coldfront.otago.ac.nz) is a web interface that enables project owners (and delegates) to manage adding/removing user access to their group resources such as project storage.
 
 - New users will need to apply for an account to be created to access the cluster
