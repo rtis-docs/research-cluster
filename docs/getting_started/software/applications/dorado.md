@@ -89,7 +89,7 @@ Below is an example SLURM batch script for running Dorado on either the `aoraki_
 
 To help you choose the right GPU for the task, this table gives the benchmarking results obtained by following [https://github.com/Kirk3gaard/2025-Crowdsource-GPU-basecalling-stats](https://github.com/Kirk3gaard/2025-Crowdsource-GPU-basecalling-stats) with Doraro v1.4.0:
 
-| Card      | Job Time (ms) | Samples/Sec  | Gbp/Day[^gbps]     | max VRAM Used (GB)     |
+| GPU      | Job Time (ms) | Samples/Sec  | Gbp/Day[^gbps]     | max VRAM Used (GB)     |
 | :--------- | ---------: | ------------: | -----------: | -----------: |
 | L4        | 4399623   | 3.07 x10^6^ | 21.22 | 22  |
 | L40       | 1834677   | 7.36 x10^6^ | 50.89 | 7  |
