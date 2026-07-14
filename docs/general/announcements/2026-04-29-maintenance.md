@@ -43,7 +43,7 @@ Following the upgrade, the production portal at `ondemand.otago.ac.nz` will run 
 - XDSGUI
 - phy
 
-**Apps available on legacy instance only** ([ondemand-legacy.otago.ac.nz](ondemand-legacy.otago.ac.nz)):
+**Apps available on legacy instance only** ([https://ondemand-legacy.otago.ac.nz](https://ondemand-legacy.otago.ac.nz)):
 
 - CCP4
 - ChimeraX

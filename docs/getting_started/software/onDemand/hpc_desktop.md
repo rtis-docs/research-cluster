@@ -78,7 +78,7 @@ Disconnects you from the HPC Desktop, you may need to relaunch the Desktop from 
 
     ### Terminal
 
-    The terminal is used to run commands for various tasks. For example transferring data on to and from the cluster using [scp or rsync](../../data_transfer/rsync.md).
+    The terminal is used to run commands for various tasks. For example transferring data on to and from the cluster using [scp or rsync](../../../storage/data_transfer/rsync.md).
 
     ![XFCE - HPC Desktop Terminal](../../../assets/images/hpc_terminal_XFCE.png){width="600px"}
 
@@ -137,7 +137,7 @@ Disconnects you from the HPC Desktop, you may need to relaunch the Desktop from 
 
     ### Terminal
 
-    The terminal is used to run commands for various tasks. For example transferring data on to and from the cluster using [scp or rsync](../../data_transfer/rsync.md).
+    The terminal is used to run commands for various tasks. For example transferring data on to and from the cluster using [scp or rsync](../../../storage/data_transfer/rsync.md).
 
     ![GNOME - HPC Desktop Terminal](../../../assets/images/hpc_terminal_GNOME.png){width="600px"}
 
