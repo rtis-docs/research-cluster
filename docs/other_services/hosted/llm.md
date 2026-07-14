@@ -4,44 +4,73 @@
 !!! info
     Please refer to the University's **[AI Governance Policy](https://www.otago.ac.nz/administration/policies/policy-collection/ai-governance-policy)** and related **[AI Tools Guidance](https://www.otago.ac.nz/__data/assets/pdf_file/0027/631836/AI-Tool-Guidance-V3.1-1st-Dec-25.pdf)** document for general advice on responsible use of AI across the University.
 
-This is a fast-moving field; We are currently trialling a number of different tools and deployment models for on-premises LLM/genAI.
+This is a fast-moving field; We are currently trialling a number of different tools and deployment models for research-related LLM/genAI use.
 
-We have a few models hosted entirely on-campus without dependencies on external cloud services, available for select trial usecases via an OpenAI-compatible API or 'ChatGPT-style' user interface.
 
-Running these models locally within the campus environment necessitates significant resources that are currently **limited** due to our present hardware capabilities. Therefore usage should focus on scenarios where **on-campus processing** is absolutely necessary (e.g. sensitive data).
-
+## Access
 Email {{ support_email }} to discuss how we can help you support your particular usecase.
+When you are onboarded, you will receive a personal API access key. This should give you access to a relevant set of LLM models.
+
+The eResearch Solutions LLM gateway is exposed as an OpenAI-compatible endpoint.
+
+* API base URL: `https://llm.uod.otago.ac.nz/v1`
+
+Most OpenAI-compatible SDKs or tools should be able to interface with this. This is accessible on-campus/via VPN only. 
+
+
+
 
 ## Models
 
+### Cloud models
+A selection of [cloud LLM models on MS Foundry](https://ai.azure.com/catalog/models) can be made available via our LLM gateway for research usecases. Please contact us to discuss your requirements.
 
-### Model list
+The current set includes `gpt-oss-120b`, `gpt-5.4`, `claude-opus-4-6`, `Kimi-K2.5`, `DeepSeek-V3.2`, `text-embedding-3-small`.
 
-The selection of available models may change, depending on specific demand, usecases and on available hardware resources.
+Cloud-hosted models should not be used for processing of any input/data that is considered sensitive, subject to data sovereignty, etc. Please refer to the **[AI Tools Guidance](https://www.otago.ac.nz/__data/assets/pdf_file/0027/631836/AI-Tool-Guidance-V3.1-1st-Dec-25.pdf)** document.
 
-Currently eResearch Solutions makes the following models available on-campus:
+### Local on-campus models
 
+We have a few small models hosted entirely on-campus without dependencies on external cloud services, available for select research trial usecases.
 
-Name | Parameters | Precision | License | Usecases
----|---|---|---|---
-DeepSeek-R1-Distill-Qwen-32B (DeepSeek, Alibaba Cloud) | 32B | bf16 | open source; MIT, Apache 2.0 | tasks requiring efficient reasoning, such as mathematical problem-solving, logical reasoning, and coding tasks; text-only
-DeepSeek-R1-Distill-Qwen-32B (DeepSeek, Alibaba Cloud) | 32B | bf16 | open source; MIT, Apache 2.0 | tasks requiring efficient reasoning, such as mathematical problem-solving, logical reasoning, and coding tasks; text-only
-Gemma3-12B-it (Google) | 12B | bf16 | custom; restrictions on use and training | question answering, summarisation; multi-modal input
-bge-m3 (BAAI) | 1.5B | fp16 | open source; MIT | embeddings (e.g. in RAG pipelines)
+Running these models locally within the campus environment requires significant resources that are currently **limited** due to our present hardware capabilities. Therefore usage should focus on research scenarios where **on-campus processing** is absolutely necessary (e.g. sensitive data).
+
+#### Local Model list
+
+Local models are prefixed with `ONCAMPUS/`.
+The selection of available models is subject to change, depending on specific demand, usecases and on available hardware resources.
+
+Currently, eResearch Solutions makes the following models available for inference on-campus:
+
+|name                    |model                                                                     |parameters|quantisation |input                      |license|
+|------------------------|--------------------------------------------------------------------------|----------|-------------|---------------------------|-------|
+|ONCAMPUS/Qwen3.6-27B-FP8|[Qwen 3.6 27B FP8](https://huggingface.co/Qwen/Qwen3.6-27B-FP8)           |27B       |FP8          |text-only                  |[Apache-2.0](https://choosealicense.com/licenses/apache-2.0/)|
+|ONCAMPUS/Qwen3.5-9B     |[Qwen 3.5 9B BF16](https://huggingface.co/Qwen/Qwen3.5-9B)                |9B        |BF16         |text-only                  |[Apache-2.0](https://choosealicense.com/licenses/apache-2.0/)|
+|ONCAMPUS/gemma-4-12B-it |[Google Gemma 4 12B IT BF16](https://huggingface.co/google/gemma-4-12B-it)|12B       |BF16         |multimodal                 |[Apache-2.0](https://choosealicense.com/licenses/apache-2.0/)|
+|ONCAMPUS/BAAI/bge-m3    |[BAAI/bge-m3](https://huggingface.co/BAAI/bge-m3)                         |0.568B    |FP16         |multilingual text embedding|[MIT](https://choosealicense.com/licenses/mit/)|
 
 
 
 ## Model features to consider
 
+### Modality
+
+LLM modality refers to the different types of data that LLMs can process, such as text, images, and audio. Multimodal LLMs integrate these modalities to enhance understanding and interaction, mimicking human-like comprehension of diverse information sources.
 
 ### Parameters
 
+LLM parameters -typically expressed in billion (B)- are the internal weights learned during training that capture patterns in language such as grammar, context and relationships between words.
 
 More parameters allow the model to capture more complex patterns in the data at training, potentially improving accuracy, but at the cost of increased resource use and speed; It's a trade-off between complexity and performance.
 
 ### Quantisation
 
-Quantisation is a model compression technique that reduces the precision of weights and activations, making LLMs more efficient. While quantised models can run on less powerful hardware, they may **sacrifice some accuracy** compared to their full-precision counterparts. However, advancements in quantisation techniques are helping to minimise this accuracy loss, making quantised models increasingly viable for various applications.
+Quantisation is a model compression technique that reduces the precision of weights and activations, making LLMs more efficient. 
+
+A full-size model might use FP32 -i.e. 32 bits to represent each number inside the model-, which is great for accuracy but terrible for size. Quantization shrinks that down: 16 bits (FP16 and BF16), 8 bits (FP8), or even smaller in some cases (GGUF). The smaller the bit size, the lighter the model.
+
+While quantised models can run more efficiently on less powerful hardware with reduced cost and environmental footprint, they **sacrifice some accuracy** compared to their full-precision counterparts. Advancements in quantisation techniques are helping to minimise this accuracy loss, making quantised models increasingly viable for various applications.
+
 
 ### License
 
@@ -62,7 +91,7 @@ Most models can be prompted to employ CoT reasoning (e.g. by adding "Let's think
 Note that this is a **simulated reasoning-like process** that quickly breaks down once confronted with out-of-domain logical problems that don't match the specific logical patterns found in the model's training data. (See 'Limitations' below)
 
 
-### LLM limitations and considerations
+## LLM limitations and considerations
 
 Large language models (LLMs) have gained significant attention due to their impressive capabilities. However there is also a lot of confusion and marketing hype surrounding LLMs and GenAI. 
 
@@ -77,5 +106,6 @@ The effectiveness of LLMs lies in their ability to generate the most plausible r
 Other considerations
 
 * **LLMs may confidently produce plausible-sounding but factually incorrect or nonsensical responses**
-* **Bias** can be a problem and should be considered in training and deployment
-* LLMs are **expensive** to train and run, and consume lots of resources
+* LLMs are **costly**, **resource-intensive**, **ethically complex**, and carry a heavy **environmental** burden
+
+We trust our researchers to thoughtfully balance the use of our LLMs (and their associated cost) against the value they deliver to their work, the University, and the broader community.
