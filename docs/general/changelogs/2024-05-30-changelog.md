@@ -22,5 +22,3 @@ Other changes/fixes:
     - [Slurm Overview](../../getting_started/running/batch/slurm_quickstart.md)
     - [Research HPC Cluster (Aoraki)](../../general/overview.md)
 
-  <!-- TODO Are these pages the next step or relevant? -->
-  <!-- I'm unsure if there are other pages that are relevant to the content-->
