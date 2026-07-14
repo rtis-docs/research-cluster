@@ -11,3 +11,7 @@ Steps on doing basic speech-to-text transcriptions is further documented [here](
 ## commandline usage
 
 TODO
+
+## Kaituhi
+
+Kaituhi is a web-based transcription tool that will automatically transcribe te reo Māori and New Zealand English audio and video files. Unlike many transcription tools, Kaituhi particularly understands the Kiwi accent and unique way of speaking. Kaituhi might be an alternative for Whisper for your use case, refer to [https://ask.otago.ac.nz/knowledgebase/article/KA-10005993](https://ask.otago.ac.nz/knowledgebase/article/KA-10005993)

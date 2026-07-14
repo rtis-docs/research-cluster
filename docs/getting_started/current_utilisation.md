@@ -97,8 +97,8 @@ This page shows the current ultilistion of resources across the cluster and can 
 
 
 !!! related-pages "What's next?"
-    - [Running Jobs Overview](running_jobs_overview.md)
-    - [Writing Slurm Job Scripts](batch/slurm_quickstart.md)
-    - [Job Efficiency](batch/efficiency.md)
+    - [Running Jobs Overview](running/running_jobs_overview.md)
+    - [Writing Slurm Job Scripts](running/batch/slurm_quickstart.md)
+    - [Job Efficiency](running/batch/efficiency.md)
 
   <!-- TODO Are these pages the next step or relevant? -->

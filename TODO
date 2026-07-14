@@ -4,8 +4,8 @@ TODO: migrate OoD apps/modules/containers -> "Available Software"
 TODO: getting started with slurm
 
 
-TODO: template for gpu job
-TODO: template for array job
+TODO: template for gpu job in examples repo
+TODO: template for array job in examples repo
 
 
 TODO: improve flow of access/signup from landing page
@@ -14,6 +14,5 @@ TODO: more direct linking for flow
 
 TODO: fix "terminal" so that it shows up in the formatting
 TODO: check if html abbreviation tags can be used
-TODO: top of each page should have a context paragraph
-TODO: add R and python admonitions
+
 FIXME: admonition heading text for terminal/r-project/python is same colour as the box
