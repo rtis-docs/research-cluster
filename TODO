@@ -16,3 +16,5 @@ TODO: fix "terminal" so that it shows up in the formatting
 TODO: check if html abbreviation tags can be used
 
 FIXME: admonition heading text for terminal/r-project/python is same colour as the box
+
+FIXME: docs/assets/tables/specs.csv has no row for the aoraki_gpu_RTX3090 partition nodes (aoraki-g[01,02,04,05], per limits.csv) - the "standalone" RTX 3090 rows don't reconcile with it (5 nodes, no hostnames vs 4 named nodes). Needs real hostnames/specs from someone with cluster access, not a guess.
