@@ -1,6 +1,6 @@
-# System Announcement
+# April 2026 Maintenance
 
-## July 13, 2026
+## Cluster OS and Security Update July 2026
 
 We have updated the OS with security updates for all nodes on the cluster using a rolling update strategy.
 
@@ -8,7 +8,7 @@ We have updated the OS with security updates for all nodes on the cluster using 
 - **Update Type**: OS Security Updates
 - **Scope**: All cluster nodes
 - **Strategy**: Rolling update approach
-- **Status**: Completed
+- **Status**: Ongoing - nearly complete
 
 ### Impact
 This update enhances system security and protects against known vulnerabilities. All nodes have been systematically updated without disrupting cluster operations.
