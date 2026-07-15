@@ -21,7 +21,7 @@ jobs:
       - name: Install system dependencies
         run: sudo apt-get update && sudo apt-get install -y libxml2-dev libxslt1-dev
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         with:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache
