@@ -1,14 +1,9 @@
 # Research HPC Cluster (Aoraki) Documentation
 
-
-!!! warning "Old Documentation Site"
-    The old documentation can still be found at [https://rtis.cspages.otago.ac.nz/research-computing/](https://rtis.cspages.otago.ac.nz/research-computing/) but is no longer being updated.
-
-
 ## Overview
 
 !!! info
-    The RTIS Research cluster provides researchers with access to shared resources, such as **CPUs, GPUs, and high-speed storage**. 
+    The Aoraki Research cluster provides researchers with access to shared resources, such as **CPUs, GPUs, Large Memory Nodes, and High-Speed Storage**. 
     Also available are specialised software and libraries optimised for scientific and datascience computing. 
 
     For all support enquiries please email {{support_email}} or check out the [Support page](general/support.md).
