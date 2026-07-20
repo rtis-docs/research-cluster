@@ -78,7 +78,7 @@ You need the contents of the **public** key file — never share your private ke
     cat ~/.ssh/id_ed25519.pub
     ```
 
-    Select and copy the full output (it starts with `ssh-ed25519` and ends with the comment you set).
+    Select and copy the full output (it starts with `ssh-ed25519` and ends with the comment you set) .
 
 ### Step 3: Add the key in OnDemand
 
