@@ -16,7 +16,7 @@ If you need special software or configurations, please ask the eResearch Support
 
 ## Cluster Overview
 
-![Photo of the cluster](../assets/images/cluster_photo.jpg)
+![Photo of the cluster](../assets/images/cluster_photo.jpg){ .left }
 
 We offer a variety of SLURM partitions based on different resource needs. The default partition (`aoraki`) provides balanced compute and memory capabilities. Additional partitions include those optimized for GPU usage and those with expanded memory capacity.
 

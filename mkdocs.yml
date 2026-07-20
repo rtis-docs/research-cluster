@@ -38,6 +38,8 @@ plugins:
         caption_prefix: ''
         allow_indented_caption: false
         position: top
+      figure:
+        ignore_classes: ["left"]
 
 extra_css:
   - assets/stylesheets/neoteroi-mkdocs.css
