@@ -73,11 +73,11 @@ You need the contents of the **public** key file — never share your private ke
 1. [Log in to OnDemand](ondemand_web.md#logging-in) at [https://ondemand.otago.ac.nz](https://ondemand.otago.ac.nz).
 2. From the top navigation bar, select **Clusters > SSH Public Key**.
 
-    ![Clusters menu showing SSH Public Key](../../assets/images/ssh_key_ood.png){width="600px"}
+    ![Clusters menu showing SSH Public Key](../../assets/images/ssh_key_ood.png){width="600px" align=left}
 
 3. On the **SSH Public Key Manager** page, paste your public key (the full line, e.g. `ssh-ed25519 AAAA... your.name@otago.ac.nz`) into the **Public key** box and click **Add**.
 
-    ![SSH Public Key Manager page](../../assets/images/ssh_key_ood_interface.png){width="600px"}
+    ![SSH Public Key Manager page](../../assets/images/ssh_key_ood_interface.png){width="600px" align=left}
 
 4. Your key will now appear under **Registered Public Keys**.
 
@@ -149,7 +149,7 @@ To use the cluster shell access within OnDemand, first [connect to the **Otago O
 
 You will then be prompted to input your password, similar to [SSH through the terminal](#ssh-through-a-terminal).
 
-![Open OnDemand Shell](../../assets/images/ood_shell.png){width="600px"}
+![Open OnDemand Shell](../../assets/images/ood_shell.png){width="600px" align=left}
 
 
 !!! related-pages "What's next?"
