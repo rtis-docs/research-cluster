@@ -22,10 +22,8 @@ graph TD;
     dept1 --> group1[group]
  
     root --> weka
-    weka --> div2[division]
-    div2 --> school2[school]
-    school2 --> dept2[dept]
-    dept2 --> group2[group]
+    weka --> users
+    users --> username
  
     root --> mnt
     mnt --> auto-hcs
