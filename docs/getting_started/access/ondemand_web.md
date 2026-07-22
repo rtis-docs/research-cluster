@@ -2,15 +2,11 @@
 
 ## Overview
 
-**Otago OnDemand (OOD)** is the gateway to Otago's High Performance Computing (HPC) resources. It provides a browser-based interface for launching interactive applications, running batch jobs, browsing files, and accessing a terminal — all without needing to install any software on your local machine.
+**Otago OnDemand (OOD)** is the gateway to Otago's High Performance Computing (HPC) resources. It provides a browser-based interface for launching interactive applications, running batch jobs, browsing files, and accessing a terminal without needing to install any software on your local machine.
 
 OOD launches applications as [Slurm](https://slurm.schedmd.com/) jobs on your behalf. These are called **interactive sessions** and consume cluster resources in the same way as any other Slurm job, so the usual fair-use policies apply.
 
 ## Logging In
-
-### Before you start
-
-You must be connected to the **University of Otago network** to access OOD — either on campus or via the [University VPN](https://ask.otago.ac.nz/knowledgebase/article/KA-10002113).
 
 ### Access the portal
 
@@ -46,8 +42,6 @@ OOD also provides:
 - **Slurm job scheduling** — submit and monitor batch jobs from the browser
 - **File browser** — view, upload, download, and manage files on the cluster
 - **Shell access** — open a terminal directly in your browser
-
----
 
 ---
 

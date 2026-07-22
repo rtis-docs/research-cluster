@@ -1,16 +1,8 @@
-!!! overview "On this Page"
-    - CPU allocation over the last 7 days
-    - GPU allocation over the last 7 days
-
-<!-- TODO See if overview is in line with content -->
-
-## Cluster Traffic (Utilisation)
+This page shows current resource utilisation across the Otago Aoraki Cluster.
 
 !!! note
     
     This data is only visible if you are on the University of Otago network or connected via VPN.
-
-This page shows the current ultilistion of resources across the cluster and can help inform why your jobs might be waiting, or when might be best to run jobs for best chances of getting the requested resources quickly
 
 
 ### CPU allocation over the last 7 days
