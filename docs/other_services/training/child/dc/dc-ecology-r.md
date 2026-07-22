@@ -1,6 +1,6 @@
 #### R for Data Analysis and Visualisation
 
-This is a free workshop introducing researchers to basics of R programming language and RStudio before moving on to data exploration, visualisation, data cleaning, and data manipulation workflows commonly used in ecological research.
+This is a free workshop introducing researchers to basics of R programming language and RStudio before moving on to data exploration, visualisation, data cleaning, and data manipulation workflows commonly used in ecological research. **This workshop does not teach statistics**.
 
 By the end of this workshop, you will be able to:
 
