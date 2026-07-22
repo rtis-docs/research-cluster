@@ -1,12 +1,6 @@
 # Storage Overview
-!!! overview "On this Page"
-      - What storage locations are available
-      - When to use each storage location
-      - Backing up your data
  
-  <!-- TODO See if overview is in line with content -->
- 
-RTIS provides high-performance storage solutions for researchers at the University of Otago. These storage solutions are available on the [Research Cluster](../general/overview.md) to all researchers at the University of Otago upon application approval.
+eResearch Support provides high-performance storage solutions for researchers at the University of Otago. These storage solutions are available on the [Research Cluster](../general/overview.md) to all researchers at the University of Otago upon application approval.
  
  
 ```mermaid
@@ -22,10 +16,8 @@ graph TD;
     dept1 --> group1[group]
  
     root --> weka
-    weka --> div2[division]
-    div2 --> school2[school]
-    school2 --> dept2[dept]
-    dept2 --> group2[group]
+    weka --> users
+    users --> user
  
     root --> mnt
     mnt --> auto-hcs
@@ -33,15 +25,24 @@ graph TD;
 ```
  
  
-|        | Home directory | RTIS (Ohau) Storage | WEKA | High capacity storage   |
+|        | Home directory | projects | weka | High Capacity Storage (HCS)  |
 | :----- | :-------------------------------------------- | :----------------------------------- | :----- |:---|
 | __Ideal Use__ | Storage of scripts and configuration files |Research data you are working on      | Workflows that require very high speed data reading/writing  | Long term storage of important research data
-|_Mount point_| `/home/<username>` | `/projects/<division>/<school>/<dept>/<group>/` | `/weka/<division>/<school>/<dept>/<group>/` | `/mnt/auto-hcs/<share name>`
-| _Backed up_| :material-close: | :material-close: | :material-close: | :material-check: |
-| _Default quota_ | 40 GB | Set by request on group creation | 0 GB (needs to be requested) | (Managed by ITS) |
+|_Mount point_| `/home/<username>` | `/projects/<division>/<school>/<dept>/<group>/` | `/weka/users/<username>` | `/mnt/auto-hcs/<share name>`
+| _Backed up_| :material-check: | :material-close: | :material-close: | :material-check: |
+| _Default quota_ | 40 GB | Set by request on group creation | 0 GB (needs to be requested) | (Managed by Core Digital. Contact AskOtago) |
  
  
  
+### Home directory
+ 
+All users of the Otago Research Cluster have a home directory that is mounted  at ``/home/<username>``. Your home directory is intended for storing configuration files, scripts, and other smaller datasets that are used for computations.
+ 
+The hard quota for home directories is **{{ home_quota }}**. When you reach this limit you will not be able to write anymore data to your home directory.
+
+Home directories are backed up. One snapshot per day for the last 7 days, one per week for the last 4 weeks, and one per month for the last 6 months are retained; older snapshots are pruned.
+
+**A warning will be sent when you have reached 30GB of data stored in your home directory.**
  
  
 ## Research Storage (Ohau storage pool)
@@ -49,18 +50,8 @@ graph TD;
  
 !!! warning
  
-    Note that the **Research storage is not backed up** and it is the responsibility of the user to ensure their important data is safe. See [data transfer](data_transfer/data_transfer_overview.md) for options to move data you want to retain. If you need assistance with backing up your data, please email {{support_email}}.
-### Home directory
- 
-All users of the Otago Research Cluster have a home directory that is mounted  at ``/home/<username>``. The home storage is intended for storing configuration files, scripts, and other smaller datasets that are used for computations.
- 
-The hard quota for home directories is **{{ home_quota }}**. When you reach this limit you will not be able to write anymore data to your home directory.
-A warning will be sent when the you have 30GB of data stored in your home directory.
- 
-!!! related-pages "What Next?"
- 
-    - Find more information on [Homes](../storage/data_locations/homes.md)
-    - Information on how to move your data on and off the Research cluster on [Data Transfer](data_transfer/data_transfer_overview.md)
+    Note that the **/projects and /weka are not backed up** and it is the responsibility of the user to ensure their important data is safe. See [data transfer](data_transfer/data_transfer_overview.md) for options to move data you want to retain. If you need assistance with backing up your data, please email {{support_email}}.
+
 ### Projects directory
  
 Projects storage is organised per department and group ``/projects/<division>/<department>/<Research_Group>``.
