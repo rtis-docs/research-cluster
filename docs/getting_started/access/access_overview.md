@@ -1,14 +1,5 @@
 # Access Overview
 
-
-!!! overview "On this page"
-    - How to access the Aoraki Research Cluster
-    - Getting an account
-    - OnDemand Web portal
-    - Accessing the login node (ssh)
-
-## How to access the Aoraki Research Cluster
-
 ### Getting an account
 
 By default your University account will need to be provisioned for access. Please follow the link to request access:
@@ -23,14 +14,10 @@ By default your University account will need to be provisioned for access. Pleas
 
 ::/cards::
 
-### Ways to access the Aoraki Research Cluster
+### Access the Aoraki Research Cluster
 
-In order to access the resources of the Aoraki Research Cluster:
-
-
-1. Have a current University of Otago login credentials
-2. If your require more than {{home_quota}} of space (default home directory quota), have your PI request a group project space
-3. Log in either via:
+1. Have a current cluster linked account
+2. Log in either via:
 
 ::cards::
 
@@ -47,7 +34,9 @@ In order to access the resources of the Aoraki Research Cluster:
 ::/cards::
 
 !!! related-pages "What next?"
-    Where to store your data and what your options are found on our [Storage Overview](../../storage/storage_options.md)
+    * Available software. We have a wide range of applications available: [Ondemand GUI Apps](../software/onDemand/available_apps.md) or commandline [Application Libraries](../software/applications/index.md)
+    * Running jobs. [Ondemand](../software/onDemand/ondemand.md) and [Slurm](../running/batch/slurm_quickstart.md) are both separate ways of running jobs on the cluster.
+    * Where to store your data and what your options are found on our [Storage Overview](../../storage/storage_options.md)
   
 
     

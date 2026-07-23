@@ -34,37 +34,37 @@ graph TD;
  
  
  
-### Home directory
+## Home directory
+
+## /home/username
  
 All users of the Otago Research Cluster have a home directory that is mounted  at ``/home/<username>``. Your home directory is intended for storing configuration files, scripts, and other smaller datasets that are used for computations.
  
-The hard quota for home directories is **{{ home_quota }}**. When you reach this limit you will not be able to write anymore data to your home directory.
+* Home driectory advisory quotas are **30 GB**. You will receive an email at your Otago email address if your home directory reaches this threshold. 
+* Home directory hard quotas are **{{ home_quota }}**. When you reach this limit you will not be able to write anymore data to your home directory. This hard quota allows for the backup of home directories.
 
 Home directories are backed up. One snapshot per day for the last 7 days, one per week for the last 4 weeks, and one per month for the last 6 months are retained; older snapshots are pruned.
 
 **A warning will be sent when you have reached 30GB of data stored in your home directory.**
  
- 
-## Research Storage (Ohau storage pool)
- 
- 
 !!! warning
  
     Note that the **/projects and /weka are not backed up** and it is the responsibility of the user to ensure their important data is safe. See [data transfer](data_transfer/data_transfer_overview.md) for options to move data you want to retain. If you need assistance with backing up your data, please email {{support_email}}.
 
-### Projects directory
+ 
+## /projects
  
 Projects storage is organised per department and group ``/projects/<division>/<department>/<Research_Group>``.
 The projects storage is high-performance and is ideal for temporarily storing data that is **in use** for individuals and sharing within groups using the research infrastructure.
 Note that this storage is not backed up and is the responsibility of the user to ensure their important data is backed up. We recommend having a copy of your data on HCS, and transferring a copy to `/projects/` for working on, then removing this working copy once finished and transferring results back to HCS.
  
-To apply for a projects directory, please fill out the [storage-signup-form](../getting_started/access/signup.md) form.
+To apply for a projects directory, please fill out the [Storage Signup](../getting_started/access/signup.md) form.
  
  
 #### When to use /projects/ storage
  
-* Intermediate Data Storage
-   During complex computations, intermediate data or temporary results are often generated.
+* Large data sets
+* Data sharing
 * Checkpointing
    In long-running computations, checkpointing is used to save the state of a job at regular intervals.
 * Data Staging
@@ -72,27 +72,13 @@ To apply for a projects directory, please fill out the [storage-signup-form](../
 * Temporary Data Processing
    For tasks that generate large amounts of temporary data, such as sorting, indexing, or image processing.
  
-!!! warning
- 
-    Note that the **Research storage is not backed up** and it is the responsibility of the user to ensure their important data is safe. See [data transfer](data_transfer/data_transfer_overview.md) for options to move data you want to retain. If you need assistance with backing up your data, please email {{support_email}}.
-
-
-!!! related-pages "What Next?"
-
-    - Find more information on [Projects](data_locations/projects.md)
-    - Information on how to move your data on and off the Research cluster on [Data Transfer](data_transfer/data_transfer_overview.md)
-<!-- TODO Are these pages the next step or relevant? -->
- 
-### Weka directory
-<!-- TODO Content -->
+## /weka
 
 WEKA is a high speed/throughput file storage system that can be utilised for workloads that need high throughput of data. Data stored on WEKA is intended to be only of a temporary nature while being processed.
 
 To make use of of WEKA during a job, read or write data to `/tmp/` which has a shared 5TB limit across all users per node. Make sure to copy or move files you want to keep from `/tmp` to another location as all files created in `/tmp/` by your job will automatically be deleted upon the job ending.
 
 For continued access between jobs, a separate path on WEKA storage can be allocated with a quota upon request to {{ support_email }}.
-
-<!-- The WEKA storage is mounted on the Aoraki compute cluster at ``/weka/<Research Group>`` or ``/weka/<user>``. The `WEKA platform <https://www.weka.io/>`_ is a high-performance storage solution ideal for **temporary data** used in high-performance computing jobs. -->
 
 !!! related-pages "What Next?"
  
@@ -115,7 +101,7 @@ If you have an HCS share this is accessible from the cluster.
 ## Backing up your data
  
  
-The Research Storage (anything within /home, /projects, /weka) is not backed up. It is the responsibility of the user to ensure their data is safe. RTIS recommends that users back up their data to the HCS.
+The Research Storage (anything within /projects, /weka) is not backed up. It is the responsibility of the user to ensure their data is safe. RTIS recommends that users back up their data to the HCS.
  
 Setting up Globus to automatically transfer data between the two storage solutions is a great way to ensure your data is backed up.
  
