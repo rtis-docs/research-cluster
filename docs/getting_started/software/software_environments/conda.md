@@ -19,7 +19,7 @@ If you are looking to only manage python packages, consider the use of [venv](ve
 
 ### Loading Conda
 
-Conda is available through the [module system]( {{modules}} )
+Conda is available through the [module system](modules.md)
 
 !!! terminal
     ```bash

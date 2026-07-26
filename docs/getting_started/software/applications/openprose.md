@@ -7,7 +7,7 @@
 
 It must be run on a partition/node with **GPU compute/CUDA** support and is optimized for NVIDIA GPUs, particularly A100 and H100. OpenPose processes image directories or video files and outputs pose estimations in JSON and/or image formats.
 
-The OpenPose container is available on the cluster as a shared [Apptainer]({{apptainer}}) image, installed at: `/opt/apptainer_img/openpose.sif`
+The OpenPose container is available on the cluster as a shared [Apptainer](../software_environments/apptainer.md) image, installed at: `/opt/apptainer_img/openpose.sif`
 
 
 

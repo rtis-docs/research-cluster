@@ -247,10 +247,10 @@ Submit a slurm batch job:
   export MLM_LICENSE_FILE=27001@slo-licence-svr.registry.otago.ac.nz
   
   ## GPU job
-  ## apptainer exec --nv --bind "$(pwd)":/opt/workspace,/weka/rtis/userxyz/tmp:/tmp --pwd /opt/workspace /opt/apptainer_img/matlab-r2024a-GL.sif matlab -nodisplay -nodesktop < MATLAB_job.m
+  ## apptainer exec --nv --bind "$(pwd)":/opt/workspace,/weka/rtis/userxyz/tmp:/tmp --pwd /opt/workspace /opt/apptainer_img/matlab-r2024a-GL.sif matlab -nodisplay -nodesktop -nosplash < MATLAB_job.m
   
   ## CPU job
-  apptainer exec --bind "$(pwd)":/opt/workspace,/weka/rtis/userxyz/tmp:/tmp --pwd /opt/workspace /opt/apptainer_img/matlab-r2024a-GL.sif matlab -nodisplay -nodesktop < MATLAB_job.m
+  apptainer exec --bind "$(pwd)":/opt/workspace,/weka/rtis/userxyz/tmp:/tmp --pwd /opt/workspace /opt/apptainer_img/matlab-r2024a-GL.sif matlab -nodisplay -nodesktop -nosplash < MATLAB_job.m
   
   echo "Script end"
   ```
@@ -287,10 +287,10 @@ Submit a slurm array batch job:
   export MLM_LICENSE_FILE=27001@slo-licence-svr.registry.otago.ac.nz
   
   ## GPU job
-  ## apptainer exec --nv --bind "$(pwd)":/opt/workspace --pwd /opt/workspace /opt/apptainer_img/matlab-r2024a-GL.sif matlab -nodisplay -nodesktop -r "process_input(${SLURM_ARRAY_TASK_ID}); exit;"
+  ## apptainer exec --nv --bind "$(pwd)":/opt/workspace --pwd /opt/workspace /opt/apptainer_img/matlab-r2024a-GL.sif matlab -nodisplay -nodesktop -nosplash -batch "process_input(${SLURM_ARRAY_TASK_ID})"
   
   ## CPU job
-  apptainer exec --bind "$(pwd)":/opt/workspace --pwd /opt/workspace /opt/apptainer_img/matlab-r2024a-GL.sif matlab -nodisplay -nodesktop -r "process_input(${SLURM_ARRAY_TASK_ID}); exit;"
+  apptainer exec --bind "$(pwd)":/opt/workspace --pwd /opt/workspace /opt/apptainer_img/matlab-r2024a-GL.sif matlab -nodisplay -nodesktop -nosplash -batch "process_input(${SLURM_ARRAY_TASK_ID})"
   
   echo "Script end"
   ```

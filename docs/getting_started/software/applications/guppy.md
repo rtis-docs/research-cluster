@@ -4,7 +4,7 @@ Guppy is a data processing toolkit that contains the Oxford Nanopore Technologie
 
 The GPU version of guppy is significantly faster than the CPU version, and should be run on a partition/node with CUDA (GPU compute) support.
 
-The GPU-enabled guppy is made available on the cluster as a shared [Apptainer]({{apptainer}}) container image. 
+The GPU-enabled guppy is made available on the cluster as a shared [Apptainer](../software_environments/apptainer.md) container image. 
 
 You can use the `apptainer/guppy` module to add a convenient alias to running `dorado` within the container.
 
@@ -40,4 +40,4 @@ Make sure to specify `--nv` To enable GPU support.
 
 ## Spack
 
-Alternatively guppy (`ont-guppy`) can also be installed using [Spack]({{spack}}).
+Alternatively guppy (`ont-guppy`) can also be installed using [Spack](../software_environments/spack.md).
