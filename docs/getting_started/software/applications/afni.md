@@ -10,7 +10,7 @@ The AFNI GUI can be accessed via the Open OnDemand Applications - [https://ondem
 
 ## Command line
 
-The AFNI suite is made available on the cluster as a shared [Apptainer]( {{ apptainer }} ) container image. 
+The AFNI suite is made available on the cluster as a shared [Apptainer](../software_environments/apptainer.md) container image. 
 Binaries and scripts are run within the context of the container.
 
 You can use the `apptainer/AFNI` module to add convenient aliases to running any of the AFNI binaries and scripts within the container:

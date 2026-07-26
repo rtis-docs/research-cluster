@@ -36,13 +36,13 @@ Access your files from the top menu: **Files > Home Directory**. You can:
 
 - Create, delete, and move files and folders.
 - Upload and download files.
-- (Section on HCS and Globus to be added.)
+- Connect to your Globus transfer account (select the Open in Globus button at the top of the page)
 
 <!--TODO section on HCS and globus -->
 
 After logging in, you'll see the Open OnDemand home page.
 
-![Open OnDemand Files App](../../../assets/images/ood_files_app.png){width="600px"}
+![Open OnDemand Files App](../../../assets/images/ood_files_app.png){width="600px"}{ .left }
 
 !!! related-pages "What's next?"
       - Find more information on [Using the Open OnDemand File Manager](ood_file_manager.md)
@@ -53,13 +53,13 @@ After logging in, you'll see the Open OnDemand home page.
 
 See and cancel your Slurm jobs from **Jobs > Active Jobs**. This includes jobs started via `sbatch`, `srun`, and Open OnDemand.
 
-![Active Jobs](../../../assets/images/ood_activejobs.png){width="600px"}
+![Active Jobs](../../../assets/images/ood_activejobs.png){width="600px"}{ .left }
 
 ### Shell Access
 
 Get command-line access to the cluster from the top menu bar options: **Clusters > Aoraki Cluster Shell Access**.
 
-![Open OnDemand Shell](../../../assets/images/ood_shell.png){width="600px"}
+![Open OnDemand Shell](../../../assets/images/ood_shell.png){width="600px"}{ .left }
 
 !!! related-pages "What's next?"
       - Find more information on [Accessing the Shell through Open OnDemand](ood_shell.md)

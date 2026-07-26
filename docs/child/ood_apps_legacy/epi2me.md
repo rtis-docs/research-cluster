@@ -38,6 +38,6 @@ To accomplish this, running the OnDemand app for the first time will automatical
     While initial testing has been promising, the added complexity of running EPI2ME Desktop this way, as well as the application's general lack of (Nextflow) configurability *may* introduce 
     hard-to-troubleshoot issues.
     
-    Consider running the workflows directly from the commandline using [Nextflow]({{nextflow}}) instead.
+    Consider running the workflows directly from the commandline using [Nextflow](/getting_started/workflows/nextflow) instead.
 
 

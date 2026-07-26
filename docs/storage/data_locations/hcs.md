@@ -18,7 +18,7 @@ How you access your data on the HCS will depend upon your use case. The 3 main u
 
 1. [Accessing HCS shares from within an OnDemand HPC desktop session](#accessing-hcs-within-the-ondemand-hpc-desktop) - Good for being able to explore your files in a file browser
 2. [Accessing HCS share from the login node](#accessing-hcs-on-the-login-node) - Good for moving/copying small amounts of data, or browsing on the commandline
-3. [Accessing HCS shares from a compute node](#accessing-hcs-on-the-cluster-nodes---auks) - Good for when you want need to access data on HCS as part of a job
+3. [Accessing HCS shares from a compute node](#accessing-hcs-on-the-cluster-nodes-auks) - Good for when you want need to access data on HCS as part of a job
 
 !!! info
     For best performance it is best to have a copy of the data you want to use on the research storage. For large transfers this is best done with Globus

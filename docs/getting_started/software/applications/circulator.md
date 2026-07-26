@@ -1,6 +1,6 @@
 # Circlator
 
-Circlator is made available as an [Apptainer]({{apptainer}}) container. 
+Circlator is made available as an [Apptainer](../software_environments/apptainer.md) container. 
 
 You can direcly run 'circlator' from the container with:
 
