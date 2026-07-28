@@ -1,7 +1,7 @@
 # SSH
 
 !!! overview "On this Page"
-    - How to generate an SSH key and register it with OnDemand
+    - How to generate an SSH key and register it with Otago Ondemand
     - How to SSH through a terminal
     - How to SSH with OnDemand
 
@@ -15,7 +15,7 @@ Register your SSH public key to enable key-based authentication to log in to the
 
 ### Step 1: Generate an SSH key pair
 
-If you already have an SSH key pair (typically `~/.ssh/id_ed25519.pub` or `~/.ssh/id_rsa.pub` on Mac/Linux), you can skip to [Step 2](#step-2-copy-your-public-key).
+If you already have an SSH key pair (typically `~/.ssh/id_ed25519.pub` or `~/.ssh/id_rsa.pub` on Mac/Linux), you can skip to Step 2.
 
 === "Windows"
 
@@ -43,33 +43,8 @@ If you already have an SSH key pair (typically `~/.ssh/id_ed25519.pub` or `~/.ss
 !!! info "No ed25519 support?"
     If your system or client doesn't support `ed25519` keys, use `ssh-keygen -t rsa -b 4096` instead.
 
-### Step 2: Copy your public key
 
-You need the contents of the **public** key file — never share your private key (the file *without* the `.pub` extension).
-
-=== "Windows (PowerShell)"
-
-    ```powershell
-    Get-Content $env:USERPROFILE\.ssh\id_ed25519.pub | Set-Clipboard
-    ```
-
-    This copies the key straight to your clipboard.
-
-=== "macOS"
-
-    ```bash
-    pbcopy < ~/.ssh/id_ed25519.pub
-    ```
-
-=== "Linux"
-
-    ```bash
-    cat ~/.ssh/id_ed25519.pub
-    ```
-
-    Select and copy the full output (it starts with `ssh-ed25519` and ends with the comment you set).
-
-### Step 3: Add your key using ssh-copy-id or Otago Ondemand
+### Step 2: Add your key using ssh-copy-id or Otago Ondemand
 
 === "ssh-copy-id (macOS / Linux)"
 
@@ -79,11 +54,11 @@ You need the contents of the **public** key file — never share your private ke
     ssh-copy-id -i ~/.ssh/id_ed25519.pub <otago-username>@aoraki-login.otago.ac.nz
     ```
 
-    You will be prompted for your password once. After that, key-based login is ready — skip to [Step 4](#step-4-connect-using-your-key).
+    You will be prompted for your password once. After that, key-based login is ready — skip to Step 3.
 
-=== "OnDemand"
+=== "Otago Ondemand"
 
-    1. [Log in to OnDemand](ondemand_web.md#logging-in) at [https://ondemand.otago.ac.nz](https://ondemand.otago.ac.nz).
+    1. [Log in to Ondemand](ondemand_web.md#logging-in) at [https://ondemand.otago.ac.nz](https://ondemand.otago.ac.nz).
     2. From the top navigation bar, select **Clusters > SSH Public Key**.
 
         ![Clusters menu showing SSH Public Key](../../assets/images/ssh_key_ood.png){width="600px" align=left}
@@ -95,7 +70,7 @@ You need the contents of the **public** key file — never share your private ke
     4. Your key will now appear under **Registered Public Keys**.
 
 
-### Step 4: Connect using your key
+### Step 3: Connect using your key
 
 Once your key is registered, SSH to the login node as normal — if your private key is in the default location, no extra flags are needed:
 
@@ -108,23 +83,6 @@ You should connect without being prompted for your password. If you saved your k
 ```bash
 ssh -i /path/to/your/private_key <otago-username>@aoraki-login.otago.ac.nz
 ```
-
-## SSH through a terminal
-
-Open a terminal and use the `ssh` command with your Otago username:
-
-!!! terminal
-
-    === "ssh login"
-
-        ```bash
-        ssh <otago-username>@aoraki-login.otago.ac.nz
-        ```
-
-        ```output
-        <otago-username>@aoraki-login.otago.ac.nz's password:
-        ```
-
 
 
 !!! info "First time connecting"
