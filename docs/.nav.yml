@@ -8,7 +8,6 @@ nav:
   - "Getting Started": "getting_started/"
   - "general"
   - "storage"
-  - storage_requests.md
   - "Other Services": "other_services"
 
 # TODO un-ignore coldfront once it is ready
