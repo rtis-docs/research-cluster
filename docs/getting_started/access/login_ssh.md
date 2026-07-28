@@ -15,7 +15,7 @@ Register your SSH public key to enable key-based authentication to log in to the
 
 ### Step 1: Generate an SSH key pair
 
-If you already have an SSH key pair (typically `~/.ssh/id_ed25519.pub` or `~/.ssh/id_rsa.pub` on Mac/Linux), you can skip to [Step 2](#step-2-copy-your-public-key).
+If you already have an SSH key pair (typically `~/.ssh/id_ed25519.pub` or `~/.ssh/id_rsa.pub` on Mac/Linux), you can skip to Step 2.
 
 === "Windows"
 
@@ -54,11 +54,11 @@ If you already have an SSH key pair (typically `~/.ssh/id_ed25519.pub` or `~/.ss
     ssh-copy-id -i ~/.ssh/id_ed25519.pub <otago-username>@aoraki-login.otago.ac.nz
     ```
 
-    You will be prompted for your password once. After that, key-based login is ready — skip to [Step 4](#step-4-connect-using-your-key).
+    You will be prompted for your password once. After that, key-based login is ready — skip to Step 3.
 
-=== "OnDemand"
+=== "Otago Ondemand"
 
-    1. [Log in to OnDemand](ondemand_web.md#logging-in) at [https://ondemand.otago.ac.nz](https://ondemand.otago.ac.nz).
+    1. [Log in to Ondemand](ondemand_web.md#logging-in) at [https://ondemand.otago.ac.nz](https://ondemand.otago.ac.nz).
     2. From the top navigation bar, select **Clusters > SSH Public Key**.
 
         ![Clusters menu showing SSH Public Key](../../assets/images/ssh_key_ood.png){width="600px" align=left}
