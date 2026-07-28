@@ -1,16 +1,17 @@
-# Accessing the login node (ssh)
+# SSH
+
 !!! overview "On this Page"
     - How to generate an SSH key and register it with OnDemand
     - How to SSH through a terminal
     - How to SSH with OnDemand
 
-Use of the login node should be limited to 'lightweight' tasks such as file browsing/copying/moving or submitting jobs into the SLURM scheduler.
 
-You can access the Research Cluster login node remotely through the two below mechanisms.
+!!! warning
+    You can access the Aoraki Cluster using SSH if you are on campus or connected to the campus VPN
 
-## Setting up SSH key access (recommended)
+## Setting up SSH key access
 
-Instead of typing your password every time you connect, you can register an SSH public key with OnDemand and use key-based authentication to log in to the login node from a terminal. This is faster and required for some tools (e.g. `rsync`, `scp`, VS Code Remote-SSH) that don't handle interactive password prompts well.
+Register your SSH public key to enable key-based authentication to log in to the login node from a terminal. This is faster and required for some tools (e.g. `rsync`, `scp`, VS Code Remote-SSH) that don't handle interactive password prompts well.
 
 ### Step 1: Generate an SSH key pair
 
@@ -68,18 +69,30 @@ You need the contents of the **public** key file — never share your private ke
 
     Select and copy the full output (it starts with `ssh-ed25519` and ends with the comment you set).
 
-### Step 3: Add the key in OnDemand
+### Step 3: Add your key using ssh-copy-id or Otago Ondemand
 
-1. [Log in to OnDemand](ondemand_web.md#logging-in) at [https://ondemand.otago.ac.nz](https://ondemand.otago.ac.nz).
-2. From the top navigation bar, select **Clusters > SSH Public Key**.
+=== "ssh-copy-id (macOS / Linux)"
 
-    ![Clusters menu showing SSH Public Key](../../assets/images/ssh_key_ood.png){width="600px" align=left}
+    The quickest way to register your key is with `ssh-copy-id`. This copies your public key to the login node in a single command:
 
-3. On the **SSH Public Key Manager** page, paste your public key (the full line, e.g. `ssh-ed25519 AAAA... your.name@otago.ac.nz`) into the **Public key** box and click **Add**.
+    ```bash
+    ssh-copy-id -i ~/.ssh/id_ed25519.pub <otago-username>@aoraki-login.otago.ac.nz
+    ```
 
-    ![SSH Public Key Manager page](../../assets/images/ssh_key_ood_interface.png){width="600px" align=left}
+    You will be prompted for your password once. After that, key-based login is ready — skip to [Step 4](#step-4-connect-using-your-key).
 
-4. Your key will now appear under **Registered Public Keys**.
+=== "OnDemand"
+
+    1. [Log in to OnDemand](ondemand_web.md#logging-in) at [https://ondemand.otago.ac.nz](https://ondemand.otago.ac.nz).
+    2. From the top navigation bar, select **Clusters > SSH Public Key**.
+
+        ![Clusters menu showing SSH Public Key](../../assets/images/ssh_key_ood.png){width="600px" align=left}
+
+    3. On the **SSH Public Key Manager** page, paste your public key (the full line, e.g. `ssh-ed25519 AAAA... your.name@otago.ac.nz`) into the **Public key** box and click **Add**.
+
+        ![SSH Public Key Manager page](../../assets/images/ssh_key_ood_interface.png){width="600px" align=left}
+
+    4. Your key will now appear under **Registered Public Keys**.
 
 
 ### Step 4: Connect using your key
@@ -149,7 +162,7 @@ To use the cluster shell access within OnDemand, first [connect to the **Otago O
 
 You will then be prompted to input your password, similar to [SSH through the terminal](#ssh-through-a-terminal).
 
-![Open OnDemand Shell](../../assets/images/ood_shell.png){width="600px" align=left}
+![Open OnDemand Shell](../../assets/images/ondemand_shell.jpeg){width="600px" align=left}
 
 
 !!! related-pages "What's next?"
