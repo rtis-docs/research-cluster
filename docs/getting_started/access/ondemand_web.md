@@ -1,10 +1,10 @@
-# Open OnDemand
+# Otago OnDemand
 
 ## Overview
 
-**Otago OnDemand (OOD)** is the gateway to Otago's High Performance Computing (HPC) resources. It provides a browser-based interface for launching interactive applications, running batch jobs, browsing files, and accessing a terminal without needing to install any software on your local machine.
+**Otago OnDemand (OOD)** is the web gateway to Otago's High Performance Computing resources. It provides a browser-based interface for launching interactive applications, running batch jobs, browsing files, and accessing a terminal without needing to install software on your local machine.
 
-OOD launches applications as [Slurm](https://slurm.schedmd.com/) jobs on your behalf. These are called **interactive sessions** and consume cluster resources in the same way as any other Slurm job, so the usual fair-use policies apply.
+OOD launches applications as [Slurm](https://slurm.schedmd.com/) jobs on your behalf. These are called **interactive sessions** and consume cluster resources.
 
 ## Logging In
 
@@ -31,11 +31,25 @@ After a successful login, you will be taken to the OOD home page:
 
 | Application | Description |
 |---|---|
-| **HPC Desktop** | A full graphical desktop environment running on the cluster |
+| [**AFNI**](../software/applications/afni.md) | Analysis of Functional NeuroImages — neuroimaging analysis suite |
+| **AnimalTA** | Animal tracking and behaviour analysis |
+| **Blender** | Free and open-source 3D creation suite |
+| [**CCP4**](../software/applications/ccp4.md) | Macromolecular structure determination by X-ray crystallography |
+| [**DeepLabCut**](../software/applications/deeplabcut.md) | Markerless pose estimation for animal behaviour research |
+| **ESA SNAP** | ESA Sentinel Application Platform for satellite remote sensing data |
+| **Fiji** | "Batteries-included" distribution of ImageJ for scientific image analysis |
+| **FlexPDE** | Finite element PDE solver with scripted model definitions |
+| [**HPC Desktop**](../software/onDemand/hpc_desktop.md) | Full graphical desktop environment running on the cluster |
+| **JupyterLab** | Browser-based interactive notebooks for Python and other kernels |
+| **Kilosort** | Spike sorting for multi-channel electrophysiology recordings |
+| [**MATLAB**](../software/applications/matlab.md) | Interactive MATLAB computing environment |
+| **NetLogo** | Multi-agent programmable modelling environment |
+| **Phenix** | Automated macromolecular structure determination |
+| **phy** | Manual spike sorting and curation of electrophysiology data |
 | **RStudio** | Interactive R development environment |
-| **Jupyter Notebook** | Browser-based Python (and other kernel) notebooks |
-| **MATLAB** | Interactive MATLAB environment |
-| **WhisperX** | Web UI for transcribing audio and video using OpenAI's Whisper AI models |
+| **VSCodium** | Community-driven, freely-licensed distribution of VS Code |
+| [**WhisperX**](../software/applications/whisper.md) | Web UI for transcribing audio and video using OpenAI's Whisper models |
+| [**XDSGUI**](../software/applications/xdsguI.md) | GUI for XDS — X-ray diffraction data processing and phasing |
 
 OOD also provides:
 
@@ -73,7 +87,7 @@ For large data transfers, command-line tools such as `scp`, `rsync`, or a dedica
 
 ## Shell Access
 
-Select **Clusters > Otago HPC Shell Access** from the top navigation bar to open a terminal session in your browser. This gives you full command-line access to the cluster login node, equivalent to connecting via SSH.
+Select **Clusters > Aoraki Cluster Shell Access** from the top navigation bar to open a terminal session in your browser. This gives you full command-line access to the cluster login node, equivalent to connecting via [SSH](login_ssh.md).
 
 ---
 
@@ -111,7 +125,7 @@ Simply closing the browser tab does **not** end the job — your allocation will
 **I'm getting an authentication error.**
 : Ensure you are using your full university email address. If MFA is enabled on your account, complete the second-factor prompt when asked.
 
-For further assistance, contact the [Research Computing team](mailto:hpc@otago.ac.nz) or log a ticket through the IT Service Desk.
+For further assistance, contact the [Research Computing team](mailto:rtis.support@otago.ac.nz) or log a ticket through the IT Service Desk.
 
 ---
 
