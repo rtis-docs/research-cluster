@@ -1,6 +1,6 @@
-# (HCS) 
+# Otago HCS 
 
-## Otago High Capacity Storage  
+## Otago High Capacity Storage (HCS)
 
 !!! overview "On this Page"
       - To see where HCS fits within Storage check out [Storage Overview](../storage_options.md)
