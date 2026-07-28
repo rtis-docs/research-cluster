@@ -1,4 +1,7 @@
-# Otago HCS (High Capacity Storage) 
+# (HCS) 
+
+## Otago High Capacity Storage  
+
 !!! overview "On this Page"
       - To see where HCS fits within Storage check out [Storage Overview](../storage_options.md)
       - What is HCS (High Capacity Storage)
@@ -16,43 +19,12 @@ HCS is the main data storage pool on the Otago campus. HCS is able to be mounted
 
 How you access your data on the HCS will depend upon your use case. The 3 main use cases are detailed below
 
-1. [Accessing HCS shares from within an OnDemand HPC desktop session](#accessing-hcs-within-the-ondemand-hpc-desktop) - Good for being able to explore your files in a file browser
-2. [Accessing HCS share from the login node](#accessing-hcs-on-the-login-node) - Good for moving/copying small amounts of data, or browsing on the commandline
-3. [Accessing HCS shares from a compute node](#accessing-hcs-on-the-cluster-nodes-auks) - Good for when you want need to access data on HCS as part of a job
+1. [Accessing HCS share from the login node](#accessing-hcs-on-the-login-node) - Good for moving/copying small amounts of data, or browsing on the commandline
+2. [Accessing HCS shares from a compute node](#accessing-hcs-on-the-cluster-nodes-auks) - Good for when you want need to access data on HCS as part of a job
+3. [Using rclone copy data or mount HCS also available on an Ondemand HPC Desktop in the file browser](../data_transfer/rclone.md) - good for transfering small to medium size data sets and for browsing HCS data on the HPC desktop.
 
 !!! info
-    For best performance it is best to have a copy of the data you want to use on the research storage. For large transfers this is best done with Globus
-
-### Accessing HCS within the OnDemand HPC Desktop
-
-Accessing the HCS within an OnDemand HPC Desktop session is useful for when you want to be able to browse your files in a graphical file browser, or for moving/copying moderate amounts of data to/from the HCS.
-
-**SMB Local Mount from HPC Desktop GUI**  
-
-  1. Start an Otago HPC Desktop 
-  2. Open a Terminal window on the desktop
-  3. Type "kdestroy" to remove invalid older tickets
-  4. Type "kinit" and Enter your password 
-  5. Open File browser window  
-  6. Connect and login to HCS by entering the smb://username@storage.hcs-p01.otago.ac.nz/share-name address  
-  7. When the authentication window appears type in the domain "registry" if staff or "student" if you are using a student account, and your password  
-  8. Press connect and wait a few seconds for authentication and your HCS files to appear in the window.  
-
-!!! note
-    It can sometimes take up to 1 minute for the authentication process to complete
-
-<!-- TODO add paragraphs explaining the images -->
-![Connecting to HCS - create kerberos ticket with `kinit`](../../assets/images/kinit.png){width="600px"}
-
-
-
-
-
-
-![Connect to HCS - authenticating using samba in the file browser](../../assets/images/smbauth.png){width="600px"}
-
-
-![Connect to HCS - browsing hcs files in file browser](../../assets/images/files.png){width="600px"}
+    For best performance it is best to have a copy of the data you want to use on the research storage. For large transfers this is best done with Globus or rclone.
 
 
 ### Accessing HCS on the Login node
