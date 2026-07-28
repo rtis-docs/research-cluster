@@ -1,4 +1,4 @@
-# Research HPC Cluster (Aoraki) Documentation
+# Otago Research Computing
 
 ## Overview
 

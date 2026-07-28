@@ -1,9 +1,9 @@
 ---
 tags:
-  - onDemand
+  - OnDemand
 ---
 
-# Open OnDemand 
+# Otago OnDemand 
 
 !!! overview "On this Page"
     - What is Open OnDemand
