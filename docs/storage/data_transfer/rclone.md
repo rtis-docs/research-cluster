@@ -1,9 +1,9 @@
-# rclone (Kerberos auth for HCS)
+# rclone 
 
-This guide sets up `rclone` instead, which is multi-threaded
+**Transfer to and from anywhere or use Kerberos auth to access your HCS data.**
 
-This is a one-time setup per user, plus a ~10-second re-auth step whenever
-your Kerberos ticket expires (typically once per session/day).
+This guide sets up `rclone` for using Kerberos authentication to access Otago HCS.  
+
 
 ---
 
@@ -16,7 +16,12 @@ module load rclone
 Add this to your `~/.bashrc` (or shell profile) if you want it available on
 every login without typing it each time.
 
-## 2. Create the rclone remote (one-time setup)
+## 2. Kerberos HCS (one-time setup part) 
+
+rclone can be user to transfer files to and from HCS to to mount HCS on an Aoraki node (e.g. the login node for file transfers or on an HPC desktop for browsing your HCS share from a compute node)
+
+This is a one-time setup per user, plus a ~10-second re-auth step whenever
+your Kerberos ticket expires (typically once per session/day).
 
 Replace `hpcshare` with whatever name you like:
 
@@ -135,8 +140,7 @@ Then open `~/smb-share` in Thunar like a normal folder. To unmount:
 fusermount -u ~/smb-share
 ```
 
-This works on any login node — no root, no static `/etc/fstab` entry needed
-— which matters since you land on a different node each session.
+Then browse to ~/smb-share in either the terminal or on an Ondemand HPC Desktop to see your HCS files and copy your files to the cluster file system or use them while your Kerberos ticket is valid.
 
 ---
 
