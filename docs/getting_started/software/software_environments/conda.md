@@ -114,7 +114,7 @@ Although once you have activated the base conda environment, you can in principl
 
     To save home directory storage space, it is recommended to create Conda environments in a shared project directory. 
     This approach allows you to manage your Conda environments within your project directory and if needed share them with collaborators.
-    If you do not yet have a shared project directory, please contact RTIS Solutions to request one.
+    If you do not yet have a shared project directory, please email the eResearch Support Solutions team ({{support_email}}) to request one.
 
 
 To create a named environment (for example, called "myenv"), ensure that the base environment is activated (the command prompt should start with "(base) "), and type:

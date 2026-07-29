@@ -16,7 +16,7 @@ Apptainer has its own container image format, but is generally compatible with D
 
 The Apptainer user guide may be found at [https://apptainer.org/docs/user/main/](https://apptainer.org/docs/user/main/) , which explains, amongst other things, how to pull down Docker images from public repositories (such as Dockerhub) and make them work with Apptainer. Email {{support_email}} if you need any help with this. 
 
-On the Research Cluster and other RTIS-managed shared servers, pre-existing shared Apptainer images (.sif) are generally located at `$APPTAINER_IMG`. 
+On the Research Cluster and other eResearch Support-managed shared servers, pre-existing shared Apptainer images (.sif) are generally located at `$APPTAINER_IMG`. 
 
 For convenience, shared Apptainer images may have been wrapped in a **modulefile** that will create the necessary aliases to the relevant in-container binaries, so after loading the module these binaries can then be invoked as per usual. e.g.:
 

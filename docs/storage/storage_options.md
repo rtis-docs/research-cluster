@@ -101,7 +101,7 @@ If you have an HCS share this is accessible from the cluster.
 ## Backing up your data
  
  
-The Research Storage (anything within /projects, /weka) is not backed up. It is the responsibility of the user to ensure their data is safe. RTIS recommends that users back up their data to the HCS.
+The Research Storage (anything within /projects, /weka) is not backed up. It is the responsibility of the user to ensure their data is safe. EResearch Support recommends that users back up their data to the HCS.
  
 Setting up Globus to automatically transfer data between the two storage solutions is a great way to ensure your data is backed up.
  

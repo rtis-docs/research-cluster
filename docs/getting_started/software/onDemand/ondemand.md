@@ -87,7 +87,7 @@ Intended Usage
 
 When possible, you should carry out your computation via the traditional command line plus Slurm functionality. OOD Desktop is intended for use for programs that require GUIs. Furthermore, if you need to use Jupyter notebooks, RStudio, or the MATLAB GUI, we provide specialized interactive apps that you should use instead of the OOD Desktop App.
 
-Before getting started, make sure you have access to the Research Cluster (by contacting RTIS).
+Before getting started, make sure you have access to the Research Cluster by [filling in the access form](../../access/signup.md) (or by contacting eResearch Support - {{support_email}}).
 
 Fill out the form presented to you and then press "Launch". (Note, as of this time, that the only partition that the Desktop app can be launched on when computing via Slurm is otago1, as we assume that most GUI usage would be for programs using one or a small number of cores). After a moment, the Desktop session will be initialized and allow you to specify the image compression and quality options. If you are unhappy with the default values, you can relaunch the session from this page with different choices. Then, press "Launch Desktop" and the Desktop will open in a new tab.
 
