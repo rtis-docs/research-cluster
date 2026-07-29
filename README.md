@@ -20,7 +20,7 @@ These commands will let you build and serve the mkdocs website locally for devel
 
 Create a python virtual environment and install the needed packages
 
-- **The requirements were last updated 23-07-2025** - local enviroment recreation may be needed
+- **The requirements were last updated 23-07-2025** - local environment recreation may be needed
 
 
 ```bash
@@ -60,3 +60,8 @@ Originally variables were being used for some highly referred to pages (apptaine
 ### Git commits
 
 Try to limit commits to a single feature or type of change and avoid combining unrelated changes into a single commit.
+
+
+### Capitalisation
+
+Use "Slurm" and "OnDemand" to remain consistent with how those products refer to themselves. 

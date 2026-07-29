@@ -1,7 +1,7 @@
 # SSH
 
 !!! overview "On this Page"
-    - How to generate an SSH key and register it with Otago Ondemand
+    - How to generate an SSH key and register it with Otago OnDemand
     - How to SSH through a terminal
     - How to SSH with OnDemand
 
@@ -56,9 +56,9 @@ If you already have an SSH key pair (typically `~/.ssh/id_ed25519.pub` or `~/.ss
 
     You will be prompted for your password once. After that, key-based login is ready — skip to Step 3.
 
-=== "Otago Ondemand"
+=== "Otago OnDemand"
 
-    1. [Log in to Ondemand](ondemand_web.md#logging-in) at [https://ondemand.otago.ac.nz](https://ondemand.otago.ac.nz).
+    1. [Log in to OnDemand](ondemand_web.md#logging-in) at [https://ondemand.otago.ac.nz](https://ondemand.otago.ac.nz).
     2. From the top navigation bar, select **Clusters > SSH Public Key**.
 
         ![Clusters menu showing SSH Public Key](../../assets/images/ssh_key_ood.png){width="600px" align=left}

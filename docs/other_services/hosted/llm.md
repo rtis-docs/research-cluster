@@ -8,7 +8,7 @@ This is a fast-moving field; We are currently trialling a number of different to
 
 
 ## Access
-Email {{ support_email }} to discuss how we can help you support your particular usecase.
+Email {{ support_email }} to discuss how we can help you support your particular use case.
 When you are onboarded, you will receive a personal API access key. This should give you access to a relevant set of LLM models.
 
 The eResearch Solutions LLM gateway is exposed as an OpenAI-compatible endpoint.
@@ -23,7 +23,7 @@ Most OpenAI-compatible SDKs or tools should be able to interface with this. This
 ## Models
 
 ### Cloud models
-A selection of [cloud LLM models on MS Foundry](https://ai.azure.com/catalog/models) can be made available via our LLM gateway for research usecases. Please contact us to discuss your requirements.
+A selection of [cloud LLM models on MS Foundry](https://ai.azure.com/catalog/models) can be made available via our LLM gateway for research use cases. Please contact us to discuss your requirements.
 
 The current set includes `gpt-oss-120b`, `gpt-5.4`, `claude-opus-4-6`, `Kimi-K2.5`, `DeepSeek-V3.2`, `text-embedding-3-small`.
 
@@ -31,14 +31,14 @@ Cloud-hosted models should not be used for processing of any input/data that is 
 
 ### Local on-campus models
 
-We have a few small models hosted entirely on-campus without dependencies on external cloud services, available for select research trial usecases.
+We have a few small models hosted entirely on-campus without dependencies on external cloud services, available for select research trial use cases.
 
 Running these models locally within the campus environment requires significant resources that are currently **limited** due to our present hardware capabilities. Therefore usage should focus on research scenarios where **on-campus processing** is absolutely necessary (e.g. sensitive data).
 
 #### Local Model list
 
 Local models are prefixed with `ONCAMPUS/`.
-The selection of available models is subject to change, depending on specific demand, usecases and on available hardware resources.
+The selection of available models is subject to change, depending on specific demand, use cases and on available hardware resources.
 
 Currently, eResearch Solutions makes the following models available for inference on-campus:
 
@@ -74,7 +74,7 @@ While quantised models can run more efficiently on less powerful hardware with r
 
 ### License
 
-*Truly Open, Open-Weights, or Restricted-Weights Open Access?* All models labeled "open" are not equal. Some follow **open-source principles** by offering the full stack — code, weights, training methodology, documentation under an open-source license. Others only publish the trained model weights, often under **restrictive** conditions that limit their usage or redistribution; These are commonly referred to as "open-weight" models.
+*Truly Open, Open-Weights, or Restricted-Weights Open Access?* All models labelled "open" are not equal. Some follow **open-source principles** by offering the full stack — code, weights, training methodology, documentation under an open-source license. Others only publish the trained model weights, often under **restrictive** conditions that limit their usage or redistribution; These are commonly referred to as "open-weight" models.
 
 ### Distillation
 

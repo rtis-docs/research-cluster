@@ -5,7 +5,7 @@
     - Batch Jobs (Slurm)
     - How to Choose
 
-<!-- TODO this page should provide an overview that the system is managed by a scheduler to manage resources equitibally, what this then means for users wantint to make use of it, of what a job is, how to categorise the job type, when to choose particular job types  -->
+<!-- TODO this page should provide an overview that the system is managed by a scheduler to manage resources equitably , what this then means for users wantint to make use of it, of what a job is, how to categorise the job type, when to choose particular job types  -->
 
 When deciding how to run your job on the cluster, you have two main options: interactive jobs (often launched through Open OnDemand) and batch jobs (submitted directly to Slurm).
 

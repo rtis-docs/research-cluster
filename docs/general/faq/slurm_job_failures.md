@@ -1,4 +1,4 @@
-# SLURM Job Management and Troubleshooting
+# Slurm Job Management and Troubleshooting
 
 ## How do I check the status of my job(s)?
 
@@ -38,7 +38,7 @@ You can find your job ID using `squeue -u $USER`.
 
 ## How do I get notified when my job finishes or fails?
 
-Add these lines to your SLURM script:
+Add these lines to your Slurm script:
 
 !!! terminal
 
@@ -51,7 +51,7 @@ This will send an email to you when your job ends or fails.
 
 ## Where do I find the output and error logs for my job?
 
-By default, SLURM writes standard output and error to a file named `slurm-<jobid>.out` in the directory where you submitted the job.
+By default, Slurm writes standard output and error to a file named `slurm-<jobid>.out` in the directory where you submitted the job.
 
 You can customize the output and error file names with:
 
@@ -88,18 +88,18 @@ You can also view a summary of job exit codes and status with:
 
 ## Can I extend the time limit of a running job?
 
-SLURM jobs **cannot** be extended past their requested wall time. If your job exceeds the time limit, SLURM will **terminate** it.
+Slurm jobs **cannot** be extended past their requested wall time. If your job exceeds the time limit, Slurm will **terminate** it.
 
 ### Important notes
 
 - You cannot extend the session.
 - If your code does not save progress regularly, you may lose data.
-- SLURM will send a termination signal (SIGTERM, then SIGKILL) when the time limit is reached.
+- Slurm will send a termination signal (SIGTERM, then SIGKILL) when the time limit is reached.
 
 ### Best practices
 
 - Always write output or checkpoints regularly (for example, save to a file every few minutes or after each iteration).
-- Use software that supports checkpointing or periodic saves.
+- Use software that supports check-pointing or periodic saves.
 - If you need more time, you can cancel and resubmit your job with a longer time limit *before* it reaches the time limit.
 
 ### Admin extensions

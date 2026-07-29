@@ -85,7 +85,7 @@ The OOD Desktop App allows you to run programs that require graphical user inter
 
 Intended Usage
 
-When possible, you should carry out your computation via the traditional command line plus SLURM functionality. OOD Desktop is intended for use for programs that require GUIs. Furthermore, if you need to use Jupyter notebooks, RStudio, or the MATLAB GUI, we provide specialized interactive apps that you should use instead of the OOD Desktop App.
+When possible, you should carry out your computation via the traditional command line plus Slurm functionality. OOD Desktop is intended for use for programs that require GUIs. Furthermore, if you need to use Jupyter notebooks, RStudio, or the MATLAB GUI, we provide specialized interactive apps that you should use instead of the OOD Desktop App.
 
 Before getting started, make sure you have access to the Research Cluster (by contacting RTIS).
 
@@ -111,7 +111,7 @@ To open a command line terminal, right click anywhere on the Desktop and select 
 3. Process your data with the cluster
 4. Copy your results back to the HCS Share 
 
-Note: Connecting to Otago HCS is intended for copying data to the Research Clutster for processing. **It is not intended for data processing** as the speeds and accessibility are not suited to cluster computing.
+Note: Connecting to Otago HCS is intended for copying data to the Research Cluster for processing. **It is not intended for data processing** as the speeds and accessibility are not suited to cluster computing.
 
 
 #### Connecting to Otago HCS Shares
@@ -136,7 +136,7 @@ This will mount your HCS share on the local machine and allow you to access and 
 
 #### Copy your HCS data to your project directory
 
-1. Naviagate to your hcs data and copy it to your user projecy directory
+1. Navigate to your hcs data and copy it to your user project directory
 
     ![Connect to HCS](../../../assets/images/copydata.png){width="600px}
 

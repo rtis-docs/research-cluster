@@ -20,7 +20,7 @@ You can use the `apptainer/AFNI` module to add convenient aliases to running any
     ```bash
     module avail afni
     module load apptainer/AFNI
-    # The following is required to use aliases in a non-interactive/SLURM batch script:
+    # The following is required to use aliases in a non-interactive/Slurm batch script:
     shopt -s expand_aliases
     afni......
     ```

@@ -31,7 +31,7 @@ For convenience, shared Apptainer images may have been wrapped in a **modulefile
 where `foo_bin` will actually be an alias to `apptainer run $APPTAINER_IMG/foo_0.1.sif foo_bin`. 
 Run `alias` to display a list of all defined aliases in your shell
 
-To use these aliases in a non-interactive script or via SLURM, add the following in your script before using the alias:
+To use these aliases in a non-interactive script or via Slurm, add the following in your script before using the alias:
 
 !!! terminal 
 
@@ -49,7 +49,7 @@ or to start an interactive shell in the container: `apptainer shell $APPTAINER_I
 ## Bind mounts
 
 Your `$HOME` directory, `/scratch`, and `/projects` will be available within the Apptainer container by default.
-Other directories/files on the host filesystem will be inaccessible from within the container, unless explicitely mounted into the container (similar to Docker's volumes). 
+Other directories/files on the host filesystem will be inaccessible from within the container, unless explicitly mounted into the container (similar to Docker's volumes). 
 
 If you need access to other arbitrary filesystem paths, specify these with the `--bind`/`-B` option 
 e.g. To start the `foo.sif` container with the host directory `/some/host_path/test` mounted on `/tmp/test` within the container:

@@ -46,7 +46,7 @@ Example test run:
 #### Running a GPU Job on the Cluster
 
 
-To run OpenPose on a GPU node interactively via SLURM:
+To run OpenPose on a GPU node interactively via Slurm:
 
 !!! terminal
 

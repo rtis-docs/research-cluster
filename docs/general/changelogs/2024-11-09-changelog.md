@@ -3,17 +3,17 @@
 # November 2024
 
 
-- **SLURM Controller Daemon Upgrade**  
+- **Slurm Controller Daemon Upgrade**  
   Upgraded `slurmctld` daemon to version 23.02.0-json, enabling both Lua and JSON capabilities.
 
-- **Secondary SLURM Control Node**  
-  Added a secondary SLURM control node.
+- **Secondary Slurm Control Node**  
+  Added a secondary Slurm control node.
 
-- **SLURM Database Migration**  
-  Migrated the SLURM database to a Galera cluster.
+- **Slurm Database Migration**  
+  Migrated the Slurm database to a Galera cluster.
 
-- **Enhanced SLURM Database Backup and Monitoring**  
-  Added new backup and monitoring features for the SLURM database.
+- **Enhanced Slurm Database Backup and Monitoring**  
+  Added new backup and monitoring features for the Slurm database.
 
 - **GPU Cgroups Constraints**  
   Implemented Cgroups constraints on GPU resources to ensure fair resource distribution.
@@ -24,11 +24,11 @@
 - **Weka Container Configuration Update**  
   Configured Weka containers to use 2 CPUs on each node.
 
-- **CPU Reservation for Weka in SLURM Configuration**  
-  Updated SLURM configuration to reserve CPU resources specifically for Weka operations.
+- **CPU Reservation for Weka in Slurm Configuration**  
+  Updated Slurm configuration to reserve CPU resources specifically for Weka operations.
 
-- **SLURM Accounting User and Group Import**  
-  Imported all users and groups into SLURM accounting for enhanced tracking and management.
+- **Slurm Accounting User and Group Import**  
+  Imported all users and groups into Slurm accounting for enhanced tracking and management.
 
 - **AUKS Installation and Configuration**  
   Installed and configured AUKS to enable Kerberos authentication across cluster nodes.

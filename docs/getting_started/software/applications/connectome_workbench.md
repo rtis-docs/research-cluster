@@ -17,7 +17,7 @@ You can use the `apptainer/connectome_workbench` module to add convenient aliase
 
     ```bash
     module load apptainer/connectome_workbench
-    # The following is required to use aliases in a non-interactive/SLURM batch script:
+    # The following is required to use aliases in a non-interactive/Slurm batch script:
     shopt -s expand_aliases
     wb_commnd ....
     ```

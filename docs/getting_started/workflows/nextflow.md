@@ -10,18 +10,17 @@ Nextflow and its dependencies can be made available with `module load nextflow`.
 
 There are a few important steps to take to make sure the pipeline can run on the cluster and integrate with the scheduler;
 
-* Create a global Nextflow configuration file at `$HOME/.nextflow/config` that tells nextflow to use the 'slurm' scheduler and which SLURM partition to use for 'gpu'-labeled tasks. By default Nextflow will merge this global config file with any other local nextflow.config files and parameters. 
-(See [https://www.nextflow.io/docs/latest/executor.html#slurm](https://www.nextflow.io/docs/latest/executor.html#slurm) for additional SLURM options.)
+* Create a global Nextflow configuration file at `$HOME/.nextflow/config` that tells nextflow to use the 'slurm' scheduler and which Slurm partition to use for 'gpu'-labelled tasks. By default Nextflow will merge this global config file with any other local nextflow.config files and parameters. 
+(See [https://www.nextflow.io/docs/latest/executor.html#slurm](https://www.nextflow.io/docs/latest/executor.html#slurm) for additional Slurm options.)
 
-```
-
-    process {
-      executor = 'slurm'
-      time = 6.h
-      withLabel: 'gpu' {
-        queue = 'aoraki_gpu'
-      }
-    }
+```nextflow
+process {
+  executor = 'slurm'
+  time = 6.h
+  withLabel: 'gpu' {
+    queue = 'aoraki_gpu'
+  }
+}
 ```
 
 In your workflow's working directory, running `nextflow config -profile singularity` will show what the merged configuration looks like.

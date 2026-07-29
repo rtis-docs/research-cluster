@@ -6,7 +6,7 @@
 .. meta::
 
    :description: Planned datacentre outage impacting the Aoraki research compute cluster and hosted research services.
-   :keywords: Aoraki, datacentre outage, maintenance, HPC, Open OnDemand, SLURM
+   :keywords: Aoraki, datacentre outage, maintenance, HPC, Open OnDemand, Slurm
    :Published: 16 December 2025
 
 The Research Computing team advises users of a planned datacentre outage that will impact the **Aoraki research compute cluster** and several associated research services.
@@ -23,7 +23,7 @@ This outage is required to support scheduled electrical maintenance and will inv
    **End:** 5:00 pm, Monday 19 January 2026
    **Timezone:** NZDT
 
-All systems hosted in the datacentre will be **unavailable** for the duration of this window.
+All systems hosted in the data centre will be **unavailable** for the duration of this window.
 
 
 ## Services Impacted
@@ -32,11 +32,11 @@ All systems hosted in the datacentre will be **unavailable** for the duration of
 The following services will be unavailable during the outage:
 
 * **Aoraki high-performance compute cluster** (login nodes and compute nodes)
-* **SLURM** job scheduling and submission services
-* Virtual machines hosted in the datacentre
+* **Slurm** job scheduling and submission services
+* Virtual machines hosted in the data centre
 * On-site storage services
-* Web portals and research platforms hosted in the datacentre
-* Departmental servers hosted in the datacentre
+* Web portals and research platforms hosted in the data centre
+* Departmental servers hosted in the data centre
 * **Open OnDemand** and hosted applications (including CryoSPARC)
 
 
@@ -47,7 +47,7 @@ The following services will be unavailable during the outage:
 
    * Ensure all running jobs **complete** before the outage begins.
    * Avoid scheduling long-running or critical workflows during this period.
-   * New SLURM job submissions will be **disabled** ahead of the outage.
+   * New Slurm job submissions will be **disabled** ahead of the outage.
    * No user access or actions will be possible during the outage.
 
 Users should plan workflows accordingly to avoid disruption.

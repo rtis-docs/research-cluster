@@ -20,9 +20,9 @@ If you have downloaded the repository, the following code examples are in the ``
     cd slurm-code-examples/r_examples/
     ```
 
-## SLURM job calling an R script
+## Slurm job calling an R script
 
-This pair of scripts represents how an Rscript can be run using the SLURM scheduler.
+This pair of scripts represents how an Rscript can be run using the Slurm scheduler.
 
 Create the R script ``hello_rscript.R`` with the following contents:
 
@@ -33,7 +33,7 @@ Create the R script ``hello_rscript.R`` with the following contents:
     ```
 
 
-Create the slurm script ``run_hello_rscript.sh`` with the following contents:
+Create the Slurm script ``run_hello_rscript.sh`` with the following contents:
 
 !!! terminal "Script: `run_hello_rscript.sh`"
 
@@ -66,7 +66,7 @@ The job can now be submitted to the scheduler with:
 
 The following are two examples creating a job that uses multiple cores on a single node *with R managing the the parallelism*. In R, either the ``parallel``  package or the ``future`` package are (mainly) used to do this. The ``parallelly`` package provides some bonus functionality to both.
 
-The key difference to the previous example is that we need to define how to parallelise the code. This is done through ``parallel`` or ``future`` and we need to define the number of cores/cpus to use for the parallelism within the SLURM script through ``--cpus-per-task`` which gets stored in a BASH environment variable ``$SLURM_CPUS_PER_TASK``.  
+The key difference to the previous example is that we need to define how to parallelise the code. This is done through ``parallel`` or ``future`` and we need to define the number of cores/cpus to use for the parallelism within the Slurm script through ``--cpus-per-task`` which gets stored in a BASH environment variable ``$SLURM_CPUS_PER_TASK``.  
 There are multiple approaches to how this can be done but for this example two have been demonstrated
 
 The overall task demonstrated is to calculate the means for sub-groups of a dataset in parallel. 
@@ -128,7 +128,7 @@ Submitting the job:
     ```
 
 
-The following is same example as above but insetad implemented using the ``furrr`` package to parallelise ``purrr`` using ``future``.
+The following is same example as above but instead implemented using the ``furrr`` package to parallelise ``purrr`` using ``future``.
 
 
 !!! r-code "Script: `r_multicore_example-furrr.R`"
@@ -179,22 +179,22 @@ Submitting the job:
     [user@aoraki-login r_examples]$ sbatch run_multicore_r_example-furrr.sh
     ```
 
-## SLURM array job with R
+## Slurm array job with R
 
 An array job allows you to define the resources for a single job but run many instances of it. 
-Instead of submitting many individual jobs, it is best to use an array job as it is more effcient for the scheduler. 
+Instead of submitting many individual jobs, it is best to use an array job as it is more efficient for the scheduler. 
 A common use case would be to define a job for a sample, and then run the job on all samples in parallel.
-SLURM facilitates this through the array job type. For an array job there are two bash environment variables that you can 
+Slurm facilitates this through the array job type. For an array job there are two bash environment variables that you can 
 make use of: ``SLURM_JOBID`` which is the overall job, and ``SLURM_ARRAY_TASK_ID`` which is the id assigned to 
 that specific "subjob". A common use for the task id would be to use it as an index on a sample sheet.
 
-A second benefit of using an array over individually submitting many of the same job is that if you want to rerun a job, you can specify specific array indexes, instead of many differnt job ids.
+A second benefit of using an array over individually submitting many of the same job is that if you want to rerun a job, you can specify specific array indexes, instead of many different job ids.
 
 To make use of these variables inside your R task, you can either pass them through as a commandline argument or you can access them from within R with `option()`
 
-The scenario for the example will be again calculating the mean for each species in the ``iris`` data set but this time instead of using a single job with multiple cores, we'll use a single job per species utilising the SLURM array.
+The scenario for the example will be again calculating the mean for each species in the ``iris`` data set but this time instead of using a single job with multiple cores, we'll use a single job per species utilising the Slurm array.
 
-Here is an example of running 3 jobs in parallel using a slurm array passing the array index as a commandline argument to R
+Here is an example of running 3 jobs in parallel using a Slurm array passing the array index as a commandline argument to R
 
 
 !!! r-code "Script: `r_array_job_args.R`"
@@ -292,17 +292,17 @@ Submitting the job:
 One disadvantage of this approach is it can be harder to create and debug the R code as it relies on environmental variables being set prior to execution, 
 rather than passing the values at runtime on the commandline through arguments.
 
-## SLURM job dependencies with R
+## Slurm job dependencies with R
 
-SLURM job dependencies allow you to link jobs together and subsequent jobs will only run depending on 
+Slurm job dependencies allow you to link jobs together and subsequent jobs will only run depending on 
 the running status of pre-requisite jobs. This allows you to create workflows with different job requirements for the different stages.
 
 When submitting the ``-d`` (or ``--dependency=``) option is supplied to ``sbatch`` with the job id to make the job dependent on e.g. ``sbatch -d 1234``. 
-The main advantage of using dependencies is that SLURM will cordinate the running (or cancelling if failed) of downstream dependent jobs. 
-There are extra options for the dependencies such as ``-d afterok:<jobid>``, ``-d afterany:<job_id>``. See https://slurm.schedmd.com/sbatch.html for more infomation regarding the ``-d`` option.
+The main advantage of using dependencies is that Slurm will cordinate the running (or cancelling if failed) of downstream dependent jobs. 
+There are extra options for the dependencies such as ``-d afterok:<jobid>``, ``-d afterany:<job_id>``. See https://slurm.schedmd.com/sbatch.html for more information regarding the ``-d`` option.
 
 In the previous example we outputted the mean for each group but it would be good to have a single output that summarised the results. We could 
-create a second job that was dependant on the previous job compeleting before it ran to take the results and combine them together. This type of 
+create a second job that was dependant on the previous job completing before it ran to take the results and combine them together. This type of 
 work flow is often referred to as a scatter-gather as there is a scattering phase to calculate results per group and a gathering phase to combine them back together.
 
 

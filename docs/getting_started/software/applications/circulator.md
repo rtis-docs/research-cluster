@@ -2,7 +2,7 @@
 
 Circlator is made available as an [Apptainer](../software_environments/apptainer.md) container. 
 
-You can direcly run 'circlator' from the container with:
+You can diretcly run 'circlator' from the container with:
 
 !!! terminal
 
@@ -22,7 +22,7 @@ and run circlator from there.
 
 
 This assumes all input and output files are located in your home directory, which gets automatically made available in the container by Apptainer. 
-Other paths will have to be explicitely mapped, in which case we need to use the apptainer run command excplictely pointing to the location of the container image. 
+Other paths will have to be explicitly mapped, in which case we need to use the apptainer run command explicitly pointing to the location of the container image. 
 e.g. to map the `/scratch/foo/data` directory on `/data` in the container:
 
 !!! terminal

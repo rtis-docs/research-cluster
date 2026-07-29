@@ -59,13 +59,13 @@ For most users, configuring `R_LIBS_USER` in `.Renviron` is the simplest and mos
 
 The `.Renviron` file can be used to supply system environment variables to R. It is often used as a way of making API keys accessible within R e.g. a github API token. Bit it can also be used to set where R looks for libraries.
 
-For a list of environmental variables that can be defined in your `.Renviron` file from witin R run: 
+For a list of environmental variables that can be defined in your `.Renviron` file from within R run: 
 !!! r-code
     ```r
     ?"environment variables"
     ```
 
-To set variables for your user, use `~/.Renviron`, to set variables for a RStudio project create `.Renviron` in the Rstudio project directory.
+To set variables for your user, use `~/.Renviron`, to set variables for a RStudio project create `.Renviron` in the RStudio project directory.
 
 #### Create or edit your `.Renviron` file
 
@@ -111,7 +111,7 @@ You can then verify the path supplied in your `.Renviron` file is being used wit
 
 ### Rprofile
 
-The `.Rprofile` file can be used to load specific R settings and can be set for at a user level with `~/.Rpofile` or if using an R-project, at the project level by making a `.Rprofile` file in the project directory.
+The `.Rprofile` file can be used to load specific R settings and can be set for at a user level with `~/.Rprofile` or if using an R-project, at the project level by making a `.Rprofile` file in the project directory.
 
 To set a custom location for installing packages, open your `.Rprofile` e.g. `~/.Rprofile` for user level
 

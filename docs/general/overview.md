@@ -18,7 +18,7 @@ If you need special software or configurations, please ask the eResearch Support
 
 ![Photo of the cluster](../assets/images/cluster_photo.jpg){ .left }
 
-We offer a variety of SLURM partitions based on different resource needs. The default partition (`aoraki`) provides balanced compute and memory capabilities. Additional partitions include those optimized for GPU usage and those with expanded memory capacity.
+We offer a variety of Slurm partitions based on different resource needs. The default partition (`aoraki`) provides balanced compute and memory capabilities. Additional partitions include those optimized for GPU usage and those with expanded memory capacity.
 
 !!! note
       Every cluster node reserves 2 cores for the OS and Weka storage, reducing the compute cores available to jobs by 2.

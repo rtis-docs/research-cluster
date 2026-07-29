@@ -8,7 +8,7 @@ The GPU-enabled guppy is made available on the cluster as a shared [Apptainer](.
 
 You can use the `apptainer/guppy` module to add a convenient alias to running `dorado` within the container.
 
-To use any of the aliases in a non-interactive/SLURM batch script, add the following in your script before using the alias:
+To use any of the aliases in a non-interactive/Slurm batch script, add the following in your script before using the alias:
 
 !!! terminal 
 
@@ -23,7 +23,7 @@ To use any of the aliases in a non-interactive/SLURM batch script, add the follo
     ```bash
     module avail guppy
     module load apptainer/guppy-gpu/6.4.6
-    # The following is required to use aliases in a non-interactive/SLURM batch script:
+    # The following is required to use aliases in a non-interactive/Slurm batch script:
     shopt -s expand_aliases
     guppy_basecaller ....
     ```

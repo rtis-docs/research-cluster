@@ -29,7 +29,7 @@ After logging in to [https://coldfront.otago.ac.nz](https://coldfront.otago.ac.n
     The role of "User" only enables the user access to the project.
     
 
-![Select the user(s) you wish to add, then click "Add Selected Users to Porject"](../../../assets/images/coldfront/coldfront_adduser_selected.png)
+![Select the user(s) you wish to add, then click "Add Selected Users to Project"](../../../assets/images/coldfront/coldfront_adduser_selected.png)
 
 ![The added members are now displayed as users on the project.](../../../assets/images/coldfront/coldfront_user_populated.png)
 
@@ -64,6 +64,7 @@ Find the Users panel for the Project
 ![Fill in the value for the new quota and justification for the increase. Then click "Submit"](../../../assets/images/coldfront/coldfront_request_allocation_change_page.png)
 
 !!! info
-    You may be contacted to discuss your data currrent and proposed usage before a decision is made on the quota change.
+    You may be contacted to discuss your data current and proposed usage before a decision is made on the quota change.
 
 ## Applying for WEKA
+

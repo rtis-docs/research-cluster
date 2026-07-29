@@ -40,8 +40,8 @@ graph TD;
  
 All users of the Otago Research Cluster have a home directory that is mounted  at ``/home/<username>``. Your home directory is intended for storing configuration files, scripts, and other smaller datasets that are used for computations.
  
-* Home driectory advisory quotas are **30 GB**. You will receive an email at your Otago email address if your home directory reaches this threshold. 
-* Home directory hard quotas are **{{ home_quota }}**. When you reach this limit you will not be able to write anymore data to your home directory. This hard quota allows for the backup of home directories.
+* Home directory advisory quotas are **30 GB**. You will receive an email at your Otago email address if your home directory reaches this threshold. 
+* Home directory hard quotas are **{{ home_quota }}**. When you reach this limit you will not be able to write any more data to your home directory. This hard quota allows for the backup of home directories.
 
 Home directories are backed up. One snapshot per day for the last 7 days, one per week for the last 4 weeks, and one per month for the last 6 months are retained; older snapshots are pruned.
 
@@ -65,8 +65,8 @@ To apply for a projects directory, please fill out the [Storage Signup](../getti
  
 * Large data sets
 * Data sharing
-* Checkpointing
-   In long-running computations, checkpointing is used to save the state of a job at regular intervals.
+* Check-pointing
+   In long-running computations, check-pointing is used to save the state of a job at regular intervals.
 * Data Staging
    Before running a job, input data can be staged (preloaded) into `/projects/` from HCS (or other sources) to ensure that the computation starts immediately without waiting for data transfers from slower storage systems.
 * Temporary Data Processing

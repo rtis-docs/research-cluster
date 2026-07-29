@@ -1,25 +1,25 @@
 # Job Efficiency
 
-<!-- TODO this page should go through why job efficency is important (shared resources, poor efficiency leads to resources not being available leads to longer wait times for all).
+<!-- TODO this page should go through why job efficiency is important (shared resources, poor efficiency leads to resources not being available leads to longer wait times for all).
 How to check a job is efficient and how you might then improve for next time
 -->
 
-<!-- TODO include link to cluster utilisation somewhere and highlight importance of tryinng to match what is requested with actually used and how that helps improve availability/reduce wait times -->
+<!-- TODO include link to cluster utilisation somewhere and highlight importance of trying to match what is requested with actually used and how that helps improve availability/reduce wait times -->
 
 !!! overview "On this Page"
-    - Determining your SLURM job efficiency
+    - Determining your Slurm job efficiency
     - How to interpret efficiency metrics
     - Tips to improve efficiency
 
 <!-- TODO See if overview is in line with content -->
 
-Efficient use of cluster resources helps you get results faster and reduces wait times for everyone. Here are the steps you can follow to determine how efficient your SLURM job was:
+Efficient use of cluster resources helps you get results faster and reduces wait times for everyone. Here are the steps you can follow to determine how efficient your Slurm job was:
 
-To determine the efficiency of your SLURM job, you can follow these steps:
+To determine the efficiency of your Slurm job, you can follow these steps:
 
 ## 1. Submit Your Job
 
-Submit your job to the SLURM scheduler using the `sbatch` command. Jobs run through OnDemand are done for you and the job number can be found on the job card under the "My Interactive Sessions" page.
+Submit your job to the Slurm scheduler using the `sbatch` command. Jobs run through OnDemand are done for you and the job number can be found on the job card under the "My Interactive Sessions" page.
 
 !!! terminal
     ```bash
@@ -102,7 +102,7 @@ Memory Efficiency: 50.00% of 4.00 GB
 - Use efficiency data to balance resource requests and job reliability.
 *What to look for*: Adjust your job scripts based on the efficiency metrics to optimize future runs.
 
-By following these steps and checking the suggested outputs, you can assess and improve the efficiency of your SLURM jobs.
+By following these steps and checking the suggested outputs, you can assess and improve the efficiency of your Slurm jobs.
 
 
 !!! related-pages "What's next?"

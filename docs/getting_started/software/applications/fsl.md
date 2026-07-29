@@ -16,7 +16,7 @@ You can use the `apptainer/FSL` module to add convenient aliases to running any 
     ```bash
     module avail fsl
     module load apptainer/FSL/6.0.7.6
-    # The following is required to use aliases in a non-interactive/SLURM batch script:
+    # The following is required to use aliases in a non-interactive/Slurm batch script:
     shopt -s expand_aliases
     fsl......
     ```

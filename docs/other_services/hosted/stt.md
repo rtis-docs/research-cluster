@@ -102,7 +102,7 @@ Speaker diarisation (i.e. the process of identifying *"who spoke when"*) adds sp
 
 Diarisation is not supported by the Whisper model itself, but is implemented as a separate step using a different model and library. The results of the Whisper transcription and diarisation are then "merged" for basic speaker diarization.
 
-When diarisation is enabled, different speakers will be identified and labeled as `SPEAKER_00`, `SPEAKER_01`, etc. in the text output, subtitle files (srt, vtt), and in the HTML output (the latter which will additionally have the different speaker segments colourised for easy reading).
+When diarisation is enabled, different speakers will be identified and labelled as `SPEAKER_00`, `SPEAKER_01`, etc. in the text output, subtitle files (srt, vtt), and in the HTML output (the latter which will additionally have the different speaker segments colourised for easy reading).
 
 To enable this, select the 'Speaker diarisation' checkbox, and if known, always try to set the number of speakers for improved accuracy. 
 
@@ -135,7 +135,7 @@ The plot below shows WERs for all languages where Whisper `large-v3` performs lo
  
 The *translate* task will translate **to English**. 
 Translating into languages other than English wasn't a part of the training objective for the Whisper models.
-However it may still be possible to produce a reasonble non-English translation with these settings:
+However it may still be possible to produce a reasonable non-English translation with these settings:
 
   * Set the model to `large-v3`
   * Set the language to the non-English *target* language
@@ -177,7 +177,7 @@ the prompt "以下是普通话的句子。" for simplified Chinese.
   * `json`: used for an intermediate step in the diarisation process
 
 * As with all AI-based automated audio transcription systems, **resulting transcripts should be carefully checked**.
-* Most nonverbal expressions like laughter or filler words will not get captured;  If that is important for your analysis, these may need to be added manually in postprocessing.
+* Most non-verbal expressions like laughter or filler words will not get captured;  If that is important for your analysis, these may need to be added manually in postprocessing.
 * The output files list in the 'Download' section is not persisted beyond your current session.
     * The actual files however (generated transcripts, uploaded audio files, as well as Whisper model files) *are* stored in your research home directory under `~/.whisper/`. These can be accessed/transferred/deleted from the [OOD Files app](../../getting_started/software/onDemand/ondemand.md#files-app). Make sure to tick the *Show dotfiles* option to show the hidden `.whisper` folder.
 
