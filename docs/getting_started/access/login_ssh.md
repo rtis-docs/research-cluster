@@ -44,7 +44,7 @@ If you already have an SSH key pair (typically `~/.ssh/id_ed25519.pub` or `~/.ss
     If your system or client doesn't support `ed25519` keys, use `ssh-keygen -t rsa -b 4096` instead.
 
 
-### Step 2: Add your key using ssh-copy-id or Otago Ondemand
+### Step 2: Add your key using ssh-copy-id or Otago OnDemand
 
 === "ssh-copy-id (macOS / Linux)"
 

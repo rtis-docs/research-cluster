@@ -67,7 +67,7 @@ I recommend that you put ``fluent-2022r2.sh`` in a directory that has been added
 ## Graphical mode
 
 In order to use Fluent through a graphical user interface you need to be able to display X11 programs (through WSL on Windows and XQuartz on Mac) on your local machine. 
-This requires a bit more setup to function correctly. If you are having issues with this please contact RTIS for support.
+This requires a bit more setup to function correctly. If you are having issues with this please contact S for support.
 
 Note that 3D software rendering is used which is a lot slower than direct hardware acceleration that would be on somebodies local machine. This means that the graphical 
 interface is useful for initial setup and validation (confirming that it works) rather than for design and analysis.
@@ -130,15 +130,15 @@ This can be found here: [https://github.com/sikvelsigma/ANSYS-WB-Batch-Script](h
 
 
 The container can be run in automated `Batch mode` where it runs in text mode only (it does not display a GUI). 
-You give it the path to the workbench file ``.wbpj`` as a single parameter and it initalises and 
+You give it the path to the workbench file ``.wbpj`` as a single parameter and it initialises and 
 runs the solvers within the provided workbench file. It exits after it finishes its simulation(s).
 
 The steps that the container goes through are:
 
 1. Searches the directory that the ``.wbpj`` file is in and then opens it.
 2. Creates a list of Solution objects that have solvers.
-3. For each object with a solver it initalises it with the chosen method (see below).
-4. Once the solver has been initalised any prior simulation data is deleted/cleaned and the simulation is started.
+3. For each object with a solver it initialises it with the chosen method (see below).
+4. Once the solver has been initialised any prior simulation data is deleted/cleaned and the simulation is started.
 5. Once the simulation has completed the simulation is saved and the container exits.
 
 

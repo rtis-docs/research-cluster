@@ -1,17 +1,17 @@
 # January 2026 Maintenance
 
-## COMPLETE: Planned Datacentre Outage – January 2026
+## COMPLETE: Planned Data centre Outage – January 2026
 
 
 .. meta::
 
-   :description: Planned datacentre outage impacting the Aoraki research compute cluster and hosted research services.
-   :keywords: Aoraki, datacentre outage, maintenance, HPC, Open OnDemand, Slurm
+   :description: Planned data centre outage impacting the Aoraki research compute cluster and hosted research services.
+   :keywords: Aoraki, data centre outage, maintenance, HPC, Open OnDemand, Slurm
    :Published: 16 December 2025
 
-The Research Computing team advises users of a planned datacentre outage that will impact the **Aoraki research compute cluster** and several associated research services.
+The Research Computing team advises users of a planned data centre outage that will impact the **Aoraki research compute cluster** and several associated research services.
 
-This outage is required to support scheduled electrical maintenance and will involve a complete power shutdown of the 325 Datacentre.
+This outage is required to support scheduled electrical maintenance and will involve a complete power shutdown of the 325 Data centre.
 
 
 ## Outage Window

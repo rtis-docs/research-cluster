@@ -139,7 +139,7 @@ However it may still be possible to produce a reasonable non-English translation
 
   * Set the model to `large-v3`
   * Set the language to the non-English *target* language
-  * Somewhat counterintuitively, set *Task* to **transcribe**, *not* translate.
+  * Somewhat counter-intuitively, set *Task* to **transcribe**, *not* translate.
   * Set VAD to `silero-vad`
   * Set VAD mode to `prepend_first_segment`
   * Optionally, set an *initial prompt* in the wanted target language  (See [Advanded prompting](#advanced-prompting) ), such as a prompt that translates to "*The following are sentences in {target language}*". 
