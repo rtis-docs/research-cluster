@@ -72,9 +72,9 @@ You can inspect these variables at any time by running:
     module show alphafold3/3.0.1
     ```
 
-## Using a GPU with SLURM
+## Using a GPU with Slurm
 
-To run a full AlphaFold3 job, you must request a GPU on a suitable compute node. The af3 wrapper automatically detects and uses available GPUs within the container. To submit a job to a GPU node, you should use a SLURM batch script.
+To run a full AlphaFold3 job, you must request a GPU on a suitable compute node. The af3 wrapper automatically detects and uses available GPUs within the container. To submit a job to a GPU node, you should use a Slurm batch script.
 
 Submitting a Job to the A100 or L40 Partitions
 You can request a single GPU from either the a100 or l40 partitions. The :bash:--gres=gpu:1 option requests one generic GPU, and the :bash:--partition option specifies the partition you want to use.

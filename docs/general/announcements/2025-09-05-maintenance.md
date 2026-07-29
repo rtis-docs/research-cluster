@@ -12,16 +12,16 @@ All cluster services, including OnDemand and CryoSPARC, are fully operational an
 
 The following system upgrades and changes were successfully performed during the maintenance window:
 
-* **Enabled SLURM QOS (Quality of Service)** SLURM QOS levels are now introduced to support differentiated scheduling policies, job prioritization, and fair-share configurations.
+* **Enabled Slurm QOS (Quality of Service)** Slurm QOS levels are now introduced to support differentiated scheduling policies, job prioritization, and fair-share configurations.
 
 * **Installed Powerscale Isilon multipath drivers** Multipath support for Isilon volumes is now enabled, improving fault tolerance and performance for storage connections.
 
-* **Set SLURM temporary directory on Weka** SLURM job temporary storage has been redirected to a high-performance Weka filesystem location for better I/O performance.
+* **Set Slurm temporary directory on Weka** Slurm job temporary storage has been redirected to a high-performance Weka filesystem location for better I/O performance.
 
 * **Installed and Enabled DCGMI**
   NVIDIA Data Center GPU Manager (DCGMI) is now installed and operational. This suite of tools provides real-time health, power, performance, and utilization metrics for NVIDIA GPUs, helping administrators optimize GPU workloads and ensure system reliability.
 
-* **Enabled SLURM Performance Statistics** SLURM Performance Statistics (SPS) is now active. This plugin collects and reports detailed job and system performance metrics, such as CPU, memory, and GPU usage, enabling advanced monitoring and accounting for optimizing workload efficiency and system utilization.
+* **Enabled Slurm Performance Statistics** Slurm Performance Statistics (SPS) is now active. This plugin collects and reports detailed job and system performance metrics, such as CPU, memory, and GPU usage, enabling advanced monitoring and accounting for optimizing workload efficiency and system utilization.
 
 * **Set /opt/weka as a bind mount (formerly a symlink)** The change to use a proper bind mount for `/opt/weka` has been implemented for improved stability.
 

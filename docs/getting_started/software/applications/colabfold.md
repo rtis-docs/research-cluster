@@ -16,7 +16,7 @@ See the [LocalColabFold documentation](https://github.com/YoshitakaMo/localcolab
 
     ```bash
     module load apptainer/colabfold
-    # The following is required to use aliases in a non-interactive/SLURM batch script:
+    # The following is required to use aliases in a non-interactive/Slurm batch script:
     shopt -s expand_aliases
     colabfold_batch ./input.fasta ./out/
     ```

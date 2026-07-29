@@ -104,7 +104,7 @@ Disconnects you from the HPC Desktop, you may need to relaunch the Desktop from 
 === "GNOME Desktop"
 
     ### Toolbar to Taskview
-    To access the toolbar click the activites button in the top left corner.
+    To access the toolbar click the activities button in the top left corner.
     ![GNOME - HPC Desktop Activities button](../../../assets/images/hpc_activies_GNOME_arrow.png){width="600px" .left}
 
     That will open the below screen where you can manage your desktops and access your toolbar.

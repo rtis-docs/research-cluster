@@ -85,9 +85,9 @@ SBGrid is a specialized software distribution and management system designed pri
       -  For how to run a job on the cluster go to [Running Jobs](../../running/running_jobs_overview.md)
       
   <!-- TODO Are these pages the next step or relevant? -->
-### venv
+### `venv`
 
-venv is a built-in Python tool (since Python 3.3) used to create virtual environments. A virtual environment is like a self-contained Python workspace — it has its own Python interpreter and its own set of installed packages, completely separate from the system Python.
+Venv is a built-in Python tool (since Python 3.3) used to create virtual environments. A virtual environment is like a self-contained Python workspace — it has its own Python interpreter and its own set of installed packages, completely separate from the system Python.
 
 Why is venv Useful?
 

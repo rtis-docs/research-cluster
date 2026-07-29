@@ -125,7 +125,7 @@ Simply closing the browser tab does **not** end the job — your allocation will
 **I'm getting an authentication error.**
 : Ensure you are using your full university email address. If MFA is enabled on your account, complete the second-factor prompt when asked.
 
-For further assistance, contact the [Research Computing team](mailto:rtis.support@otago.ac.nz) or log a ticket through the IT Service Desk.
+For further assistance, contact the eResearch Support team ({{support_email}}) or log a ticket through the IT Service Desk.
 
 ---
 

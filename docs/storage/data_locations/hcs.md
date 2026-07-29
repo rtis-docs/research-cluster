@@ -151,7 +151,7 @@ Now you can use the `--auks=yes` option with srun or `#SBATCH --auks=yes` in you
 
 HCS shares are automatically mounted on each node when requested. The user's krbtgt, retrieved from the Auks server, is used to generate Kerberos tickets for communication with the HCS storage servers. However, obtaining these tickets can take some time. If the HCS share is not yet mounted on the node, the job or script may fail.
 
-To mitigate this, it is recommended to include a command such as `sleep 20` in batch scripts before accessing the automounted share.
+To mitigate this, it is recommended to include a command such as `sleep 20` in batch scripts before accessing the auto-mounted share.
 
 #### Generating Auto-Renewal Kerberos Tickets
 

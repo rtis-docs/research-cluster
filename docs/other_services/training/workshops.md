@@ -4,8 +4,8 @@
 ## Carpentries Workshops
 
 
-The Carpentries ([https://carpentries.org](https://carpentries.org)) is a global organistation that teaches foundational 
-coding and data science skils to researchers world-wide. University of Otago is a member organistation 
+The Carpentries ([https://carpentries.org](https://carpentries.org)) is a global organisation that teaches foundational 
+coding and data science skills to researchers world-wide. University of Otago is a member organisation 
 of the Carpentries and uses the **Software** and **Data** Carpentry curriculums for workshops. Each year we also train
 new instructors through instructor training workshops.
 

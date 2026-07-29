@@ -11,7 +11,7 @@ eResearch Solutions facilitate or manage a number of research-focused platforms 
 * workflows
     * containerised pipelines and cloud-native batch jobs
 * Kubernetes
-    * We maintain several small Kubernetes (K8s) clusters for various usecases, and can help you with transitioning workloads and services to Kubernetes.
+    * We maintain several small Kubernetes (K8s) clusters for various use cases, and can help you with transitioning workloads and services to Kubernetes.
 * object storage (S3)
     * S3-compatible buckets for cloud-native storage needs
 * FaaS (Function as a Service)

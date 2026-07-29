@@ -10,9 +10,9 @@ Open OnDemand provides applications that are best used for interactive jobs, suc
 The HPC desktop App in Open OnDemand provides general environment for interactive jobs, and the included terminal is a good option for running commandline tasks.
 <!-- TODO link to hpc desktop page -->
 
-The RStudio server or Juptyer Server OnDemand Apps provide common data analysis environments - useful for if you are developing code or data visualisation.
+The RStudio server or Jupyter Server OnDemand Apps provide common data analysis environments - useful for if you are developing code or data visualisation.
 
-<!-- TODO link to rstudio and juptyer -->
+<!-- TODO link to rstudio and jupyter -->
 
 
 !!! related-pages "What's next?"

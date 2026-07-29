@@ -46,7 +46,7 @@ To verify from within MATLAB, enter: `rendererinfo()`. The Renderer should list 
 
 Commandline `matlab` is available by default. Additional versions will be made available via `module` going forward.
 
-### via SLURM
+### Via Slurm
 
 
 Different containerised builds of MATLAB are available in /opt/apptainer_img/ folder:
@@ -63,7 +63,7 @@ Different containerised builds of MATLAB are available in /opt/apptainer_img/ fo
   /opt/apptainer_img/matlab-r2024b-u4-GL.sif
   ```
 
-Start a new slurm interactive job on the cpu node:
+Start a new Slurm interactive job on the cpu node:
 
 !!! terminal
 

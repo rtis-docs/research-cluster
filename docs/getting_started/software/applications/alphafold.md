@@ -10,7 +10,7 @@ You can use the `apptainer/alphafold2` module to add a convenient alias: `run_al
 the `run_alphafold.py` within the container;
 The alias will also bind-mount the AlphaFold database base path (`$AF2DB`, which is set to `/opt/alphafold_databases/`) into the container on `/db`.
 
-To use the `run_alphafold_apptainer` alias in a non-interactive/SLURM batch script, add the following in your script before using the alias:
+To use the `run_alphafold_apptainer` alias in a non-interactive/Slurm batch script, add the following in your script before using the alias:
 
 !!! terminal
     ```bash

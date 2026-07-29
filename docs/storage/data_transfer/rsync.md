@@ -36,7 +36,7 @@ This method is recommended for small numbers/sizes of files. For transferring la
 
 ## rsync
 
-Rsync has additional functionalies from `scp`' such as the ability to resume transfers if the connection is interrupted.
+Rsync has additional functionalities from `scp`' such as the ability to resume transfers if the connection is interrupted.
 
 ### Transferring to the cluster
 

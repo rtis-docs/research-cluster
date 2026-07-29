@@ -4,7 +4,7 @@
 
 ## LibreTranslate
 
-We have an exprimental on-campus deployment of [LibreTranslate](https://github.com/LibreTranslate/LibreTranslate), a free & open source machine translation web user interface and API;
+We have an experimental on-campus deployment of [LibreTranslate](https://github.com/LibreTranslate/LibreTranslate), a free & open source machine translation web user interface and API;
 
 [https://translate.rtis-k8s-charlie.uod.otago.ac.nz](https://translate.rtis-k8s-charlie.uod.otago.ac.nz)
 

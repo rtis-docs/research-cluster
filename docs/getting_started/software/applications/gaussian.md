@@ -18,7 +18,7 @@ This will add the g16 command to your path and set up the required environment v
 ## Interactive session
 
 An interactive session is useful for quick tests and debugging.
-The following command requests 4 CPUs, 32 GB of memory, and 1 hour of wall time on the aoraki partition:
+The following command requests 4 CPUs, 32 GB of memory, and 1 hour of wall time on the `aoraki` partition:
 
 !!! terminal
 
@@ -44,9 +44,9 @@ If Gaussian writes a checkpoint file to scratch, copy it back:
     cp -p "$GAUSS_SCRDIR/water.chk" .
     ```
 
-## SLURM batch job
+## Slurm batch job
 
-For longer calculations, use a SLURM batch job.
+For longer calculations, use a Slurm batch job.
 Create a Gaussian input file (e.g., water.gjf) with your desired calculation settings.
 Make sure to include the following lines in your input file to set the number of processors and memory: 
 
@@ -55,9 +55,9 @@ Make sure to include the following lines in your input file to set the number of
 %mem=32GB
 ```
 
-This matches the resources requested in the SLURM job script.
+This matches the resources requested in the Slurm job script.
 
-To submit a batch job, create a SLURM script (e.g., gaussian_job.slurm) with the following content:
+To submit a batch job, create a Slurm script (e.g., gaussian_job.slurm) with the following content:
 
 !!! terminal
 
@@ -105,8 +105,8 @@ Check the job status with:
 
 After submission, the job will run in the background.
 
-- You can monitor its progress using the SLURM commands like `squeue` or `sacct`.
-- The output and error logs will be saved in the files specified by `--output` and `--error` in the SLURM script.
+- You can monitor its progress using the Slurm commands like `squeue` or `sacct`.
+- The output and error logs will be saved in the files specified by `--output` and `--error` in the Slurm script.
 
 After the job completes, the output will be in `water.log`, and any checkpoint files will be copied back to your current directory.
 You can view the output and error logs with:
@@ -119,8 +119,8 @@ You can view the output and error logs with:
 
 ## Best practices
 
-- Match resources: Set `%nprocshared` in your .gjf file to match `--cpus-per-task` in your SLURM script.
-- Memory settings: Set `%mem` in the input file slightly below your SLURM `--mem` to avoid oversubscription.
+- Match resources: Set `%nprocshared` in your .gjf file to match `--cpus-per-task` in your Slurm script.
+- Memory settings: Set `%mem` in the input file slightly below your Slurm `--mem` to avoid oversubscription.
 - Batch for production: Use batch jobs for large calculations for better scheduling and reliability.
 - Checkpoint files: If your job generates checkpoint files, ensure they are copied back to your working directory after the job completes.
 

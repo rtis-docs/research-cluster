@@ -12,7 +12,7 @@ You can use the `apptainer/dorado` module to add a convenient alias to running `
     ```bash
     module avail dorado
     module load apptainer/dorado/0.7.1
-    # The following is required to use aliases in a non-interactive/SLURM batch script:
+    # The following is required to use aliases in a non-interactive/Slurm batch script:
     shopt -s expand_aliases
     dorado ....
     ```
@@ -42,15 +42,15 @@ As with all Apptainer containers, take care to qualify the files and paths in th
 container image, i.e. Models are located within the container in `/models/`, and any other files 
 and data stored outside the container needs to be in a folder that is bound by Apptainer into the 
 container (either by default, such as your `$HOME`, `/scratch` or `/projects`), or 
-by explicitely specifying a bind mount with Apptainer's `--bind` option). 
+by explicitly specifying a bind mount with Apptainer's `--bind` option). 
 
 Please refer to the dorado GitHub page for more information regarding running dorado.
 [https://github.com/nanoporetech/dorado](https://github.com/nanoporetech/dorado)
 
 
-## Example SLURM batch script
+## Example Slurm batch script
 
-Below is an example SLURM batch script for running Dorado on either the `aoraki_gpu_H100` or `aoraki_gpu_A100` partition of the cluster. This example uses the Apptainer module with the dorado alias:
+Below is an example Slurm batch script for running Dorado on either the `aoraki_gpu_H100` or `aoraki_gpu_A100` partition of the cluster. This example uses the Apptainer module with the dorado alias:
 
 !!! terminal
 
@@ -70,7 +70,7 @@ Below is an example SLURM batch script for running Dorado on either the `aoraki_
     # Load the Apptainer/Dorado module
     module load apptainer/dorado/0.7.1
 
-    # Enable aliases in non-interactive SLURM shell
+    # Enable aliases in non-interactive Slurm shell
     shopt -s expand_aliases
 
     echo "CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES"

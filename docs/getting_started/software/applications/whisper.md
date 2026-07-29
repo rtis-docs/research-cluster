@@ -15,22 +15,29 @@ The app can be accessed **[via the Open OnDemand Applications](https://ondemand.
 3. In the Whisper app launch form, leave all options as default, and click the 'Launch' button (link above).
 4. Wait for the session to get scheduled on one of the cluster nodes; then click the 'Connect to Whisper WebUI' button.
 
+![](../../../assets/images/whisper/microphone-access.png)
+
 ### Transcription quickstart
 
 1. In the Upload Files tab, drag and drop an audio or video recording file in the 'Drop File here' area, or click to select a file from your local drive.
-   - (aadnk version): Multiple files can be selected; these will then be processed sequentially, with outputs bundled in a zip archive.
+      - (aadnk version): Multiple files can be selected; these will then be processed sequentially, with outputs bundled in a zip archive.
+      ![](../../../assets/images/whisper/drop-file.png)
+
 2. Select the source material language, or leave it empty to automatically detect it.
 3. Speaker diarisation (i.e. "who spoke when") can be enabled by ticking the 'Diarisation' option (see [Speaker diarisation](#speaker-diarisation) below). Set the 'Diarisation - Speakers' field to the number of speakers if known (which improves accuracy), or set to 0 to enable automatic detection.
    - The diarisation process will add additional processing time after the transcription phase, and progress currently is not reflected in the user interface; i.e. the progress bar will just appear to hang at 100% — be patient.
 4. Other settings can be left as default. Click the 'Submit' button when ready to start.
 5. The very first time, the required AI model files will get downloaded to your research home directory. Depending on the selected model, this can be sizeable and will take some additional time to initialise.
 6. When finished, the transcribed text should show up in the output pane, and the resulting output files will be available for download in the 'Downloads' section. Click the down arrow to download files to your local machine.
+![](../../../assets/images/whisper/download.png)
 
 ### Translation quickstart
 
 For document text-to-text translation, see [Translation](#translation).
 
 Follow the same steps as per Transcription quickstart, only now selecting the translate option under Task.
+
+![](../../../assets/images/whisper/translate.png)
 
 For translations it is recommended to select the multilingual `large-v3` model. (See [Model selection](#model-selection)). See [Translation](#translation) below for additional pointers.
 
@@ -58,7 +65,7 @@ Speaker diarisation (i.e. the process of identifying "who spoke when") adds spea
 
 Diarisation is not supported by the Whisper model itself, but is implemented as a separate step using a different model and library. The results of the Whisper transcription and diarisation are then "merged" for basic speaker diarisation.
 
-When diarisation is enabled, different speakers will be identified and labeled as `SPEAKER_00`, `SPEAKER_01`, etc. in the text output, subtitle files (srt, vtt), and in the HTML output (the latter which will additionally have the different speaker segments colourised for easy reading).
+When diarisation is enabled, different speakers will be identified and labelled as `SPEAKER_00`, `SPEAKER_01`, etc. in the text output, subtitle files (srt, vtt), and in the HTML output (the latter which will additionally have the different speaker segments colourised for easy reading).
 
 To enable this, select the 'Speaker diarisation' checkbox, and if known, always try to set the number of speakers for improved accuracy.
 
@@ -78,6 +85,8 @@ Translation performance varies widely depending on the source language.
 While the underlying model was trained on 98 languages, only languages that exceeded a <50% word error rate (WER) — an industry standard benchmark for speech-to-text model accuracy — are considered reliable. The model may work for languages not listed but the quality will be low.
 
 Source: [openai/whisper discussion #1762](https://github.com/openai/whisper/discussions/1762)
+
+![](../../../assets/images/whisper/table.svg)
 
 #### Translations to non-English
 
@@ -120,7 +129,7 @@ Output formats:
 
 As with all AI-based automated audio transcription systems, resulting transcripts should be carefully checked.
 
-- Most nonverbal expressions like laughter or filler words will not get captured; if that is important for your analysis, these may need to be added manually in postprocessing.
+- Most non-verbal expressions like laughter or filler words will not get captured; if that is important for your analysis, these may need to be added manually in postprocessing.
 - The output files list in the 'Download' section is not persisted beyond your current session.
 - The actual files (generated transcripts, uploaded audio files, as well as Whisper model files) are stored in your research home directory under `~/.whisper/`. These can be accessed/transferred/deleted from the OOD Files app. Make sure to tick the "Show dotfiles" option to show the hidden `.whisper` folder.
 - Subtitle files can overlay your audio/video recording using a capable media player (e.g. VLC), while the colourised HTML transcripts can be opened in a browser and are easy to read.

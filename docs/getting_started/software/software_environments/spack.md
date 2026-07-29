@@ -44,7 +44,7 @@ You could add this to your `~/.bashrc` file (or its equivalent when not using th
 
 ## User-local Spack installation
 
-In order to install Spack packages youself, you need to set up **your own Spack instance**.
+In order to install Spack packages yourself, you need to set up **your own Spack instance**.
 
 * Open a terminal and with your $HOME as the current working directory, follow the [Installation instructions on the Spack website](https://spack.readthedocs.io/en/latest/getting_started.html#installation) and [source the appropriate initialisation script](https://spack.readthedocs.io/en/latest/getting_started.html#shell-support):
 
@@ -78,7 +78,7 @@ In order to install Spack packages youself, you need to set up **your own Spack 
     ```
 
 * Following the above instructions, Spack packages will be installed under `~/spack/` in your home directory, which can get 
-sizable and will count towards your home directory storage quota. If you have a `/projects` folder set up, Spack can alternatively 
+sizeable and will count towards your home directory storage quota. If you have a `/projects` folder set up, Spack can alternatively 
 be installed there or [set up as an alternative prefix](https://spack.readthedocs.io/en/latest/getting_started.html#optional-alternate-prefix).
  
 * If you installed Spack via the recommended `git clone`, you can **keep your local Spack instance up to date** by running :code:`cd $SPACK_ROOT && git pull`

@@ -24,7 +24,7 @@ Intermediate Data Storage:
 
 Checkpointing:
   
-  - In long-running computations, checkpointing is used to save the state of a job at regular intervals.
+  - In long-running computations, check-pointing is used to save the state of a job at regular intervals.
 
 Data Staging: 
   

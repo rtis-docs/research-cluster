@@ -2,7 +2,7 @@
 
 <!-- TODO 
 This page should cover 
-some common reasons/uses for using the hpc deskop to do work
+some common reasons/uses for using the hpc desktop to do work
 suggested resources for common tasks
 how to get an HPC desktop session
 how to run something in the terminal
@@ -14,7 +14,7 @@ moving data around
 
 When launching the desktop you can customise the computational components to suit your needs by clicking Advanced options. You can choose between 2 desktop environments XFCE and GNOME. If you have GPU intensive tasks select the "Request GPU" button.
 
-When adjusting other components like cores and memory please refer to the guidelines <!--FIXME make a guidelines page or see if Nesi ones apply https://docs.nesi.org.nz/Getting_Started/Next_Steps/Finding_Job_Efficiency/ https://docs.nesi.org.nz/Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions/#initial-python-script https://docs.nesi.org.nz/Getting_Started/Next_Steps/MPI_Scaling_Example/--> or compare the job you want to run to previous jobs you have run.
+When adjusting other components like cores and memory please refer to the guidelines <!--FIXME make a guidelines page or see if NeSI ones apply https://docs.nesi.org.nz/Getting_Started/Next_Steps/Finding_Job_Efficiency/ https://docs.nesi.org.nz/Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions/#initial-python-script https://docs.nesi.org.nz/Getting_Started/Next_Steps/MPI_Scaling_Example/--> or compare the job you want to run to previous jobs you have run.
 
 
 ![HPC Desktop Launch Settings](../../../assets/images/hpc_desktop_launch.png){width="400px"}
@@ -26,8 +26,16 @@ Increasing compression will increase input lag but is better for low bandwidth c
 
 ## Running a commandline program
 
+TODO
+
 ## Moving Data to/from HCS
+
+TODO
 
 ### Access HCS
 
+TODO
+
 ### Copying/Moving
+
+TODO

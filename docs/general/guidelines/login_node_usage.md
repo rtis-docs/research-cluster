@@ -2,7 +2,7 @@
 
 The main purpose of the login node is to provide a mechanism for interacting with the scheduler to submit jobs.
 
-The login node is a *shared resource* and is not intended to have computational jobs run on it. There is a limit of 8 CPUS and 60GB of memory per user, exceeding this will trigger warning emails and the possiblity of your tasks being cancelled in order to maintain the stability and accessibilty of the node for everyone. Tasks involving data copying/moving would ideally be kept to less than 30 minutes.
+The login node is a *shared resource* and is not intended to have computational jobs run on it. There is a limit of 8 CPUS and 60GB of memory per user, exceeding this will trigger warning emails and the possibility of your tasks being cancelled in order to maintain the stability and accessibility of the node for everyone. Tasks involving data copying/moving would ideally be kept to less than 30 minutes.
 
 Examples of tasks that the login node is suitable for:
 

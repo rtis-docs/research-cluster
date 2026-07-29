@@ -2,7 +2,7 @@
 
 ## How long do I have to wait for my job to start?
 
-There is no guaranteed way to know the exact wait time for a SLURM job, but you can get a good estimate using SLURM commands and by checking cluster utilisation.
+There is no guaranteed way to know the exact wait time for a Slurm job, but you can get a good estimate using Slurm commands and by checking cluster utilisation.
 
 ### Check your job in the queue
 
@@ -26,7 +26,7 @@ After submitting a job, you can check its estimated start time (if available):
     scontrol show job <jobid> | grep StartTime
     ```
 
-This shows SLURM's estimated start time, but be aware that this can change as other jobs are submitted or finish.
+This shows Slurm's estimated start time, but be aware that this can change as other jobs are submitted or finish.
 
 ### Tips for faster job start
 

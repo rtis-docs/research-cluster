@@ -41,7 +41,7 @@ You can use the `apptainer/deepposekit` module to add a convenient alias to `pyt
     #SBATCH <slurm job script options>
     
     module load apptainer/deepposekit
-    # The following is required to use aliases in a non-interactive/SLURM batch script:
+    # The following is required to use aliases in a non-interactive/Slurm batch script:
     shopt -s expand_aliases
     python -c 'import deepposekit; print(deepposekit.__version__)'
     ```

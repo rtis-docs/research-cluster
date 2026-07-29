@@ -1,10 +1,10 @@
-# Research HPC Cluster (Aoraki) Documentation
+# Otago Research Computing
 
 ## Overview
 
 !!! info
     The Aoraki Research cluster provides researchers with access to shared resources, such as **CPUs, GPUs, Large Memory Nodes, and High-Speed Storage**. 
-    Also available are specialised software and libraries optimised for scientific and datascience computing. 
+    Also available are specialised software and libraries optimised for scientific and data science computing. 
 
     For all support enquiries please email {{support_email}} or check out the [Support page](general/support.md).
 
@@ -120,7 +120,7 @@
   image: assets/images/icons/interactive_space_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Using the scheduler
-  content: Submitting and managing jobs through the SLURM scheduler
+  content: Submitting and managing jobs through the Slurm scheduler
   url: getting_started/running/batch/slurm_quickstart.md
   image: assets/images/icons/add_to_queue_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 

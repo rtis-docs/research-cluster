@@ -7,7 +7,7 @@ Space Ranger is available on the cluster in: `/opt/spaceranger/spaceranger-3.0.1
 
 Space Ranger tutorial: [https://www.10xgenomics.com/support/software/space-ranger/latest/tutorials/count-ffpe-tutorial](https://www.10xgenomics.com/support/software/space-ranger/latest/tutorials/count-ffpe-tutorial)
 
-To run spaceranger on the slurm cluster node create similar slurm script:
+To run Space Ranger on the Slurm cluster node create similar Slurm script:
 
 !!! terminal
 
@@ -51,8 +51,8 @@ To run spaceranger on the slurm cluster node create similar slurm script:
     echo "Script end"
     ```
  
-As of May 30, 2024, SLURM/cgroup rules now enforce strict resource limits based on the job specifications in the SLURM script. For example, 
-if your SLURM script requests 16 cores and 64 GB of RAM, the job will be restricted to these limits. Should the job exceed the 
+As of May 30, 2024, Slurm/cgroup rules now enforce strict resource limits based on the job specifications in the Slurm script. For example, 
+if your Slurm script requests 16 cores and 64 GB of RAM, the job will be restricted to these limits. Should the job exceed the 
 64 GB RAM allocation, it will terminate with an "Out of memory" error. For different or larger datasets, please adjust the resource requests in your 
 script accordingly to avoid such issues.
 
@@ -78,7 +78,7 @@ Submit slurm job:
     511981   aoraki_bigcpu   account   account   spaceranger-16c-64g  R    0:05   1-10:00:00     1     16    64G       N/A      aoraki15      aoraki15 200040
     ```
 
-After the SLURM job is done, please check the job's efficiency and adjust the script if needed.
+After the Slurm job is done, please check the job's efficiency and adjust the script if needed.
 
 !!! terminal
 
@@ -119,5 +119,5 @@ bcl2fastq is available as a spack module.
     ```
 
 
-Please refer to the Space Ranger web page for more information regarding running spaceranger.
+Please refer to the Space Ranger web page for more information regarding running Space Ranger.
 [https://www.10xgenomics.com/support/software/space-ranger/latest](https://www.10xgenomics.com/support/software/space-ranger/latest)

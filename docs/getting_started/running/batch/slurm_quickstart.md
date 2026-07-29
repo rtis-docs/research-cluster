@@ -1,23 +1,23 @@
 # Slurm Overview
 
 The Otago cluster uses **S**imple **L**inux **U**tility for **R**esource
-**M**anagement (SLURM) for job management.
+**M**anagement (Slurm) for job management.
 Slurm is an open-source resource manager and job scheduling system for HPC
 (**H**igh-**P**erformance **C**omputing) which manages jobs, job steps,
 nodes, partitions (groups of nodes), and other entities on the cluster.
 Its main purpose is to allocate and manage resources on a cluster, so that jobs
-can be run in a way that maximizes utilization of the available resources. In order for SLURM to effectively manage resources, 
+can be run in a way that maximizes utilization of the available resources. In order for Slurm to effectively manage resources, 
 jobs are submitted to a queue and based on the requested resources the scheduler 
 will run them to make best utilisation of the cluster. 
 
 In contrast to the usual interactive mode of running commands on your computer, 
-the main way of interacting with slurm is to 'batch' your jobs up and submit them. 
+the main way of interacting with Slurm is to 'batch' your jobs up and submit them. 
 This 'batching' is usually in the form of a bash script which also includes meta information about 
 the resource requirements such as the amount of time it's expected to take, along with the number of CPUs and RAM needed.
 At a minimum, a time-limit needs to be specified for your job at submission.
 
 The following is a summary of how to submit jobs and interact with the scheduler. 
-Full documentation for slurm is available at [https://slurm.schedmd.com/documentation.html](https://slurm.schedmd.com/documentation.html)
+Full documentation for Slurm is available at [https://slurm.schedmd.com/documentation.html](https://slurm.schedmd.com/documentation.html)
 
 
 ## Slurm Workflow
@@ -44,7 +44,7 @@ Below is a high-level overview of how Slurm schedules and runs your jobs:
 
 Slurm's workflow ensures that jobs are run efficiently and fairly, making the best use of available cluster resources. 
 
-## Interacting with the SLURM scheduler
+## Interacting with the Slurm scheduler
 
 The following are commands that are used to find out information about the status of the scheduler and jobs that have been submitted
 
@@ -80,7 +80,7 @@ In order to submit a job to the scheduler using ``sbatch`` you first need to def
 
 A job script specifies where and how you want to run your job on the cluster
 and ends with the actual command(s) needed to run your job.
-The job script file looks much like a standard shell script (``.sh``) file, but at the top also includes one or more lines that specify options for the SLURM scheduler.
+The job script file looks much like a standard shell script (``.sh``) file, but at the top also includes one or more lines that specify options for the Slurm scheduler.
 These lines take the form of
 
 !!! terminal
@@ -90,7 +90,7 @@ These lines take the form of
     ```
 
 Although these lines start with hash signs (``#``), and thus are regarded as
-comments by the shell, they are nonetheless read and interpreted by the SLURM
+comments by the shell, they are nonetheless read and interpreted by the Slurm
 scheduler.
 
 It is through these ``#SBATCH`` lines that the system resources are requested for the allocation that will run your job. 
@@ -112,7 +112,7 @@ Common parameters include:
   - ``--error=``/ ``-e``
     File to save output from stderr
   - ``--dependency=``/ ``-d``
-    Depends on a specified jobid finishing. Can be modifed by completion status. See documentation.
+    Depends on a specified jobid finishing. Can be modified by completion status. See documentation.
   - ``--chdir=`` / ``-D``
     Directory to change into before running the job
  
@@ -121,7 +121,7 @@ Common parameters include:
   - ``--mem=`` 
     (default 8GB) Total memory for the job per node. Specify with units (MB, GB)
   - ``--mem-per-cpu=`` 
-    amount of memory for each cpu (slurm will total this). Specify with units (MB, GB)
+    amount of memory for each cpu (Slurm will total this). Specify with units (MB, GB)
     
   
 **Parallelism**
@@ -138,7 +138,7 @@ Common parameters include:
 
 The full list of parameters and their descriptions is available at [https://slurm.schedmd.com/sbatch.html](https://slurm.schedmd.com/sbatch.html)
 
-Here is an example slurm script that would request a single cpu with an allocation of 4 GB of memory, and run for a maximum of 1 minute:
+Here is an example Slurm script that would request a single cpu with an allocation of 4 GB of memory, and run for a maximum of 1 minute:
 
 !!! terminal
 
@@ -159,7 +159,7 @@ Here is an example slurm script that would request a single cpu with an allocati
 
 !!! hint "Finding Output"
 
-    Output from running a SLURM batch job is, by default, placed in a file named
+    Output from running a Slurm batch job is, by default, placed in a file named
     ``slurm-%j.out``, where the job's ID is substituted for ``%j``; e.g.
     ``slurm-478012.out``.
     This file will be created in your current directory; i.e. the directory from
@@ -277,7 +277,7 @@ files, if desired, such as email notification options when a job has completed.
 These are all described further below.
 
 
-**At a minimum, a time limit must be provided when submitting a job** with ``--time=hh:mm:ss`` (replacing hh,mm, and ss with number values). This can be provided either be as part of your jobscript or as a commandline parameter.
+**At a minimum, a time limit must be provided when submitting a job** with ``--time=hh:mm:ss`` (replacing hh,mm, and ss with number values). This can be provided either be as part of your job script or as a commandline parameter.
 
 
 ## Memory Available
@@ -320,7 +320,7 @@ In addition, in some cases it can make sense to use the ``--ntasks`` (or
 determine how many nodes and tasks per node are needed.
 In general ``--cpus-per-task`` will be ``1`` except when running threaded code.  
 
-Note that if the various options are not set SLURM will in some cases infer
+Note that if the various options are not set Slurm will in some cases infer
 what the value of the option needs to be given other options that are set and
 in other cases will treat the value as being ``1``. 
 So some of the options set in the example below are not strictly necessary, but
@@ -348,7 +348,7 @@ Only the partition, time, and account flags are required.
 
 ## GPU Jobs
 
-Requesting a GPU for a SLURM job requires that your job specifies **both**
+Requesting a GPU for a Slurm job requires that your job specifies **both**
 
 - a GPU partition
 - includes the `--gres` flag
@@ -368,7 +368,7 @@ The partition is used to specify a specific GPU, or how much GPU memory is neede
    GPUs): ``--gpus-per-node=2``
 
 
-Please see the [SLURM GPU examples page](slurm_examples/gpu-slurm.md) for examples of how to submit SLURM jobs that require a GPU.
+Please see the [Slurm GPU examples page](slurm_examples/gpu-slurm.md) for examples of how to submit Slurm jobs that require a GPU.
 
 
 

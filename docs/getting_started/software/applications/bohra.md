@@ -12,7 +12,7 @@ See the [Bohra wiki](https://github.com/MDU-PHL/bohra/wiki) for usage informatio
 
     ```bash
     module load apptainer/bohra
-    # The following is required to use aliases in a non-interactive/SLURM batch script:
+    # The following is required to use aliases in a non-interactive/Slurm batch script:
     shopt -s expand_aliases
     bohra test
     bohra run ......

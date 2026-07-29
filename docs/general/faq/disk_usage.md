@@ -50,7 +50,7 @@ Once you've identified the largest files or folders, you can:
 
 ### Move or migrate data
 
-Research data and large files should not be stored in your home directory. Instead, request a project directory on shared or scratch storage. Contact the RTIS support team to request project or scratch storage.
+Research data and large files should not be stored in your home directory. Instead, request a project directory on shared or scratch storage. Contact the eResearch Support team ({{support_email}}) to request project or scratch storage.
 
 ### Manage Conda environments
 
@@ -64,5 +64,5 @@ For detailed advice, see our guide: https://researchcomputing.otago.ac.nz/cluste
 ### Prevent future issues
 
 - Regularly monitor your disk usage.
-- Avoid saving large SLURM job outputs in your home directory.
+- Avoid saving large Slurm job outputs in your home directory.
 - Use project or scratch space for compute-intensive or large-scale data workloads.
