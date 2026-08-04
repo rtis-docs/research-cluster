@@ -15,10 +15,13 @@ tags:
 ## Opening a Shell Session
 
 1. Log in to [https://ondemand.otago.ac.nz](https://ondemand.otago.ac.nz).
-2. From the top menu, go to **Clusters > Aoraki Cluster Shell Access**.
-3. A new tab opens with a terminal session connected to the cluster.
+2. From the top menu, go to **Clusters > Aoraki Shell Access**. There is also an **Aoraki Shell Access** tile among the pinned apps on the dashboard.
 
-![A shell session in the browser](../../../assets/images/ood_shell.png){width="600px"}{ .left }
+    ![The Clusters menu open on the OnDemand dashboard, with Aoraki Shell Access highlighted](../../../assets/images/ood_shell_nav.jpeg){width="600px"}{ .left }
+
+3. A new tab opens with a terminal session on the `aoraki-login` node, showing the login banner and your shell prompt.
+
+    ![A browser tab showing a terminal connected to aoraki-login.otago.ac.nz, with the Otago Compute Cluster login node welcome banner and a shell prompt](../../../assets/images/ood_shell_access.jpeg){width="600px"}{ .left }
 
 ## What You Can Do
 

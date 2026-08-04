@@ -116,7 +116,7 @@ ssh -i /path/to/your/private_key <otago-username>@aoraki-login.otago.ac.nz
 
 ## SSH within OnDemand
 
-To use the cluster shell access within OnDemand, first [connect to the **Otago OnDemand** web portal](ondemand_web.md#sign-in) and then from the top menu bar select the menu `Clusters` > `Aoraki Cluster Shell Access`.
+To use the cluster shell access within OnDemand, first [connect to the **Otago OnDemand** web portal](ondemand_web.md#sign-in) and then from the top menu bar select the menu `Clusters` > `Aoraki Shell Access`.
 
 You will then be prompted to input your password, similar to [SSH through the terminal](#ssh-through-a-terminal).
 

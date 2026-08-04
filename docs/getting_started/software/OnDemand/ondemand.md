@@ -116,10 +116,10 @@ Copy the data you want to work on into `/projects/` first, then run your OnDeman
 
 ### Shell Access
 
-**Clusters > Aoraki Cluster Shell Access** opens a terminal on the login node in a browser tab, equivalent to connecting over [SSH](../../access/login_ssh.md).
+**Clusters > Aoraki Shell Access** opens a terminal on the login node in a browser tab, equivalent to connecting over [SSH](../../access/login_ssh.md).
 
 <figure markdown="span" style="display: block; margin-left: 0; margin-right: auto;">
-  ![A shell session in the browser](../../../assets/images/ood_shell.png){ width="600px" }
+  ![A browser tab showing a terminal connected to aoraki-login.otago.ac.nz, with the Otago Compute Cluster login node welcome banner and a shell prompt](../../../assets/images/ood_shell_access.jpeg){ width="600px" }
 </figure>
 
 [Accessing the Shell through OnDemand :material-arrow-right:](ood_shell.md){ .md-button }
