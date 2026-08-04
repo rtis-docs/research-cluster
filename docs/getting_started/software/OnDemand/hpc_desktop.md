@@ -1,12 +1,30 @@
+---
+tags:
+  - OnDemand
+---
+
 # OnDemand HPC Desktop
+
 !!! overview "On this Page"
+    - What the HPC Desktop is for, and when to use something else
     - Key information when launching HPC Desktop
     - What the 2 different types of Desktops look like
     - Features available on each Desktop
-    - Feature available on both Desktops
- 
-<!-- TODO See if overview is in line with content -->
+    - Features available on both Desktops
+    - How to work with your files from the desktop
 
+The HPC Desktop is an [Open OnDemand](ondemand.md) interactive app that gives you a full Linux desktop running on a compute node, for graphical software that has no dedicated OnDemand app of its own.
+
+Like every OnDemand interactive app, the desktop runs as a Slurm job — the resources you pick on the launch form are the job's resource request, and the session holds them until you delete it or the wall time runs out.
+
+!!! note "Use a dedicated app where one exists"
+    If the software you need has its own OnDemand app — JupyterLab, RStudio, MATLAB and so on — launch that instead. Those apps come configured for the job and are simpler to start. See [Available Apps](available_apps.md). Where your work can be done from the command line, a [batch job](../../running/batch/slurm_quickstart.md) is a better use of cluster resources than a desktop session.
+
+## Before You Start
+
+You need access to the Research Cluster. If you do not have it yet, [fill in the access form](../../access/signup.md) or email the eResearch Support team at **{{ support_email }}**.
+
+Log in to [https://ondemand.otago.ac.nz](https://ondemand.otago.ac.nz) and choose **Otago HPC Desktop** from the **Interactive Apps** menu.
 
 ## Launching HPC Desktop
 
@@ -17,9 +35,16 @@ When adjusting other components like cores and memory please refer to the guidel
 
 ![HPC Desktop Launch Settings](../../../assets/images/hpc_desktop_launch.png){width="400px" .left}
 
-Increasing compression will increase input lag but is better for low bandwidth connections. For image quality you want to decrease if you have a low bandwidth.
+Fill out the form and press **Launch**. Your session is queued with Slurm and starts once the resources you asked for are free — asking for less usually means starting sooner.
+
+Once the session starts you can set the image compression and quality before connecting. Increasing compression will increase input lag but is better for low bandwidth connections. For image quality you want to decrease if you have a low bandwidth. If you are unhappy with the defaults you can relaunch the session from this page with different choices.
 
 ![noVNC Compression and Image Quality](../../../assets/images/hpc_noVNC_adjustments.png){width="600px" .left}
+
+Then press **Launch Desktop** and the desktop opens in a new tab.
+
+!!! tip "Ending your session"
+    Closing the browser tab does not end the job. Return to **My Interactive Sessions** on the OnDemand dashboard and click **Delete** to release the resources.
 
 ## HPC Desktop Overview
 
@@ -148,14 +173,48 @@ Disconnects you from the HPC Desktop, you may need to relaunch the Desktop from 
     ![GNOME - HPC Desktop Application Finder](../../../assets/images/hpc_show_applications_GNOME.png){width="600px" .left}
 
 
+## Working With Your Files
+
+Your desktop session runs directly on the Research Cluster, so it sees the same storage as any other cluster session — your [home directory](../../../storage/data_locations/homes.md), your [projects directory](../../../storage/data_locations/projects.md), and [Weka](../../../storage/data_locations/weka.md). You can work with them through the desktop's file manager or from a terminal.
+
+To open a terminal, right click anywhere on the desktop and select **Open Terminal Here**.
+
+### Using Otago HCS data
+
+[Otago HCS](../../../storage/data_locations/hcs.md) is the recommended long-term home for your research data, but it is not suited to being read from and written to during computation — the connection is not built for cluster speeds. The workflow is to stage your data in, process it, and copy the results back:
+
+1. Copy your data from your HCS share to your projects directory.
+2. Process it on the cluster.
+3. Copy your results back to your HCS share.
+
+!!! warning
+    Connecting to HCS from the cluster is for **moving data**, not for processing it in place.
+
+To reach your HCS share from a terminal in the desktop session:
+
+1. Note your HCS share name — the part after `//storage.hcs-p01.otago.ac.nz/`.
+2. Run `kdestroy` to clear any stale Kerberos tickets.
+3. Run `kinit` and enter your University password. The terminal shows no feedback as you type; press Enter to confirm.
+4. Navigate to `/mnt/auto-hcs/<yourshare>`.
+5. Copy what you need across to your projects directory, for example:
+
+!!! terminal
+
+    ```bash
+    rsync -avz /mnt/auto-hcs/its-rtis/testfile /projects/rtis/higje06p/
+    ```
+
+You can also do this through the desktop's file manager:
+
+![Copying data from HCS](../../../assets/images/copydata.png){width="600px" .left}
+
+When you have finished processing, copy your results back to your HCS share.
+
+This is the small-transfer route. For anything large, or if you need HCS access from a compute node during a job, see [Otago HCS](../../../storage/data_locations/hcs.md) and [Data Transfer](../../../storage/data_transfer/data_transfer_overview.md).
 
 !!! related-pages "What's next?"
-      - For more information about on Demand see [Open OnDemand](ondemand.md)
-      - Looking for something else? See [Software Overview page](../index.md)
-      -  For how to run a job on the cluster go to [Running Jobs](../../running/running_jobs_overview.md)
-      
-  <!-- TODO Are these pages the next step or relevant? -->
-
-  
-
-
+      - For more information about OnDemand see the [Open OnDemand Overview](ondemand.md)
+      - For managing files in the browser instead, see the [OnDemand File Manager](ood_file_manager.md)
+      - For the other apps you can launch, see [Available Apps](available_apps.md)
+      - Looking for something else? See the [Software Overview](../index.md)
+      - For how to run a job on the cluster go to [Running Jobs](../../running/running_jobs_overview.md)

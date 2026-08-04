@@ -1,0 +1,10 @@
+# Navigation for "OnDemand/"
+ignore:
+  - Apps/* # this contains the app cards which are embedded into "available_apps.md"
+
+nav:
+ - ondemand.md
+ - available_apps.md
+ - hpc_desktop.md
+ - ood_file_manager.md
+ - ood_shell.md

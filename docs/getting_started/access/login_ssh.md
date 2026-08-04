@@ -58,7 +58,7 @@ If you already have an SSH key pair (typically `~/.ssh/id_ed25519.pub` or `~/.ss
 
 === "Otago OnDemand"
 
-    1. [Log in to OnDemand](ondemand_web.md#logging-in) at [https://ondemand.otago.ac.nz](https://ondemand.otago.ac.nz).
+    1. [Log in to OnDemand](ondemand_web.md#sign-in) at [https://ondemand.otago.ac.nz](https://ondemand.otago.ac.nz).
     2. From the top navigation bar, select **Clusters > SSH Public Key**.
 
         ![Clusters menu showing SSH Public Key](../../assets/images/ssh_key_ood.png){width="600px" align=left}
@@ -116,7 +116,7 @@ ssh -i /path/to/your/private_key <otago-username>@aoraki-login.otago.ac.nz
 
 ## SSH within OnDemand
 
-To use the cluster shell access within OnDemand, first [connect to the **Otago OnDemand** web portal](ondemand_web.md#logging-in) and then from the top menu bar select the menu `Clusters` > `Aoraki Cluster Shell Access`.
+To use the cluster shell access within OnDemand, first [connect to the **Otago OnDemand** web portal](ondemand_web.md#sign-in) and then from the top menu bar select the menu `Clusters` > `Aoraki Cluster Shell Access`.
 
 You will then be prompted to input your password, similar to [SSH through the terminal](#ssh-through-a-terminal).
 
