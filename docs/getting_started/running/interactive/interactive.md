@@ -16,7 +16,7 @@ The RStudio server or Jupyter Server OnDemand Apps provide common data analysis 
 
 
 !!! related-pages "What's next?"
-    - [Open OnDemand Guide](../..//software/onDemand/ondemand.md)
+    - [Open OnDemand Guide](../..//software/OnDemand/ondemand.md)
     - [Writing Slurm Job Scripts](../batch/slurm_quickstart.md)
     - [Current Cluster Utilisation](../../current_utilisation.md)
 

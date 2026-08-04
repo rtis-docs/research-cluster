@@ -78,17 +78,17 @@
 
 - title: Available Web Apps
   content: Pre-installed apps available within Open OnDemand
-  url: getting_started/software/onDemand/available_apps.md
+  url: getting_started/software/OnDemand/available_apps.md
   image: assets/images/icons/grid_view_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Using HPC Desktop
   content: How to use the virtual desktop environment
-  url: getting_started/software/onDemand/hpc_desktop.md
+  url: getting_started/software/OnDemand/hpc_desktop.md
   image: assets/images/icons/desktop_windows_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Managing files with OnDemand
   content: How to manage files through the Open OnDemand web interface
-  url: getting_started/software/onDemand/ood_file_manager.md
+  url: getting_started/software/OnDemand/ood_file_manager.md
   image: assets/images/icons/folder_match_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 ::/cards::
@@ -101,12 +101,12 @@
 
 - title: Available Web Apps
   content: Pre-installed apps available within Open OnDemand
-  url: getting_started/software/onDemand/available_apps.md
+  url: getting_started/software/OnDemand/available_apps.md
   image: assets/images/icons/grid_view_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Using HPC Desktop
   content: How to use the virtual desktop environment
-  url: getting_started/software/onDemand/hpc_desktop.md
+  url: getting_started/software/OnDemand/hpc_desktop.md
   image: assets/images/icons/desktop_windows_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Managing Software
@@ -116,7 +116,7 @@
 
 - title: Interactive jobs
   content: Options for interactive jobs
-  url: getting_started/software/onDemand/available_apps.md
+  url: getting_started/software/OnDemand/available_apps.md
   image: assets/images/icons/interactive_space_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Using the scheduler

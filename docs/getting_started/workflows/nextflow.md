@@ -44,4 +44,4 @@ In your workflow's working directory, running `nextflow config -profile singular
 
 [EPI2ME](https://labs.epi2me.io/) is Oxford Nanopore's data analysis platform providing a user-friendly graphical interface to running ONT's bioinformatics Nextflow pipelines, as well as other generic Nextflow pipelines.
 
-More info [here](../../getting_started/software/onDemand/available_apps.md#epi2me-desktop).
+More info [here](../../getting_started/software/OnDemand/available_apps.md#epi2me-desktop).

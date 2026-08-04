@@ -1,5 +1,3 @@
-.. _openpose-apptainer:
-
 # OpenPose
 
 
@@ -16,7 +14,7 @@ The OpenPose container is available on the cluster as a shared [Apptainer](../so
 You can use the `apptainer/openpose` module to load OpenPose with convenient aliases for execution:
 
 
-!!! termianl 
+!!! terminal
 
     ```bash
     module avail openpose
@@ -121,9 +119,11 @@ To run with GUI display enabled:
 
 Alternatively, run OpenPose manually using `apptainer exec`. Example:
 
-.. code-block:: bash
+!!! terminal
 
+    ```bash
     apptainer exec --nv $APPTAINER_IMG/openpose.sif [command]
+    ```
 
 You must use `--nv` to enable NVIDIA GPU support.
 
@@ -143,9 +143,11 @@ Make sure input/output paths are within bound directories (e.g., `$HOME`, `/proj
 
 To list all available CLI options:
 
-.. code-block:: bash
+!!! terminal
 
+    ```bash
     openpose --help
+    ```
 
 ### Further Information
 

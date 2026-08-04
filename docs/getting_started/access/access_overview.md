@@ -34,8 +34,8 @@ By default your University account will need to be provisioned for access. Pleas
 ::/cards::
 
 !!! related-pages "What next?"
-    * Available software. We have a wide range of applications available: [Ondemand GUI Apps](../software/onDemand/available_apps.md) or commandline [Application Libraries](../software/applications/index.md)
-    * Running jobs. [OnDemand](../software/onDemand/ondemand.md) and [Slurm](../running/batch/slurm_quickstart.md) are both separate ways of running jobs on the cluster.
+    * Available software. We have a wide range of applications available: [OnDemand GUI Apps](../software/OnDemand/available_apps.md) or commandline [Application Libraries](../software/applications/index.md)
+    * Running jobs. [OnDemand](../software/OnDemand/ondemand.md) and [Slurm](../running/batch/slurm_quickstart.md) are both separate ways of running jobs on the cluster.
     * Where to store your data and what your options are found on our [Storage Overview](../../storage/storage_options.md)
   
 

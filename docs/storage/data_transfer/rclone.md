@@ -140,7 +140,7 @@ Then open `~/smb-share` in Thunar like a normal folder. To unmount:
 fusermount -u ~/smb-share
 ```
 
-Then browse to ~/smb-share in either the terminal or on an Ondemand HPC Desktop to see your HCS files and copy your files to the cluster file system or use them while your Kerberos ticket is valid.
+Then browse to ~/smb-share in either the terminal or on an OnDemand HPC Desktop to see your HCS files and copy your files to the cluster file system or use them while your Kerberos ticket is valid.
 
 ---
 

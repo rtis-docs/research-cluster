@@ -31,7 +31,7 @@ This will load the latest version of conda installed on the system.
 
 !!! note
 
-    After loading conda, `source $(conda info --base)/etc/profile.d/conda.sh` is needed to load the conda functions into your environment and needs to be done everytime the miniconda module is loaded. This is done instead of using `conda init`. The use of `conda init` is not recommended as it hard codes a specific version of conda into your bashrc which can cause issues if you are not managing the installation of conda yourself.
+    After loading conda, `source $(conda info --base)/etc/profile.d/conda.sh` is needed to load the conda functions into your environment and needs to be done every time the miniconda module is loaded. This is done instead of using `conda init`. The use of `conda init` is not recommended as it hard codes a specific version of conda into your bashrc which can cause issues if you are not managing the installation of conda yourself.
 
     This also mirrors the requirement for when using conda in a slurm script as your bashrc is not parsed as part of a Slurm job.
 
