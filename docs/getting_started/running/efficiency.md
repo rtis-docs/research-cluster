@@ -35,7 +35,7 @@ If you are sizing an unfamiliar workload, start with a deliberately small test â
     squeue --me
     ```
 
-The `ST` column shows `R` for running and `PD` for pending; for a pending job, the last column says why. See [Job Queuing](../../general/faq/job_start_time.md) if it is not starting.
+The `ST` column shows `R` for running and `PD` for pending; for a pending job, the last column says why. See [Why Is My Job Not Starting?](../../general/faq/job_start_time.md) if it is not starting.
 
 ## 3. Check How It Finished
 
@@ -57,7 +57,7 @@ Table: The job states you are most likely to see
 | `TIMEOUT` | Hit the wall time â€” ask for more time, or make it faster |
 | `CANCELLED` | Stopped by you or by an administrator |
 
-[Slurm Job Management and Troubleshooting](../../general/faq/slurm_job_failures.md) covers each of these in more detail.
+[Why Did My Job Fail?](../../general/faq/slurm_job_failures.md) covers each of these in more detail.
 
 ## 4. See What It Actually Used
 
@@ -134,5 +134,5 @@ What changes is which numbers are meaningful:
     - For how jobs and the scheduler work, see [Running Jobs](running_jobs_overview.md)
     - To adjust your request, see [Job Script Options](batch/sbatch_options.md)
     - For sizing an interactive session, see [Interactive Jobs](interactive/interactive.md)
-    - If a job failed, see [Slurm Troubleshooting](../../general/faq/slurm_job_failures.md)
+    - If a job failed, see [Why Did My Job Fail?](../../general/faq/slurm_job_failures.md)
     - For what a fair share of the cluster looks like, see [Reasonable Usage](../../general/guidelines/reasonable_usage.md)

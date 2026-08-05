@@ -55,7 +55,7 @@ So a realistic `--time` is not just good manners — it is the single most effec
 Priority also uses **fairshare**, so a group that has recently used a large share of the cluster is scheduled behind one that has not.
 
 !!! tip "Before you submit"
-    [Current Utilisation](../current_utilisation.md) shows what is busy right now. If the partition you want is full, a smaller request or a quieter partition may start much sooner. If your job is already queued and you want to know why, see [Why is my job not starting?](../../general/faq/job_start_time.md)
+    [Current Utilisation](../current_utilisation.md) shows what is busy right now. If the partition you want is full, a smaller request or a quieter partition may start much sooner. If your job is already queued and you want to know why, see [Why Is My Job Not Starting?](../../general/faq/job_start_time.md)
 
 ## Interactive or Batch?
 
