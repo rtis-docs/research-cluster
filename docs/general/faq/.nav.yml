@@ -1,0 +1,10 @@
+# Navigation for "faq/"
+nav:
+  - index.md
+  - access.md
+  - job_start_time.md
+  - slurm_job_failures.md
+  - gpu_jobs.md
+  - disk_usage.md
+  - sharing_data.md
+  - software.md

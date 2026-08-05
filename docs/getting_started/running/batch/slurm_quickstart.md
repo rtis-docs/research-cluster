@@ -146,7 +146,7 @@ Once the job has ended, `sacct` shows how it finished:
     sacct -j 716 --format=JobID,JobName,Partition,State,Elapsed,MaxRSS,ExitCode
     ```
 
-A state of `COMPLETED` means the script exited cleanly. `FAILED`, `OUT_OF_MEMORY` and `TIMEOUT` each point at a different fix — see [Slurm Job Management and Troubleshooting](../../../general/faq/slurm_job_failures.md).
+A state of `COMPLETED` means the script exited cleanly. `FAILED`, `OUT_OF_MEMORY` and `TIMEOUT` each point at a different fix — see [Why Did My Job Fail?](../../../general/faq/slurm_job_failures.md).
 
 !!! tip "Check what it actually used"
     `seff 716` compares what you asked for against what the job used. It is the fastest way to find out that your job needed 4 GB rather than the 64 GB you reserved. See [Job Efficiency](../efficiency.md).
@@ -188,6 +188,6 @@ Table: Where to find each kind of job script
     - For every `#SBATCH` option and its Aoraki default, see [Job Script Options](sbatch_options.md)
     - To check whether your request matched what you used, see [Job Efficiency](../efficiency.md)
     - For worked examples, see [Example Job Scripts](slurm_examples/array-slurm.md)
-    - If a job failed or will not start, see [Slurm Troubleshooting](../../../general/faq/slurm_job_failures.md) and [Job Queuing](../../../general/faq/job_start_time.md)
+    - If a job failed or will not start, see [Why Did My Job Fail?](../../../general/faq/slurm_job_failures.md) and [Why Is My Job Not Starting?](../../../general/faq/job_start_time.md)
     - For partitions, hardware and limits, see the [Cluster Overview](../../../general/overview.md)
     - The complete Slurm reference is at [slurm.schedmd.com](https://slurm.schedmd.com/documentation.html)
