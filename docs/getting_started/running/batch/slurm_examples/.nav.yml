@@ -1,0 +1,8 @@
+# Navigation for "slurm_examples/"
+nav:
+  - array-slurm.md
+  - gpu-slurm.md
+  - dependent_jobs.md
+  - python-slurm.md
+  - r-slurm.md
+  - heterogeneous_jobs.md

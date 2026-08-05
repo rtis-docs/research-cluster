@@ -116,7 +116,7 @@
 
 - title: Interactive jobs
   content: Options for interactive jobs
-  url: getting_started/software/OnDemand/available_apps.md
+  url: getting_started/running/interactive/interactive.md
   image: assets/images/icons/interactive_space_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Using the scheduler

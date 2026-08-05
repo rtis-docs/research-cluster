@@ -28,7 +28,7 @@ Log in to [https://ondemand.otago.ac.nz](https://ondemand.otago.ac.nz) and choos
 
 When launching the desktop you can customise the computational components to suit your needs by clicking **Advanced options**. You can choose between two desktop environments, XFCE and GNOME — both give you a terminal, file manager and web browser, so pick whichever you prefer. If you have GPU intensive tasks select the **Request GPU** button.
 
-When adjusting other components like cores and memory, compare the job you want to run to previous jobs you have run, and keep the [reasonable usage limits](../../../general/guidelines/reasonable_usage.md) in mind. [Job Efficiency](../../running/batch/efficiency.md) covers how to check whether what you asked for matched what you used.
+When adjusting other components like cores and memory, compare the job you want to run to previous jobs you have run, and keep the [reasonable usage limits](../../../general/guidelines/reasonable_usage.md) in mind. [Job Efficiency](../../running/efficiency.md) covers how to check whether what you asked for matched what you used.
 
 <!--FIXME make a guidelines page or see if Nesi ones apply https://docs.nesi.org.nz/Getting_Started/Next_Steps/Finding_Job_Efficiency/ https://docs.nesi.org.nz/Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions/#initial-python-script https://docs.nesi.org.nz/Getting_Started/Next_Steps/MPI_Scaling_Example/-->
 
