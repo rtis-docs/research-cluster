@@ -41,7 +41,7 @@ Remember the Aoraki cluster is a shared resource and as such the following guide
 
 !!! related-pages "What's next?"
     - [Cluster Overview](../overview.md)
-    - [Slurm Overview](../../getting_started/running/batch/slurm_quickstart.md)
+    - [Slurm Quickstart](../../getting_started/running/batch/slurm_quickstart.md)
 
       
 

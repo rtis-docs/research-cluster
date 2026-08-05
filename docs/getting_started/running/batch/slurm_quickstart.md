@@ -1,397 +1,193 @@
-# Slurm Overview
+# Slurm Quickstart
 
-The Otago cluster uses **S**imple **L**inux **U**tility for **R**esource
-**M**anagement (Slurm) for job management.
-Slurm is an open-source resource manager and job scheduling system for HPC
-(**H**igh-**P**erformance **C**omputing) which manages jobs, job steps,
-nodes, partitions (groups of nodes), and other entities on the cluster.
-Its main purpose is to allocate and manage resources on a cluster, so that jobs
-can be run in a way that maximizes utilization of the available resources. In order for Slurm to effectively manage resources, 
-jobs are submitted to a queue and based on the requested resources the scheduler 
-will run them to make best utilisation of the cluster. 
+!!! overview "On this Page"
+    - What a batch job is and how one moves through the scheduler
+    - Writing your first job script
+    - Submitting it, finding the output, and cancelling it
+    - Watching a job while it runs and checking it afterwards
+    - Where to go for more complex job shapes
 
-In contrast to the usual interactive mode of running commands on your computer, 
-the main way of interacting with Slurm is to 'batch' your jobs up and submit them. 
-This 'batching' is usually in the form of a bash script which also includes meta information about 
-the resource requirements such as the amount of time it's expected to take, along with the number of CPUs and RAM needed.
-At a minimum, a time-limit needs to be specified for your job at submission.
+A **batch job** is a script that Slurm runs for you on a compute node, without you being there. You write down what you want run and what resources it needs, hand it to the scheduler, and collect the output when it finishes.
 
-The following is a summary of how to submit jobs and interact with the scheduler. 
-Full documentation for Slurm is available at [https://slurm.schedmd.com/documentation.html](https://slurm.schedmd.com/documentation.html)
+This page takes you from nothing to a completed job. For the meaning of every option you can put in a script, see [Job Script Options](sbatch_options.md).
 
+!!! tip "Not sure batch is what you want?"
+    If you need to see results as you go, click on things, or work out what your analysis should do, start with an [interactive session](../interactive/interactive.md) instead.
 
-## Slurm Workflow
+## How a Job Moves Through Slurm
 
-Below is a high-level overview of how Slurm schedules and runs your jobs:
+```mermaid
+graph LR;
+    A["sbatch<br/>my_job.sh"] --> B["Queued"]
+    B --> C["Running on a<br/>compute node"]
+    C --> D["Output written to<br/>slurm-JOBID.out"]
+    C --> E["Usage recorded<br/>sacct / seff"]
+```
 
-### 1. Define Job and Submit  
-   You submit your job to Slurm using the `sbatch` command. Your job is typically a script that specifies what program(s) to run and what resources are needed (e.g., CPUs, memory, time limit).
+You submit with `sbatch`. Slurm gives you a job ID and puts the job in the queue. When a node with the resources you asked for is free, the job starts, your script runs top to bottom, and anything it prints goes to a file. When the script exits — or when it hits the wall time or memory limit — the job ends and the resources are released.
 
-### 2. Resource Request and Queueing  
-   Slurm places your job in a queue and waits until the requested resources (CPU cores, memory, GPUs, etc.) become available. The scheduler considers all jobs in the queue and allocates resources based on availability and job priority.
+The whole thing is unattended. You can log out, and the job keeps going.
 
-### 3. Resource Allocation
-   Once resources are available, Slurm allocates them to your job. This includes assigning nodes, CPUs, memory, and any other requested resources.
+## Your First Job Script
 
-### 4. Job Execution  
-   Slurm starts your job on the assigned resources. If your job has multiple tasks or steps, Slurm manages these as job steps, which may run in parallel or sequence depending on your script.
+A job script is an ordinary bash script with `#SBATCH` lines at the top. Those lines look like comments to bash but are read by Slurm as your resource request.
 
-### 5. Monitoring and Management  
-   While your job is running, Slurm monitors its progress, manages input/output, and handles any errors. You can check the status of your job at any time using commands like `squeue` or `sacct`.
-
-### 6. Job Completion and Output  
-   When your job finishes, Slurm collects the output and error messages and writes them to files (by default, `slurm-<jobid>.out`). You are notified of completion (if enabled), and you can review the results and resource usage.
-
-Slurm's workflow ensures that jobs are run efficiently and fairly, making the best use of available cluster resources. 
-
-## Interacting with the Slurm scheduler
-
-The following are commands that are used to find out information about the status of the scheduler and jobs that have been submitted
-
-- ``sinfo``
-    View the status of the cluster's compute nodes.
-    The output includes how many nodes and of what types are currently 
-    available for running jobs
-- ``squeue``
-    Check the current jobs in the batch queue system. 
-    Use ``squeue --me`` to view your own jobs.
-- ``scancel``
-    Cancel a job based on its job ID. 
-    ``scancel 123`` would cancel the job with ID ``123``. It is only possible to cancel your own jobs.
-    ``scancel --me`` will cancel all of your jobs.
-- ``sacct``
-    Display the job usage metrics after a job has run. This is useful to see resource usage of a job, or determine if it failed.
-    ``sacct -j <jobid>``
-
-
-
-!!! hint
-
-    ``sinfo`` will quickly tell you the state of the cluster and ``squeue`` will show you all of the jobs running and in the queue. 
-
-
-
-
-
-## Defining Jobs
-
-
-In order to submit a job to the scheduler using ``sbatch`` you first need to define the job through a script. 
-
-A job script specifies where and how you want to run your job on the cluster
-and ends with the actual command(s) needed to run your job.
-The job script file looks much like a standard shell script (``.sh``) file, but at the top also includes one or more lines that specify options for the Slurm scheduler.
-These lines take the form of
-
-!!! terminal
-
-    ```bash
-    #SBATCH --some-option-here
-    ```
-
-Although these lines start with hash signs (``#``), and thus are regarded as
-comments by the shell, they are nonetheless read and interpreted by the Slurm
-scheduler.
-
-It is through these ``#SBATCH`` lines that the system resources are requested for the allocation that will run your job. 
-These parameters can also the supplied as part of calling ``sbatch`` at job submission. parameters supplied in this way will
-override the values in your job script.
-
-Common parameters include:
-
-**Meta**
-
-  - ``--time=``
-    (**required**) Time limit to be applied to the job. Supplied in format hh\:mm:ss.
-  - ``--job-name=`` / ``-J``
-    Custom job name
-  - ``--partition=``
-    aoraki (default) or aoraki_gpu
-  - ``--output=`` / ``-o``
-    File to save output from stdout
-  - ``--error=``/ ``-e``
-    File to save output from stderr
-  - ``--dependency=``/ ``-d``
-    Depends on a specified jobid finishing. Can be modified by completion status. See documentation.
-  - ``--chdir=`` / ``-D``
-    Directory to change into before running the job
- 
-**Memory** - Only need to supply one of these.
-
-  - ``--mem=`` 
-    (default 8GB) Total memory for the job per node. Specify with units (MB, GB)
-  - ``--mem-per-cpu=`` 
-    amount of memory for each cpu (Slurm will total this). Specify with units (MB, GB)
-    
-  
-**Parallelism**
-
-  - ``--cpus-per-task=`` / ``-c``
-    Number of cores being requested (default = 1)
-  - ``--ntasks=``
-    Number of tasks (default = 1)
-  - ``--array=``
-    defines an array task
-  - ``--nodes=``/ ``-N``
-    (default = 1). Number of nodes to run jobs across.
-  
-
-The full list of parameters and their descriptions is available at [https://slurm.schedmd.com/sbatch.html](https://slurm.schedmd.com/sbatch.html)
-
-Here is an example Slurm script that would request a single cpu with an allocation of 4 GB of memory, and run for a maximum of 1 minute:
-
-!!! terminal
-
-    ```bash
-    
-    #!/bin/bash
-    #SBATCH --job-name=my_job # define the job name
-    #SBATCH --mem=4GB # request an allocation with 4GB of ram
-    #SBATCH --time=00:01:00 # job time limit of 1 minute (hh:mm:ss)
-    #SBATCH --partition=aoraki # 'aoraki' or 'aoraki_gpu' (for gpu access)
-    
-    # usual bash commands go below here:
-    echo "my example script will now start"
-    sleep 10 # pretend to do something
-    echo "my example script has finished"
-    ```
-
-
-!!! hint "Finding Output"
-
-    Output from running a Slurm batch job is, by default, placed in a file named
-    ``slurm-%j.out``, where the job's ID is substituted for ``%j``; e.g.
-    ``slurm-478012.out``.
-    This file will be created in your current directory; i.e. the directory from
-    within which you entered the ``sbatch`` command.
-    Also by default, both command output and error output (to stdout and stderr,
-    respectively) are combined in this file.
-
-    To specify alternate files for command and error output use:
-
-    ``--output``
-      destination file for stdout
-    ``--error``
-      destination file for stderr
-
-
-### Slurm Scheduler Example
-
-
-Here is a minimal example of a job script file. 
-It will run unattended for up to 30 seconds on one of the compute nodes in the
-``aoraki`` partition, and will simply print out the text ``hello world``.
-
+Save this as `my_job.sh`:
 
 !!! terminal
 
     ```bash
     #!/bin/bash
-    # Job name:
-    #SBATCH --job-name=test
-    #
-    # Partition:
-    #SBATCH --partition=aoraki
-    #
-    # Request one node:
-    #SBATCH --nodes=1
-    #
-    # Specify one task:
-    #SBATCH --ntasks-per-node=1
-    #
-    # Number of processors for single task needed for use case (example):
-    #SBATCH --cpus-per-task=4
-    #
-    # Wall clock limit:
-    #SBATCH --time=00:00:30
-    #
-    echo "hello world"  
+    #SBATCH --job-name=hello          # a name you will recognise in squeue
+    #SBATCH --partition=aoraki        # which group of nodes to run on
+    #SBATCH --cpus-per-task=1         # cores
+    #SBATCH --mem=2G                  # memory for the whole job
+    #SBATCH --time=00:05:00           # wall time limit (hh:mm:ss)
+
+    # Everything below here is ordinary bash, run on the compute node.
+    echo "Running on $(hostname)"
+    echo "Started at $(date)"
+
+    sleep 30                          # stand-in for your actual work
+
+    echo "Finished at $(date)"
     ```
 
-If the text of this file is stored in ``hello_world.sh`` you could run and
-retrieve the result at the Linux prompt as follows
+Three rules cover almost everything:
+
+- **`#SBATCH` lines must come before any command.** Slurm stops reading them at the first real line of the script.
+- **Your script starts in the directory you submitted it from**, not in your home directory. Use absolute paths, or `cd` at the top, if that matters.
+- **Anything you would type in a shell works**, including `module load`. See [Modules](../../software/software_environments/modules.md).
+
+!!! note "You do not need `--account`"
+    On Aoraki every user has a default account and every partition accepts it. Scripts copied from other clusters' documentation often carry an `#SBATCH --account=` line — delete it.
+
+## Submitting It
 
 !!! terminal
 
     ```bash
-    $ sbatch hello_world.sh
-    Submitted batch job 716
-    $ cat slurm-716.out
-    hello world
-    ```
-
-!!! note
-
-    By default the output will be stored in a file called ``slurm-<number>.out``
-    where ``<number>`` is the job ID assigned by Slurm
-
-## Submitting Jobs
-
-To run your work on the cluster, you need to submit a job script to Slurm. Here’s how:
-
-- **Write a job script**: Create a text file (e.g., `myjob.sh`) with your commands and resource requests using `#SBATCH` lines at the top.
-- **Submit your job**: Use the `sbatch` command to send your script to the scheduler.
-
-    !!! terminal
-        ```bash
-        sbatch myjob.sh
-        ```
-
-    Slurm will respond with a job ID. Make a note of this number.
-
-- **Override script options at submission**: You can provide or override Slurm parameters on the command line. For example:
-
-    !!! terminal
-        ```bash
-        sbatch --job-name=my_job myjob.sh
-        ```
-
-    Command-line options take precedence over those in your script.
-
-- **Cancel a job**: If you need to stop a job, use the `scancel` command with your job ID.
-
-    !!! terminal
-        ```bash
-        scancel 123
-        ```
-
-    You can only cancel your own jobs. To cancel all your jobs:
-
-    !!! terminal
-        ```bash
-        scancel --me
-        ```
-
-!!! warning "If you do not specify a time limit, your job will not run."
-     At a minimum, you must specify a time limit for your job using `--time=hh:mm:ss`. This can be set in your script or on the command line. 
-
-
-Here we give details on job submission for various kinds of jobs in both batch
-(i.e., non-interactive or background) mode and interactive mode.
-
-In addition to the key options of account, partition, and time limit (see
-below), your job script files can also contain options to request various
-numbers of cores, nodes, and/or computational tasks. 
-There are also a variety of additional options you can specify in your batch
-files, if desired, such as email notification options when a job has completed.
-These are all described further below.
-
-
-**At a minimum, a time limit must be provided when submitting a job** with ``--time=hh:mm:ss`` (replacing hh,mm, and ss with number values). This can be provided either be as part of your job script or as a commandline parameter.
-
-
-## Memory Available
-
-Also note that in all partitions except for GPU and HTC partitions, by default
-the full memory on the node(s) will be available to your job. 
-
-You should specify the amount using either the total memory required with ``--mem`` (which is the same as ``--mem-per-node``), or the amount of ram required per task with ``--mem-per-task``.
-
-On the GPU and HTC partitions you get an amount of memory proportional to the
-number of cores your job requests relative to the number of cores on the node.
-For example, if the node has 64 GB and 8 cores, and you request 2 cores, you'll
-have access to 16 GB memory.
-
-
-
-
-
-
-## Parallelization
-
-When submitting parallel code, you usually need to specify the number of tasks,
-nodes, and CPUs to be used by your job in various ways.
-For any given use case, there are generally multiple ways to set the options to
-achieve the same effect; these examples try to illustrate what we consider to
-be best practices.
-
-The key options for parallelization are:
-
-- ``--nodes`` (or ``-N``)
-  indicates the number of nodes to use
-- ``--ntasks-per-node``
-  indicates the number of tasks (i.e., processes one wants to run on each
-  node)
-- ``--cpus-per-task`` (or ``-c``)
-  indicates the number of cpus to be used for each task
-
-In addition, in some cases it can make sense to use the ``--ntasks`` (or
-``-n``) option to indicate the total number of tasks and let the scheduler
-determine how many nodes and tasks per node are needed.
-In general ``--cpus-per-task`` will be ``1`` except when running threaded code.  
-
-Note that if the various options are not set Slurm will in some cases infer
-what the value of the option needs to be given other options that are set and
-in other cases will treat the value as being ``1``. 
-So some of the options set in the example below are not strictly necessary, but
-we give them explicitly to be clear.
-
-Here's an example script that requests an entire Otago node and specifies 20
-cores per task.
-
-!!! terminal
-
-    ```bash
-    #!/bin/bash
-    #SBATCH --job-name=test
-    #SBATCH --account=account_name
-    #SBATCH --partition=aoraki
-    #SBATCH --nodes=1
-    #SBATCH --ntasks-per-node=1
-    #SBATCH --cpus-per-task=20
-    #SBATCH --time=00:00:30
-    ## Command(s) to run:
-    echo "hello world" 
-    ```
-
-Only the partition, time, and account flags are required.
-
-## GPU Jobs
-
-Requesting a GPU for a Slurm job requires that your job specifies **both**
-
-- a GPU partition
-- includes the `--gres` flag
-
-
-The partition is used to specify a specific GPU, or how much GPU memory is needed
-
-- `aoraki_gpu` will get you any free GPU
-- `aoraki_gpu_H100` will get you an entire H100 with 80 GB of GPU memory
-- `aoraki_gpu_L40` will get you an entire L40 with 48GB of GPU memory
-- `aoraki_gpu_A100_80GB` will get you an A100 with 80GB of GPU memory to use
-- `aoraki_gpu_A100_40GB` will get you an A100 with 40GB of GPU memory to use
-
- Make sure to request at least two CPUs for each GPU requested, using ``--cpus-per-task``
- 
- You can request multiple GPUs with syntax like this (in this case for two
-   GPUs): ``--gpus-per-node=2``
-
-
-Please see the [Slurm GPU examples page](slurm_examples/gpu-slurm.md) for examples of how to submit Slurm jobs that require a GPU.
-
-
-
-## Job Accounting / Efficency
-
-
-To view your job information you can use the ``sacct`` command. 
-
-   To view detailed job information:
-
-!!! terminal
-    
-    ```bash
-    sacct --format="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc,NTask,MaxRSS,State" -j <job_id_number>
+    sbatch my_job.sh
     ```
 
     ```output
-    sacct --format="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc,NTask,MaxRSS,State" -j 321746
-    JobID           JobName    Elapsed     AveCPU     MinCPU   TotalCPU  AllocCPUS   NTasks     MaxRSS      State
-    ------------ ---------- ---------- ---------- ---------- ---------- ---------- -------- ---------- ----------
-    321746       ondemand/+   23:11:07                        00:05.337          4                     CANCELLED+
-    321746.batch      batch   23:11:08   00:00:00   00:02:56  00:05.337          4        1    683648K  CANCELLED
+    Submitted batch job 716
     ```
 
+`716` is the **job ID**. Note it down — it is how you refer to the job in every other command, and it is in the name of the output file.
 
+You can override anything in the script from the command line, which is handy for a one-off change without editing the file. Command-line options win:
 
+!!! terminal
+
+    ```bash
+    sbatch --time=00:30:00 --job-name=longer_run my_job.sh
+    ```
+
+### Finding the Output
+
+Anything your script prints — both normal output and errors — goes to `slurm-<jobid>.out` in the directory you submitted from:
+
+!!! terminal
+
+    ```bash
+    cat slurm-716.out
+    ```
+
+    ```output
+    Running on aoraki07
+    Started at Wed  5 Aug 09:14:02 NZST 2026
+    Finished at Wed  5 Aug 09:14:32 NZST 2026
+    ```
+
+To send them somewhere else, or to separate normal output from errors, use `--output` and `--error` — see [Output and Errors](sbatch_options.md#output-and-errors).
+
+## Watching and Stopping a Job
+
+Four commands cover day-to-day use.
+
+Table: The commands you need while a job is in the system
+
+| Command | What it tells you |
+| :-- | :-- |
+| `squeue --me` | Your queued and running jobs, and which node each is on |
+| `scancel <jobid>` | Cancels a job. You can only cancel your own |
+| `sacct -j <jobid>` | What happened to a job after it finished, including why it failed |
+| `seff <jobid>` | How much of what you asked for the job actually used |
+
+!!! terminal
+
+    ```bash
+    squeue --me
+    ```
+
+    ```output
+    JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+      716    aoraki    hello  user123  R       0:12      1 aoraki07
+      717    aoraki  bigjob   user123 PD       0:00      1 (Resources)
+    ```
+
+`ST` is the state: `R` is running, `PD` is pending. For a pending job, the bracketed text is *why* it has not started — `(Resources)` means it is waiting for a node to free up, `(Priority)` means other jobs are ahead of it.
+
+To stop a job, whether it is queued or running:
+
+!!! terminal
+
+    ```bash
+    scancel 716
+    scancel --me      # cancel everything you have submitted
+    ```
+
+Once the job has ended, `sacct` shows how it finished:
+
+!!! terminal
+
+    ```bash
+    sacct -j 716 --format=JobID,JobName,Partition,State,Elapsed,MaxRSS,ExitCode
+    ```
+
+A state of `COMPLETED` means the script exited cleanly. `FAILED`, `OUT_OF_MEMORY` and `TIMEOUT` each point at a different fix — see [Slurm Job Management and Troubleshooting](../../../general/faq/slurm_job_failures.md).
+
+!!! tip "Check what it actually used"
+    `seff 716` compares what you asked for against what the job used. It is the fastest way to find out that your job needed 4 GB rather than the 64 GB you reserved. See [Job Efficiency](../efficiency.md).
+
+## Asking for the Right Resources
+
+Your request is a hard limit: exceed the memory or the wall time and the job is killed. But asking for far more than you need makes the job wait longer, because Slurm has to find a bigger gap, and it keeps resources reserved that nobody else can use.
+
+The practical approach is to run a small version first, look at `seff`, and size the real job from that.
+
+Two things to keep in mind while you do:
+
+- **The defaults are modest.** Without `--mem` you get 2 GB per core; without `--time` you get the partition's default, usually 8 hours. See [What you get by default](../running_jobs_overview.md#what-you-get-by-default).
+- **A shorter wall time genuinely starts sooner.** Slurm backfills short jobs into gaps in the schedule, so `--time=01:00:00` finds many more opportunities than `--time=3-00:00:00`.
+
+Which partition to use, and the per-job limits that apply to each, are in the [Cluster Overview](../../../general/overview.md). [Current Utilisation](../../current_utilisation.md) shows what is busy right now.
+
+[All the options in detail :material-arrow-right:](sbatch_options.md){ .md-button }
+
+## Common Job Shapes
+
+Once a single job works, most real workloads are one of a handful of patterns:
+
+Table: Where to find each kind of job script
+
+| You want to | See |
+| :-- | :-- |
+| Run the same script over many inputs | [Array Jobs](slurm_examples/array-slurm.md) |
+| Use a GPU | [GPU Jobs](slurm_examples/gpu-slurm.md) |
+| Run one job only after another succeeds | [Dependent Jobs](slurm_examples/dependent_jobs.md) |
+| Run R code | [R Jobs](slurm_examples/r-slurm.md) |
+| Run Python code | [Python Jobs](slurm_examples/python-slurm.md) |
+| Give different parts of one job different resources | [Heterogeneous Jobs](slurm_examples/heterogeneous_jobs.md) |
+
+!!! warning "Submitting many jobs at once"
+    Array jobs are the right way to run hundreds of similar tasks — not a loop that calls `sbatch` hundreds of times. See [Reasonable Usage](../../../general/guidelines/reasonable_usage.md) for the limits that apply.
+
+!!! related-pages "What's next?"
+    - For every `#SBATCH` option and its Aoraki default, see [Job Script Options](sbatch_options.md)
+    - To check whether your request matched what you used, see [Job Efficiency](../efficiency.md)
+    - For worked examples, see [Example Job Scripts](slurm_examples/array-slurm.md)
+    - If a job failed or will not start, see [Slurm Troubleshooting](../../../general/faq/slurm_job_failures.md) and [Job Queuing](../../../general/faq/job_start_time.md)
+    - For partitions, hardware and limits, see the [Cluster Overview](../../../general/overview.md)
+    - The complete Slurm reference is at [slurm.schedmd.com](https://slurm.schedmd.com/documentation.html)

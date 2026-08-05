@@ -51,7 +51,7 @@ Choosing well matters: a partition with the hardware you need but a long queue m
 | Lots of memory | `aoraki_bigmem` | Up to 2000 GB on a node. |
 | Fast single-core performance | `aoraki_fastcore` | Fewer cores per node, but the highest clock speed on the cluster. |
 | To run for longer than 14 days | `aoraki_long` | Up to 30 days. |
-| A GPU | `aoraki_gpu` | Gives you any free GPU. Use a specific partition such as `aoraki_gpu_H100` when your work needs that model or that much GPU memory. |
+| A GPU | `aoraki_gpu` | The general GPU pool — whichever of its A100, H100 or L40 nodes is free first. Use a specific partition such as `aoraki_gpu_H100` when your work needs that model, or that much GPU memory. |
 | Very little, or not for long | `aoraki_small`, `aoraki_short` | These use the normally idle CPU cores on GPU nodes, so small and short jobs can start without waiting for a general-purpose node. |
 
 Before you submit, [Current Utilisation](../getting_started/current_utilisation.md) shows how busy the cluster is right now.

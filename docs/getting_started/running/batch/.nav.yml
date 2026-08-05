@@ -1,7 +1,5 @@
 # Navigation for "batch/"
 nav:
   - slurm_quickstart.md
- # - define_job.md
- # - submit_job.md
-  - efficiency.md
-  - slurm_examples/
+  - sbatch_options.md
+  - "Example Job Scripts": slurm_examples

@@ -14,4 +14,4 @@
 "aoraki_gpu_L4_24GB",7,2,8,"60G",2,1,"aoraki[29]"
 "aoraki_gpu_RTX6000^",7,2,16,"150G",2,2,"aoraki[45-46]"
 "aoraki_gpu_H200^",7,2,16,"220G",2,1,"aoraki44"
-"aoraki_gpu_RTX3090",7,2,8,"60G",2,4,"aoraki-g[01,02,04,05]"
+"aoraki_gpu_RTX3090",7,2,8,"60G",2,3,"aoraki-g[01,02,05]"
