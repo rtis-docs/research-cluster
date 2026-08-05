@@ -221,7 +221,7 @@ Example Slurm files are given (see above) to submit jobs to the Slurm job manage
 ## Home directory quota constraints
 
 
-A quota system is in place on Aoraki that limits the data in a users home directory to 15GB. This can be easy exceeded with CFD simulations with large datasets and multiple runs. 
+A quota system is in place on Aoraki that limits the data in a user's home directory to **{{ home_quota }}**. This can be easily exceeded with CFD simulations with large datasets and multiple runs. See [Storage and Quotas](../../../general/faq/disk_usage.md) for how to check what you are using. 
 The possible solutions involve moving your data onto another storage medium (Ohau or HCS) and running the container from that directory. 
 
 
