@@ -3,4 +3,5 @@ nav:
   - running_jobs_overview.md
   - "Interactive Jobs": interactive
   - "Batch Jobs": batch
+  - "Workflows": workflows
   - efficiency.md

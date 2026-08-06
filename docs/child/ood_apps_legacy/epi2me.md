@@ -4,7 +4,7 @@ Oxford Nanopore's [EPI2ME Desktop](https://labs.epi2me.io/about/) is a data anal
 
 !!! note
     Apart from the list of ONT workflows prepopulated in the `Available Workflows` tab, EPI2ME Desktop allows for the importation of other **generic Nextflow workflows**, 
-    such as the 100+ curated pipelines of []nf-core](https://nf-co.re/pipelines).
+    such as the 100+ curated pipelines of [nf-core](https://nf-co.re/pipelines).
     
     Under Workflows, click `Import workflow` and copy-paste the workflow's git repository URL.
     (i.e. `https://github.com/nf-core/<wf>`)
@@ -38,6 +38,6 @@ To accomplish this, running the OnDemand app for the first time will automatical
     While initial testing has been promising, the added complexity of running EPI2ME Desktop this way, as well as the application's general lack of (Nextflow) configurability *may* introduce 
     hard-to-troubleshoot issues.
     
-    Consider running the workflows directly from the commandline using [Nextflow](/getting_started/workflows/nextflow) instead.
+    Consider running the workflows directly from the commandline using [Nextflow](../../running/workflows/nextflow.md) instead.
 
 
