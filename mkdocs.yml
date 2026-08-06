@@ -26,6 +26,9 @@ watch:
 # Pages that are written but not ready to publish. Remove the entry to publish the page.
 exclude_docs: |
   other_services/secure_research_environments.md
+  # Superseded by announcements/ and long out of date. Kept in the repo rather than
+  # deleted, so the history is still there if it is ever wanted.
+  general/changelogs/
   # Fragments pulled into other pages with {% include %}. They are not pages in their
   # own right, so links inside them are written relative to the page that includes them.
   /child/
