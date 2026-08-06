@@ -129,7 +129,7 @@ Copy the data you want to work on into `/projects/` first, then run your OnDeman
 The **Interactive Apps** menu is the list of applications OnDemand can launch for you as Slurm jobs — JupyterLab, RStudio, MATLAB, Fiji, Blender and many more, plus the HPC Desktop.
 
 <figure markdown="span" style="display: block; margin-left: 0; margin-right: auto;">
-  ![The Interactive Apps menu](../../../assets/images/ood_interactive.png){ width="600px" }
+  ![The Interactive Apps menu](../../../assets/images/ood_apps.jpeg){ width="800px" }
 </figure>
 
 [Available Apps :material-arrow-right:](available_apps.md){ .md-button }
