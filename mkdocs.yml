@@ -23,6 +23,10 @@ theme :
 watch:
   - includes/
 
+# Pages that are written but not ready to publish. Remove the entry to publish the page.
+exclude_docs: |
+  other_services/secure_research_environments.md
+
 hooks:
   - mkdocs_hooks.py
 
