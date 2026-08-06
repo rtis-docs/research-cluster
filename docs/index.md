@@ -9,7 +9,8 @@
     {# TODO: uncomment when Secure Research Environments is ready to announce
     - **[Secure research environments](other_services/secure_research_environments.md)** — for analysis of sensitive or restricted data that cannot be held on general-purpose systems.
     #}
-    - **[Other Services](other_services/index.md)** — hosted applications such as CryoSPARC, ShinyProxy, SAS, databases, speech-to-text and translation, plus cloud native platforms and training workshops.
+    - **[Other Services](other_services/index.md)** — hosted applications such as CryoSPARC, ShinyProxy, SAS, databases, speech-to-text and translation, plus cloud native platforms.
+    - **[Training](other_services/training/workshops.md)** — hands-on Software and Data Carpentry workshops covering the Unix shell, Git, and Python or R. No prior experience needed.
 
     All of it is available to University of Otago researchers. If you are not sure which suits your work, ask us.
 
