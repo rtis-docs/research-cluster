@@ -1,4 +1,7 @@
 nav:
+  - index.md
+  # TODO: uncomment when Secure Research Environments is ready to announce
+  # - "Secure Research Environments": secure_research_environments.md
   - "Hosted": hosted
   - "Cloud Native": cloudnative 
   - "Training": training
