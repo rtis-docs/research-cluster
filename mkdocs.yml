@@ -85,3 +85,7 @@ markdown_extensions:
 extra:
   support_email: '<a href="mailto:rtis.support@otago.ac.nz">rtis.support@otago.ac.nz</a>'
   home_quota: "40 GB"
+  # Triage form for support requests. The form does not exist yet — until it does, the
+  # button and the table row that use this are wrapped in a Jinja {# ... #} comment in
+  # general/support.md. Set the real URL here and uncomment there to publish it.
+  support_form: "https://forms.cloud.microsoft/r/PLACEHOLDER"
