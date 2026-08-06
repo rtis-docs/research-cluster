@@ -4,7 +4,7 @@
 
 ## Rstudio
 
-RStudio server is available through [OnDemand as a versioned apptainer image](../OnDemand/available_apps.md/#rstudio-server). Each container has a slightly different configuration and availability of system libraries and pre-installed packages.
+RStudio server is available through [OnDemand as a versioned apptainer image](../OnDemand/available_apps.md#apps-on-the-current-portal). Each container has a slightly different configuration and availability of system libraries and pre-installed packages.
 
 ## R
 
