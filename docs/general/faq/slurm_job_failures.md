@@ -164,8 +164,9 @@ Email {{ support_email }} with:
 - The **error output**, copied as text rather than a screenshot
 - What you expected to happen
 
-The [Support](../support.md) page has the full list, including how to put together a small
-test case for problems that are harder to pin down.
+The [Support](../support.md) page has a `sacct` and `seff` command you can paste in to collect
+most of this in one go, and covers how to put together a small test case for problems that are
+harder to pin down.
 
 !!! related-pages "What's next?"
     - If the job never started at all, see [Why Is My Job Not Starting?](job_start_time.md)

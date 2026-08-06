@@ -140,7 +140,7 @@ Email {{ support_email }}. Include:
 
 Where the software is straightforward to install into your own space, we will usually point
 you at the quickest route rather than making you wait for a central install. See
-[Support](../support.md) for what makes a request easy to act on.
+[Support](../support.md) for the other ways to reach us and what makes a request easy to act on.
 
 !!! related-pages "What's next?"
     - For modules, see [Using Modules](../../getting_started/software/software_environments/modules.md)
