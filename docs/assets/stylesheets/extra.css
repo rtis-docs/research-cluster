@@ -42,6 +42,74 @@ figure {
 }
 
 
+/* Side-nav icons. The classes are applied by addNavIcons() in
+   assets/javascripts/general.js — to give another entry an icon, add its
+   sidebar label to NAV_ICONS there and define a matching variable below.
+   Glyphs are Material Design Icons, taken from the theme's own .icons set. */
+:root {
+  --md-nav-icon--start: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m13.13 22.19-1.63-3.83c1.57-.58 3.04-1.36 4.4-2.27zM5.64 12.5l-3.83-1.63 6.1-2.77C7 9.46 6.22 10.93 5.64 12.5M21.61 2.39S16.66.269 11 5.93c-2.19 2.19-3.5 4.6-4.35 6.71-.28.75-.09 1.57.46 2.13l2.13 2.12c.55.56 1.37.74 2.12.46A19.1 19.1 0 0 0 18.07 13c5.66-5.66 3.54-10.61 3.54-10.61m-7.07 7.07c-.78-.78-.78-2.05 0-2.83s2.05-.78 2.83 0c.77.78.78 2.05 0 2.83s-2.05.78-2.83 0m-5.66 7.07-1.41-1.41zM6.24 22l3.64-3.64c-.34-.09-.67-.24-.97-.45L4.83 22zM2 22h1.41l4.77-4.76-1.42-1.41L2 20.59zm0-2.83 4.09-4.08c-.21-.3-.36-.62-.45-.97L2 17.76z'/%3E%3C/svg%3E");
+  --md-nav-icon--general: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 9h-2V7h2m0 10h-2v-6h2m-1-9A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2'/%3E%3C/svg%3E");
+  --md-nav-icon--storage: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3C7.58 3 4 4.79 4 7s3.58 4 8 4 8-1.79 8-4-3.58-4-8-4M4 9v3c0 2.21 3.58 4 8 4s8-1.79 8-4V9c0 2.21-3.58 4-8 4s-8-1.79-8-4m0 5v3c0 2.21 3.58 4 8 4s8-1.79 8-4v-3c0 2.21-3.58 4-8 4s-8-1.79-8-4'/%3E%3C/svg%3E");
+  --md-nav-icon--services: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 11h8V3H3m0 18h8v-8H3m10 8h8v-8h-8m0-10v8h8V3'/%3E%3C/svg%3E");
+  --md-nav-icon--training: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z'/%3E%3C/svg%3E");
+}
+
+/* The sidebar title and the top-level section headings ship grey; a section
+   that has an index page (Other Services) is an anchor instead, and ships in
+   the link colour. */
+.md-nav--primary > .md-nav__title,
+.md-nav__item--section > .md-nav__link[for],
+.md-nav__item--section > .md-nav__container > .md-nav__link[href] {
+  color: var(--md-default-fg-color);
+}
+
+.md-nav__link--icon {
+  font-weight: 700;
+}
+
+/* The icon is a flex item rather than a background so that it sits before the
+   label without depending on the link's padding, which differs between desktop
+   (none) and the mobile drawer (.6rem .8rem). */
+.md-nav__link--icon::before {
+  content: "";
+  align-self: flex-start;
+  margin-top: .1em;
+  width: 1.1em;
+  height: 1.1em;
+  flex-shrink: 0;
+  background-color: #ee8a07;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+
+.md-nav__link--icon-start::before {
+  -webkit-mask-image: var(--md-nav-icon--start);
+          mask-image: var(--md-nav-icon--start);
+}
+
+.md-nav__link--icon-general::before {
+  -webkit-mask-image: var(--md-nav-icon--general);
+          mask-image: var(--md-nav-icon--general);
+}
+
+.md-nav__link--icon-storage::before {
+  -webkit-mask-image: var(--md-nav-icon--storage);
+          mask-image: var(--md-nav-icon--storage);
+}
+
+.md-nav__link--icon-services::before {
+  -webkit-mask-image: var(--md-nav-icon--services);
+          mask-image: var(--md-nav-icon--services);
+}
+
+.md-nav__link--icon-training::before {
+  -webkit-mask-image: var(--md-nav-icon--training);
+          mask-image: var(--md-nav-icon--training);
+}
+
+
 .tabbed-set {
   border: 1px solid #317bff;
   border-radius: 5px;

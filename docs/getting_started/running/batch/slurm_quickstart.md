@@ -59,7 +59,7 @@ Three rules cover almost everything:
 - **Your script starts in the directory you submitted it from**, not in your home directory. Use absolute paths, or `cd` at the top, if that matters.
 - **Anything you would type in a shell works**, including `module load`. See [Modules](../../software/software_environments/modules.md).
 
-!!! note "You do not need `--account`"
+!!! note "You do not need `--account` unless you have more than one account (some users belong to more than one lab group and wish to separate job accounting)"
     On Aoraki every user has a default account and every partition accepts it. Scripts copied from other clusters' documentation often carry an `#SBATCH --account=` line — delete it.
 
 ## Submitting It

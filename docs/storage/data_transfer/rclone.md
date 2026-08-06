@@ -16,7 +16,7 @@ module load rclone
 Add this to your `~/.bashrc` (or shell profile) if you want it available on
 every login without typing it each time.
 
-## 2. Kerberos HCS (one-time setup part) 
+## 2. Kerberos to access HCS (one-time setup part) 
 
 rclone can be user to transfer files to and from HCS to to mount HCS on an Aoraki node (e.g. the login node for file transfers or on an HPC desktop for browsing your HCS share from a compute node)
 
@@ -125,22 +125,22 @@ operations can pause before the first byte moves.
 rclone sync hpcshare:sharename/path ~/local-dest --dry-run
 ```
 
-## 7. Mount the share as a browsable folder (optional)
+## 7. Mount the share as a browsable folder on HPC Desktop (optional)
 
-If you'd rather browse the share in Thunar than use the command line:
-
-```bash
-mkdir -p ~/smb-share
-rclone mount hpcshare: ~/smb-share --vfs-cache-mode writes --daemon
-```
-
-Then open `~/smb-share` in Thunar like a normal folder. To unmount:
+If you'd rather browse an HCS share on an HPC desktop than use the command line:
 
 ```bash
-fusermount -u ~/smb-share
+mkdir -p ~/hcs-share
+rclone mount hpcshare: ~/hcs-share --vfs-cache-mode writes --daemon
 ```
 
-Then browse to ~/smb-share in either the terminal or on an OnDemand HPC Desktop to see your HCS files and copy your files to the cluster file system or use them while your Kerberos ticket is valid.
+Then open `~/hcs-share` in Thunar like a normal folder. To unmount:
+
+```bash
+fusermount -u ~/hcs-share
+```
+
+Then browse to ~/hcs-share in either the terminal or on an OnDemand HPC Desktop to see your HCS files and copy your files to the cluster file system or use them while your Kerberos ticket is valid.
 
 ---
 

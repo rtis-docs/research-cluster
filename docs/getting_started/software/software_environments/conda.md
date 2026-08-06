@@ -86,6 +86,42 @@ Bioconda ([https://bioconda.github.io](https://bioconda.github.io)) is a popular
 
 These commands modify your `~/.condarc` file.
 
+#### Finding Bioinformatics Packages
+
+Between them, [Bioconda](https://bioconda.github.io) and
+[conda-forge](https://conda-forge.org/) carry most of the standard bioinformatics toolkit — read
+aligners, variant callers, file format utilities, GWAS tools, transcriptomics and assembly
+software, and the usual visualisation packages. If a tool is widely used, it is worth checking
+conda before asking us to install it.
+
+The easiest way to find out whether something is packaged is to search from the command line:
+
+!!! terminal
+
+    ```bash
+    # search every channel you have configured
+    conda search plink
+
+    # restrict the search to bioconda
+    conda search -c bioconda plink
+
+    # mamba works the same way and is considerably faster
+    mamba search plink
+    ```
+
+To browse rather than search, the [Bioconda](https://anaconda.org/bioconda) and
+[conda-forge](https://anaconda.org/conda-forge) channel listings on anaconda.org are easier to
+read than the command line.
+
+Listing an entire channel is possible but produces thousands of lines, so pipe it through `grep`
+if you are looking for something whose name you only half remember:
+
+!!! terminal
+
+    ```bash
+    conda search -c bioconda "*" | grep vcftools
+    ```
+
 ## Conda environments
 
 Conda environments let you manage software (and it's dependencies). Ultimately, conda install software into specific directories and then alters your `PATH` for you to make them accessible. To utilise an environment it must first exist, and then be activated. 
