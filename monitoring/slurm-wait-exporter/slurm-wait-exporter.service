@@ -1,0 +1,38 @@
+[Unit]
+Description=Aoraki Slurm queue wait time and GRES exporter
+Documentation=https://github.com/rtis-docs/research-cluster/tree/main/monitoring/slurm-wait-exporter
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/slurm_wait_exporter.py --port 9341 --interval 60
+Restart=always
+RestartSec=15
+
+# Cumulative histogram counters live here, so they survive a restart rather than resetting
+# to zero and putting a false drop into every rate() on the dashboard.
+StateDirectory=aoraki-wait-exporter
+Environment=PYTHONUNBUFFERED=1
+
+# The exporter only ever reads: sacct, squeue and sinfo. It needs no privileges and writes
+# nothing outside its StateDirectory.
+DynamicUser=yes
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+RestrictNamespaces=yes
+RestrictRealtime=yes
+LockPersonality=yes
+MemoryDenyWriteExecute=yes
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+
+[Install]
+WantedBy=multi-user.target

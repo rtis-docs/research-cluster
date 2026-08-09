@@ -28,6 +28,11 @@
   url: getting_started/current_utilisation.md
   image: assets/images/icons/preview_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
+- title: Queue and Availability
+  content: How long jobs are waiting to start, and what is free right now
+  url: getting_started/queue_and_availability.md
+  image: assets/images/icons/add_to_queue_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
+
 ::/cards::
 
 ## Quick Start

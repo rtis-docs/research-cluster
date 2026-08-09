@@ -47,7 +47,7 @@ The Aoraki lane submits your job to the Research Cluster's GPU nodes as a [Slurm
 
 The trade-off is that they are shared with every other cluster user and application, so your job may sit in the queue before it starts. Use this lane for heavy steps where the faster hardware is worth the wait.
 
-To see how busy the GPU nodes are before you queue a job, check [Current Utilisation](../../getting_started/current_utilisation.md). See the [Cluster Overview](../../getting_started/overview.md) for the GPU partitions and the limits that apply to them.
+To see which GPUs are free before you queue a job, and how long each GPU partition has recently made jobs wait, check [Queue and Availability](../../getting_started/queue_and_availability.md). See the [Cluster Overview](../../getting_started/overview.md) for the GPU partitions and the limits that apply to them.
 
 !!! related-pages "What's next?"
     - To get an account, see [Signing Up](../../getting_started/access/signup.md)

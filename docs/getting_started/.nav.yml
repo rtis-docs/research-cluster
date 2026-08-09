@@ -2,6 +2,8 @@
 nav:
   - overview.md
   - access
-  - Cluster Traffic: current_utilisation.md
+  - Cluster Traffic:
+      - Current Utilisation: current_utilisation.md
+      - Queue and Availability: queue_and_availability.md
   - software
   - Running Jobs: running

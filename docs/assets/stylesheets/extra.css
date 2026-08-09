@@ -343,3 +343,43 @@ li.md-nav__item--active:not(li.md-nav__item--nested) {
   font-size: 0.85rem;
 } */
 
+
+/* ================================
+   Embedded Grafana panels
+   ================================ */
+
+/* Grafana's d-solo embeds have no intrinsic size, so an iframe without explicit
+   dimensions collapses. Rather than hardcoding pixels — which overflow the content
+   area on a narrow window — fill the available width and hold a fixed aspect ratio. */
+.grafana-panel {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  min-height: 18rem;
+  border: 0;
+  border-radius: 0.2rem;
+  margin: 0.8rem 0 1.4rem;
+  background: var(--md-default-bg-color);
+}
+
+/* Taller variant for panels with a legend down the side or one row per partition. */
+.grafana-panel--tall {
+  aspect-ratio: 16 / 10;
+  min-height: 24rem;
+}
+
+/* Phones cannot show a wide time series usefully at 16:8, so give it more height. */
+@media screen and (max-width: 44.9375em) {
+  .grafana-panel,
+  .grafana-panel--tall {
+    aspect-ratio: 4 / 3;
+    min-height: 16rem;
+  }
+}
+
+/* Two panels side by side on a wide screen, stacking below it. */
+.grafana-pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  gap: 0 1rem;
+}

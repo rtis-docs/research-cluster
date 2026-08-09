@@ -117,8 +117,10 @@ To see which GPUs each node has, and how many are already taken:
     sinfo -p aoraki_gpu -o "%20P %10N %20G %30C"
     ```
 
-[Current Utilisation](../../getting_started/current_utilisation.md) shows the same picture
-as graphs over the last week, which is a better guide to when the cluster is usually quiet.
+[Queue and Availability](../../getting_started/queue_and_availability.md) shows the same
+picture as graphs over the last week, including how long jobs on each partition have actually
+been waiting before they start — a better guide to when the cluster is usually quiet, and to
+whether a different partition would get you running sooner.
 
 ## Why Did a Job I Submitted Later Start First?
 
