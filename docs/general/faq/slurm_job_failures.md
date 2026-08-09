@@ -83,7 +83,7 @@ What to do instead:
 - **Checkpoint.** Write partial results or state to disk as you go, so a job that is cut
   short can be resumed rather than restarted. Most long-running scientific software has an
   option for this.
-- **Resubmit with more time**, up to the [partition's limit](../overview.md#partition-limits).
+- **Resubmit with more time**, up to the [partition's limit](../../getting_started/overview.md#partition-limits).
   `aoraki_long` allows 30 days.
 - **Ask early, not late.** An administrator can sometimes extend a job that is *still
   running*, if the resources are available and it does not disrupt other work. Email

@@ -72,7 +72,7 @@ The complete list is in the [Slurm `sbatch` documentation](https://slurm.schedmd
 | `--time=2-00:00:00` | 2 days |
 | `--time=1-12:30:00` | 1 day, 12 hours, 30 minutes |
 
-You cannot ask for more than the partition's maximum — the job is rejected at submission. Maximum wall times per partition are in the [Cluster Overview](../../../general/overview.md).
+You cannot ask for more than the partition's maximum — the job is rejected at submission. Maximum wall times per partition are in the [Cluster Overview](../../../getting_started/overview.md).
 
 ## Memory
 
@@ -137,7 +137,7 @@ An example of the threaded case, requesting 16 cores on one node:
 !!! warning "More cores is not always faster"
     Very few programs scale linearly. A job asking for 64 cores and using 4 waits longer to start *and* finishes no sooner. Test at a couple of sizes and compare, then request what actually helps.
 
-Note that GPU jobs and OnDemand sessions are limited to a **single node**, and each partition caps the cores a single job may request — see the [Cluster Overview](../../../general/overview.md).
+Note that GPU jobs and OnDemand sessions are limited to a **single node**, and each partition caps the cores a single job may request — see the [Cluster Overview](../../../getting_started/overview.md).
 
 ## Output and Errors
 
@@ -246,5 +246,5 @@ Inside a running job, Slurm sets variables describing what you were actually giv
     - To submit your first job, see the [Slurm Quickstart](slurm_quickstart.md)
     - To check whether your request matched what the job used, see [Job Efficiency](../efficiency.md)
     - For worked scripts, see [Array Jobs](slurm_examples/array-slurm.md), [GPU Jobs](slurm_examples/gpu-slurm.md), [R Jobs](slurm_examples/r-slurm.md) and [Dependent Jobs](slurm_examples/dependent_jobs.md)
-    - For partitions, hardware and per-job limits, see the [Cluster Overview](../../../general/overview.md)
+    - For partitions, hardware and per-job limits, see the [Cluster Overview](../../../getting_started/overview.md)
     - The complete option reference is at [slurm.schedmd.com/sbatch.html](https://slurm.schedmd.com/sbatch.html)

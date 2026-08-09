@@ -49,7 +49,7 @@ Table: Pending reasons you are likely to see on Aoraki
 | `(JobHeldUser)` / `(JobHeldAdmin)` | The job is held. You can release your own with `scontrol release <jobid>` | Release it, or contact {{ support_email }} for an admin hold |
 | `(BeginTime)` | You asked for it to start later with `--begin` | Nothing |
 
-The current partition limits are in the [Cluster Overview](../overview.md#partition-limits).
+The current partition limits are in the [Cluster Overview](../../getting_started/overview.md#partition-limits).
 
 ## When Will My Job Start?
 
@@ -136,7 +136,7 @@ No. Aoraki enforces partition limits at submission, so a request over the limit 
 rejected immediately by `sbatch` or sits pending with `(PartitionConfig)` or
 `(PartitionTimeLimit)` and never runs.
 
-Check your request against the [partition limits](../overview.md#partition-limits) before
+Check your request against the [partition limits](../../getting_started/overview.md#partition-limits) before
 submitting. If your work genuinely needs more than a partition allows, email
 {{ support_email }} — limits can be raised for a specific piece of work.
 

@@ -78,7 +78,7 @@ A few cluster limits apply specifically to jobs started through OnDemand:
 - OnDemand jobs are **limited to a single node**, as are any jobs requesting GPUs.
 - OnDemand jobs do **not** count towards the 5000 submitted-job limit.
 
-See the [Cluster Overview](../../../general/overview.md) for the full set of cluster limits.
+See the [Cluster Overview](../../../getting_started/overview.md) for the full set of cluster limits.
 
 ## Your Data in OnDemand
 
