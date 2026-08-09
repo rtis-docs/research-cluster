@@ -23,6 +23,16 @@ theme :
 watch:
   - includes/
 
+# Pages that are written but not ready to publish. Remove the entry to publish the page.
+exclude_docs: |
+  other_services/secure_research_environments.md
+  # Superseded by announcements/ and long out of date. Kept in the repo rather than
+  # deleted, so the history is still there if it is ever wanted.
+  general/changelogs/
+  # Fragments pulled into other pages with {% include %}. They are not pages in their
+  # own right, so links inside them are written relative to the page that includes them.
+  /child/
+
 hooks:
   - mkdocs_hooks.py
 
@@ -78,3 +88,7 @@ markdown_extensions:
 extra:
   support_email: '<a href="mailto:rtis.support@otago.ac.nz">rtis.support@otago.ac.nz</a>'
   home_quota: "40 GB"
+  # Triage form for support requests. The form does not exist yet — until it does, the
+  # button and the table row that use this are wrapped in a Jinja {# ... #} comment in
+  # general/support.md. Set the real URL here and uncomment there to publish it.
+  support_form: "https://forms.cloud.microsoft/r/PLACEHOLDER"

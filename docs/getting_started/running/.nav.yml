@@ -1,8 +1,7 @@
 # Navigation for "running/"
 nav:
   - running_jobs_overview.md
-  - interactive/
-  - batch/
-  - '*'
-
-# TODO decide on order and if 'batch' is a good name for the category heading
+  - "Interactive Jobs": interactive
+  - "Batch Jobs": batch
+  - "Workflows": workflows
+  - efficiency.md

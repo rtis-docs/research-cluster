@@ -15,7 +15,7 @@ For uploading a single file or a few small files, use the file browser in Open O
 The file browser within Open OnDemand can be used to upload files directly into either your home or a project directory. It can't be used for accessing data on the Otago HCS.
 
 !!! related-pages "What's next?"
-    -  [Open OnDemand file browser](../../getting_started/software/onDemand/ondemand.md#using-open-ondemand)
+    -  [Open OnDemand file browser](../../getting_started/software/OnDemand/ood_file_manager.md)
     -  [Storage locations](../../storage/storage_options.md)
 
 

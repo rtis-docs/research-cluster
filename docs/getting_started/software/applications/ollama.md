@@ -60,7 +60,7 @@ The container sets the ``OLLAMA_HOST`` environmental variable that tells the ``o
 ## Home directory quota constraints
 
 
-A quota system is in place on Aoraki that limits the data in a users home directory to 15GB. This can be easy exceeded with LLM models. 
+A quota system is in place on Aoraki that limits the data in a user's home directory to **{{ home_quota }}**. This can be easily exceeded with LLM models. See [Storage and Quotas](../../../general/faq/disk_usage.md) for how to check what you are using. 
 The possible solutions involve moving your data onto another storage medium (Ohau or HCS) and either setting environmental variables or copying data and then creating symlinks to the new data location. 
 Other hidden directories can also contains large amount of hidden files: ``~/.cache`` and ``~/.local``. You can set the environmental variable ``OLLAMA_MODELS`` to a directory that is not in ``/home`` and Ollama will put any downloaded model files in there.
 

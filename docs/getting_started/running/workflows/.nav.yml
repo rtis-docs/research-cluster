@@ -1,0 +1,4 @@
+# Navigation for "workflows/"
+nav:
+  - index.md
+  - nextflow.md

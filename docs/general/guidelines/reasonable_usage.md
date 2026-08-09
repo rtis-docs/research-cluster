@@ -5,12 +5,12 @@ Limitations implemented through QoS policies
 ## Per USER
 
 - maximum of 5000 submitted jobs in the queue.
-- Up to 10 onDemand jobs may be run and are not counted in this maximum.
+- Up to 10 OnDemand jobs may be run and are not counted in this maximum.
 - A user is limited to 2 simultaneously running GPU jobs per GPU partition (extra jobs will remain in the queue)
 
 ## Per job requesting GPUs
 
-- Each job requesting GPU resources (including through onDemand) is limited to:
+- Each job requesting GPU resources (including through OnDemand) is limited to:
     - 2 GPUs
     - 16 CPUs (8 for RTX3090 and L40_24GB jobs)
     - 150GB System Memory (60GB for RTX3090 and L40_24GB jobs)
@@ -30,7 +30,7 @@ Aoraki_bigmem|10 | 126| 2000 GB
 Aoraki_long | 25 | 252 | 2000 GB
 Aoraki_short| 250 | 32 | 256 GB
 Aoraki_small| 30 | 8| 32 GB
-onDemand | 10 | 252 | 2000 GB
+OnDemand | 10 | 252 | 2000 GB
 
 
 
@@ -41,7 +41,7 @@ Remember the Aoraki cluster is a shared resource and as such the following guide
 
 !!! related-pages "What's next?"
     - [Cluster Overview](../overview.md)
-    - [Slurm Overview](../../getting_started/running/batch/slurm_quickstart.md)
+    - [Slurm Quickstart](../../getting_started/running/batch/slurm_quickstart.md)
 
       
 

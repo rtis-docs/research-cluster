@@ -3,8 +3,16 @@
 ## Overview
 
 !!! info
-    The Aoraki Research cluster provides researchers with access to shared resources, such as **CPUs, GPUs, Large Memory Nodes, and High-Speed Storage**. 
-    Also available are specialised software and libraries optimised for scientific and data science computing. 
+    **eResearch Otago** provides research computing resources and services to researchers across the University:
+
+    - **The [Aoraki cluster](general/overview.md)** — shared **CPUs, GPUs, large memory nodes and high-speed storage**, together with specialised software and libraries optimised for scientific and data science computing.
+    {# TODO: uncomment when Secure Research Environments is ready to announce
+    - **[Secure research environments](other_services/secure_research_environments.md)** — for analysis of sensitive or restricted data that cannot be held on general-purpose systems.
+    #}
+    - **[Other Services](other_services/index.md)** — hosted applications such as CryoSPARC, ShinyProxy, SAS, databases, speech-to-text and translation, plus cloud native platforms.
+    - **[Training](other_services/training/workshops.md)** — hands-on Software and Data Carpentry workshops covering the Unix shell, Git, and Python or R. No prior experience needed.
+
+    All of it is available to University of Otago researchers. If you are not sure which suits your work, ask us.
 
     For all support enquiries please email {{support_email}} or check out the [Support page](general/support.md).
 
@@ -14,6 +22,11 @@
   content: What is the Research HPC Cluster (Aoraki)?
   url: general/overview.md
   image: assets/images/icons/graph_5_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
+
+- title: Cluster Traffic
+  content: How busy the cluster is right now — CPU and GPU allocation
+  url: getting_started/current_utilisation.md
+  image: assets/images/icons/preview_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 ::/cards::
 
@@ -78,17 +91,17 @@
 
 - title: Available Web Apps
   content: Pre-installed apps available within Open OnDemand
-  url: getting_started/software/onDemand/available_apps.md
+  url: getting_started/software/OnDemand/available_apps.md
   image: assets/images/icons/grid_view_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Using HPC Desktop
   content: How to use the virtual desktop environment
-  url: getting_started/software/onDemand/hpc_desktop.md
+  url: getting_started/software/OnDemand/hpc_desktop.md
   image: assets/images/icons/desktop_windows_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Managing files with OnDemand
   content: How to manage files through the Open OnDemand web interface
-  url: getting_started/software/onDemand/ood_file_manager.md
+  url: getting_started/software/OnDemand/ood_file_manager.md
   image: assets/images/icons/folder_match_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 ::/cards::
@@ -101,12 +114,12 @@
 
 - title: Available Web Apps
   content: Pre-installed apps available within Open OnDemand
-  url: getting_started/software/onDemand/available_apps.md
+  url: getting_started/software/OnDemand/available_apps.md
   image: assets/images/icons/grid_view_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Using HPC Desktop
   content: How to use the virtual desktop environment
-  url: getting_started/software/onDemand/hpc_desktop.md
+  url: getting_started/software/OnDemand/hpc_desktop.md
   image: assets/images/icons/desktop_windows_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Managing Software
@@ -116,7 +129,7 @@
 
 - title: Interactive jobs
   content: Options for interactive jobs
-  url: getting_started/software/onDemand/available_apps.md
+  url: getting_started/running/interactive/interactive.md
   image: assets/images/icons/interactive_space_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Using the scheduler

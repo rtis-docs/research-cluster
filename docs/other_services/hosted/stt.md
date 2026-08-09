@@ -179,7 +179,7 @@ the prompt "以下是普通话的句子。" for simplified Chinese.
 * As with all AI-based automated audio transcription systems, **resulting transcripts should be carefully checked**.
 * Most non-verbal expressions like laughter or filler words will not get captured;  If that is important for your analysis, these may need to be added manually in postprocessing.
 * The output files list in the 'Download' section is not persisted beyond your current session.
-    * The actual files however (generated transcripts, uploaded audio files, as well as Whisper model files) *are* stored in your research home directory under `~/.whisper/`. These can be accessed/transferred/deleted from the [OOD Files app](../../getting_started/software/onDemand/ondemand.md#files-app). Make sure to tick the *Show dotfiles* option to show the hidden `.whisper` folder.
+    * The actual files however (generated transcripts, uploaded audio files, as well as Whisper model files) *are* stored in your research home directory under `~/.whisper/`. These can be accessed/transferred/deleted from the [OOD Files app](../../getting_started/software/OnDemand/ondemand.md#files). Make sure to tick the *Show dotfiles* option to show the hidden `.whisper` folder.
 
 Subtitle files can overlay your audio/video recording using a capable media player (e.g. [VLC](https://www.videolan.org/vlc/)), while the colourised HTML transcripts can be opened in a browser and are easy to read.
 

@@ -20,7 +20,7 @@ The key things to remember are:
  * You can request multiple GPUs with syntax like this (in this case for two
    GPUs): ``--gpus-per-node=2``
  * The partition is used to specify a specific GPU, or how much GPU memory is needed
-    - aoraki_gpu will get you any free GPU
+    - aoraki_gpu is the general GPU pool — whichever of its A100, H100 or L40 nodes is free first
     - aoraki_gpu_H100 will get you an entire H100 with 80 GB of GPU memory
     - aoraki_gpu_L40 will get you an entire L40 with 48GB of GPU memory
     - aoraki_gpu_A100_80GB will get you an A100 with 80GB of GPU memory to use

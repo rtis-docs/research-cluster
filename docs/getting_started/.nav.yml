@@ -1,7 +1,0 @@
-# navigation for "getting_started/"
-nav:
-  - access
-  - Cluster Traffic: current_utilisation.md
-  - software
-  - Running Jobs: running
-  - workflows
