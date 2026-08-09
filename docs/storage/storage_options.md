@@ -1,6 +1,6 @@
 # Storage Overview
  
-eResearch Support provides high-performance storage solutions for researchers at the University of Otago. These storage solutions are available on the [Research Cluster](../general/overview.md) to all researchers at the University of Otago upon application approval.
+eResearch Support provides high-performance storage solutions for researchers at the University of Otago. These storage solutions are available on the [Research Cluster](../getting_started/overview.md) to all researchers at the University of Otago upon application approval.
  
  
 ```mermaid

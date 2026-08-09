@@ -5,17 +5,7 @@ ignore:
   - access/coldfront.md
 nav:
   - "index.md"
-  # Getting Started is listed out here rather than in getting_started/.nav.yml
-  # because awesome-nav resolves nav paths relative to the directory holding the
-  # .nav.yml, so a nested file cannot reach general/overview.md. The overview stays
-  # at general/overview.md — moving it would change its URL and break the links
-  # pointing at it from across the site.
-  - "Getting Started":
-      - "Cluster Overview": general/overview.md
-      - getting_started/access
-      - "Cluster Traffic": getting_started/current_utilisation.md
-      - getting_started/software
-      - "Running Jobs": getting_started/running
+  - "Getting Started": "getting_started/"
   - "general"
   - "storage"
   - "Other Services": "other_services"

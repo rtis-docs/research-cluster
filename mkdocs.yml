@@ -39,6 +39,11 @@ hooks:
 plugins:
   - search
   - awesome-nav
+  - redirects:
+      redirect_maps:
+        # The cluster overview moved into getting_started/. Keep the old URL
+        # working for bookmarks and links shared before the move.
+        general/overview.md: getting_started/overview.md
   - macros
   - include-markdown
   - table-reader

@@ -51,7 +51,7 @@ What you request is what you get, and nothing more. If the application inside yo
 - **Wall time is the lever that matters most.** Slurm backfills short jobs into gaps in the schedule, so a two-hour session usually starts sooner than an eight-hour one. Ask for what your working session actually needs, not for the whole day.
 - **Memory is reserved even when unused**, so a habit of asking for 200 GB "to be safe" keeps a node's cores idle for everyone else.
 - **Cores only help if the software uses them.** Most interactive exploration is single-threaded.
-- The same per-job limits apply as to any other job — see the [Cluster Overview](../../../general/overview.md). GPU partitions cap a single job at 2 GPUs, and you may have at most 2 running GPU jobs per partition and 10 running OnDemand sessions.
+- The same per-job limits apply as to any other job — see the [Cluster Overview](../../overview.md). GPU partitions cap a single job at 2 GPUs, and you may have at most 2 running GPU jobs per partition and 10 running OnDemand sessions.
 
 Once a session ends, `seff <jobid>` tells you what you actually used. For an interactive session the number to look at is peak memory — see [Job Efficiency](../efficiency.md).
 

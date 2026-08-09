@@ -6,7 +6,7 @@
     - Who to ask when you are not sure what you need
 
 Not every research computing problem is a batch job. Alongside the
-[Aoraki cluster](../general/overview.md) we run and support a number of other services —
+[Aoraki cluster](../getting_started/overview.md) we run and support a number of other services —
 some of them hosted applications you simply log in to, some of them platforms we help you
 build on.
 
@@ -65,6 +65,6 @@ eResearch Support team at **{{ support_email }}** — the [Support](../general/s
 covers what to include.
 
 !!! related-pages "What's next?"
-    - For the shared HPC cluster, see the [Cluster Overview](../general/overview.md)
+    - For the shared HPC cluster, see the [Cluster Overview](../getting_started/overview.md)
     - For where research data can live, see [Storage Options](../storage/storage_options.md)
     - For common questions about the cluster, see the [FAQ](../general/faq/index.md)

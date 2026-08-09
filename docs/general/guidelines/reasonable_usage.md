@@ -40,7 +40,7 @@ Remember the Aoraki cluster is a shared resource and as such the following guide
     - Limit how many array jobs are running simultaneously by using `%N` with your `--array` parameter, e.g. `--array=1-500%20` to limit to 20 simultaneous jobs   
 
 !!! related-pages "What's next?"
-    - [Cluster Overview](../overview.md)
+    - [Cluster Overview](../../getting_started/overview.md)
     - [Slurm Quickstart](../../getting_started/running/batch/slurm_quickstart.md)
 
       

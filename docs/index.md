@@ -5,7 +5,7 @@
 !!! info
     **eResearch Otago** provides research computing resources and services to researchers across the University:
 
-    - **The [Aoraki cluster](general/overview.md)** — shared **CPUs, GPUs, large memory nodes and high-speed storage**, together with specialised software and libraries optimised for scientific and data science computing.
+    - **The [Aoraki cluster](getting_started/overview.md)** — shared **CPUs, GPUs, large memory nodes and high-speed storage**, together with specialised software and libraries optimised for scientific and data science computing.
     {# TODO: uncomment when Secure Research Environments is ready to announce
     - **[Secure research environments](other_services/secure_research_environments.md)** — for analysis of sensitive or restricted data that cannot be held on general-purpose systems.
     #}
@@ -20,7 +20,7 @@
 
 - title: Cluster Overview
   content: What is the Research HPC Cluster (Aoraki)?
-  url: general/overview.md
+  url: getting_started/overview.md
   image: assets/images/icons/graph_5_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
 - title: Cluster Traffic

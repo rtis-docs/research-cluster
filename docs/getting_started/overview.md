@@ -25,16 +25,16 @@ graph LR;
     D --- E
 ```
 
-**Login node** — where you land when you connect over [SSH](../getting_started/access/login_ssh.md) or through [OnDemand](../getting_started/software/OnDemand/ondemand.md). Use it to edit scripts, move files around and submit work. It is shared by everyone, so it is not the place to run your analysis — see [Login Node Usage](guidelines/login_node_usage.md).
+**Login node** — where you land when you connect over [SSH](access/login_ssh.md) or through [OnDemand](software/OnDemand/ondemand.md). Use it to edit scripts, move files around and submit work. It is shared by everyone, so it is not the place to run your analysis — see [Login Node Usage](../general/guidelines/login_node_usage.md).
 
 **Compute nodes** — where your work actually runs. You do not log in to them directly; you reach them by asking Slurm for an allocation.
 
-**Slurm** — the scheduler. You tell it how many cores, how much memory, how long, and whether you need a GPU, and it finds a node that can satisfy that request. See [Running Jobs](../getting_started/running/running_jobs_overview.md).
+**Slurm** — the scheduler. You tell it how many cores, how much memory, how long, and whether you need a GPU, and it finds a node that can satisfy that request. See [Running Jobs](running/running_jobs_overview.md).
 
 **Shared storage** — every node sees the same files, so a job on any compute node can read the data you put in `/home`, `/projects` or `/weka`. See the [Storage Overview](../storage/storage_options.md).
 
 !!! tip "Getting started"
-    If you have not used the cluster before, [get access](../getting_started/access/access_overview.md) first, then work through [Running Jobs](../getting_started/running/running_jobs_overview.md). You can also use most of the cluster from your browser through [OnDemand](../getting_started/software/OnDemand/ondemand.md), which writes the Slurm job for you.
+    If you have not used the cluster before, [get access](access/access_overview.md) first, then work through [Running Jobs](running/running_jobs_overview.md). You can also use most of the cluster from your browser through [OnDemand](software/OnDemand/ondemand.md), which writes the Slurm job for you.
 
 ## Partitions
 
@@ -54,7 +54,7 @@ Choosing well matters: a partition with the hardware you need but a long queue m
 | A GPU | `aoraki_gpu` | The general GPU pool — whichever of its A100, H100 or L40 nodes is free first. Use a specific partition such as `aoraki_gpu_H100` when your work needs that model, or that much GPU memory. |
 | Very little, or not for long | `aoraki_small`, `aoraki_short` | These use the normally idle CPU cores on GPU nodes, so small and short jobs can start without waiting for a general-purpose node. |
 
-Before you submit, [Current Utilisation](../getting_started/current_utilisation.md) shows how busy the cluster is right now.
+Before you submit, [Current Utilisation](current_utilisation.md) shows how busy the cluster is right now.
 
 ### Partition Limits
 
@@ -102,7 +102,7 @@ Table: Hardware configuration of each node type
 
 !!! related-pages "What's next?"
 
-    * [Get access to the cluster](../getting_started/access/access_overview.md)
+    * [Get access to the cluster](access/access_overview.md)
     * [Move data on and off the cluster](../storage/data_transfer/data_transfer_overview.md)
-    * [Run a job](../getting_started/running/running_jobs_overview.md)
-    * [See how busy the cluster is](../getting_started/current_utilisation.md)
+    * [Run a job](running/running_jobs_overview.md)
+    * [See how busy the cluster is](current_utilisation.md)
