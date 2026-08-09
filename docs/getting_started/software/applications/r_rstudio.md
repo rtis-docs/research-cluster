@@ -1,8 +1,8 @@
-# R and Rstudio
+# R and RStudio
 
 
 
-## Rstudio
+## RStudio
 
 RStudio server is available through [OnDemand as a versioned apptainer image](../onDemand/available_apps.md/#rstudio-server). Each container has a slightly different configuration and availability of system libraries and pre-installed packages.
 
