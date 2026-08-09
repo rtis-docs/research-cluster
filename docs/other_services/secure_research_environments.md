@@ -17,7 +17,7 @@ analysis has to come to the data instead.
     what your data will require.
 
 !!! related-pages "What's next?"
-    - For the shared cluster, see the [Cluster Overview](../general/overview.md)
+    - For the shared cluster, see the [Cluster Overview](../getting_started/overview.md)
     - For where data can be held on the cluster, see [Storage Options](../storage/storage_options.md)
     - Looking for something else? See the [Support page](../general/support.md)
 

@@ -89,7 +89,7 @@ Email the eResearch Support team at **{{ support_email }}**, or find us on the
 The [Support](../support.md) page describes what to include so we can help quickly.
 
 !!! related-pages "What's next?"
-    - New to the cluster? Start with the [Cluster Overview](../overview.md)
+    - New to the cluster? Start with the [Cluster Overview](../../getting_started/overview.md)
     - To get on, see [Access Overview](../../getting_started/access/access_overview.md)
     - To run something, see [Running Jobs](../../getting_started/running/running_jobs_overview.md)
     - For what a fair share looks like, see [Reasonable Usage](../guidelines/reasonable_usage.md)

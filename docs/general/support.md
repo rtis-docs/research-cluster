@@ -114,5 +114,5 @@ When a problem needs data to reproduce, a small example saves everyone time:
 
 !!! related-pages "What's next?"
       - Looking for something else? See the [Frequently Asked Questions](faq/index.md).
-      - New to the cluster? Start with [Cluster Overview](overview.md).
+      - New to the cluster? Start with [Cluster Overview](../getting_started/overview.md).
       - [Home Page](../index.md)
