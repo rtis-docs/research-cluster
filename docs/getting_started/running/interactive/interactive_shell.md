@@ -138,11 +138,7 @@ Which partition to pick, and how to request a particular GPU model, is covered i
 
 - **Your session ends when the wall time runs out**, with no warning and no chance to save. Ask for enough, and save your work as you go.
 - **A session dies if your SSH connection drops.** See below.
-<<<<<<< HEAD
-- **Per-job caps apply.** Most GPU partitions cap a single job at 16 cores, 2 GPUs and 150 GB; `aoraki_small` at 8 cores and 32 GB; `aoraki_short` at 32 cores and 256 GB. Asking for more than the cap means the job is rejected or never starts. The full set is in the [Cluster Overview](../../../getting_started/overview.md).
-=======
 - **Per-job caps apply.** Most GPU partitions cap a single job at 16 cores, 2 GPUs and 150 GB; `aoraki_small` at 8 cores and 32 GB; `aoraki_short` at 32 cores and 256 GB. Asking for more than the cap means the job is rejected or never starts. The full set is in the [Cluster Overview](../../overview.md).
->>>>>>> bee4f213358f539a530dcc7d94b8a392cfc04f9a
 
 ### Surviving a Dropped Connection
 

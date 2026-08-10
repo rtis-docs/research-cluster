@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-nav:
-  - "Cluster Overview": "overview.md"
-  - "Access": access/
-  - "Cluster Traffic": current_utilisation.md
-  - "Software": software/
-  - "Running": running/
-
-=======
 # navigation for "getting_started/"
 nav:
   - overview.md
@@ -14,4 +5,3 @@ nav:
   - Cluster Traffic: current_utilisation.md
   - software
   - Running Jobs: running
->>>>>>> bee4f213358f539a530dcc7d94b8a392cfc04f9a

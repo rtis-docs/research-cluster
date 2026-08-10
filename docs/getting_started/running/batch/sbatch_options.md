@@ -137,11 +137,7 @@ An example of the threaded case, requesting 16 cores on one node:
 !!! warning "More cores is not always faster"
     Very few programs scale linearly. A job asking for 64 cores and using 4 waits longer to start *and* finishes no sooner. Test at a couple of sizes and compare, then request what actually helps.
 
-<<<<<<< HEAD
-Note that GPU jobs and OnDemand sessions are limited to a **single node**, and each partition caps the cores a single job may request — see the [Cluster Overview](../../../getting_started/overview.md).
-=======
 Note that GPU jobs and OnDemand sessions are limited to a **single node**, and each partition caps the cores a single job may request — see the [Cluster Overview](../../overview.md).
->>>>>>> bee4f213358f539a530dcc7d94b8a392cfc04f9a
 
 ## Output and Errors
 

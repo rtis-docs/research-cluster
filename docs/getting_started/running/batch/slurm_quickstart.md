@@ -189,9 +189,5 @@ Table: Where to find each kind of job script
     - To check whether your request matched what you used, see [Job Efficiency](../efficiency.md)
     - For worked examples, see [Example Job Scripts](slurm_examples/array-slurm.md)
     - If a job failed or will not start, see [Why Did My Job Fail?](../../../general/faq/slurm_job_failures.md) and [Why Is My Job Not Starting?](../../../general/faq/job_start_time.md)
-<<<<<<< HEAD
-    - For partitions, hardware and limits, see the [Cluster Overview](../../../getting_started/overview.md)
-=======
     - For partitions, hardware and limits, see the [Cluster Overview](../../overview.md)
->>>>>>> bee4f213358f539a530dcc7d94b8a392cfc04f9a
     - The complete Slurm reference is at [slurm.schedmd.com](https://slurm.schedmd.com/documentation.html)
