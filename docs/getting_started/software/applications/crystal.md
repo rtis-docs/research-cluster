@@ -121,7 +121,7 @@ Harmless on Ethernet-only systems. The module already forces TCP transports.
 
 ### Attempting to start ranks with srun
 
-This build isn’t Slurm-PMI enabled. Use ``srun``/**salloc** to get the allocation,
+This build isn’t Slurm-MPI enabled. Use ``srun``/**salloc** to get the allocation,
 then launch with ``mpirun`` inside that allocation.
 
 ## Provenance

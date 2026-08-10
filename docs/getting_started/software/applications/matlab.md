@@ -3,30 +3,9 @@
 
 ## MATLAB GUI
 
-OnDemand features a [MATLAB application](https://ondemand.otago.ac.nz/pun/sys/dashboard/batch_connect/sys/ood_matlab_apptainer) using containerised builds of MATLAB including a number of popular toolboxes.
+MATLAB is available as a GUI application on Otago OnDemand, with several containerised builds to choose from.
 
-### Toolboxes
-
-Toolboxes and addons included:
-
-* Communications_Toolbox
-* Computer_Vision_Toolbox
-* Deep_Learning_Toolbox
-* DSP_System_Toolbox
-* Image_Acquisition_Toolbox
-* Image_Processing_Toolbox
-* Mapping_Toolbox
-* MATLAB_Compiler
-* MATLAB_Compiler_SDK
-* Navigation_Toolbox
-* Optimization_Toolbox
-* Parallel_Computing_Toolbox
-* Partial_Differential_Equation_Toolbox
-* Sensor_Fusion_and_Tracking_Toolbox
-* Signal_Processing_Toolbox
-* Simulink
-* Statistics_and_Machine_Learning_Toolbox
-* Wavelet_Toolbox
+[Open MATLAB application](https://ondemand.otago.ac.nz/pun/sys/dashboard/batch_connect/sys/ood_apptainer_matlab/session_contexts/new){:target="_blank"}
 
 ### License
 
@@ -41,11 +20,33 @@ When launching the OOD app, make sure to tick the `Request GPU` and `3D hardware
 
 To verify from within MATLAB, enter: `rendererinfo()`. The Renderer should list an NVIDIA model; If this is 'llvmpipe', you are using software rendering instead.
 
+### Toolboxes
+
+!!! info "Toolboxes and addons included"
+    * Communications_Toolbox
+    * Computer_Vision_Toolbox
+    * Deep_Learning_Toolbox
+    * DSP_System_Toolbox
+    * Image_Acquisition_Toolbox
+    * Image_Processing_Toolbox
+    * Mapping_Toolbox
+    * MATLAB_Compiler
+    * MATLAB_Compiler_SDK
+    * Navigation_Toolbox
+    * Optimization_Toolbox
+    * Parallel_Computing_Toolbox
+    * Partial_Differential_Equation_Toolbox
+    * Sensor_Fusion_and_Tracking_Toolbox
+    * Signal_Processing_Toolbox
+    * Simulink
+    * Statistics_and_Machine_Learning_Toolbox
+    * Wavelet_Toolbox
+
 ## Commandline MATLAB
 
 Commandline `matlab` is available by default. Additional versions will be made available via `module` going forward.
 
-### via SLURM
+### Via Slurm
 
 
 Different containerised builds of MATLAB are available in /opt/apptainer_img/ folder:
@@ -62,7 +63,7 @@ Different containerised builds of MATLAB are available in /opt/apptainer_img/ fo
   /opt/apptainer_img/matlab-r2024b-u4-GL.sif
   ```
 
-Start a new slurm interactive job on the cpu node:
+Start a new Slurm interactive job on the cpu node:
 
 !!! terminal
 
@@ -247,10 +248,10 @@ Submit a slurm batch job:
   export MLM_LICENSE_FILE=27001@slo-licence-svr.registry.otago.ac.nz
   
   ## GPU job
-  ## apptainer exec --nv --bind "$(pwd)":/opt/workspace,/weka/rtis/userxyz/tmp:/tmp --pwd /opt/workspace /opt/apptainer_img/matlab-r2024a-GL.sif matlab -nodisplay -nodesktop < MATLAB_job.m
+  ## apptainer exec --nv --bind "$(pwd)":/opt/workspace,/weka/rtis/userxyz/tmp:/tmp --pwd /opt/workspace /opt/apptainer_img/matlab-r2024a-GL.sif matlab -nodisplay -nodesktop -nosplash < MATLAB_job.m
   
   ## CPU job
-  apptainer exec --bind "$(pwd)":/opt/workspace,/weka/rtis/userxyz/tmp:/tmp --pwd /opt/workspace /opt/apptainer_img/matlab-r2024a-GL.sif matlab -nodisplay -nodesktop < MATLAB_job.m
+  apptainer exec --bind "$(pwd)":/opt/workspace,/weka/rtis/userxyz/tmp:/tmp --pwd /opt/workspace /opt/apptainer_img/matlab-r2024a-GL.sif matlab -nodisplay -nodesktop -nosplash < MATLAB_job.m
   
   echo "Script end"
   ```
@@ -287,10 +288,10 @@ Submit a slurm array batch job:
   export MLM_LICENSE_FILE=27001@slo-licence-svr.registry.otago.ac.nz
   
   ## GPU job
-  ## apptainer exec --nv --bind "$(pwd)":/opt/workspace --pwd /opt/workspace /opt/apptainer_img/matlab-r2024a-GL.sif matlab -nodisplay -nodesktop -r "process_input(${SLURM_ARRAY_TASK_ID}); exit;"
+  ## apptainer exec --nv --bind "$(pwd)":/opt/workspace --pwd /opt/workspace /opt/apptainer_img/matlab-r2024a-GL.sif matlab -nodisplay -nodesktop -nosplash -batch "process_input(${SLURM_ARRAY_TASK_ID})"
   
   ## CPU job
-  apptainer exec --bind "$(pwd)":/opt/workspace --pwd /opt/workspace /opt/apptainer_img/matlab-r2024a-GL.sif matlab -nodisplay -nodesktop -r "process_input(${SLURM_ARRAY_TASK_ID}); exit;"
+  apptainer exec --bind "$(pwd)":/opt/workspace --pwd /opt/workspace /opt/apptainer_img/matlab-r2024a-GL.sif matlab -nodisplay -nodesktop -nosplash -batch "process_input(${SLURM_ARRAY_TASK_ID})"
   
   echo "Script end"
   ```

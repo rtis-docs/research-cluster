@@ -1,6 +1,8 @@
 # Getting an Account
 
-Submit the form below to request an account on the Otago Aoraki compute cluster. Account requests are typically processed within 1 business day, and you will receive an email confirmation to your university email address when your account is ready.
+Submit your information in the form below to request a Aoraki cluster account.   
+  
+You will receive an email confirmation when your account is ready. Account requests are typically processed within 1 business day.   
 
 Please contact the eResearch Support team ({{support_email}}) if you have any questions.
 
@@ -20,8 +22,5 @@ Please contact the eResearch Support team ({{support_email}}) if you have any qu
 </iframe>
 
 
-!!! related-pages "What Next?"
-
-    Once you have received your confirmation email, login to the cluster through either the [Open OnDemand Web portal](../access/ondemand_web.md) or [Commandline Access with SSH](../access/login_ssh.md)
 
     

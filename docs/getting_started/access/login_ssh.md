@@ -1,30 +1,88 @@
-# Accessing the login node (ssh)
-<!-- TODO See if overview is in line with content -->
+# SSH
+
 !!! overview "On this Page"
-    - How to Access the login node for 'lightweight' tasks
+    - How to generate an SSH key and register it with Otago OnDemand
     - How to SSH through a terminal
     - How to SSH with OnDemand
 
-Use of the login node should be limited to 'lightweight' tasks such as file browsing/copying/moving or submitting jobs into the SLURM scheduler.
 
-You can access the Research Cluster login node remotely through the two below mechanisms.
+!!! warning
+    You can access the Aoraki Cluster using SSH if you are on campus or connected to the campus VPN
 
-## SSH through a terminal
+## Setting up SSH key access
 
-To SSH to the login node from your local computer, first open a terminal/commandline and then use the `ssh` command with username being your Otago username and the address for the remote computer being `aoraki-login.otago.ac.nz` which will look like this: `ssh lasfi12p@aoraki-login.otago.ac.nz`
+Register your SSH public key to enable key-based authentication to log in to the login node from a terminal. This is faster and required for some tools (e.g. `rsync`, `scp`, VS Code Remote-SSH) that don't handle interactive password prompts well.
 
-!!! terminal
+### Step 1: Generate an SSH key pair
 
-    === "ssh login"
+If you already have an SSH key pair (typically `~/.ssh/id_ed25519.pub` or `~/.ssh/id_rsa.pub` on Mac/Linux), you can skip to Step 2.
 
-        ```bash
-        ssh <otago-username>@aoraki-login.otago.ac.nz
-        ```
+=== "Windows"
 
-        ```output
-        <otago-username>@aoraki-login.otago.ac.nz's password:
-        ```
+    Windows 10/11 ship with an OpenSSH client. Open **PowerShell** and run:
 
+    ```powershell
+    ssh-keygen -t ed25519 -C "your.name@otago.ac.nz"
+    ```
+
+    Press <kbd>Enter</kbd> to accept the default file location (`C:\Users\<you>\.ssh\id_ed25519`), then set (or skip) a passphrase.
+
+    !!! info "Using PuTTY instead"
+        If you use PuTTY rather than the built-in OpenSSH client, run **PuTTYgen**, click **Generate**, and save the private key. Copy the public key text shown in the box at the top of the window — you'll need it in [Step 2](#step-2-copy-your-public-key).
+
+=== "macOS / Linux"
+
+    Open a terminal and run:
+
+    ```bash
+    ssh-keygen -t ed25519 -C "your.name@otago.ac.nz"
+    ```
+
+    Press <kbd>Enter</kbd> to accept the default file location (`~/.ssh/id_ed25519`), then set (or skip) a passphrase.
+
+!!! info "No ed25519 support?"
+    If your system or client doesn't support `ed25519` keys, use `ssh-keygen -t rsa -b 4096` instead.
+
+
+### Step 2: Add your key using ssh-copy-id or Otago OnDemand
+
+=== "ssh-copy-id (macOS / Linux)"
+
+    The quickest way to register your key is with `ssh-copy-id`. This copies your public key to the login node in a single command:
+
+    ```bash
+    ssh-copy-id -i ~/.ssh/id_ed25519.pub <otago-username>@aoraki-login.otago.ac.nz
+    ```
+
+    You will be prompted for your password once. After that, key-based login is ready — skip to Step 3.
+
+=== "Otago OnDemand"
+
+    1. [Log in to OnDemand](ondemand_web.md#sign-in) at [https://ondemand.otago.ac.nz](https://ondemand.otago.ac.nz).
+    2. From the top navigation bar, select **Clusters > SSH Public Key**.
+
+        ![Clusters menu showing SSH Public Key](../../assets/images/ssh_key_ood.png){width="600px" align=left}
+
+    3. On the **SSH Public Key Manager** page, paste your public key (the full line, e.g. `ssh-ed25519 AAAA... your.name@otago.ac.nz`) into the **Public key** box and click **Add**.
+
+        ![SSH Public Key Manager page](../../assets/images/ssh_key_ood_interface.png){width="600px" align=left}
+
+    4. Your key will now appear under **Registered Public Keys**.
+
+
+### Step 3: Connect using your key
+
+Once your key is registered, SSH to the login node as normal — if your private key is in the default location, no extra flags are needed:
+
+```bash
+ssh <otago-username>@aoraki-login.otago.ac.nz
+```
+
+You should connect without being prompted for your password. If you saved your key to a non-default location, specify it with `-i`:
+
+```bash
+ssh -i /path/to/your/private_key <otago-username>@aoraki-login.otago.ac.nz
+```
 
 
 !!! info "First time connecting"
@@ -54,20 +112,17 @@ To SSH to the login node from your local computer, first open a terminal/command
 
 !!! warning "Password not showing"
 
-    When typing in your password when prompted there will be nothing outputed on the screen. Once you have typed your password press <kbd>Enter</kbd> to submit and continue. If you mistyped your password you will be prompted to re-enter it.
+    When typing in your password when prompted, nothing will be displayed on the screen. Once you have typed your password, press <kbd>Enter</kbd> to submit and continue. If you mistyped your password you will be prompted to re-enter it.
 
 ## SSH within OnDemand
 
-To use the cluster shell access within OnDemand, first [connect to the **Otago OnDemand** web portal](ondemand_web.md#logging-in) and then from the top menu bar select the menu `Clusters` > `Aoraki Cluster Shell Access`.
+To use the cluster shell access within OnDemand, first [connect to the **Otago OnDemand** web portal](ondemand_web.md#sign-in) and then from the top menu bar select the menu `Clusters` > `Aoraki Shell Access`.
 
-You will then be prompted to input your password, similar to [SSH through the terminal](#ssh-through-a-terminal)
+You will then be prompted to input your password, similar to [SSH through the terminal](#ssh-through-a-terminal).
 
-![Open OnDemand Shell](../../assets/images/ood_shell.png){width="600px"}
-
-<!-- TODO update screenshot -->
+![Open OnDemand Shell](../../assets/images/ondemand_shell.jpeg){width="600px" align=left}
 
 
 !!! related-pages "What's next?"
     Where to store your data and what your options are found on our [Storage Overview](../../storage/storage_options.md)
-  <!-- TODO Are these pages the next step or relevant? -->
 

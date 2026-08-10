@@ -23,12 +23,27 @@ theme :
 watch:
   - includes/
 
+# Pages that are written but not ready to publish. Remove the entry to publish the page.
+exclude_docs: |
+  other_services/secure_research_environments.md
+  # Superseded by announcements/ and long out of date. Kept in the repo rather than
+  # deleted, so the history is still there if it is ever wanted.
+  general/changelogs/
+  # Fragments pulled into other pages with {% include %}. They are not pages in their
+  # own right, so links inside them are written relative to the page that includes them.
+  /child/
+
 hooks:
   - mkdocs_hooks.py
 
 plugins:
   - search
   - awesome-nav
+  - redirects:
+      redirect_maps:
+        # The cluster overview moved into getting_started/. Keep the old URL
+        # working for bookmarks and links shared before the move.
+        general/overview.md: getting_started/overview.md
   - macros
   - include-markdown
   - table-reader
@@ -38,6 +53,8 @@ plugins:
         caption_prefix: ''
         allow_indented_caption: false
         position: top
+      figure:
+        ignore_classes: ["left"]
 
 extra_css:
   - assets/stylesheets/neoteroi-mkdocs.css
@@ -59,6 +76,7 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - md_in_html
   #- pydownx.highlight
+  - pymdownx.caret
   - pymdownx.superfences:
       preserve_tabs: true
       custom_fences:
@@ -74,10 +92,8 @@ markdown_extensions:
 
 extra:
   support_email: '<a href="mailto:rtis.support@otago.ac.nz">rtis.support@otago.ac.nz</a>'
-  apptainer: "/getting_started/software/software_environments/apptainer"
-  nextflow: "/getting_started/workflows/nextflow"
-  conda: "/getting_started/software/software_environments/conda"
-  spack: "/getting_started/software/software_environments/spack"
-  modules: "/getting_started/software/software_environments/modules"
-  sbgrid: "/getting_started/software/software_environments/sbgrid"
   home_quota: "40 GB"
+  # Triage form for support requests. The form does not exist yet — until it does, the
+  # button and the table row that use this are wrapped in a Jinja {# ... #} comment in
+  # general/support.md. Set the real URL here and uncomment there to publish it.
+  support_form: "https://forms.cloud.microsoft/r/PLACEHOLDER"

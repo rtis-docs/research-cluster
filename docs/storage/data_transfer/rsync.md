@@ -36,7 +36,7 @@ This method is recommended for small numbers/sizes of files. For transferring la
 
 ## rsync
 
-Rsync has additional functionalies from `scp`' such as the ability to resume transfers if the connection is interrupted.
+Rsync has additional functionalities from `scp`' such as the ability to resume transfers if the connection is interrupted.
 
 ### Transferring to the cluster
 
@@ -55,6 +55,6 @@ Rsync has additional functionalies from `scp`' such as the ability to resume tra
     ```
 
 !!! related-pages "What's next?"
-    - For software available on the cluster go to [Software](../software/applications/index.md)
+    - For software available on the cluster go to [Software](../../getting_started/software/applications/index.md)
     -  For how to run a job on the cluster go to [Running Jobs](../../getting_started/running/running_jobs_overview.md)
   <!-- TODO Are these pages the next step or relevant? -->

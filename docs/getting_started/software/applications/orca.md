@@ -17,7 +17,7 @@ This will add the ORCA executables to your path and set up the required environm
 ## Interactive session
 
 An interactive session is useful for quick tests and debugging.
-The following command requests 4 CPUs, 16 GB of memory, and 1 hour of wall time on the aoraki partition:
+The following command requests 4 CPUs, 16 GB of memory, and 1 hour of wall time on the `aoraki` partition:
 
 !!! terminal
 
@@ -37,9 +37,9 @@ Once connected to the compute node:
 ORCA will automatically use the number of CPUs allocated to your job.
 
 
-## SLURM batch job
+## Slurm batch job
 
-For longer calculations, use a SLURM batch job.
+For longer calculations, use a Slurm batch job.
 Create an ORCA input file (e.g., water.inp) with your desired calculation settings.
 
 Example ORCA input file:
@@ -58,9 +58,9 @@ Example ORCA input file:
     *
     ```
 
-Make sure the `nprocs` value matches the `--cpus-per-task` in your SLURM script, and set `%maxcore` appropriately for your memory allocation.
+Make sure the `nprocs` value matches the `--cpus-per-task` in your Slurm script, and set `%maxcore` appropriately for your memory allocation.
 
-To submit a batch job, create a SLURM script (e.g., orca_job.slurm) with the following content:
+To submit a batch job, create a Slurm script (e.g., orca_job.slurm) with the following content:
 
 !!! terminal
 
@@ -116,7 +116,7 @@ Monitor the calculation progress by checking the output file:
 
 ### Best practices
 
-- **Match resources**: Set `nprocs` in your .inp file to match `--cpus-per-task` in your SLURM script.
+- **Match resources**: Set `nprocs` in your .inp file to match `--cpus-per-task` in your Slurm script.
 - **Memory settings**: Set `%maxcore` to about 80% of your total memory divided by the number of cores (in MB).
 - **Scratch space**: ORCA can generate large temporary files. The script above sets up a scratch directory.
 - **File management**: Copy important output files (.gbw, .xyz, .hess) back to your working directory.

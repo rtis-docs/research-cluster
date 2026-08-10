@@ -3,7 +3,7 @@
 Dorado is a high-performance, easy-to-use, open source basecaller for Oxford Nanopore reads. 
 It needs to be run on a partition/node with **GPU compute/CUDA** support, and is heavily-optimised for Nvidia A100 and H100 GPUs.
 
-Dorado is made available on the cluster as a shared [Apptainer]({{apptainer}}) container image.
+Dorado is made available on the cluster as a shared [Apptainer](../software_environments/apptainer.md) container image.
 
 You can use the `apptainer/dorado` module to add a convenient alias to running `dorado` within the container:
 
@@ -12,7 +12,7 @@ You can use the `apptainer/dorado` module to add a convenient alias to running `
     ```bash
     module avail dorado
     module load apptainer/dorado/0.7.1
-    # The following is required to use aliases in a non-interactive/SLURM batch script:
+    # The following is required to use aliases in a non-interactive/Slurm batch script:
     shopt -s expand_aliases
     dorado ....
     ```
@@ -42,15 +42,15 @@ As with all Apptainer containers, take care to qualify the files and paths in th
 container image, i.e. Models are located within the container in `/models/`, and any other files 
 and data stored outside the container needs to be in a folder that is bound by Apptainer into the 
 container (either by default, such as your `$HOME`, `/scratch` or `/projects`), or 
-by explicitely specifying a bind mount with Apptainer's `--bind` option). 
+by explicitly specifying a bind mount with Apptainer's `--bind` option). 
 
 Please refer to the dorado GitHub page for more information regarding running dorado.
 [https://github.com/nanoporetech/dorado](https://github.com/nanoporetech/dorado)
 
 
-## Example SLURM batch script
+## Example Slurm batch script
 
-Below is an example SLURM batch script for running Dorado on either the `aoraki_gpu_H100` or `aoraki_gpu_A100` partition of the cluster. This example uses the Apptainer module with the dorado alias:
+Below is an example Slurm batch script for running Dorado on either the `aoraki_gpu_H100` or `aoraki_gpu_A100` partition of the cluster. This example uses the Apptainer module with the dorado alias:
 
 !!! terminal
 
@@ -70,7 +70,7 @@ Below is an example SLURM batch script for running Dorado on either the `aoraki_
     # Load the Apptainer/Dorado module
     module load apptainer/dorado/0.7.1
 
-    # Enable aliases in non-interactive SLURM shell
+    # Enable aliases in non-interactive Slurm shell
     shopt -s expand_aliases
 
     echo "CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES"
@@ -82,6 +82,25 @@ Below is an example SLURM batch script for running Dorado on either the `aoraki_
       ~/pod5s/ \
       --emit-mapping
     ```
+
+
+
+## Benchmarking
+
+To help you choose the right GPU for the task, this table gives the benchmarking results obtained by following [https://github.com/Kirk3gaard/2025-Crowdsource-GPU-basecalling-stats](https://github.com/Kirk3gaard/2025-Crowdsource-GPU-basecalling-stats) with Doraro v1.4.0:
+
+| GPU      | Job Time (ms) | Samples/Sec  | Gbp/Day[^gbps]     | max VRAM Used (GB)     |
+| :--------- | ---------: | ------------: | -----------: | -----------: |
+| L4        | 4399623   | 3.07 x10^6^ | 21.22 | 22  |
+| L40       | 1834677   | 7.36 x10^6^ | 50.89 | 7  |
+| A100_40GB | 1414881   | 9.55 x10^6^ | 65.99  | 39   |
+| A100_80GB | 1261519   | 1.07 x10^7^ | 74.02| 63 |
+| H100      | 662815    | 2.04 x10^7^ | 140.88 | 51 |
+| RTX6000   | 657351    | 2.06 x10^7^ | 142.05 | 61   |
+| H200      | 534527    | 2.53 x10^7^ | 174.68 | 63 |
+
+
+[^gbps]: `Gbp/day = samples/sec / 5000*400 * 3600 * 24 / 10^9` 
 
 
 <!-- TODO/FIXME update the above from the below (plus convert to below to md on the way) -->

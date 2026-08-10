@@ -9,6 +9,5 @@
 
 !!! related-pages "What's next?"
       - [Storage Overview](../../storage/storage_options.md) 
-      
-  <!-- TODO Are these pages the next step or relevant? -->
-  <!--Unsure if there are any other relevant pages-->
+     
+ 

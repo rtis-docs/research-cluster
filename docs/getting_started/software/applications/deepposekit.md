@@ -4,7 +4,7 @@
 
 While DeepPoseKit can be self-installed e.g. using conda as per the project's installation instructions, the legacy codebase requires a specific set of outdated 
 dependencies with a supported TensorFlow/CUDA combination.
-We have bundled a working environment in an [Apptainer]({{apptainer}}) container which can be launched from the [OOD JupyterLab app](https://ondemand.otago.ac.nz/pun/sys/dashboard/batch_connect/sys/ood_jupyter_apptainer/) or used on the commandline.
+We have bundled a working environment in an [Apptainer](../software_environments/apptainer.md) container which can be launched from the [OOD JupyterLab app](https://ondemand.otago.ac.nz/pun/sys/dashboard/batch_connect/sys/ood_jupyter_apptainer/) or used on the commandline.
 
 The [project website](https://github.com/jgraving/DeepPoseKit) links to a number of notebooks detailing usage and the general workflow.
 
@@ -31,7 +31,7 @@ and copy-paste the full `127.0.0.1` URL displayed into the browser (Firefox) wit
 (e.g. `http://127.0.0.1:8888/lab?token=2edd3d93b0411e75da1a14029d3c5b23a6214b5048d11e76` )
 
 
-DeepPoseKit is made available on the cluster as a shared [Apptainer]({{apptainer}}) container image. 
+DeepPoseKit is made available on the cluster as a shared [Apptainer](../software_environments/apptainer.md) container image. 
 
 You can use the `apptainer/deepposekit` module to add a convenient alias to `python` in the container:
 
@@ -41,7 +41,7 @@ You can use the `apptainer/deepposekit` module to add a convenient alias to `pyt
     #SBATCH <slurm job script options>
     
     module load apptainer/deepposekit
-    # The following is required to use aliases in a non-interactive/SLURM batch script:
+    # The following is required to use aliases in a non-interactive/Slurm batch script:
     shopt -s expand_aliases
     python -c 'import deepposekit; print(deepposekit.__version__)'
     ```

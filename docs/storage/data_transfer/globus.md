@@ -97,8 +97,8 @@ Once you have installed Globus Connect Personal, you can connect your desktop en
 
 !!! related-pages "What's next?"
     -  To transfer data between your desktop and Research Storage go to [Globus Connect Personal](https://www.globus.org/globus-connect-personal)
-    - For software available on the cluster go to [Software](../software/applications/index.md)
-    - Connect to the cluster and view your files [Connect to the Cluster](../access/access_overview.md)
+    - For software available on the cluster go to [Software](../../getting_started/software/applications/index.md)
+    - Connect to the cluster and view your files [Connect to the Cluster](../../getting_started/access/access_overview.md)
     -  For how to run a job on the cluster go to [Running Jobs](../../getting_started/running/running_jobs_overview.md)
   
   

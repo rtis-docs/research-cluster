@@ -10,14 +10,14 @@ The Connectome Workbench wb_view GUI is [available as an Open OnDemand app](http
 
 ## via commandline/Slurm
 
-Connectome Workbench is made available on the cluster as a shared [Apptainer]({{apptainer}}) container image.
+Connectome Workbench is made available on the cluster as a shared [Apptainer](../software_environments/apptainer.md) container image.
 You can use the `apptainer/connectome_workbench` module to add convenient aliases to running any of the FSL binaries within the container:
 
 !!! terminal
 
     ```bash
     module load apptainer/connectome_workbench
-    # The following is required to use aliases in a non-interactive/SLURM batch script:
+    # The following is required to use aliases in a non-interactive/Slurm batch script:
     shopt -s expand_aliases
     wb_commnd ....
     ```

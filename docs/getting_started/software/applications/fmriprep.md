@@ -15,7 +15,7 @@ the need for users to install or manage neuroimaging dependencies.
 * Version: 25.1.2
 * Container runtime: Apptainer
 * Interface: BIDS-Apps compliant command line
-* Execution: SLURM batch jobs
+* Execution: Slurm batch jobs
 
 ## Loading the Module
 
@@ -49,12 +49,12 @@ Example::
             /projects/mygroup/derivatives/fmriprep \
             participant
 
-## Running with SLURM
+## Running with Slurm
 
 
-fMRIPrep should be run on compute nodes using SLURM.
+fMRIPrep should be run on compute nodes using Slurm.
 
-Example SLURM job script:
+Example Slurm job script:
 
 !!! terminal
 

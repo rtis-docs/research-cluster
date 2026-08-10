@@ -2,7 +2,7 @@
 
 Easy to use protein structure and complex prediction using AlphaFold2 and Alphafold2-multimer.
 
-Local [ColabFold](https://github.com/sokrypton/ColabFold) is made available on the cluster as a shared [Apptainer]({{apptainer}}) container image. 
+Local [ColabFold](https://github.com/sokrypton/ColabFold) is made available on the cluster as a shared [Apptainer](../software_environments/apptainer.md) container image. 
 This should be run on a **GPU Compute** partition.
 
 You can use the `apptainer/colabfold` module which will add convenient aliases for: `colabfold_batch`, 
@@ -16,7 +16,7 @@ See the [LocalColabFold documentation](https://github.com/YoshitakaMo/localcolab
 
     ```bash
     module load apptainer/colabfold
-    # The following is required to use aliases in a non-interactive/SLURM batch script:
+    # The following is required to use aliases in a non-interactive/Slurm batch script:
     shopt -s expand_aliases
     colabfold_batch ./input.fasta ./out/
     ```

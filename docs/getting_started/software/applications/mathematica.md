@@ -31,7 +31,7 @@ You can verify it is working by checking the version:
     math -version
     ```
 
-## Using Mathematica with SLURM
+## Using Mathematica with Slurm
 
 
 You can use Mathematica either interactively or via batch jobs.

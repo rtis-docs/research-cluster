@@ -37,7 +37,7 @@ The container that has the Ollama software in it is called the Ollama Shell Envi
     OllEnv harsi12p@aoraki27:~$
     ```
 
-This has been done using a convience script called `ollama-env.sh`. Useful files such as this can be extracted from the container by running the following in an empty directory:
+This has been done using a convenience script called `ollama-env.sh`. Useful files such as this can be extracted from the container by running the following in an empty directory:
 
 !!! terminal
 
@@ -60,7 +60,7 @@ The container sets the ``OLLAMA_HOST`` environmental variable that tells the ``o
 ## Home directory quota constraints
 
 
-A quota system is in place on Aoraki that limits the data in a users home directory to 15GB. This can be easy exceeded with LLM models. 
+A quota system is in place on Aoraki that limits the data in a user's home directory to **{{ home_quota }}**. This can be easily exceeded with LLM models. See [Storage and Quotas](../../../general/faq/disk_usage.md) for how to check what you are using. 
 The possible solutions involve moving your data onto another storage medium (Ohau or HCS) and either setting environmental variables or copying data and then creating symlinks to the new data location. 
 Other hidden directories can also contains large amount of hidden files: ``~/.cache`` and ``~/.local``. You can set the environmental variable ``OLLAMA_MODELS`` to a directory that is not in ``/home`` and Ollama will put any downloaded model files in there.
 
@@ -120,7 +120,7 @@ Pressing [CTRL] + [D] exits iPython. You have have to have run ``ollama run llam
 Jupyter notebook pops up Firefox that is also included within the container. Because of this you have to be able to display X11 programs (through WSL on Windows and XQuartz on Mac) on your local machine. This requires a bit more setup to function correctly.
 
 **Batch mode**
-The container can also run in batch mode. This is done by giving a container a single parameter. What happens is that the container starts the Ollama server but instead of dropping you into an interractive bash shell it runs your command and then exits. For example:
+The container can also run in batch mode. This is done by giving a container a single parameter. What happens is that the container starts the Ollama server but instead of dropping you into an interactive bash shell it runs your command and then exits. For example:
 
 !!! terminal
     
@@ -128,7 +128,7 @@ The container can also run in batch mode. This is done by giving a container a s
     apptainer run --nv /opt/apptainer_img/ollama_shellenv.sif 'echo "What is a cat? Give a response as a single sentence." | ollama run llama3 > what-is-a-cat-batched.txt'
     ```
 
-This is useful if you have large inference jobs that you want to run and you want to use SLURM (for a significant speed and resource increase).
+This is useful if you have large inference jobs that you want to run and you want to use Slurm (for a significant speed and resource increase).
 
 ## Resources
 

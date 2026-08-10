@@ -8,7 +8,7 @@ The FSL GUI tools (including FSLeyes) can be accessed via the Open OnDemand Appl
 
 ## via Apptainer
 
-FSL is made available on the cluster as a shared [Apptainer]({{apptainer}}) container image.
+FSL is made available on the cluster as a shared [Apptainer](../software_environments/apptainer.md) container image.
 You can use the `apptainer/FSL` module to add convenient aliases to running any of the FSL binaries within the container:
 
 !!! terminal
@@ -16,7 +16,7 @@ You can use the `apptainer/FSL` module to add convenient aliases to running any 
     ```bash
     module avail fsl
     module load apptainer/FSL/6.0.7.6
-    # The following is required to use aliases in a non-interactive/SLURM batch script:
+    # The following is required to use aliases in a non-interactive/Slurm batch script:
     shopt -s expand_aliases
     fsl......
     ```
@@ -44,4 +44,4 @@ These can also be invoked directly within the context of the container, with:
 
 ## via Spack
 
-Alternatively FSL (`fsl`) can also be self-installed using [Spack]({{spack}}).
+Alternatively FSL (`fsl`) can also be self-installed using [Spack](../software_environments/spack.md).

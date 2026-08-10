@@ -140,10 +140,7 @@
     },
     "CCP4": {
         "description": "CCP4",
-        "domains": [
-            "apptainer", 
-            "sbgrid"
-        ],
+        
         "homepage": "https://www.ccp4.ac.uk/",
         "support": "../applications/ccp4/",
         "versions": [

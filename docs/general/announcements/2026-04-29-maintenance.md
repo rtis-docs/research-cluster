@@ -16,8 +16,8 @@ The Open OnDemand (OOD) web portal will be upgraded from version 3.x to version 
 
 
 - Users will be unable to log in to the OOD portal during the upgrade window.
-- **Running SLURM jobs will not be affected.** Jobs started on the current portal will remain accessible after the upgrade.
-- The cluster login node and SLURM scheduler will be unaffected.
+- **Running Slurm jobs will not be affected.** Jobs started on the current portal will remain accessible after the upgrade.
+- The cluster login node and Slurm scheduler will be unaffected.
 
 ### What's Changing
 
@@ -43,7 +43,7 @@ Following the upgrade, the production portal at `ondemand.otago.ac.nz` will run 
 - XDSGUI
 - phy
 
-**Apps available on legacy instance only** ([ondemand-legacy.otago.ac.nz](ondemand-legacy.otago.ac.nz)):
+**Apps available on legacy instance only** ([https://ondemand-legacy.otago.ac.nz](https://ondemand-legacy.otago.ac.nz)):
 
 - CCP4
 - ChimeraX
@@ -70,4 +70,4 @@ Following the upgrade, the production portal at `ondemand.otago.ac.nz` will run 
 ##Questions
 
 
-If you have any questions or concerns, please contact the RTIS team at {{ support_email }}.
+If you have any questions or concerns, please contact the eResearch Support team at {{ support_email }}.

@@ -5,7 +5,7 @@
 
 All users of the Otago Research Cluster have a home directory that is mounted  at ``/home/<username>``. The home storage is intended for storing configuration files, scripts, and other smaller datasets that are used for computations.
  
-The hard quota for home directories is **{{ home_quota }}**. When you reach this limit you will not be able to write anymore data to your home directory.
+The hard quota for home directories is **{{ home_quota }}**. When you reach this limit you will not be able to write any more data to your home directory.
 A warning will be sent when the you have 30GB of data stored in your home directory.
  
 
@@ -14,6 +14,6 @@ A warning will be sent when the you have 30GB of data stored in your home direct
     - Find out how to move Data on and off the Research Cluster on [Data Transfer](../data_transfer/data_transfer_overview.md) 
     - Getting and using a project directory
     - Using WEKA in a high IO workflow
-    - [Exceeding Quotas](../../general/faq/exceeding_quota.md)
+    - If you are running out of room, see [Storage and Quotas](../../general/faq/disk_usage.md)
 
   <!-- TODO Are these pages the next step or relevant? -->

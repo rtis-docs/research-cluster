@@ -2,7 +2,7 @@
 
 [Ansys Fluent](https://www.ansys.com/products/fluids/ansys-fluent/) is proprietary fluid simulation software.
 
-These containers can be run on both GPU and CPU partitions. There is about a 20-30% speedup with using a GPU. They can be operated interactively (either through a text user interface or a graphical user interface) once you have logged into a node (with ``srun``) or in "batch mode" where the container can be run through the job scheduler.
+These containers can be run on both GPU and CPU partitions. There is about a 20-30% speed up with using a GPU. They can be operated interactively (either through a text user interface or a graphical user interface) once you have logged into a node (with ``srun``) or in "batch mode" where the container can be run through the job scheduler.
 
 
 The ``ansys_fluent_2022r2.sif`` container contains a full Linux installation of ANSYS Fluent 2022R2. It is designed to be operated from within the cluster. 
@@ -52,8 +52,8 @@ This will load into an Ubuntu Linux Bash shell environment where the user can st
     ANSFlu user@aorakiXX:~$
     ```
 
-A convience script called ``fluent-2022r2.sh`` has been written that simplifies loading the container. 
-This and other files (SLURM examples) can be extracted from the container by running the following in an empty directory:
+A convenience script called ``fluent-2022r2.sh`` has been written that simplifies loading the container. 
+This and other files (Slurm examples) can be extracted from the container by running the following in an empty directory:
 
 !!! terminal
 
@@ -67,9 +67,9 @@ I recommend that you put ``fluent-2022r2.sh`` in a directory that has been added
 ## Graphical mode
 
 In order to use Fluent through a graphical user interface you need to be able to display X11 programs (through WSL on Windows and XQuartz on Mac) on your local machine. 
-This requires a bit more setup to function correctly. If you are having issues with this please contact RTIS for support.
+This requires a bit more setup to function correctly. If you are having issues with this please contact S for support.
 
-Note that 3D software rendering is used which is alot slower than direct hardware acceleration that would be on somebodies local machine. This means that the graphical 
+Note that 3D software rendering is used which is a lot slower than direct hardware acceleration that would be on somebodies local machine. This means that the graphical 
 interface is useful for initial setup and validation (confirming that it works) rather than for design and analysis.
 
 To start the Fluent workbench you have to enter into the container (as mentioned above) and then type:
@@ -130,15 +130,15 @@ This can be found here: [https://github.com/sikvelsigma/ANSYS-WB-Batch-Script](h
 
 
 The container can be run in automated `Batch mode` where it runs in text mode only (it does not display a GUI). 
-You give it the path to the workbench file ``.wbpj`` as a single parameter and it initalizes and 
+You give it the path to the workbench file ``.wbpj`` as a single parameter and it initialises and 
 runs the solvers within the provided workbench file. It exits after it finishes its simulation(s).
 
 The steps that the container goes through are:
 
 1. Searches the directory that the ``.wbpj`` file is in and then opens it.
 2. Creates a list of Solution objects that have solvers.
-3. For each object with a solver it initalizes it with the chosen method (see below).
-4. Once the solver has been initalized any prior simulation data is deleted/cleaned and the simulation is started.
+3. For each object with a solver it initialises it with the chosen method (see below).
+4. Once the solver has been initialised any prior simulation data is deleted/cleaned and the simulation is started.
 5. Once the simulation has completed the simulation is saved and the container exits.
 
 
@@ -146,9 +146,9 @@ The steps that the container goes through are:
 
 Environmental variables are used to control the initialization of the model before the simulation is run:
 
-**ANSFLU_INITIALIZE_METHOD:** The ``ANSFLU_INITIALIZE_METHOD`` is used to set the inititation method. The default is "hybrid". 
+**ANSFLU_INITIALIZE_METHOD:** The ``ANSFLU_INITIALIZE_METHOD`` is used to set the initiation method. The default is "hybrid". 
 There is: `none`, `hybrid`, `standard`, `custom`. The default is `hybrid`. If `custom` is set you have to define the 
-TUI initalization command in the ``ANSFLU_INITIALIZE_METHOD_CUSTOM`` environmental variable.
+TUI initialisation command in the ``ANSFLU_INITIALIZE_METHOD_CUSTOM`` environmental variable.
 
 For example: 
 
@@ -216,12 +216,12 @@ An example of a workbench based simulation run:
 There can be only a single ``.wbpj`` workbench file present in that directory at a time. 
 No job completion information is given while the simulation(s) are underway.
 
-Example SLURM files are given (see above) to submit jobs to the SLURM job manager.
+Example Slurm files are given (see above) to submit jobs to the Slurm job manager.
 
 ## Home directory quota constraints
 
 
-A quota system is in place on Aoraki that limits the data in a users home directory to 15GB. This can be easy exceeded with CFD simulations with large datasets and multiple runs. 
+A quota system is in place on Aoraki that limits the data in a user's home directory to **{{ home_quota }}**. This can be easily exceeded with CFD simulations with large datasets and multiple runs. See [Storage and Quotas](../../../general/faq/disk_usage.md) for how to check what you are using. 
 The possible solutions involve moving your data onto another storage medium (Ohau or HCS) and running the container from that directory. 
 
 
@@ -237,7 +237,7 @@ Fluent TUI commands (text commands within Fluent):
 Journaling and Scripting within Fluent (basics):
 [https://www.afs.enea.it/project/neptunius/docs/fluent/html/wbug/node45.htm](https://www.afs.enea.it/project/neptunius/docs/fluent/html/wbug/node45.htm)
 
-Running Fluent on a different HPC cluster using SLURM:
+Running Fluent on a different HPC cluster using Slurm:
 [https://www.hkhlr.de/sites/default/files/field_download_file/HKHLR-HowTo-Ansys_Fluent.pdf](https://www.hkhlr.de/sites/default/files/field_download_file/HKHLR-HowTo-Ansys_Fluent.pdf)
 
 Starting Parallel Ansys Fluent on a Linux System: 

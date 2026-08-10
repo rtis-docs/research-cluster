@@ -29,6 +29,28 @@ It provides essential computing support to the global structural biology communi
  
 ## SBGrid on the Research Cluster
 
+### SBgrid Tools
+
+To use SBGrid Tools, execute the following command `source /programs/sbgrid.shrc`  
+ 
+!!! note
+    To make this permanent, add the above command to your `.bashrc`
+
+
+
+To load SBGrid software using the **SBGrid tools** instead of modules see
+[SBGrid Getting Started](https://sbgrid.org/wiki/getting_started) 
+
+`source /programs/sbgrid.shrc`
+
+Once you are in the SBGrid environment you can use all SBGrid commands.
+
+[https://sbgrid.org/wiki/examples](https://sbgrid.org/wiki/examples)
+
+[SBGrid youtube](https://www.youtube.com/user/SBGridTV)
+
+
+
 
 ### Modules
 
@@ -38,7 +60,7 @@ To use SBGrid via modules, use the following command `export MODULEPATH=/program
     To make this permanent, add the above command to your `.bashrc`
 
 Module Examples:
-Once the modulepath is loaded as above `module avail` will list all modules including SBGrid, Spack, and RTIS custom modules 
+Once the modulepath is loaded as above `module avail` will list all modules including SBGrid, Spack, and eResearch Support custom modules 
 
 `module spider alphafold` will search for all module packages include the SBGrid packages
 
@@ -72,25 +94,8 @@ To load a specific version use `module load sbgrid/alphafold/2.1.2`
 To show which versions are loaded `module list`
 
 
-### SBgrid Tools
-
-To use SBGrid Tools, execute the following command `source /programs/sbgrid.shrc`  
- 
-!!! note
-    To make this permanent, add the above command to your `.bashrc`
 
 
-
-To load SBGrid software using the **SBGrid tools** instead of modules see
-[SBGrid Getting Started](https://sbgrid.org/wiki/getting_started) 
-
-`source /programs/sbgrid.shrc`
-
-Once you are in the SBGrid environment you can use all SBGrid commands.
-
-[https://sbgrid.org/wiki/examples](https://sbgrid.org/wiki/examples)
-
-[SBGrid youtube](https://www.youtube.com/user/SBGridTV)
  
 !!! related-pages "What's next?"
       - Looking for something else? See [Software Overview page](../index.md)

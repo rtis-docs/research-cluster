@@ -14,7 +14,7 @@ When you submit an array job, Slurm schedules multiple tasks, each with a differ
 
 Inside your job script, you can use the task ID to select input files, set parameters, or control the behavior of each task.
 
-## Useful SLURM Variables
+## Useful Slurm Variables
 
 Slurm provides several environment variables you can use in your scripts:
 

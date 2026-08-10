@@ -55,7 +55,7 @@ Once on the node:
 ## GPU Mode (Requires GPU Node)
 
 
-To use GPU acceleration, you must be on a GPU-capable node and request a GPU using SLURM.
+To use GPU acceleration, you must be on a GPU-capable node and request a GPU using Slurm.
 
 Set `USE_GPU=1` before loading the module to enable GPU support:
 
@@ -79,7 +79,7 @@ Then:
     M2
     ```
 
-GPU SLURM Batch Job Example:
+GPU Slurm Batch Job Example:
 
 Create a file named ``macaulay2_gpu.slurm`` with the following content:
 
@@ -120,7 +120,7 @@ Submit the job:
   Ensure the module is loaded.
 
 - GPU not detected:
-  Make sure you set ``export USE_GPU=1`` *before* loading the module, and requested a GPU in your SLURM job.
+  Make sure you set ``export USE_GPU=1`` *before* loading the module, and requested a GPU in your Slurm job.
 
 - To verify GPU access inside the container:
 

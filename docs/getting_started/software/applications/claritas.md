@@ -39,7 +39,7 @@ The GUI can be accessed [via the Open OnDemand Applications](https://ondemand.ot
 
 ## Commandline tools
 
-GLOBEClaritas is made available on the cluster as a shared [Apptainer]({{apptainer}}) container image. Commandline tools have to be run within the context of the container.
+GLOBEClaritas is made available on the cluster as a shared [Apptainer](../software_environments/apptainer.md) container image. Commandline tools have to be run within the context of the container.
 
 You can use the `apptainer/GLOBEClaritas` module to add convenient wrapper aliases to any of the Claritas binaries. i.e.
 
@@ -54,12 +54,12 @@ You can use the `apptainer/GLOBEClaritas` module to add convenient wrapper alias
 The aliases will also bind-mount the GLOBEClaritas projects registry path (`$CLARITAS_PROJECTS`, which is set to `$HOME/.claritas/projects` by default) as well as the 
 license server file (`$CLARITAS_LICENSE`, set to `$HOME/.claritas/serverReference.lic` by default) into the container. **Both of these files need to exist in order to run any commands in the container.**
 
-To use aliases in a non-interactive/SLURM batch script, add the following in your script before using the alias:
+To use aliases in a non-interactive/Slurm batch script, add the following in your script before using the alias:
 
 !!! terminal
     
     ```bash    
-    # The following is required to use aliases in a non-interactive/SLURM batch script:
+    # The following is required to use aliases in a non-interactive/Slurm batch script:
     shopt -s expand_aliases
     module load apptainer/GLOBEClaritas
     ```

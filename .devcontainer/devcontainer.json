@@ -7,20 +7,29 @@
 	"features": {
 		"ghcr.io/devcontainers-extra/features/mkdocs:2": {},
 		"ghcr.io/devcontainers-extra/features/pipenv:2": {}
-	}
-
+	},
+	"mounts": [
+		"source=${env:SSH_AUTH_SOCK},target=/ssh-agent,type=bind",
+		"source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind"
+	],
+	"remoteEnv": {
+		"SSH_AUTH_SOCK": "/ssh-agent"
+	},
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "pip3 install --user -r requirements.txt",
-
 	// Configure tool-specific properties.
 	// "customizations": {},
-
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"python.defaultInterpreterPath": "/workspaces/rtis_mkdocs/venv/bin/python"
+			}
+		}
+	}
 }

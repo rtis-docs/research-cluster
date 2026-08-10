@@ -19,7 +19,7 @@ If you are looking to only manage python packages, consider the use of [venv](ve
 
 ### Loading Conda
 
-Conda is available through the [module system]( {{modules}} )
+Conda is available through the [module system](modules.md)
 
 !!! terminal
     ```bash
@@ -31,9 +31,9 @@ This will load the latest version of conda installed on the system.
 
 !!! note
 
-    After loading conda, `source $(conda info --base)/etc/profile.d/conda.sh` is needed to load the conda functions into your environment and needs to be done everytime the miniconda module is loaded. This is done instead of using `conda init`. The use of `conda init` is not recommended as it hard codes a specific version of conda into your bashrc which can cause issues if you are not managing the installation of conda yourself.
+    After loading conda, `source $(conda info --base)/etc/profile.d/conda.sh` is needed to load the conda functions into your environment and needs to be done every time the miniconda module is loaded. This is done instead of using `conda init`. The use of `conda init` is not recommended as it hard codes a specific version of conda into your bashrc which can cause issues if you are not managing the installation of conda yourself.
 
-    This also mirrors the requirement for when using conda in a slurm script as your bashrc is not parsed as part of a SLURM job.
+    This also mirrors the requirement for when using conda in a slurm script as your bashrc is not parsed as part of a Slurm job.
 
 #### Self installing
 
@@ -75,7 +75,7 @@ By default conda will download the code for packages into a cache in your home d
 
 #### Bioconda
 
-Bioconda ([https://bioconda.github.io](https://bioconda.github.io)) is a popular repository for bioinformatic software. To be able to make use of the bioconda repository you must configure conda to know about it. The following commands are from [https://bioconda.github.io/#usage](https://bioconda.github.io/#usage) and will configure conda to search and download from the bioconda repositiory when installing into enivronments.
+Bioconda ([https://bioconda.github.io](https://bioconda.github.io)) is a popular repository for bioinformatic software. To be able to make use of the bioconda repository you must configure conda to know about it. The following commands are from [https://bioconda.github.io/#usage](https://bioconda.github.io/#usage) and will configure conda to search and download from the bioconda repository when installing into environments.
 
 !!! terminal
     ```bash
@@ -86,13 +86,49 @@ Bioconda ([https://bioconda.github.io](https://bioconda.github.io)) is a popular
 
 These commands modify your `~/.condarc` file.
 
+#### Finding Bioinformatics Packages
+
+Between them, [Bioconda](https://bioconda.github.io) and
+[conda-forge](https://conda-forge.org/) carry most of the standard bioinformatics toolkit — read
+aligners, variant callers, file format utilities, GWAS tools, transcriptomics and assembly
+software, and the usual visualisation packages. If a tool is widely used, it is worth checking
+conda before asking us to install it.
+
+The easiest way to find out whether something is packaged is to search from the command line:
+
+!!! terminal
+
+    ```bash
+    # search every channel you have configured
+    conda search plink
+
+    # restrict the search to bioconda
+    conda search -c bioconda plink
+
+    # mamba works the same way and is considerably faster
+    mamba search plink
+    ```
+
+To browse rather than search, the [Bioconda](https://anaconda.org/bioconda) and
+[conda-forge](https://anaconda.org/conda-forge) channel listings on anaconda.org are easier to
+read than the command line.
+
+Listing an entire channel is possible but produces thousands of lines, so pipe it through `grep`
+if you are looking for something whose name you only half remember:
+
+!!! terminal
+
+    ```bash
+    conda search -c bioconda "*" | grep vcftools
+    ```
+
 ## Conda environments
 
 Conda environments let you manage software (and it's dependencies). Ultimately, conda install software into specific directories and then alters your `PATH` for you to make them accessible. To utilise an environment it must first exist, and then be activated. 
 
 There are two types of environments: _named_ and _prefix_. 
 
-- _Named_ environments are installed within your home directory (subdirectories within `~/.conda/envs`) and will let you activiate by `conda activate <environment_name>`.
+- _Named_ environments are installed within your home directory (subdirectories within `~/.conda/envs`) and will let you activate by `conda activate <environment_name>`.
 
 - _Prefix_ environments are installed into the location you specify at creation. If this location is accessible by others, they too can use the environment. For reproducibility it is useful to create an environment in a project directory and use that for operating on data there. When you change to a different project, you can activate the corresponding environment. This lets you manage your software at the project level.
 
@@ -114,7 +150,7 @@ Although once you have activated the base conda environment, you can in principl
 
     To save home directory storage space, it is recommended to create Conda environments in a shared project directory. 
     This approach allows you to manage your Conda environments within your project directory and if needed share them with collaborators.
-    If you do not yet have a shared project directory, please contact RTIS Solutions to request one.
+    If you do not yet have a shared project directory, please email the eResearch Support Solutions team ({{support_email}}) to request one.
 
 
 To create a named environment (for example, called "myenv"), ensure that the base environment is activated (the command prompt should start with "(base) "), and type:
@@ -293,10 +329,10 @@ your shell will find pip in your base environment, which will lead to pip packag
 Explicitly installing pip into your sub-environment will guard against this.    
 
 
-## Using conda with SLURM
+## Using conda with Slurm
 
 
-In order to use conda environments within your slurm script you need to source the conda profile script so that the conda paths get set.
+In order to use conda environments within your Slurm script you need to source the conda profile script so that the conda paths get set.
 
 !!! terminal
     
@@ -322,7 +358,7 @@ In order to use conda environments within your slurm script you need to source t
 ### Adding custom conda environments to Jupyter
 
 On the commandline, first create a conda environment and install the packages/software you wish into it. 
-Then add the `ipykernel` and register it with Juptyer.
+Then add the `ipykernel` and register it with Jupyter.
 
 !!! terminal
     

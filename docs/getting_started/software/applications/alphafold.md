@@ -3,14 +3,14 @@
 _[AlphaFold](https://github.com/deepmind/alphafold)_ is an AI system developed by DeepMind that makes 
 state-of-the-art accurate predictions of a protein's structure from its amino-acid sequence.
 
-AlphaFold is made available on the cluster as a shared [Apptainer]({{apptainer}}) container image. 
+AlphaFold is made available on the cluster as a shared [Apptainer](../software_environments/apptainer.md) container image. 
 This should be run on a **GPU Compute** partition.
 
 You can use the `apptainer/alphafold2` module to add a convenient alias: `run_alphafold_apptainer`, which will run 
 the `run_alphafold.py` within the container;
 The alias will also bind-mount the AlphaFold database base path (`$AF2DB`, which is set to `/opt/alphafold_databases/`) into the container on `/db`.
 
-To use the `run_alphafold_apptainer` alias in a non-interactive/SLURM batch script, add the following in your script before using the alias:
+To use the `run_alphafold_apptainer` alias in a non-interactive/Slurm batch script, add the following in your script before using the alias:
 
 !!! terminal
     ```bash
