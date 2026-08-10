@@ -162,11 +162,7 @@ Two things to keep in mind while you do:
 - **The defaults are modest.** Without `--mem` you get 2 GB per core; without `--time` you get the partition's default, usually 8 hours. See [What you get by default](../running_jobs_overview.md#what-you-get-by-default).
 - **A shorter wall time genuinely starts sooner.** Slurm backfills short jobs into gaps in the schedule, so `--time=01:00:00` finds many more opportunities than `--time=3-00:00:00`.
 
-<<<<<<< HEAD
-Which partition to use, and the per-job limits that apply to each, are in the [Cluster Overview](../../../getting_started/overview.md). [Current Utilisation](../../current_utilisation.md) shows what is busy right now.
-=======
 Which partition to use, and the per-job limits that apply to each, are in the [Cluster Overview](../../overview.md). [Current Utilisation](../../current_utilisation.md) shows what is busy right now.
->>>>>>> bee4f213358f539a530dcc7d94b8a392cfc04f9a
 
 [All the options in detail :material-arrow-right:](sbatch_options.md){ .md-button }
 

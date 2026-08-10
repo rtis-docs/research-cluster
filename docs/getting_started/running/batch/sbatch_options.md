@@ -72,11 +72,7 @@ The complete list is in the [Slurm `sbatch` documentation](https://slurm.schedmd
 | `--time=2-00:00:00` | 2 days |
 | `--time=1-12:30:00` | 1 day, 12 hours, 30 minutes |
 
-<<<<<<< HEAD
-You cannot ask for more than the partition's maximum — the job is rejected at submission. Maximum wall times per partition are in the [Cluster Overview](../../../getting_started/overview.md).
-=======
 You cannot ask for more than the partition's maximum — the job is rejected at submission. Maximum wall times per partition are in the [Cluster Overview](../../overview.md).
->>>>>>> bee4f213358f539a530dcc7d94b8a392cfc04f9a
 
 ## Memory
 
