@@ -62,7 +62,11 @@ What each part does:
 
 - `executor = 'slurm'` is the setting that matters. Without it, nothing reaches the scheduler.
 - `queue` is the Slurm partition. `aoraki` is the general-purpose one; see the
+<<<<<<< HEAD
   [Cluster Overview](../../../getting_started/overview.md) for the others.
+=======
+  [Cluster Overview](../../overview.md) for the others.
+>>>>>>> bee4f213358f539a530dcc7d94b8a392cfc04f9a
 - The `gpu` label block is covered under [GPU Processes](#gpu-processes) below.
 - `queueSize` and `submitRateLimit` are covered under
   [How Many Jobs at Once](#how-many-jobs-at-once).

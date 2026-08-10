@@ -5,7 +5,11 @@ ignore:
   - access/coldfront.md
 nav:
   - "index.md"
+<<<<<<< HEAD
   - "Getting Started": "getting_started"
+=======
+  - "Getting Started": "getting_started/"
+>>>>>>> bee4f213358f539a530dcc7d94b8a392cfc04f9a
   - "general"
   - "storage"
   - "Other Services": "other_services"

@@ -36,7 +36,11 @@ Table: What a job gets on Aoraki when you do not ask for something specific
 
 | If you do not set… | You get | Notes |
 | :-- | :-- | :-- |
+<<<<<<< HEAD
 | `--partition` | `aoraki` | 27 general-purpose nodes. See [Partitions](../../getting_started/overview.md#partitions). |
+=======
+| `--partition` | `aoraki` | 27 general-purpose nodes. See [Partitions](../overview.md#partitions). |
+>>>>>>> bee4f213358f539a530dcc7d94b8a392cfc04f9a
 | `--time` | The partition's default: **8 hours** on most, 1 hour on `aoraki_short`, 24 hours on `aoraki_long` | Your job is killed at the limit, so set this deliberately. |
 | `--mem` or `--mem-per-cpu` | **2 GB per allocated CPU** | A 4-core job gets 8 GB unless you say otherwise. |
 | `--cpus-per-task` | 1 core | |
@@ -86,4 +90,8 @@ A common and sensible pattern is to use both: work out the shape of your analysi
     - To submit your first batch job, see the [Slurm Quickstart](batch/slurm_quickstart.md)
     - For the full list of `#SBATCH` options and their Aoraki defaults, see [Job Script Options](batch/sbatch_options.md)
     - To check whether you asked for the right amount, see [Job Efficiency](efficiency.md)
+<<<<<<< HEAD
     - For the partitions, hardware and limits, see the [Cluster Overview](../../getting_started/overview.md)
+=======
+    - For the partitions, hardware and limits, see the [Cluster Overview](../overview.md)
+>>>>>>> bee4f213358f539a530dcc7d94b8a392cfc04f9a

@@ -43,7 +43,11 @@
   Enabled the L40 GPU Nodes for use in OnDemand desktop environments.
 
 !!! related-pages "What's next?"
+<<<<<<< HEAD
     - [General Cluster Overview](../getting_started/overview.md)
+=======
+    - [General Cluster Overview](../../getting_started/overview.md)
+>>>>>>> bee4f213358f539a530dcc7d94b8a392cfc04f9a
     - [Slurm Overview](../../getting_started/running/batch/slurm_quickstart.md)
     - [Weka](../../storage/data_locations/weka.md)
 
