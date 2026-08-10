@@ -14,11 +14,11 @@ We have opted to make [WhisperX](https://github.com/m-bain/whisperX) available; 
 
 WhisperX is available on campus via:
 
-  * whisperx-web (whisper.uod.otago.ac.nz) – A basic, user-friendly web application, that allows anyone on-campus to easily drop a media file and get a resulting transcript returned
+  * whisperx-web – A basic, user-friendly web application, that allows anyone on-campus to easily drop a media file and get a resulting transcript returned
   * a WhisperX OnDemand application on the eResearch OnDemand cluster – For power-users wanting more control over the transcription process
 
 
-### whisperx-web (whisper.uod.otago.ac.nz)
+### whisperx-web
 
 [https://whisper.uod.otago.ac.nz](https://whisper.uod.otago.ac.nz)
 
