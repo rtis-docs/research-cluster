@@ -14,11 +14,11 @@ We have opted to make [WhisperX](https://github.com/m-bain/whisperX) available; 
 
 WhisperX is available on campus via:
 
-  * whisperx-web (whisper.uod.otago.ac.nz) -- A basic, user-friendly web application, that allows anyone on-campus to easily drop a media file and get a resulting transcript returned
-  * a WhisperX OnDemand application on the eResearch OnDemand cluster -- For power-users wanting more control over the transcription process
+  * whisperx-web – A basic, user-friendly web application, that allows anyone on-campus to easily drop a media file and get a resulting transcript returned
+  * a WhisperX OnDemand application on the eResearch OnDemand cluster – For power-users wanting more control over the transcription process
 
 
-### whisperx-web -- whisper.uod.otago.ac.nz
+### whisperx-web
 
 [https://whisper.uod.otago.ac.nz](https://whisper.uod.otago.ac.nz)
 
@@ -30,20 +30,19 @@ This is a new, experimental web application currently being trialled and under a
 
 A select number of settings is available under the `Settings` button;
 
-  * Mode -- `Transcribe` (default) writes the speech down in the language it was spoken in. `Translate` uses Whisper's built-in speech translation, which always outputs English.
-  * Language -- The main source language of the recording. Can be set to `Autodetect` to detect the language based on the first few seconds of audio, but defaults to English.
-  * Speaker diarisation -- Identify and label the different speakers.
+  * Mode – `Transcribe` (default) writes the speech down in the language it was spoken in. `Translate` uses Whisper's built-in speech translation, which always outputs English.
+  * Language – The main source language of the recording. Can be set to `Autodetect` to detect the language based on the first few seconds of audio, but defaults to English.
+  * Speaker diarisation – Identify and label the different speakers.
     * Min speakers / max speakers are optional hints for diarisation. Leave blank to let the model detect the speaker count itself.
-  * Initial prompt -- Add context to steer the transcript in a particular direction. This is useful to enforce particular spellings, use of specific words, or specify otherwise ambiguous styles.
+  * Initial prompt – Add context to steer the transcript in a particular direction. This is useful to enforce particular spellings, use of specific words, or specify otherwise ambiguous styles.
 
 
 #### Input
-Most audio/video media file formats are supported. Audio quality, background noise, overlapping conversations, etc. will most likely lead to poorer transcription results.
-
-Uploaded media files are deleted from disk as soon as they are processed.
+* Most audio/video media file formats are supported. Audio quality, background noise, overlapping conversations, etc. will most likely lead to poorer transcription results.
+* Uploaded media files are deleted from disk as soon as they are processed.
 
 #### Output
-Generated transcripts are automatically downloaded upon completion, and accessible via the unique random link for up to 7 days before being scrubbed.
+Generated transcripts in plaintext format are automatically downloaded upon completion, and accessible via the unique random link for up to 7 days before being scrubbed.
 
 
 
@@ -78,7 +77,7 @@ Generated transcripts are automatically downloaded upon completion, and accessib
 
 * Speaker diarisation (i.e. *"who spoke when"*) can be enabled by ticking the 'Diarisation' option (See [Speaker diarisation](#speaker-diarisation) below). Set the 'Diarisation - Speakers' field to the number of speaker if known (which improves accuracy), or set to `0` to enable automatic detection.
 
-  * The diarisation process will add additional processing time after the transcription phase, and progress currently is not reflected in the user interface; i.e. The progress bar will just appear to hang at 100% -- Be patient.
+  * The diarisation process will add additional processing time after the transcription phase, and progress currently is not reflected in the user interface; i.e. The progress bar will just appear to hang at 100% – Be patient.
 
 * Other settings can be left as default. Click the 'Submit' button when ready to start.
 
@@ -142,7 +141,7 @@ When diarisation is enabled, different speakers will be identified and labeled i
 
 To enable this, select the 'Speaker diarisation' checkbox, and if known, always try to set the number of (min/max) speakers for improved accuracy. 
 
-The speaker diarisation process will add significant additional processing time after the transcription phase -- Be patient.
+The speaker diarisation process will add significant additional processing time after the transcription phase – Be patient.
 
 Speaker identification is not perfect, particularly in challenging audio conditions. The accuracy of the speaker labeling:
 
