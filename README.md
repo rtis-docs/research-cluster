@@ -47,6 +47,11 @@ In the output look for messages about pages containing links but there is no suc
 
 ## Conventions
 
+### Peer-review vs merge straight in
+
+New pages, small modifications or expansions of a page(s) (e.g. straight forward edits) can be merged straight in and for things that are substantial re-writes or structural/layout changes a peer-review on the pull request should be requested so implications of the change can be discussed.
+
+
 ### Including support email
 
 In all places where the support/contact email is being referenced use the variable `{{support_email}}` which will substitute in the correct mailto link and gives a single location where we can update the email address if needed.
@@ -65,3 +70,11 @@ Try to limit commits to a single feature or type of change and avoid combining u
 ### Capitalisation
 
 Use "Slurm" and "OnDemand" to remain consistent with how those products refer to themselves. 
+
+
+### Navigation bar and `.nav.yml`
+
+Where possible use a H1 heading at the top of the specific page, rather than customising the page name within `.nav.yml`
+
+Use a `.nav.yml` in the directory to alter how the structure of the navigation behaves. If moving a page, make sure to update the `.nav.yml` of the source and target directories (where applicable).
+
