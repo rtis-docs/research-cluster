@@ -153,4 +153,6 @@ Then reload your R session and you can confirm your library path will be used wi
 
 ### Project level libraries with `renv`
 
-If your projects have need for different package versions it would be worth looking into the `renv` package for managing libraries and packages at the project level - [https://rstudio.github.io/renv/articles/renv.html](https://rstudio.github.io/renv/articles/renv.html)
+The approaches above set library paths for you or for a project by hand. If different projects need different versions of the same package, `renv` manages that for you: each project gets its own library, and the exact versions are recorded in a lockfile you can commit and reinstall from later.
+
+See [renv (R Package Environments)](../software_environments/renv.md) for setting this up on the cluster, including how to get prebuilt packages rather than compiling from source, and how to use a project from a Slurm job.

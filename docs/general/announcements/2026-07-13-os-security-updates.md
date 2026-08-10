@@ -8,7 +8,7 @@ We have updated the OS with security updates for all nodes on the cluster using 
 - **Update Type**: OS Security Updates
 - **Scope**: All cluster nodes
 - **Strategy**: Rolling update approach
-- **Status**: Ongoing - nearly complete
+- **Status**: Complete
 
 ### Impact
 This update enhances system security and protects against known vulnerabilities. All nodes have been systematically updated without disrupting cluster operations.
