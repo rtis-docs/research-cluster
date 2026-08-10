@@ -94,7 +94,7 @@ The translate task will translate to English. Translating into languages other t
 
 - Set the model to `large-v3`
 - Set the language to the non-English target language
-- Somewhat counterintuitively, set Task to `transcribe`, not `translate`
+- Somewhat counter-intuitively, set Task to `transcribe`, not `translate`
 - Set VAD to `silero-vad`
 - Set VAD mode to `prepend_first_segment`
 - Optionally, set an initial prompt in the target language (see [Advanced prompting](#advanced-prompting)), such as a prompt that translates to "The following are sentences in {target language}", e.g. "Ce qui suit sont des phrases en français."
