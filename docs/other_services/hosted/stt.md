@@ -10,15 +10,51 @@
 
 [Whisper](https://github.com/openai/whisper) is an open source machine learning model created by OpenAI for speech recognition, transcription and translation. It can be used freely and offline.
 
-We have deployed a basic web user interface using the Whisper model, available on the [eResearch OnDemand cluster](https://ondemand.otago.ac.nz) (as AI models such as Whisper require a lot of compute resources to run) which allows for easy **transcription, subtitling or translation of audio and video recordings**.
+We have opted to make [WhisperX](https://github.com/m-bain/whisperX) available; This is a Whisper-based pipeline that adds additional pre- and post-processing steps to increase accuracy and add speaker identification (diarisation).
 
-### Getting access
+WhisperX is available on campus via:
+
+  * whisperx-web (whisper.uod.otago.ac.nz) -- A basic, user-friendly web application, that allows anyone on-campus to easily drop a media file and get a resulting transcript returned
+  * a WhisperX OnDemand application on the eResearch OnDemand cluster -- For power-users wanting more control over the transcription process
+
+
+### whisperx-web -- whisper.uod.otago.ac.nz
+
+https://whisper.uod.otago.ac.nz
+
+This is a new, experimental web application currently being trialed and under active development.
+
+![whisperx-web](../../assets/images/whisper/whisperx-web.png){width=220}
+
+#### Settings
+
+A select number of settings is available under the `Settings` button;
+
+  * Mode -- `Transcribe` (default) writes the speech down in the language it was spoken in. `Translate` uses Whisper's built-in speech translation, which always outputs English.
+  * Language -- The main source language of the recording. Can be set to `Autodetect` to detect the language based on the first few seconds of audio, but defaults to English.
+  * Speaker diarisation -- Identify and label the different speakers.
+    * Min speakers / max speakers are optional hints for diarisation. Leave blank to let the model detect the speaker count itself.
+  * Initial prompt -- Add context to steer the transcript in a particular direction. This is useful to enforce particular spellings, use of specific words, or specify otherwise ambiguous styles.
+
+
+#### Input
+Most audio/video media file formats are supported. Audio quality, background noise, overlapping conversations, etc. will most likely lead to poorer transcription results.
+
+Uploaded media files are deleted from disk as soon as they are processed.
+
+#### Output
+Generated transcripts are automatically downloaded upon completion, and accessible via the unique random link for up to 7 days before being scrubbed.
+
+
+
+### Otago OnDemand application
+#### Getting access
 
 * [Sign up](https://ask.otago.ac.nz/otagoresearchcluster) for access to the eResearch Compute Cluster if you haven't already.
 
-* Once you are onboarded, browse to [Otago OnDemand](https://ondemand.otago.ac.nz) and find the `Whisper (Speech-to-Text)` app (or follow this [direct link](https://ondemand.otago.ac.nz/pun/sys/dashboard/batch_connect/sys/ood_whisper-webui_apptainer)).
+* Once you are onboarded, browse to [Otago OnDemand](https://ondemand.otago.ac.nz) and find the `WhisperX (Speech-to-Text)` app (or follow this [direct link](https://ondemand.otago.ac.nz/pun/sys/dashboard/batch_connect/sys/ood_whisper-webui_apptainer)).
 
-* In the Whisper app launch form, leave all options as default, and click the 'Launch' button
+* In the WhisperX app launch form, leave all options as default, and click the 'Launch' button
 
 * Wait for the session to get scheduled on one of the cluster nodes; then click the 'Connect to Whisper WebUI' button.
 
@@ -29,7 +65,7 @@ We have deployed a basic web user interface using the Whisper model, available o
 
  
 
-### Transcription quickstart
+#### Transcription quickstart
 
 
 * In the Upload Files tab, drag and drop an audio or video recording file in the 'Drop File here' area, or click to select a file from your local drive. 
@@ -54,7 +90,7 @@ We have deployed a basic web user interface using the Whisper model, available o
 ![Download transcription](../../assets/images/whisper/download.png){width=320}
 
 
-### Translation quickstart
+#### Translation quickstart
 
 
 *For document text-to-text translation, see* [Translation](translate.md).
@@ -69,7 +105,7 @@ For translations it is recommended to select the multilingual `large-v3` model. 
 See [Translation](#translation) below for additional pointers.
 
 
-### Model selection
+#### Model selection
 
 Several trained models are available; Larger models will add accuracy, at the cost of processing time and resource consumption.
 The `small` model has the best quality/accuracy to speed/performance ratio, and is suitable for most English-language transcription use cases.
@@ -80,7 +116,7 @@ Whisper's `large-v2` may perform better for unknown languages.
 When selecting larger models, ensure your OnDemand app session was started with sufficient compute resources.
 
 
-### Processing time
+#### Processing time
 
 * When run for the first time, the latest version of the required AI model(s) will be downloaded to your research home directory on the cluster; This will take some additional time.
 * The model size selected is a crucial factor in the time it will take to transcribe your recording.
@@ -89,22 +125,22 @@ When selecting larger models, ensure your OnDemand app session was started with 
 *As an example: Processing a half hour long interview with the 'medium' model and speaker diarisation enabled, shouldn't take more than 1-2 minutes.*
 
 
-### Input
+#### Input
 
 * Most common audio and video formats are supported
 * Audio quality, background noise, overlapping conversations, etc. will most likely lead to poorer transcription results.
 
 
-### Speaker diarisation
+#### Speaker diarisation
 
 
 Speaker diarisation (i.e. the process of identifying *"who spoke when"*) adds speaker labels to the different segments. It helps readers follow a transcript, and is also essential when having transcripts analysed by an [LLM](llm.md) by adding more structure and context.
 
 Diarisation is not supported by the Whisper model itself, but is implemented as a separate step using a different model and library. The results of the Whisper transcription and diarisation are then "merged" for basic speaker diarization.
 
-When diarisation is enabled, different speakers will be identified and labeled as `SPEAKER_00`, `SPEAKER_01`, etc. in the text output, subtitle files (srt, vtt), and in the HTML output (the latter which will additionally have the different speaker segments colourised for easy reading).
+When diarisation is enabled, different speakers will be identified and labeled in the transcript.
 
-To enable this, select the 'Speaker diarisation' checkbox, and if known, always try to set the number of speakers for improved accuracy. 
+To enable this, select the 'Speaker diarisation' checkbox, and if known, always try to set the number of (min/max) speakers for improved accuracy. 
 
 The speaker diarisation process will add significant additional processing time after the transcription phase -- Be patient.
 
@@ -120,7 +156,7 @@ Speaker identification is not perfect, particularly in challenging audio conditi
 
 
 
-### Translation
+#### Translation
 
 Translation performance varies widely depending on the source language.
 
@@ -131,7 +167,7 @@ The plot below shows WERs for all languages where Whisper `large-v3` performs lo
 ![Plot of WER src: [https://github.com/openai/whisper/discussions/1762](https://github.com/openai/whisper/discussions/1762)](../../assets/images/whisper/table.svg)
 
 
-### Translations to non-English
+#### Translations to non-English
  
 The *translate* task will translate **to English**. 
 Translating into languages other than English wasn't a part of the training objective for the Whisper models.
@@ -146,7 +182,7 @@ However it may still be possible to produce a reasonble non-English translation 
       * e.g. "*Ce qui suit sont des phrases en français.* "
 
 
-### VAD (Voice Activity Detection)
+#### VAD (Voice Activity Detection)
 
 VAD is part of the WhisperX pipeline and enabled by default in the Whisperx version.
 
@@ -156,7 +192,7 @@ English is generally very well handled by Whisper, and it's less susceptible to 
 So you may only need to use a VAD for other languages, or for longer recordings (>10 min).
 
 
-### Advanced prompting
+#### Advanced prompting
 
 It is possible to **steer the model in a specific direction** by using an *initial prompt*. This may be necessary to enforce particular spellings, use of specific words, or specify otherwise ambiguous styles, and this feature can also be used to force non-English translations or transcription. (See [Translation](#translation))
 
@@ -166,7 +202,7 @@ One example: When transcribing Mandarin, adding the following initial prompt "�
 the prompt "以下是普通话的句子。" for simplified Chinese.
 
 
-### Output
+#### Output
 
 * Output formats:
 
@@ -187,19 +223,21 @@ Tip: In VLC, in order to show the subtitle file for an audio file, you may need 
 
 Transcripts could also be fed into [LLM models](llm.md) for further processing, e.g. analysis, categorisation or summarisation. 
 
+
 ### Known issues and limitations
 
 * Speaker identification is not perfect. See [Speaker diarisation](#speaker-diarisation)` above.
 * There are some particular quirks that may occasionally happen when using these ASR AI models, such as getting stuck in a loop of repeating text, or interpretation of background noise or silence as 'text'. This should be greatly reduced in the WhisperX version.
 
 
-
 ### Technical details
 
+* whisperx-web
+  * Codebase is available at [https://github.com/gimmw/whisperx-web] and maintained in-house. This is a heavily modified fork of [https://github.com/one-among-us/whisper-web].
 
-The frontend application is developed in the [Gradio](https://www.gradio.app/) framework.
+* OnDemand app
+  * The frontend application is developed in the [Gradio](https://www.gradio.app/) framework.
 The WhisperX version UI code is available at [https://github.com/gimmw/c3-whisperx-gradio](https://github.com/gimmw/c3-whisperx-gradio), a customised fork of [https://github.com/comput3ai/c3-whisperx-gradio](https://github.com/comput3ai/c3-whisperx-gradio) that uses the [WhisperX]https://github.com/m-bain/whisperX) pipeline.
+  * The code repository for the legacy `aadnk` version can be found at [https://github.com/gimmw/whisper-webui-diarisation](https://github.com/gimmw/whisper-webui-diarisation)
 
-The code repository for the `aadnk` version can be found at [https://github.com/gimmw/whisper-webui-diarisation](https://github.com/gimmw/whisper-webui-diarisation); This is a customised fork of [https://gitlab.com/aadnk/whisper-webui](https://gitlab.com/aadnk/whisper-webui) using [faster-whisper](https://github.com/SYSTRAN/faster-whisper) and [pyannote](https://github.com/pyannote) for segmentation and speaker diarisation.
-
-All of the code used is free & open source software, and [OpenAI Whisper](https://openai.com/index/whisper/)'s code and model weights are released under the MIT License.
+All of the code used and distributed is free & open source software, and [OpenAI Whisper](https://openai.com/index/whisper/)'s code and model weights are released under the MIT License.
