@@ -246,9 +246,5 @@ Inside a running job, Slurm sets variables describing what you were actually giv
     - To submit your first job, see the [Slurm Quickstart](slurm_quickstart.md)
     - To check whether your request matched what the job used, see [Job Efficiency](../efficiency.md)
     - For worked scripts, see [Array Jobs](slurm_examples/array-slurm.md), [GPU Jobs](slurm_examples/gpu-slurm.md), [R Jobs](slurm_examples/r-slurm.md) and [Dependent Jobs](slurm_examples/dependent_jobs.md)
-<<<<<<< HEAD
-    - For partitions, hardware and per-job limits, see the [Cluster Overview](../../../getting_started/overview.md)
-=======
     - For partitions, hardware and per-job limits, see the [Cluster Overview](../../overview.md)
->>>>>>> bee4f213358f539a530dcc7d94b8a392cfc04f9a
     - The complete option reference is at [slurm.schedmd.com/sbatch.html](https://slurm.schedmd.com/sbatch.html)
