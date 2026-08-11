@@ -688,9 +688,9 @@
     },
     {
       "id": 121,
-      "type": "timeseries",
-      "title": "GPU utilisation, by model",
-      "description": "Whether the GPUs are actually computing, averaged across each model. This is a different question from whether they are allocated: a GPU can be held by a job and sit at 0%.",
+      "type": "bargauge",
+      "title": "GPU utilisation by model, 24 hour average",
+      "description": "How hard each GPU model has actually been working, averaged over the last 24 hours and across every GPU of that model. This is a different question from whether the GPUs are allocated: a GPU can be held by a job and sit at 0%. Models with only one or two GPUs swing a long way on a single job. Only the cluster compute nodes are counted; the standalone workstations (the TITAN V and the RTX 3090s) are excluded.",
       "datasource": {
         "type": "prometheus",
         "uid": "UeV7jcYVk"
@@ -698,21 +698,121 @@
       "gridPos": {
         "x": 0,
         "y": 45,
+        "w": 24,
+        "h": 9
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "min": 0,
+          "max": 100,
+          "color": {
+            "mode": "thresholds"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 50
+              },
+              {
+                "color": "orange",
+                "value": 75
+              },
+              {
+                "color": "red",
+                "value": 90
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "displayMode": "gradient",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "",
+          "values": true
+        },
+        "showUnfilled": true,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "valueMode": "color",
+        "namePlacement": "auto",
+        "sizing": "auto"
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "UeV7jcYVk"
+          },
+          "editorMode": "code",
+          "expr": "label_replace(avg by (modelName) (avg_over_time(DCGM_FI_DEV_GPU_UTIL{instance=~\"rtis-hpc-r.*\"}[24h])), \"modelName\", \"$1\", \"modelName\", \"NVIDIA (.*)\")",
+          "refId": "A",
+          "instant": true,
+          "range": false,
+          "format": "table"
+        }
+      ],
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true
+            }
+          }
+        },
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "field": "Value",
+                "desc": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 124,
+      "type": "timeseries",
+      "title": "GPU utilisation trend, by model",
+      "description": "The same measurement as the bar gauge above, as a one hour moving average so the lines are readable. Raw GPU utilisation is sampled every five seconds and swings between 0 and 100%, which is why the legend reports the mean over the window rather than the latest value. Only the cluster compute nodes are counted; the standalone workstations (the TITAN V and the RTX 3090s) are excluded.",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "UeV7jcYVk"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 54,
         "w": 12,
         "h": 9
       },
       "fieldConfig": {
         "defaults": {
           "unit": "percent",
+          "min": 0,
           "custom": {
             "drawStyle": "line",
             "lineInterpolation": "smooth",
             "lineWidth": 2,
-            "fillOpacity": 10,
+            "fillOpacity": 0,
             "showPoints": "never",
             "spanNulls": true,
             "axisPlacement": "auto",
-            "gradientMode": "opacity",
+            "gradientMode": "none",
             "scaleDistribution": {
               "type": "linear"
             }
@@ -738,9 +838,11 @@
           "placement": "right",
           "showLegend": true,
           "calcs": [
-            "lastNotNull",
+            "mean",
             "max"
-          ]
+          ],
+          "sortBy": "Mean",
+          "sortDesc": true
         },
         "tooltip": {
           "mode": "multi",
@@ -754,7 +856,7 @@
             "uid": "UeV7jcYVk"
           },
           "editorMode": "code",
-          "expr": "avg by (modelName) (DCGM_FI_DEV_GPU_UTIL)",
+          "expr": "label_replace(avg by (modelName) (avg_over_time(DCGM_FI_DEV_GPU_UTIL{instance=~\"rtis-hpc-r.*\"}[1h])), \"modelName\", \"$1\", \"modelName\", \"NVIDIA (.*)\")",
           "legendFormat": "{{modelName}}",
           "refId": "A",
           "instant": false,
@@ -773,7 +875,7 @@
       },
       "gridPos": {
         "x": 12,
-        "y": 45,
+        "y": 54,
         "w": 12,
         "h": 9
       },
@@ -850,7 +952,7 @@
       },
       "gridPos": {
         "x": 0,
-        "y": 54,
+        "y": 63,
         "w": 24,
         "h": 7
       },
