@@ -368,6 +368,13 @@ li.md-nav__item--active:not(li.md-nav__item--nested) {
   min-height: 24rem;
 }
 
+/* Per-node panels carry a single line each, so they gain nothing from filling a wide
+   window. Cap them at the 850x400 these embeds used before they were made responsive. */
+.grafana-panel--compact {
+  max-width: 53rem;
+  aspect-ratio: 17 / 8;
+}
+
 /* Phones cannot show a wide time series usefully at 16:8, so give it more height. */
 @media screen and (max-width: 44.9375em) {
   .grafana-panel,
