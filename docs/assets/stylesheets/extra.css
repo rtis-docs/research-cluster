@@ -369,10 +369,17 @@ li.md-nav__item--active:not(li.md-nav__item--nested) {
 }
 
 /* Per-node panels carry a single line each, so they gain nothing from filling a wide
-   window. Cap them at the 850x400 these embeds used before they were made responsive. */
+   window. Cap them at the 850x400 these embeds used before they were made responsive.
+
+   In pixels, deliberately. Material sets html{font-size:125%} and steps it to 137.5% and
+   then 150% on wide viewports, so 1rem is 20-24px rather than 16 and a rem-based cap grows
+   on exactly the large screens it is meant to rein in. min-height has to be cleared for the
+   same reason: the 18rem inherited above is 360px at the default scale but 540px at 150%,
+   which would override the aspect ratio and make these taller than they are wide. */
 .grafana-panel--compact {
-  max-width: 53rem;
-  aspect-ratio: 17 / 8;
+  max-width: 850px;
+  aspect-ratio: 850 / 400;
+  min-height: 0;
 }
 
 /* Phones cannot show a wide time series usefully at 16:8, so give it more height. */
