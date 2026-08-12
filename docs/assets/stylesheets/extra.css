@@ -369,10 +369,20 @@ li.md-nav__item--active:not(li.md-nav__item--nested) {
 }
 
 /* Per-node panels carry a single line each, so they gain nothing from filling a wide
-   window. Cap them at the 850x400 these embeds used before they were made responsive. */
-.grafana-panel--compact {
-  max-width: 53rem;
-  aspect-ratio: 17 / 8;
+   window. Cap them at the 850x400 these embeds used before they were made responsive.
+
+   The .md-typeset prefix is load-bearing. Material ships `.md-typeset iframe{max-width:100%}`,
+   which at 0-1-1 outranks a bare `.grafana-panel--compact` at 0-1-0 and throws the cap away -
+   the panels keep the aspect ratio set here, because Material sets none, and so come out the
+   right shape at the full column width. Qualifying takes this to 0-2-0 and it wins.
+
+   min-height: 0 clears the 18rem inherited above, which is 360px at Material's default
+   html{font-size:125%} and 540px once that steps up to 150% on a wide viewport. Left in, it
+   would beat the aspect ratio and leave these taller than they are wide. */
+.md-typeset .grafana-panel--compact {
+  max-width: 850px;
+  aspect-ratio: 850 / 400;
+  min-height: 0;
 }
 
 /* Phones cannot show a wide time series usefully at 16:8, so give it more height. */

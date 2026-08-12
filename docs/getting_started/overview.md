@@ -1,4 +1,4 @@
-# Aoraki HPC Cluster
+# Research Cluster (Aoraki)
 
 !!! overview "On this Page"
       - What the Aoraki Research Cluster is and how it is put together
