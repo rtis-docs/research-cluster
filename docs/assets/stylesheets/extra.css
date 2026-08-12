@@ -400,3 +400,76 @@ li.md-nav__item--active:not(li.md-nav__item--nested) {
   grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
   gap: 0 1rem;
 }
+
+/* A pair of machine-room photographs shown side by side - the front of the rack row, and the
+   same row from behind. The two come off the camera at different shapes (4:3 and roughly 6:5),
+   so both are cropped to a common 4:3 with object-fit rather than left to set their own
+   heights, which would drop the two captions onto different lines.
+
+   Every selector here is qualified with .md-typeset. Material ships `.md-typeset img` and
+   `.md-typeset figcaption` rules of its own, and at 0-1-1 those outrank a bare class at 0-1-0 -
+   the same trap that made the Grafana panel cap silently do nothing for two commits. */
+.md-typeset .photo-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.2rem 0 1.6rem;
+}
+
+.md-typeset .photo-pair figure {
+  margin: 0;
+}
+
+.md-typeset .photo-pair img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0.3rem;
+  box-shadow: 0 0.15rem 0.5rem rgba(0, 0, 0, 0.28);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.md-typeset .photo-pair figure:hover img {
+  transform: translateY(-0.15rem);
+  box-shadow: 0 0.35rem 0.9rem rgba(0, 0, 0, 0.35);
+}
+
+/* Material centres figcaptions and caps them at 24rem, which under a half-width photo wraps
+   into a narrow ragged column. These read as labels on the photo above, so left-align them
+   against the image edge and mark them with the header blue. */
+.md-typeset .photo-pair figcaption {
+  max-width: none;
+  margin: 0.5rem 0 0;
+  padding-left: 0.5rem;
+  border-left: 0.15rem solid #060d87;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  text-align: left;
+  color: var(--md-default-fg-color--light);
+}
+
+.md-typeset .photo-pair figcaption b {
+  color: var(--md-default-fg-color);
+}
+
+/* Below the phone breakpoint the pair stacks, and two stacked 4:3 crops eat a lot of screen
+   before any text, so let them go wide and short instead. */
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .photo-pair {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .md-typeset .photo-pair img {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .photo-pair img,
+  .md-typeset .photo-pair figure:hover img {
+    transition: none;
+    transform: none;
+  }
+}
