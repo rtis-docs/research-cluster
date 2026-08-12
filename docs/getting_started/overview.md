@@ -54,7 +54,7 @@ Choosing well matters: a partition with the hardware you need but a long queue m
 | A GPU | `aoraki_gpu` | The general GPU pool — whichever of its A100, H100 or L40 nodes is free first. Use a specific partition such as `aoraki_gpu_H100` when your work needs that model, or that much GPU memory. |
 | Very little, or not for long | `aoraki_small`, `aoraki_short` | These use the normally idle CPU cores on GPU nodes, so small and short jobs can start without waiting for a general-purpose node. |
 
-Before you submit, [Current Utilisation](current_utilisation.md) shows how busy the cluster is right now.
+Before you submit, [Queue and Availability](queue_and_availability.md) shows how busy the cluster is right now, and how long jobs on each partition have recently waited before starting.
 
 ### Partition Limits
 
