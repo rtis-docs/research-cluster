@@ -183,5 +183,6 @@ finding the versions available.
     - For worked GPU job scripts, see [Using a GPU with Slurm](../../getting_started/running/batch/slurm_examples/gpu-slurm.md)
     - For an interactive GPU session, see [Interactive Sessions](../../getting_started/running/interactive/interactive_shell.md#gpu-sessions)
     - For the hardware in each node, see the [Cluster Overview](../../getting_started/overview.md#node-hardware)
-    - For GPU use over the last week, see [Current Utilisation](../../getting_started/current_utilisation.md)
+    - For which GPUs are free and how long each partition has been making jobs wait, see [Queue and Availability](../../getting_started/queue_and_availability.md)
+    - For GPU use over the last week, node by node, see [Current Utilisation](../../getting_started/current_utilisation.md)
     - If the job failed rather than waited, see [Why Did My Job Fail?](slurm_job_failures.md)

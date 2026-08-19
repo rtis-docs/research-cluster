@@ -1,4 +1,4 @@
-# Aoraki HPC Cluster
+# Research Cluster (Aoraki)
 
 !!! overview "On this Page"
       - What the Aoraki Research Cluster is and how it is put together
@@ -8,7 +8,18 @@
 
 The Aoraki Research Cluster is the University of Otago's shared high performance computing system. It gives researchers access to **CPUs, GPUs, large-memory nodes and high-speed storage**, along with specialised software and libraries for scientific and data science computing.
 
-![Photo of the cluster](../assets/images/cluster_photo.jpg){ .left }
+<div class="photo-pair">
+  <figure>
+    <img src="../../assets/images/front_cluster.jpeg" loading="lazy"
+         alt="The front of the Aoraki cluster: a row of black server cabinets, lettered A to F, seen down the cold aisle.">
+    <figcaption><b>The front.</b> Cabinets A to F, drawing cool air in through the mesh doors.</figcaption>
+  </figure>
+  <figure>
+    <img src="../../assets/images/back_cluster.jpeg" loading="lazy"
+         alt="The rear of the same row of cabinets, showing bundled network and power cabling and rows of status lights.">
+    <figcaption><b>The back.</b> The same row from the other side — network and power cabling.</figcaption>
+  </figure>
+</div>
 
 It is *shared* infrastructure, and that is the main thing that makes it different from a workstation. You are not limited to the hardware on your desk, but you also do not get a machine to yourself: you describe the resources your work needs, and a scheduler decides where and when it runs.
 
@@ -54,7 +65,7 @@ Choosing well matters: a partition with the hardware you need but a long queue m
 | A GPU | `aoraki_gpu` | The general GPU pool — whichever of its A100, H100 or L40 nodes is free first. Use a specific partition such as `aoraki_gpu_H100` when your work needs that model, or that much GPU memory. |
 | Very little, or not for long | `aoraki_small`, `aoraki_short` | These use the normally idle CPU cores on GPU nodes, so small and short jobs can start without waiting for a general-purpose node. |
 
-Before you submit, [Current Utilisation](current_utilisation.md) shows how busy the cluster is right now.
+Before you submit, [Queue and Availability](queue_and_availability.md) shows how busy the cluster is right now, and how long jobs on each partition have recently waited before starting.
 
 ### Partition Limits
 
