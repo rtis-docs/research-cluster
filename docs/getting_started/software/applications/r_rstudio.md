@@ -6,6 +6,9 @@
 
 RStudio server is available through [OnDemand as a versioned apptainer image](../OnDemand/available_apps.md#apps-on-the-current-portal). Each container has a slightly different configuration and availability of system libraries and pre-installed packages.
 
+
+
+
 ## R
 
 
@@ -156,3 +159,53 @@ Then reload your R session and you can confirm your library path will be used wi
 The approaches above set library paths for you or for a project by hand. If different projects need different versions of the same package, `renv` manages that for you: each project gets its own library, and the exact versions are recorded in a lockfile you can commit and reinstall from later.
 
 See [renv (R Package Environments)](../software_environments/renv.md) for setting this up on the cluster, including how to get prebuilt packages rather than compiling from source, and how to use a project from a Slurm job.
+
+
+## Known Issues
+
+### RStudio Server Shows Blank or Gray Screen, or Error “Status code 502”
+
+When using RStudio Server through OnDemand, some users have found that the job starts normally, but upon connecting through OnDemand, a blank or gray screen appears instead of RStudio Server. Occasionally, RStudio Server will load successfully from this screen. Please wait at least a full minute on this screen before proceeding to the solution below.
+
+#### Resolving
+
+If the gray screen persists after one minute, or you receive the error:
+
+`Status code 502 returned by RStudio Server when executing 'client_init'`
+
+it is possible that RStudio Server is stuck trying to load.
+
+As a workaround, try **reloading the tab and waiting another minute**. This can sometimes resolve the issue.
+
+If the issue continues, **clearing RStudio’s temporary files** can help. These are stored at:
+
+`~/.local/share/rstudio`
+
+To do this safely, move the files to a backup location with the following command:
+
+`mv ~/.local/share/rstudio ~/.local/share/rstudio.backup`
+
+Then, try loading RStudio Server again. Note that it may still take a minute or two for the gray screen to clear, as described above.
+
+!!! note
+    This will likely reset your RStudio session. You may need to reopen previous projects and files, and any unsaved work may be lost.
+
+
+#### Preventing
+
+While the exact cause is unclear, possible reasons include:
+
+RStudio Server’s temporary files being corrupted due to an improper shutdown.
+
+RStudio Server attempting to reload large files from a previous session.
+
+To minimize the chance of this happening:
+
+**Properly shut down your RStudio session** before your job times out in OnDemand. Do this by clicking the **power button** in the top-right corner of RStudio Server.
+
+**Prevent RStudio Server from saving your workspace** on exit. To do this:
+
+- Click the “Tools” menu and select “Global Options”.
+- In the “General” pane under the “Workspace” section:
+    - Uncheck: “Restore .RData into workspace at startup:”
+    - Set: “Save workspace to .RData on exit:” to Never
