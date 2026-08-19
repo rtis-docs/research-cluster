@@ -13,10 +13,6 @@ By the end of this workshop, you will be able to:
 Level: Novice/Beginner
 
 
-##### 12 - 13 August 2026
 
-Two half-days, 10am - 1pm each day online
-
-[Register](https://www.eventbrite.com/e/introduction-to-r-tickets-1993965535593){ .md-button .md-button--primary }
 
 ----

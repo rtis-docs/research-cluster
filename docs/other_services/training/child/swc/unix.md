@@ -12,11 +12,7 @@ By the end of this workshop, you will be able to:
 
 Level: Novice/Beginner
 
-##### 30 July 2026
 
-10am - 3pm online
-
-[Register](https://www.eventbrite.co.nz/e/workshop-introduction-to-the-unix-shell-tickets-1992793522069){ .md-button .md-button--primary }
 
 ##### 15 October 2026
 
