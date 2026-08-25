@@ -4,7 +4,7 @@
 
 eResearch Solutions hosts an instance at [https://ai.uod.otago.ac.nz](https://ai.uod.otago.ac.nz), intended to be used as a user-friendly interface to [our LLM gateway](llm.md).
 
-![whisperx-web](../../assets/images/ai_uod.png){width=220}
+![Open WebUI](../../assets/images/ai_uod.png){width=220}
 
 
 ## Local Data Processing
