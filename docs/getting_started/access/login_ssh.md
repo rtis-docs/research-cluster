@@ -28,7 +28,7 @@ If you already have an SSH key pair (typically `~/.ssh/id_ed25519.pub` or `~/.ss
     Press <kbd>Enter</kbd> to accept the default file location (`C:\Users\<you>\.ssh\id_ed25519`), then set (or skip) a passphrase.
 
     !!! info "Using PuTTY instead"
-        If you use PuTTY rather than the built-in OpenSSH client, run **PuTTYgen**, click **Generate**, and save the private key. Copy the public key text shown in the box at the top of the window — you'll need it in [Step 2](#step-2-copy-your-public-key).
+        If you use PuTTY rather than the built-in OpenSSH client, run **PuTTYgen**, click **Generate**, and save the private key. Copy the public key text shown in the box at the top of the window — you'll need it in [Step 2](#step-2-add-your-key-using-ssh-copy-id-or-otago-ondemand).
 
 === "macOS / Linux"
 
@@ -118,7 +118,7 @@ ssh -i /path/to/your/private_key <otago-username>@aoraki-login.otago.ac.nz
 
 To use the cluster shell access within OnDemand, first [connect to the **Otago OnDemand** web portal](ondemand_web.md#sign-in) and then from the top menu bar select the menu `Clusters` > `Aoraki Shell Access`.
 
-You will then be prompted to input your password, similar to [SSH through the terminal](#ssh-through-a-terminal).
+You will then be prompted to input your password, similar to [SSH through the terminal](#step-3-connect-using-your-key).
 
 ![Open OnDemand Shell](../../assets/images/ondemand_shell.jpeg){width="600px" align=left}
 
