@@ -4,6 +4,8 @@
 
 eResearch Solutions hosts an instance at [https://ai.uod.otago.ac.nz](https://ai.uod.otago.ac.nz), intended to be used as a user-friendly interface to [our LLM gateway](llm.md).
 
+![Open WebUI](../../assets/images/ai_uod.png){width=220}
+
 
 ## Local Data Processing
 The ai.uod web application is hosted on-campus, and when combined with the self-hosted `ONCAMPUS` LLM models, provides a solution that **completely operates on-campus** without relying on any external/cloud-based services.
@@ -11,7 +13,7 @@ The ai.uod web application is hosted on-campus, and when combined with the self-
 Be aware though that any of the following will *NOT* meet local data processing requirements:
 
   * when using **cloud LLM models** (i.e. any model not prefixed with "`ONCAMPUS/`")
-  * when enabling **Web Search**, search queries are proxied trough a local metasearch proxy to various Internet search providers, and may leak data in the query
+  * when enabling **Web Search**, search queries are proxied through a local metasearch proxy to various Internet search providers, and may leak data in the query
   * when enabling Voice Mode or 'Read Aloud', the **text-to-speech** responses are processed through Microsoft's online text-to-speech service
 
 
@@ -37,4 +39,4 @@ On first login, the model list will be empty; You will need to connect your ai.u
 The model list should now be populated with the models that are accessible to you.
 
 ## Usage
-Please refer to to Open WebUI documentation - [https://docs.openwebui.com/getting-started/essentials](https://docs.openwebui.com/getting-started/essentials)
+Please refer to the Open WebUI documentation - [https://docs.openwebui.com/getting-started/essentials](https://docs.openwebui.com/getting-started/essentials)
