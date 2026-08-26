@@ -479,3 +479,24 @@ li.md-nav__item--active:not(li.md-nav__item--nested) {
     transform: none;
   }
 }
+
+
+/* ================================
+   Embedded Microsoft Forms
+   ================================ */
+
+/* A cross-origin Forms embed cannot report its own height, so the iframe has to be told
+   one and the page has to be tall enough to hold the whole question list. These embeds
+   previously carried `max-height: 100vh` alongside that height; the cap won, trimmed the
+   frame to the viewport, and left the form scrolling inside the page. No cap here - set
+   the height per page and let the page itself scroll.
+
+   The .md-typeset prefix is load-bearing, same as for .grafana-panel above: Material ships
+   `.md-typeset iframe{max-width:100%}` at 0-1-1, which outranks a bare class at 0-1-0. */
+.md-typeset .ms-form {
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  border: 0;
+  margin: 1rem 0 1.5rem;
+}
