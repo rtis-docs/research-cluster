@@ -53,7 +53,7 @@ Add the following host entry to your SSH configuration file:
     ```text
     Host aoraki-vscode
     HostName aoraki-login.otago.ac.nz
-    User h<otago-username>
+    User <otago-username>
     RequestTTY force
     ForwardAgent yes
     ControlMaster no
