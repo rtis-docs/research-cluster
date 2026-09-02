@@ -500,3 +500,70 @@ li.md-nav__item--active:not(li.md-nav__item--nested) {
   border: 0;
   margin: 1rem 0 1.5rem;
 }
+
+
+/* ================================
+   Backup status table row
+   ================================ */
+
+/* Whether a filesystem is backed up is the single most consequential fact on the storage
+   page - people lose data by assuming /projects behaves like /home - so that row is pulled
+   out of the table's uniform grey with a tinted background, an accent bar on the label
+   cell, and colour on the icons.
+
+   Colour alone is not a safe carrier for a warning, so the markup pairs each icon with the
+   words "Yes"/"No"; the colours below are reinforcement, not the message itself.
+
+   Scoping is by :has() on the cell contents rather than a class on the row, because a
+   pipe-table gives no place to hang a class on a <tr>. Where :has() is unsupported the row
+   simply loses its tint and the icons stay coloured - the meaning survives. */
+
+:root {
+  --backup-row-bg: rgba(0, 0, 0, 0.045);
+  --backup-yes-fg: #1b7f37;
+  --backup-no-fg: #c1121f;
+}
+
+/* The site ships no palette toggle today, so this block is inert; it is here so the row
+   does not turn into dark-on-dark the day a slate scheme is switched on. */
+[data-md-color-scheme="slate"] {
+  --backup-row-bg: rgba(255, 255, 255, 0.06);
+  --backup-yes-fg: #5fd07d;
+  --backup-no-fg: #ff6b6b;
+}
+
+/* The .md-typeset table:not([class]) prefix matches Material's own table rules at the same
+   specificity, so these land after them rather than under them. */
+.md-typeset table:not([class]) tr:has(.backup-status) > td {
+  background-color: var(--backup-row-bg);
+  font-weight: 700;
+}
+
+.md-typeset table:not([class]) tr:has(.backup-status) > td:first-child {
+  box-shadow: inset 0.2rem 0 0 var(--md-accent-fg-color);
+}
+
+.md-typeset table:not([class]) td:has(.backup-yes) {
+  color: var(--backup-yes-fg);
+}
+
+.md-typeset table:not([class]) td:has(.backup-no) {
+  color: var(--backup-no-fg);
+}
+
+/* Fallback for browsers without :has() - the icons themselves are always coloured. */
+.md-typeset .backup-yes {
+  color: var(--backup-yes-fg);
+}
+
+.md-typeset .backup-no {
+  color: var(--backup-no-fg);
+}
+
+/* Material renders :material-check: as a .twemoji span wrapping an SVG that is filled with
+   currentcolor, so the colours above carry through without touching the SVG. Size is set
+   through Material's own --md-icon-size knob rather than by overriding the svg rule, which
+   would otherwise be a specificity tie decided by stylesheet order. */
+.md-typeset .backup-status {
+  --md-icon-size: 1.3em;
+}
