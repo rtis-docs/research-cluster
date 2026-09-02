@@ -1,4 +1,4 @@
-# VS Code Remote Development
+# VSCode on Aoraki
 
 !!! overview "On this Page"
     - How to connect VS Code to an Aoraki compute node via Slurm
