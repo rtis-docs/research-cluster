@@ -29,7 +29,7 @@ graph TD;
 | :----- | :-------------------------------------------- | :----------------------------------- | :----- |:---|
 | __Ideal Use__ | Storage of scripts and configuration files |Research data you are working on      | Workflows that require very high speed data reading/writing  | Long term storage of important research data
 |_Mount point_| `/home/<username>` | `/projects/<division>/<school>/<dept>/<group>/` | `/weka/users/<username>` | `/mnt/auto-hcs/<share name>`
-| _Backed up_| :material-check: | :material-close: | :material-close: | :material-check: |
+| __Backed up__ | :material-check:{ .backup-status .backup-yes } Yes | :material-close:{ .backup-status .backup-no } No | :material-close:{ .backup-status .backup-no } No | :material-check:{ .backup-status .backup-yes } Yes |
 | _Default quota_ | 40 GB | Set by request on group creation | 0 GB (needs to be requested) | (Managed by Core Digital. Contact AskOtago) |
  
  
