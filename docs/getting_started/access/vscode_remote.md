@@ -36,11 +36,15 @@ Add the following host entry to your SSH configuration file:
 
     ```text
     Host aoraki-vscode
-        HostName aoraki-login.otago.ac.nz
-        User <otago-username>
-        RequestTTY yes
-        ForwardAgent yes
-        RemoteCommand module load vscode-remote; vscode-shell-proxy.py --salloc-arg=--time=10:00:00 --salloc-arg=--cpus-per-task=1 --salloc-arg=--mem=10G --salloc-arg=--partition=aoraki
+      HostName aoraki-login.otago.ac.nz
+      User <otago-username>
+      RequestTTY force
+      ForwardAgent yes
+      ControlMaster no
+      ControlPath none
+      ServerAliveInterval 30
+      ServerAliveCountMax 6
+      RemoteCommand module load vscode-remote; vscode-shell-proxy.py -vv -l /tmp/vscode-proxy-[PID].log --salloc-arg=--time=10:00:00 --salloc-arg=--cpus-per-task=1 --salloc-arg=--mem=10G --salloc-arg=--partition=aoraki
     ```
 
     !!! info
@@ -52,17 +56,17 @@ Add the following host entry to your SSH configuration file:
 
     ```text
     Host aoraki-vscode
-    HostName aoraki-login.otago.ac.nz
-    User <otago-username>
-    RequestTTY force
-    ForwardAgent yes
-    ControlMaster no
-    ControlPath none
-    ServerAliveInterval 30
-    ServerAliveCountMax 6
-    ForwardX11 no
-    ForwardX11Trusted no
-    RemoteCommand module load vscode-remote; vscode-shell-proxy.py -vv -l /tmp/vscode-proxy-[PID].log --salloc-arg=--time=10:00:00 --salloc-arg=--cpus-per-task=1 --salloc-arg=--mem=10G --salloc-arg=--partition=aoraki
+      HostName aoraki-login.otago.ac.nz
+      User <otago-username>
+      RequestTTY force
+      ForwardAgent yes
+      ControlMaster no
+      ControlPath none
+      ServerAliveInterval 30
+      ServerAliveCountMax 6
+      ForwardX11 no
+      ForwardX11Trusted no
+      RemoteCommand module load vscode-remote; vscode-shell-proxy.py -vv -l /tmp/vscode-proxy-[PID].log --salloc-arg=--time=10:00:00 --salloc-arg=--cpus-per-task=1 --salloc-arg=--mem=10G --salloc-arg=--partition=aoraki
     ```
 
     !!! info
@@ -73,17 +77,40 @@ Replace `<otago-username>` with your Aoraki username in both the `User` and (if 
 !!! tip "Default resource allocation"
     The example above requests a **10-hour** allocation with **1 CPU** and **10 GB** of memory on the `aoraki` partition. Increase these if your workload needs more — see [Customising your Slurm allocation](#customising-your-slurm-allocation) below.
 
-## Step 2: Enable RemoteCommand in VS Code
+## Step 2: Configure VS Code settings
 
 By default, the Remote - SSH extension ignores `RemoteCommand` directives in your SSH config. You need to enable this setting explicitly.
 
-1. Open VS Code.
-2. Open **Settings** (<kbd>Ctrl</kbd>+<kbd>,</kbd> on Windows/Linux, <kbd>⌘</kbd>+<kbd>,</kbd> on macOS).
-3. Search for `remote.SSH.enableRemoteCommand`.
-4. Tick the checkbox to enable it.
+=== "Windows"
+
+    Windows also needs the extension to use a local server and dynamic forwarding rather than a UNIX socket. Add the following to your **user** `settings.json`:
+
+    1. Press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> and run **Preferences: Open User Settings (JSON)**.
+    2. Merge these entries into the existing top-level JSON object:
+
+    ```json
+    {
+        "remote.SSH.enableRemoteCommand": true,
+        "remote.SSH.useLocalServer": true,
+        "remote.SSH.enableDynamicForwarding": true,
+        "remote.SSH.remoteServerListenOnSocket": false,
+        "remote.SSH.connectTimeout": 300,
+        "remote.SSH.logLevel": "trace"
+    }
+    ```
+
+    !!! info
+        If `settings.json` already contains settings, don't paste the outer braces — add the entries inside the existing object and make sure each line ends with a comma except the last.
+
+=== "macOS / Linux"
+
+    1. Open VS Code.
+    2. Open **Settings** (<kbd>⌘</kbd>+<kbd>,</kbd> on macOS, <kbd>Ctrl</kbd>+<kbd>,</kbd> on Linux).
+    3. Search for `remote.SSH.enableRemoteCommand`.
+    4. Tick the checkbox to enable it.
 
 !!! warning
-    Without this setting, VS Code will connect to the **login node** directly, ignoring the proxy script entirely. You won't have a Slurm allocation and will be working on the shared login node.
+    Without `remote.SSH.enableRemoteCommand`, VS Code will connect to the **login node** directly, ignoring the proxy script entirely. You won't have a Slurm allocation and will be working on the shared login node.
 
 ## Step 3: Connect
 
