@@ -1,4 +1,4 @@
-# VS Code Remote Development
+# VSCode on Aoraki
 
 !!! overview "On this Page"
     - How to connect VS Code to an Aoraki compute node via Slurm
@@ -52,11 +52,17 @@ Add the following host entry to your SSH configuration file:
 
     ```text
     Host aoraki-vscode
-        HostName aoraki-login.otago.ac.nz
-        User <otago-username>
-        RequestTTY yes
-        ForwardAgent yes
-        RemoteCommand module load vscode-remote; vscode-shell-proxy.py --salloc-arg=--time=10:00:00 --salloc-arg=--cpus-per-task=1 --salloc-arg=--mem=10G --salloc-arg=--partition=aoraki
+    HostName aoraki-login.otago.ac.nz
+    User <otago-username>
+    RequestTTY force
+    ForwardAgent yes
+    ControlMaster no
+    ControlPath none
+    ServerAliveInterval 30
+    ServerAliveCountMax 6
+    ForwardX11 no
+    ForwardX11Trusted no
+    RemoteCommand module load vscode-remote; vscode-shell-proxy.py -vv -l /tmp/vscode-proxy-[PID].log --salloc-arg=--time=10:00:00 --salloc-arg=--cpus-per-task=1 --salloc-arg=--mem=10G --salloc-arg=--partition=aoraki
     ```
 
     !!! info
