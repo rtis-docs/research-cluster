@@ -104,10 +104,22 @@ By default, the Remote - SSH extension ignores `RemoteCommand` directives in you
 
 === "macOS / Linux"
 
-    1. Open VS Code.
-    2. Open **Settings** (<kbd>⌘</kbd>+<kbd>,</kbd> on macOS, <kbd>Ctrl</kbd>+<kbd>,</kbd> on Linux).
-    3. Search for `remote.SSH.enableRemoteCommand`.
-    4. Tick the checkbox to enable it.
+    Add the following to your **user** `settings.json`:
+
+    1. Press <kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> (macOS) or <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> (Linux) and run **Preferences: Open User Settings (JSON)**.
+    2. Merge this entry into the existing top-level JSON object:
+
+    ```json
+    {
+        "remote.SSH.enableRemoteCommand": true
+    }
+    ```
+
+    !!! info
+        If `settings.json` already contains settings, don't paste the outer braces — add the entry inside the existing object and make sure each line ends with a comma except the last.
+
+    !!! tip
+        You can also set this through the settings UI: open **Settings** (<kbd>⌘</kbd>+<kbd>,</kbd> / <kbd>Ctrl</kbd>+<kbd>,</kbd>), search for `remote.SSH.enableRemoteCommand`, and tick the checkbox.
 
 !!! warning
     Without `remote.SSH.enableRemoteCommand`, VS Code will connect to the **login node** directly, ignoring the proxy script entirely. You won't have a Slurm allocation and will be working on the shared login node.
