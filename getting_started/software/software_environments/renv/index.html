@@ -1,0 +1,4900 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://rtis-docs.github.io/research-cluster/getting_started/software/software_environments/renv/">
+      
+      
+        <link rel="prev" href="../modules/">
+      
+      
+        <link rel="next" href="../sbgrid/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/uoo-favicon-32x32.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>renv (R Package Environments) - eResearch Support</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=wickliffe-sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"wickliffe-sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/neoteroi-mkdocs.css?h=74bf0588">
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css?h=abc75da2">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#renv-r-package-environments" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+<!-- Custom Banner -->
+<!-- <div class="banner">
+    <p style="color: red; font-weight: bold; display:inline;font-size: 160%;">This site is in early stages of development</p>
+</div> -->
+
+<!-- Original Header -->
+
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="eResearch Support" class="md-header__button md-logo" aria-label="eResearch Support" data-md-component="logo">
+      
+  <img src="../../../../assets/images/UoO_Logo_RGB_Horz_Gold-REV.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            eResearch Support
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              renv (R Package Environments)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/rtis-docs/research-cluster" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Cluster Documentation
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="eResearch Support" class="md-nav__button md-logo" aria-label="eResearch Support" data-md-component="logo">
+      
+  <img src="../../../../assets/images/UoO_Logo_RGB_Horz_Gold-REV.svg" alt="logo">
+
+    </a>
+    eResearch Support
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/rtis-docs/research-cluster" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Cluster Documentation
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Otago Research Computing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Research Cluster (Aoraki)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Access
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Access
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../access/access_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Access Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../access/signup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting an Account
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../access/login_ssh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SSH
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../access/ondemand_web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Logging in to OnDemand (Web)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../access/vscode_remote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VSCode on Aoraki
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../access/coldfront/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Account and Allocation Management
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_6" id="__nav_2_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Account and Allocation Management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../access/coldfront/manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../access/coldfront/user/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Viewing Current Status
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Cluster Traffic
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cluster Traffic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../current_utilisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Current Utilisation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../queue_and_availability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Queue and Availability
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Software
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Software
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    OnDemand
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            OnDemand
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OnDemand/ondemand/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Open OnDemand Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OnDemand/available_apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Available Apps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OnDemand/hpc_desktop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OnDemand HPC Desktop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OnDemand/ood_file_manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using the OnDemand File Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OnDemand/ood_shell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Accessing the Shell through OnDemand
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../applications/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Applications
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4_3" id="__nav_2_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Applications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/4ti2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4ti2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/afni/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AFNI (Analysis of Functional NeuroImages)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/alphafold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AlphaFold
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/alphafold3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alphafold3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/ansys_fluent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ansys Fluent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/bohra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bohra
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/ccp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CCP4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/circulator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Circlator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/claritas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GLOBEClaritas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/colabfold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ColabFold
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/connectome_workbench/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Connectome Workbench
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/crystal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Crystal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/deeplabcut/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DeepLabCut
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/deepposekit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DeepPoseKit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/dorado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dorado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/fmriprep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    fMRIPrep (Containerised)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/fsl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FSL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/gaussian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gaussian
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/gubbins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gubbins
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/guppy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Guppy (GPU)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/humann/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HUMAnN 3.0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/macaulay2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Macaulay2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/mathematica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mathematica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/matlab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MATLAB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/ollama/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ollama
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/openpose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenPose
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/orca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ORCA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/pytorch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PyTorch via module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/r_rstudio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    R and RStudio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/samtools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Samtools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/spaceranger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Space Ranger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/tbprofiler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TBProfiler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/whisper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Whisper (speech-to-text)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/xdsguI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    xdsguI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Software environments
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4_4" id="__nav_2_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Software environments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apptainer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Apptainer (Singularity)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conda/Mamba
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using Modules (LMOD)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    renv (R Package Environments)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    renv (R Package Environments)
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before You Start
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-a-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up a Project
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-installs-fast" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making Installs Fast
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moving-the-cache-off-your-home-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Moving the Cache off Your Home Directory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#everyday-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Everyday Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-renv-in-a-slurm-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using renv in a Slurm Job
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-renv-with-rstudio-on-ondemand" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using renv with RStudio on OnDemand
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharing-and-reproducing-a-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sharing and Reproducing a Project
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Problems
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sbgrid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SBGrid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shells (bash, zsh, fish, tcsh)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Spack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../venv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python virtual environments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Running Jobs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Running Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../running/running_jobs_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Running Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_2" id="__nav_2_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Interactive Jobs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Interactive Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../running/interactive/interactive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interactive Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../running/interactive/interactive_shell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interactive Sessions from the Command Line
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_3" id="__nav_2_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Batch Jobs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Batch Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../running/batch/slurm_quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slurm Quickstart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../running/batch/sbatch_options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Job Script Options
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_3_3" id="__nav_2_5_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Example Job Scripts
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_5_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Example Job Scripts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../running/batch/slurm_examples/array-slurm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Array Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../running/batch/slurm_examples/gpu-slurm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using a GPU with Slurm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../running/batch/slurm_examples/dependent_jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dependent Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../running/batch/slurm_examples/python-slurm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using Python with Slurm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../running/batch/slurm_examples/r-slurm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using R with Slurm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../running/batch/slurm_examples/heterogeneous_jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Heterogeneous Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../running/workflows/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Workflows
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5_4" id="__nav_2_5_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Workflows
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../running/workflows/nextflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nextflow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../running/efficiency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Job Efficiency
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            General
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Announcements
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Announcements
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/announcements/2026-07-13-os-security-updates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    July 2026 Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/announcements/2026-04-29-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    April 2026 Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/announcements/2026-01-16-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    January 2026 Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/announcements/2025-09-05-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    September 2025 Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/announcements/2025-05-25-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    April 2025 Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/announcements/2024-11-09-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    November 2024 Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Guidelines
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Guidelines
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/guidelines/login_node_usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Login Node Usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/guidelines/reasonable_usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reasonable Usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/guidelines/storage_guidelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Storage Guidelines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../general/faq/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            FAQ
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/faq/access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Access and Login
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/faq/job_start_time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Why Is My Job Not Starting?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/faq/slurm_job_failures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Why Did My Job Fail?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/faq/gpu_jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GPU Questions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/faq/disk_usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Storage and Quotas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/faq/sharing_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sharing and Moving Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/faq/software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software and Environments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Storage
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Storage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/storage_options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Storage Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Data Locations
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Data Locations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_locations/homes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Homes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_locations/projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Projects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_locations/weka/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Weka
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_locations/hcs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Otago HCS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Data Transfer
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Data Transfer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_transfer/data_transfer_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Transfer Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_transfer/globus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Globus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_transfer/globus_registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Globus registration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_transfer/rclone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    rclone
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_transfer/rsync/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    scp or rsync
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/storage_request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Storage Request
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/file_permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    File Permissions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../other_services/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Other Services
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Other Services
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Hosted
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Hosted
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/cryosparc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CryoSPARC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/databases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database hosting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/llm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Large Language Models (LLMs)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/openwebui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ai.uod (Open WebUI)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/sas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SAS Studio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/shinyproxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shinyproxy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/stt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Audio/Video Speech-to-Text Transcription &amp; Translation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/translate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Translation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../other_services/cloudnative/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Cloud Native
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud Native
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/cloudnative/faas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function-as-a-Service (FaaS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Training
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Training
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/training/workshops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workshops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before You Start
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-a-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up a Project
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-installs-fast" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making Installs Fast
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moving-the-cache-off-your-home-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Moving the Cache off Your Home Directory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#everyday-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Everyday Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-renv-in-a-slurm-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using renv in a Slurm Job
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-renv-with-rstudio-on-ondemand" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using renv with RStudio on OnDemand
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharing-and-reproducing-a-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sharing and Reproducing a Project
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Problems
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="renv-r-package-environments">renv (R Package Environments)<a class="headerlink" href="#renv-r-package-environments" title="Permanent link">¶</a></h1>
+<div class="admonition overview">
+<p class="admonition-title">On this Page</p>
+<ul>
+<li>What <code>renv</code> does, and when it is worth the effort on a shared cluster</li>
+<li>Setting up a project, and getting package installs to take minutes instead of hours</li>
+<li>Moving the package cache off your home directory before it fills up</li>
+<li>Using an <code>renv</code> project from a Slurm job and from RStudio on OnDemand</li>
+<li>Sharing a project so someone else gets the same package versions</li>
+</ul>
+</div>
+<p><a href="https://rstudio.github.io/renv/"><code>renv</code></a> gives each project its own R package library, and records the exact version of every package in a lockfile. Reinstalling from that lockfile — on the cluster, on a laptop, or a year later — gets you the same versions you started with.</p>
+<p>On a shared system this solves a specific problem. Without it, every project you run shares one library in your home directory. Upgrading a package for one analysis silently changes every other analysis that used it, and there is no record of what the versions were when your results were produced.</p>
+<div class="admonition note">
+<p class="admonition-title">renv or the other options?</p>
+<p><code>renv</code> manages <strong>R packages within a project</strong>. It does not manage R itself, and it does not install system libraries.</p>
+<ul>
+<li>For a different <strong>version of R</strong>, use the <a href="../modules/">module system</a>.</li>
+<li>For a full environment including non-R dependencies, see <a href="../conda/">Conda/Mamba</a>, which can also manage R.</li>
+<li>For setting a single library path for all your work rather than per project, see <a href="../../applications/r_rstudio/#managing-package-libraries-with-r-and-rstudio">Managing Package Libraries</a>.</li>
+</ul>
+</div>
+<h2 id="before-you-start">Before You Start<a class="headerlink" href="#before-you-start" title="Permanent link">¶</a></h2>
+<p><code>renv</code> is not installed system-wide, so you install it once yourself. First load an R module — the system R in <code>/usr/bin/R</code> is older and is not the one to build work against.</p>
+<p>To see the available versions:</p>
+<div class="admonition terminal">
+<p class="admonition-title">Terminal</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>spider<span class="w"> </span>r
+</code></pre></div>
+</div>
+<p>Then load one and install <code>renv</code>:</p>
+<div class="admonition terminal">
+<p class="admonition-title">Terminal</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>r/4.4.3
+Rscript<span class="w"> </span>-e<span class="w"> </span><span class="s1">'install.packages("renv", repos = "https://cloud.r-project.org")'</span>
+</code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Package libraries are tied to an R version</p>
+<p>A library built under <code>r/4.4.3</code> will not work under <code>r/4.5.1</code>. R keeps them apart automatically — the default library path is <code>~/R/x86_64-pc-linux-gnu-library/4.4</code>, with the version on the end — and <code>renv</code> does the same inside each project.</p>
+<p>This means <strong>pin the R module version in your job scripts</strong> rather than using <code>module load r</code>. If you move a project to a newer R, expect to run <code>renv::restore()</code> again to rebuild the library for it.</p>
+</div>
+<p>Package installation compiles C, C++ and Fortran code and can be heavy. The <a href="../../../../general/guidelines/login_node_usage/">login node</a> allows 8 CPUs and 60 GB of memory, and asks that tasks stay under 30 minutes — a small project fits comfortably, but for a large restore use an <a href="../../../running/interactive/interactive_shell/">interactive allocation</a> instead.</p>
+<h2 id="setting-up-a-project">Setting Up a Project<a class="headerlink" href="#setting-up-a-project" title="Permanent link">¶</a></h2>
+<p>Work in a directory on <a href="../../../../storage/storage_options/"><code>/projects</code> or <code>/weka</code></a> rather than your home directory. Package libraries get large, and your home directory has a 40 GB quota.</p>
+<div class="admonition terminal">
+<p class="admonition-title">Terminal</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/projects/&lt;division&gt;/&lt;school&gt;/&lt;department&gt;/&lt;group&gt;/my_analysis
+module<span class="w"> </span>load<span class="w"> </span>r/4.4.3
+R
+</code></pre></div>
+</div>
+<p>Then, in R:</p>
+<div class="admonition r-code">
+<p class="admonition-title">R-code</p>
+<div class="highlight"><pre><span></span><code><span class="n">renv</span><span class="o">::</span><span class="nf">init</span><span class="p">()</span>
+</code></pre></div>
+</div>
+<p>This creates three things in the project directory:</p>
+<table id="_table-1">
+<caption style="caption-side:top"> What <code>renv::init()</code> adds to your project</caption><thead>
+<tr>
+<th style="text-align: left;">Path</th>
+<th style="text-align: left;">What it is</th>
+<th style="text-align: left;">Commit to git?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>renv.lock</code></td>
+<td style="text-align: left;">The lockfile — every package and its exact version</td>
+<td style="text-align: left;"><strong>Yes</strong>. This is the reproducible record</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>renv/activate.R</code></td>
+<td style="text-align: left;">Startup script that points R at the project library</td>
+<td style="text-align: left;"><strong>Yes</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>.Rprofile</code></td>
+<td style="text-align: left;">One line, sourcing <code>renv/activate.R</code></td>
+<td style="text-align: left;"><strong>Yes</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>renv/library/</code></td>
+<td style="text-align: left;">The installed packages themselves</td>
+<td style="text-align: left;">No — <code>renv</code> adds this to <code>.gitignore</code> for you</td>
+</tr>
+</tbody>
+</table>
+<p>From now on, starting R <strong>from that directory</strong> activates the project automatically. You should see a startup message naming the project. If you do not, you are in the wrong directory, or R was started in a way that skips <code>.Rprofile</code> — see <a href="#common-problems">Common Problems</a>.</p>
+<h2 id="making-installs-fast">Making Installs Fast<a class="headerlink" href="#making-installs-fast" title="Permanent link">¶</a></h2>
+<p>This is the single change worth making on this cluster. By default R downloads package <em>source</em> from CRAN and compiles it, which for a large project can take hours.</p>
+<p>The cluster runs Rocky Linux 9, and <a href="https://packagemanager.posit.co/">Posit Package Manager</a> publishes prebuilt binaries for it. Pointing R at those turns most of that compiling into a download.</p>
+<p>Add this to your <code>~/.Rprofile</code> so it applies to everything you do:</p>
+<div class="admonition r-code">
+<p class="admonition-title">File: <code>~/.Rprofile</code></p>
+<div class="highlight"><pre><span></span><code><span class="nf">options</span><span class="p">(</span>
+<span class="w">  </span><span class="n">repos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">CRAN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"https://packagemanager.posit.co/cran/__linux__/rhel9/latest"</span><span class="p">),</span>
+<span class="w">  </span><span class="n">HTTPUserAgent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">sprintf</span><span class="p">(</span>
+<span class="w">    </span><span class="s">"R/%s R (%s)"</span><span class="p">,</span>
+<span class="w">    </span><span class="nf">getRversion</span><span class="p">(),</span>
+<span class="w">    </span><span class="nf">paste</span><span class="p">(</span><span class="nf">getRversion</span><span class="p">(),</span><span class="w"> </span><span class="n">R.version</span><span class="p">[</span><span class="s">"platform"</span><span class="p">],</span><span class="w"> </span><span class="n">R.version</span><span class="p">[</span><span class="s">"arch"</span><span class="p">],</span><span class="w"> </span><span class="n">R.version</span><span class="p">[</span><span class="s">"os"</span><span class="p">])</span>
+<span class="w">  </span><span class="p">),</span>
+<span class="w">  </span><span class="n">Ncpus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">8</span>
+<span class="p">)</span>
+</code></pre></div>
+</div>
+<p>The <code>HTTPUserAgent</code> line is what tells Package Manager to serve binaries rather than source. <code>Ncpus</code> lets R compile several packages at once for the ones that still need building — set it no higher than the cores you have available.</p>
+<div class="admonition tip">
+<p class="admonition-title">Check it is working</p>
+<p>Install something and watch the output. A binary install reports downloading a <code>.tar.gz</code> and unpacking it in seconds. A source install prints pages of compiler commands. If you are still seeing compiler output for common packages, the <code>HTTPUserAgent</code> option has not been picked up.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">A project <code>.Rprofile</code> replaces your personal one</p>
+<p>R sources <strong>only one</strong> <code>.Rprofile</code> — the one in the project directory if it exists, otherwise the one in your home directory. Because <code>renv</code> creates a project <code>.Rprofile</code>, your <code>~/.Rprofile</code> is <strong>not</strong> read inside a project.</p>
+<p>To keep the repository settings inside a project, either add the <code>options()</code> block to the project's <code>.Rprofile</code> above the <code>renv</code> line, or put the equivalent in <code>~/.Renviron</code>, which is always read. See <a href="../../applications/r_rstudio/#renviron-vs-rprofile">.Renviron vs .Rprofile</a>.</p>
+</div>
+<h2 id="moving-the-cache-off-your-home-directory">Moving the Cache off Your Home Directory<a class="headerlink" href="#moving-the-cache-off-your-home-directory" title="Permanent link">¶</a></h2>
+<p><code>renv</code> keeps one shared cache of installed packages and links each project's library to it, so ten projects using the same version of a package store it once. That cache lives under <code>~/.cache/R/renv</code> by default, and on a 40 GB home directory quota it will eventually become a problem.</p>
+<p>Move it somewhere with room, by adding a line to <code>~/.Renviron</code>:</p>
+<div class="admonition terminal">
+<p class="admonition-title">Terminal</p>
+<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>~/.Renviron
+</code></pre></div>
+</div>
+<div class="admonition r-code">
+<p class="admonition-title">File: <code>~/.Renviron</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">RENV_PATHS_CACHE</span><span class="o">=/</span><span class="n">projects</span><span class="o">/&lt;</span><span class="n">division</span><span class="o">&gt;/&lt;</span><span class="n">school</span><span class="o">&gt;/&lt;</span><span class="n">department</span><span class="o">&gt;/&lt;</span><span class="n">group</span><span class="o">&gt;/</span><span class="n">renv</span><span class="o">-</span><span class="n">cache</span>
+</code></pre></div>
+</div>
+<p><code>.Renviron</code> is read before R starts, so this applies to <code>R</code>, <code>Rscript</code>, batch jobs and RStudio alike. Restart R for it to take effect.</p>
+<div class="admonition tip">
+<p class="admonition-title">A research group can share one cache</p>
+<p>Point everyone in the group at the same <code>RENV_PATHS_CACHE</code> directory and packages are downloaded and built once for the whole group. The directory needs to be group-writable — see <a href="../../../../storage/file_permissions/">File Permissions</a>.</p>
+</div>
+<h2 id="everyday-use">Everyday Use<a class="headerlink" href="#everyday-use" title="Permanent link">¶</a></h2>
+<table id="_table-2">
+<caption style="caption-side:top"> The commands you will use most</caption><thead>
+<tr>
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>renv::install("dplyr")</code></td>
+<td style="text-align: left;">Install a package into the project library</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>renv::snapshot()</code></td>
+<td style="text-align: left;">Record what is currently installed into <code>renv.lock</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>renv::status()</code></td>
+<td style="text-align: left;">Compare the lockfile against what is installed</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>renv::restore()</code></td>
+<td style="text-align: left;">Install what the lockfile says, discarding differences</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>renv::update()</code></td>
+<td style="text-align: left;">Update packages to their latest available versions</td>
+</tr>
+</tbody>
+</table>
+<p>The cycle is: install what you need, then <code>renv::snapshot()</code> to record it.</p>
+<div class="admonition r-code">
+<p class="admonition-title">R-code</p>
+<div class="highlight"><pre><span></span><code><span class="n">renv</span><span class="o">::</span><span class="nf">install</span><span class="p">(</span><span class="s">"dplyr"</span><span class="p">)</span>
+<span class="n">renv</span><span class="o">::</span><span class="nf">install</span><span class="p">(</span><span class="s">"ggplot2"</span><span class="p">)</span>
+
+<span class="c1"># Bioconductor and GitHub packages work too</span>
+<span class="n">renv</span><span class="o">::</span><span class="nf">install</span><span class="p">(</span><span class="s">"bioc::DESeq2"</span><span class="p">)</span>
+<span class="n">renv</span><span class="o">::</span><span class="nf">install</span><span class="p">(</span><span class="s">"tidyverse/glue"</span><span class="p">)</span>
+
+<span class="n">renv</span><span class="o">::</span><span class="nf">snapshot</span><span class="p">()</span>
+</code></pre></div>
+</div>
+<p><code>renv::snapshot()</code> only records packages your code actually loads, by scanning for <code>library()</code> and <code>::</code> calls. If you install something and it does not appear in the lockfile, check that it is referenced somewhere in the project.</p>
+<h2 id="using-renv-in-a-slurm-job">Using renv in a Slurm Job<a class="headerlink" href="#using-renv-in-a-slurm-job" title="Permanent link">¶</a></h2>
+<p>The important part is that the job must <strong>start R with the project directory as its working directory</strong>, so that the project <code>.Rprofile</code> is read and the project library is used.</p>
+<div class="admonition terminal">
+<p class="admonition-title">Script: <code>run_analysis.sh</code></p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --job-name=r_analysis</span>
+<span class="c1">#SBATCH --cpus-per-task=4</span>
+<span class="c1">#SBATCH --mem=16G</span>
+<span class="c1">#SBATCH --time=02:00:00</span>
+
+<span class="c1"># Pin the same R version the project library was built for</span>
+module<span class="w"> </span>load<span class="w"> </span>r/4.4.3
+
+<span class="c1"># Start in the project directory so renv activates</span>
+<span class="nb">cd</span><span class="w"> </span>/projects/&lt;division&gt;/&lt;school&gt;/&lt;department&gt;/&lt;group&gt;/my_analysis
+
+Rscript<span class="w"> </span>analysis.R
+</code></pre></div>
+</div>
+<p>Submit it as usual:</p>
+<div class="admonition terminal">
+<p class="admonition-title">Terminal</p>
+<div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>run_analysis.sh
+</code></pre></div>
+</div>
+<p>To confirm the job used the project library rather than your personal one, print the paths at the top of the R script:</p>
+<div class="admonition r-code">
+<p class="admonition-title">Script: <code>analysis.R</code></p>
+<div class="highlight"><pre><span></span><code><span class="nf">cat</span><span class="p">(</span><span class="s">"Library paths in use:\n"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">.libPaths</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<p>The first path should be inside your project's <code>renv/library/</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Run <code>renv::restore()</code> before you submit, not inside the job</p>
+<p>Restoring downloads and compiles packages. Doing that inside a batch job means every job repeats the work, jobs sit in the queue holding an allocation while they compile, and an array job will have many tasks writing to the cache at once.</p>
+<p>Restore once, interactively, then submit. Jobs should find everything already built.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Do not use <code>--vanilla</code></p>
+<p><code>Rscript --vanilla</code> and <code>R --no-init-file</code> skip <code>.Rprofile</code>, which is exactly the file that activates <code>renv</code>. The job will run against your default library and either fail with missing packages or, worse, quietly use different versions.</p>
+</div>
+<h2 id="using-renv-with-rstudio-on-ondemand">Using renv with RStudio on OnDemand<a class="headerlink" href="#using-renv-with-rstudio-on-ondemand" title="Permanent link">¶</a></h2>
+<p>RStudio is available through <a href="../../OnDemand/available_apps/">OnDemand</a> as versioned Apptainer images. <code>renv</code> works there, with one thing to watch.</p>
+<p>Each RStudio image bundles its own R, which is <strong>not</strong> the same installation as the <code>r/…</code> modules. A project library built under <code>module load r/4.4.3</code> on the command line is only reusable in RStudio if that image has a matching R version. If the versions differ, R will tell you the library is for a different version, and you need <code>renv::restore()</code> to rebuild it for that R.</p>
+<p>The simplest approach is to pick one R version for a project and stay with it — either an RStudio image, or a module — rather than moving between them.</p>
+<p>Opening the project in RStudio through <strong>File → Open Project</strong>, or starting RStudio in the project directory, activates <code>renv</code> the same way as on the command line.</p>
+<h2 id="sharing-and-reproducing-a-project">Sharing and Reproducing a Project<a class="headerlink" href="#sharing-and-reproducing-a-project" title="Permanent link">¶</a></h2>
+<p>The lockfile is the deliverable. Commit <code>renv.lock</code>, <code>.Rprofile</code> and <code>renv/activate.R</code> to version control, and leave <code>renv/library/</code> out of it.</p>
+<p>Someone else — or you, on another system — then runs:</p>
+<div class="admonition r-code">
+<p class="admonition-title">R-code</p>
+<div class="highlight"><pre><span></span><code><span class="n">renv</span><span class="o">::</span><span class="nf">restore</span><span class="p">()</span>
+</code></pre></div>
+</div>
+<p>which installs the recorded versions into a fresh project library.</p>
+<div class="admonition note">
+<p class="admonition-title">Lockfiles record the repository as well as the packages</p>
+<p>If you followed <a href="#making-installs-fast">Making Installs Fast</a>, the lockfile will name the Rocky Linux binary repository. That URL serves binaries for this cluster and source everywhere else, so it still works for a collaborator on macOS or Windows — but they will get no speed benefit and may prefer to set their own <code>repos</code>.</p>
+</div>
+<p>For a result you may need to reproduce years later, record the R version alongside the lockfile — the module name, such as <code>r/4.4.3</code>, is enough. <code>renv</code> restores packages, not R itself.</p>
+<h2 id="common-problems">Common Problems<a class="headerlink" href="#common-problems" title="Permanent link">¶</a></h2>
+<p><strong>Starting R does not activate the project.</strong> R only reads <code>.Rprofile</code> from its working directory. Check with <code>getwd()</code> that you are in the project, and that <code>.Rprofile</code> exists there. In a Slurm job this is almost always a missing <code>cd</code>.</p>
+<p><strong>Packages are missing in a job that worked interactively.</strong> Your shell startup files are not read by a Slurm job in the same way, so anything you loaded by hand is absent. Make sure the job script has its own <code>module load r/…</code> and <code>cd</code> into the project.</p>
+<p><strong>A package fails to compile with a missing header or library.</strong> The package needs a system library that is not loaded. Search the modules for it:</p>
+<div class="admonition terminal">
+<p class="admonition-title">Terminal</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>spider<span class="w"> </span>&lt;name&gt;
+</code></pre></div>
+</div>
+<p>Load it before installing. If there is no module for what the package needs, email the eResearch Support team at <strong><a href="mailto:rtis.support@otago.ac.nz">rtis.support@otago.ac.nz</a></strong> with the package name and the error, and it can be added.</p>
+<p><strong>"Package was installed by a different version of R".</strong> The library was built for another R. Load the R version the project was created with, or run <code>renv::restore()</code> to rebuild it for the version you are now using.</p>
+<p><strong>Your home directory filled up.</strong> Move the cache, as in <a href="#moving-the-cache-off-your-home-directory">Moving the Cache off Your Home Directory</a>. Existing projects pick up the new location on their next install; the old <code>~/.cache/R/renv</code> can then be deleted.</p>
+<p><strong>Everything is compiling from source and taking hours.</strong> The repository options are not being applied. Inside a project, <code>~/.Rprofile</code> is ignored — see the note in <a href="#making-installs-fast">Making Installs Fast</a>. Check with <code>getOption("repos")</code>, which should show the <code>packagemanager.posit.co</code> URL.</p>
+<div class="admonition related-pages">
+<p class="admonition-title">What's next?</p>
+<ul>
+<li>For R versions, RStudio, and library paths outside <code>renv</code>, see <a href="../../applications/r_rstudio/">R and Rstudio</a></li>
+<li>For worked examples of running R under the scheduler, see <a href="../../../running/batch/slurm_examples/r-slurm/">Using R with Slurm</a></li>
+<li>For loading R and other software, see <a href="../modules/">Using Modules (LMOD)</a></li>
+<li>For managing non-R dependencies alongside R, see <a href="../conda/">Conda/Mamba</a></li>
+<li>For where to keep project data and libraries, see <a href="../../../../storage/storage_options/">Storage Options</a></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.path", "navigation.indexes", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/general.js?h=b719a1f3"></script>
+      
+    
+  </body>
+</html>

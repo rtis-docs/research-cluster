@@ -1,0 +1,4933 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://rtis-docs.github.io/research-cluster/getting_started/running/workflows/nextflow/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../efficiency/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/uoo-favicon-32x32.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Nextflow - eResearch Support</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=wickliffe-sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"wickliffe-sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/neoteroi-mkdocs.css?h=74bf0588">
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css?h=abc75da2">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nextflow" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+<!-- Custom Banner -->
+<!-- <div class="banner">
+    <p style="color: red; font-weight: bold; display:inline;font-size: 160%;">This site is in early stages of development</p>
+</div> -->
+
+<!-- Original Header -->
+
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="eResearch Support" class="md-header__button md-logo" aria-label="eResearch Support" data-md-component="logo">
+      
+  <img src="../../../../assets/images/UoO_Logo_RGB_Horz_Gold-REV.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            eResearch Support
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Nextflow
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/rtis-docs/research-cluster" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Cluster Documentation
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="eResearch Support" class="md-nav__button md-logo" aria-label="eResearch Support" data-md-component="logo">
+      
+  <img src="../../../../assets/images/UoO_Logo_RGB_Horz_Gold-REV.svg" alt="logo">
+
+    </a>
+    eResearch Support
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/rtis-docs/research-cluster" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Cluster Documentation
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Otago Research Computing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Research Cluster (Aoraki)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Access
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Access
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../access/access_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Access Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../access/signup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting an Account
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../access/login_ssh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SSH
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../access/ondemand_web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Logging in to OnDemand (Web)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../access/vscode_remote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VSCode on Aoraki
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../access/coldfront/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Account and Allocation Management
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_6" id="__nav_2_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Account and Allocation Management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../access/coldfront/manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../access/coldfront/user/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Viewing Current Status
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Cluster Traffic
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cluster Traffic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../current_utilisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Current Utilisation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../queue_and_availability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Queue and Availability
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../software/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Software
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Software
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    OnDemand
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            OnDemand
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/OnDemand/ondemand/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Open OnDemand Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/OnDemand/available_apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Available Apps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/OnDemand/hpc_desktop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OnDemand HPC Desktop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/OnDemand/ood_file_manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using the OnDemand File Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/OnDemand/ood_shell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Accessing the Shell through OnDemand
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../software/applications/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Applications
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4_3" id="__nav_2_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Applications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/4ti2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4ti2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/afni/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AFNI (Analysis of Functional NeuroImages)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/alphafold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AlphaFold
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/alphafold3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alphafold3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/ansys_fluent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ansys Fluent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/bohra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bohra
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/ccp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CCP4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/circulator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Circlator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/claritas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GLOBEClaritas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/colabfold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ColabFold
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/connectome_workbench/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Connectome Workbench
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/crystal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Crystal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/deeplabcut/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DeepLabCut
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/deepposekit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DeepPoseKit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/dorado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dorado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/fmriprep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    fMRIPrep (Containerised)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/fsl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FSL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/gaussian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gaussian
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/gubbins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gubbins
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/guppy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Guppy (GPU)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/humann/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HUMAnN 3.0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/macaulay2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Macaulay2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/mathematica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mathematica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/matlab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MATLAB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/ollama/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ollama
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/openpose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenPose
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/orca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ORCA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/pytorch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PyTorch via module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/r_rstudio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    R and RStudio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/samtools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Samtools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/spaceranger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Space Ranger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/tbprofiler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TBProfiler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/whisper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Whisper (speech-to-text)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/xdsguI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    xdsguI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../software/software_environments/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Software environments
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4_4" id="__nav_2_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Software environments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/software_environments/apptainer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Apptainer (Singularity)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/software_environments/conda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conda/Mamba
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/software_environments/modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using Modules (LMOD)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/software_environments/renv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    renv (R Package Environments)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/software_environments/sbgrid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SBGrid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/software_environments/shells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shells (bash, zsh, fish, tcsh)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/software_environments/spack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Spack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/software_environments/venv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python virtual environments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Running Jobs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Running Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../running_jobs_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Running Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_2" id="__nav_2_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Interactive Jobs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Interactive Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interactive/interactive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interactive Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interactive/interactive_shell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interactive Sessions from the Command Line
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_3" id="__nav_2_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Batch Jobs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Batch Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../batch/slurm_quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slurm Quickstart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../batch/sbatch_options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Job Script Options
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_3_3" id="__nav_2_5_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Example Job Scripts
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_5_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Example Job Scripts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../batch/slurm_examples/array-slurm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Array Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../batch/slurm_examples/gpu-slurm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using a GPU with Slurm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../batch/slurm_examples/dependent_jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dependent Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../batch/slurm_examples/python-slurm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using Python with Slurm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../batch/slurm_examples/r-slurm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using R with Slurm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../batch/slurm_examples/heterogeneous_jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Heterogeneous Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Workflows
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5_4" id="__nav_2_5_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Workflows
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Nextflow
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nextflow
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#loading-nextflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading Nextflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-it-for-aoraki" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure It for Aoraki
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-the-work-directory-goes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where the Work Directory Goes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container Images
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keeping-the-head-process-alive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keeping the Head Process Alive
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-many-jobs-at-once" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Many Jobs at Once
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpu-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU Processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batching-short-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batching Short Tasks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resuming-a-failed-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resuming a Failed Run
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nf-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      nf-core
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epi2me" class="md-nav__link">
+    <span class="md-ellipsis">
+      EPI2ME
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../efficiency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Job Efficiency
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            General
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Announcements
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Announcements
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/announcements/2026-07-13-os-security-updates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    July 2026 Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/announcements/2026-04-29-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    April 2026 Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/announcements/2026-01-16-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    January 2026 Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/announcements/2025-09-05-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    September 2025 Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/announcements/2025-05-25-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    April 2025 Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/announcements/2024-11-09-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    November 2024 Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Guidelines
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Guidelines
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/guidelines/login_node_usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Login Node Usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/guidelines/reasonable_usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reasonable Usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/guidelines/storage_guidelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Storage Guidelines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../general/faq/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            FAQ
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/faq/access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Access and Login
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/faq/job_start_time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Why Is My Job Not Starting?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/faq/slurm_job_failures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Why Did My Job Fail?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/faq/gpu_jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GPU Questions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/faq/disk_usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Storage and Quotas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/faq/sharing_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sharing and Moving Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/faq/software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software and Environments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Storage
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Storage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/storage_options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Storage Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Data Locations
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Data Locations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_locations/homes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Homes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_locations/projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Projects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_locations/weka/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Weka
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_locations/hcs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Otago HCS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Data Transfer
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Data Transfer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_transfer/data_transfer_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Transfer Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_transfer/globus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Globus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_transfer/globus_registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Globus registration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_transfer/rclone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    rclone
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_transfer/rsync/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    scp or rsync
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/storage_request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Storage Request
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/file_permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    File Permissions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../other_services/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Other Services
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Other Services
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Hosted
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Hosted
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/cryosparc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CryoSPARC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/databases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database hosting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/llm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Large Language Models (LLMs)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/openwebui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ai.uod (Open WebUI)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/sas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SAS Studio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/shinyproxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shinyproxy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/stt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Audio/Video Speech-to-Text Transcription &amp; Translation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/translate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Translation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../other_services/cloudnative/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Cloud Native
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud Native
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/cloudnative/faas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function-as-a-Service (FaaS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Training
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Training
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/training/workshops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workshops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#loading-nextflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading Nextflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-it-for-aoraki" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure It for Aoraki
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-the-work-directory-goes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where the Work Directory Goes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container Images
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keeping-the-head-process-alive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keeping the Head Process Alive
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-many-jobs-at-once" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Many Jobs at Once
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpu-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU Processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batching-short-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batching Short Tasks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resuming-a-failed-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resuming a Failed Run
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nf-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      nf-core
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epi2me" class="md-nav__link">
+    <span class="md-ellipsis">
+      EPI2ME
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="nextflow">Nextflow<a class="headerlink" href="#nextflow" title="Permanent link">¶</a></h1>
+<div class="admonition overview">
+<p class="admonition-title">On this Page</p>
+<ul>
+<li>Loading Nextflow and configuring it for Aoraki</li>
+<li>Where the work directory and container images should live</li>
+<li>Keeping the head process alive for the length of a run</li>
+<li>Controlling how many jobs a pipeline puts in the queue</li>
+<li>Requesting GPUs, batching short tasks, and resuming a failed run</li>
+</ul>
+</div>
+<p><a href="https://nextflow.io/">Nextflow</a> describes a pipeline as a set of processes connected by
+channels. You write what each step does; Nextflow works out the order, submits each task to
+Slurm as a separate job, and stitches the results together.</p>
+<p>Because it talks to Slurm directly, a Nextflow pipeline behaves like hundreds of small jobs
+rather than one big one. Most of this page is about making that behave well on a shared cluster.</p>
+<h2 id="loading-nextflow">Loading Nextflow<a class="headerlink" href="#loading-nextflow" title="Permanent link">¶</a></h2>
+<div class="admonition terminal">
+<p class="admonition-title">Terminal</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>nextflow
+nextflow<span class="w"> </span>-version
+</code></pre></div>
+</div>
+<p>Several versions are installed. <code>module load nextflow</code> gives you the newest; use
+<code>module avail nextflow</code> to see the rest, and <code>module load nextflow/24.04.3-qlizevk</code> (for example)
+to pin one. Nextflow needs Java, and the module loads <code>openjdk/17</code> for you — you do not need to
+load it yourself.</p>
+<p>The first time you run it, Nextflow downloads its own dependencies into <code>$HOME/.nextflow</code>. That
+is normal and only happens once per version.</p>
+<h2 id="configure-it-for-aoraki">Configure It for Aoraki<a class="headerlink" href="#configure-it-for-aoraki" title="Permanent link">¶</a></h2>
+<p>Out of the box Nextflow runs every task as a local process on whatever machine you launched it
+from — which on the login node means it will run your whole pipeline there. It has to be told to
+use the scheduler.</p>
+<p>Create <code>$HOME/.nextflow/config</code> with the following. Nextflow reads this file for every pipeline
+you run, so this is a one-off:</p>
+<div class="highlight"><pre><span></span><code><span class="n">process</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'slurm'</span>
+<span class="w">    </span><span class="n">queue</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s1">'aoraki'</span>
+
+<span class="w">    </span><span class="nl">withLabel:</span><span class="w"> </span><span class="s1">'gpu'</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">queue</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s1">'aoraki_gpu'</span>
+<span class="w">        </span><span class="n">clusterOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'--gres=gpu:1'</span>
+<span class="w">        </span><span class="n">maxForks</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+
+<span class="n">executor</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">queueSize</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span>
+<span class="w">    </span><span class="n">submitRateLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'10/1min'</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>What each part does:</p>
+<ul>
+<li><code>executor = 'slurm'</code> is the setting that matters. Without it, nothing reaches the scheduler.</li>
+<li><code>queue</code> is the Slurm partition. <code>aoraki</code> is the general-purpose one; see the
+  <a href="../../../overview/">Cluster Overview</a> for the others.</li>
+<li>The <code>gpu</code> label block is covered under <a href="#gpu-processes">GPU Processes</a> below.</li>
+<li><code>queueSize</code> and <code>submitRateLimit</code> are covered under
+  <a href="#how-many-jobs-at-once">How Many Jobs at Once</a>.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">A pipeline's own settings win</p>
+<p>This file is merged with the <code>nextflow.config</code> that ships with whatever pipeline you run, and
+the pipeline's file is applied last. Well-written pipelines set their own <code>cpus</code>, <code>memory</code> and
+<code>time</code> per process, and those will override anything you put here. Treat your global config as
+"how to reach the scheduler", not "how big every task should be".</p>
+</div>
+<p>To see what a pipeline will actually use once everything is merged, run this from the pipeline's
+directory:</p>
+<div class="admonition terminal">
+<p class="admonition-title">Terminal</p>
+<div class="highlight"><pre><span></span><code>nextflow<span class="w"> </span>config<span class="w"> </span>-profile<span class="w"> </span>singularity
+</code></pre></div>
+</div>
+<h2 id="where-the-work-directory-goes">Where the Work Directory Goes<a class="headerlink" href="#where-the-work-directory-goes" title="Permanent link">¶</a></h2>
+<p>Nextflow gives every task its own directory under <code>work/</code>, containing its inputs, its outputs and
+its logs. Nothing is cleaned up automatically — that is what makes <code>-resume</code> possible. It also
+means a single run can leave hundreds of gigabytes behind.</p>
+<p>By default <code>work/</code> is created wherever you launched the pipeline from. <strong>If that is your home
+directory, you will hit the 40 GB hard quota and the run will fail partway through</strong>,
+usually with an error that looks like a problem with the pipeline rather than a problem with
+disk space.</p>
+<p>Put it on <code>/projects</code> instead:</p>
+<div class="admonition terminal">
+<p class="admonition-title">Terminal</p>
+<div class="highlight"><pre><span></span><code>nextflow<span class="w"> </span>run<span class="w"> </span>&lt;pipeline&gt;<span class="w"> </span>-work-dir<span class="w"> </span>/projects/&lt;division&gt;/&lt;department&gt;/&lt;group&gt;/nextflow_work
+</code></pre></div>
+</div>
+<p>Or set it once in <code>$HOME/.nextflow/config</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">workDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'/projects/&lt;division&gt;/&lt;department&gt;/&lt;group&gt;/nextflow_work'</span>
+</code></pre></div>
+<p>When a run has finished and you have copied out the results you want, delete the work directory.
+See <a href="../../../../storage/storage_options/">Storage Options</a> for what each storage area is for.</p>
+<h2 id="container-images">Container Images<a class="headerlink" href="#container-images" title="Permanent link">¶</a></h2>
+<p>Most published pipelines ship their software as containers. Docker is not available on the
+cluster — it requires root — so you need the Singularity or Apptainer profile instead:</p>
+<div class="admonition terminal">
+<p class="admonition-title">Terminal</p>
+<div class="highlight"><pre><span></span><code>nextflow<span class="w"> </span>run<span class="w"> </span>&lt;pipeline&gt;<span class="w"> </span>-profile<span class="w"> </span>singularity
+</code></pre></div>
+</div>
+<p>Some pipelines call this profile <code>apptainer</code> rather than <code>singularity</code>. Either works here:
+Apptainer is installed at <code>/usr/bin/apptainer</code> with a <code>singularity</code> compatibility symlink, and
+no module is needed to use it.</p>
+<p>Set a shared cache directory so images are pulled once rather than re-downloaded into every
+run's work directory:</p>
+<div class="admonition terminal">
+<p class="admonition-title">Terminal</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">NXF_APPTAINER_CACHEDIR</span><span class="o">=</span>/projects/&lt;division&gt;/&lt;department&gt;/&lt;group&gt;/apptainer_cache
+</code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Do not leave the image cache in your home directory</p>
+<p>Without <code>NXF_APPTAINER_CACHEDIR</code>, images are cached under <code>$HOME/.apptainer/cache</code>. Pipeline
+images are routinely several gigabytes each and a pipeline may use a dozen of them, so the
+40 GB home quota disappears quickly — and it will take the rest of your work with
+it when you can no longer write to your home directory.</p>
+<p>Put the line in your <code>~/.bashrc</code> so you cannot forget it.</p>
+</div>
+<p>For more on containers generally, see <a href="../../../software/software_environments/apptainer/">Apptainer</a>.</p>
+<h2 id="keeping-the-head-process-alive">Keeping the Head Process Alive<a class="headerlink" href="#keeping-the-head-process-alive" title="Permanent link">¶</a></h2>
+<p>Nextflow itself does not run your analysis. It sits there submitting jobs, waiting for them and
+submitting the next ones — for the entire length of the pipeline, which may be days. If that
+process dies, the pipeline stops.</p>
+<p>The <a href="../../../../general/guidelines/login_node_usage/">login node</a> is not the place for it. The
+better pattern is to submit the head process as a small, long-running batch job. It needs almost
+no resources itself, and <code>sbatch</code> works from compute nodes, so it can submit the pipeline's tasks
+from there quite happily.</p>
+<div class="admonition terminal">
+<p class="admonition-title">run_pipeline.sh</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -e</span>
+<span class="c1">#SBATCH --job-name=nextflow_head</span>
+<span class="c1">#SBATCH --partition=aoraki_long</span>
+<span class="c1">#SBATCH --cpus-per-task=1</span>
+<span class="c1">#SBATCH --mem=4G</span>
+<span class="c1">#SBATCH --time=3-00:00:00</span>
+<span class="c1">#SBATCH --output=nextflow_head_%j.out</span>
+
+module<span class="w"> </span>load<span class="w"> </span>nextflow
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">NXF_APPTAINER_CACHEDIR</span><span class="o">=</span>/projects/&lt;division&gt;/&lt;department&gt;/&lt;group&gt;/apptainer_cache
+
+nextflow<span class="w"> </span>run<span class="w"> </span>&lt;pipeline&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-profile<span class="w"> </span>singularity<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-work-dir<span class="w"> </span>/projects/&lt;division&gt;/&lt;department&gt;/&lt;group&gt;/nextflow_work<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-resume
+</code></pre></div>
+</div>
+<p>Submit it with <code>sbatch run_pipeline.sh</code>. Give <code>--time</code> more than you think the pipeline needs:
+if the head job hits its wall time, every task it was managing is orphaned.</p>
+<p>For a short pipeline you are watching interactively, <code>tmux</code> on the login node is a reasonable
+alternative — it keeps the process alive when your SSH connection drops. See
+<a href="../../interactive/interactive_shell/">Interactive Sessions</a> for how to use it.</p>
+<h2 id="how-many-jobs-at-once">How Many Jobs at Once<a class="headerlink" href="#how-many-jobs-at-once" title="Permanent link">¶</a></h2>
+<p>By default Nextflow keeps <strong>100</strong> tasks submitted at a time and submits them as fast as it can.
+On a shared cluster that is more aggressive than it sounds, because Slurm caps how many jobs one
+user may have running in each partition.</p>
+<table id="_table-1">
+<caption style="caption-side:top"> Running jobs allowed per user, by partition</caption><thead>
+<tr>
+<th style="text-align: left;">Partition</th>
+<th style="text-align: right;">Jobs running at once</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>aoraki_short</code></td>
+<td style="text-align: right;">250</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>aoraki</code></td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>aoraki_small</code></td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>aoraki_long</code></td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>aoraki_bigmem</code></td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;">Any GPU partition</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+<p>So the default of 100 uses your entire allowance on <code>aoraki</code> — one pipeline and you have no
+room left for anything else you want to run. Dropping <code>queueSize</code> to 50 costs you very little
+in wall time and leaves you space to work.</p>
+<p><code>submitRateLimit</code> spreads the submissions out. Without it, Nextflow will fire 100 <code>sbatch</code> calls
+at the scheduler in a burst every time a stage completes.</p>
+<h2 id="gpu-processes">GPU Processes<a class="headerlink" href="#gpu-processes" title="Permanent link">¶</a></h2>
+<p>Nextflow's Slurm executor only understands five process directives: <code>clusterOptions</code>, <code>cpus</code>,
+<code>memory</code>, <code>queue</code> and <code>time</code>. In particular it does <strong>not</strong> support the <code>accelerator</code> directive,
+which is what most Nextflow documentation tells you to use for GPUs — on Slurm it is silently
+ignored.</p>
+<p>This matters more than it sounds. Sending a task to <code>queue = 'aoraki_gpu'</code> puts it on a machine
+that has GPUs, but Slurm hands out GPUs individually: without an explicit request the task gets
+none, and the pipeline either falls back to CPU or fails with a CUDA error. The GPU has to come
+through <code>clusterOptions</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">process</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="nl">withLabel:</span><span class="w"> </span><span class="s1">'gpu'</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">queue</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s1">'aoraki_gpu'</span>
+<span class="w">        </span><span class="n">clusterOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'--gres=gpu:1'</span>
+<span class="w">        </span><span class="n">maxForks</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p><code>maxForks = 2</code> matches the two-running-jobs cap on the GPU partitions. Without it, Nextflow
+happily submits fifty GPU tasks that then sit pending while two run — which does not make the
+pipeline faster, but does fill the queue.</p>
+<p>Check which label a pipeline uses for its GPU steps before relying on this; <code>gpu</code> is a common
+convention but not a universal one. For GPU jobs generally, see
+<a href="../../batch/slurm_examples/gpu-slurm/">GPU Jobs</a>.</p>
+<h2 id="batching-short-tasks">Batching Short Tasks<a class="headerlink" href="#batching-short-tasks" title="Permanent link">¶</a></h2>
+<p>If a pipeline has thousands of tasks that each take a minute or two, submitting one Slurm job
+per task wastes more time on scheduling overhead than the tasks take to run. The <code>array</code>
+directive groups them into Slurm job arrays instead:</p>
+<div class="highlight"><pre><span></span><code><span class="n">process</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>This requires a recent Nextflow — use <code>nextflow/24.04.3-qlizevk</code> or newer. It is the single most
+effective change you can make to a pipeline made of many short steps, and it is much kinder to
+the scheduler than the equivalent flood of individual jobs.</p>
+<h2 id="resuming-a-failed-run">Resuming a Failed Run<a class="headerlink" href="#resuming-a-failed-run" title="Permanent link">¶</a></h2>
+<p>Add <code>-resume</code> and Nextflow re-uses the results of every task that already completed successfully,
+picking up from the first one that failed:</p>
+<div class="admonition terminal">
+<p class="admonition-title">Terminal</p>
+<div class="highlight"><pre><span></span><code>nextflow<span class="w"> </span>run<span class="w"> </span>&lt;pipeline&gt;<span class="w"> </span>-profile<span class="w"> </span>singularity<span class="w"> </span>-resume
+</code></pre></div>
+</div>
+<p>This only works while the work directory still exists — it is where the cached results live. If
+you have deleted <code>work/</code>, <code>-resume</code> has nothing to resume from and the pipeline starts over.</p>
+<h2 id="nf-core">nf-core<a class="headerlink" href="#nf-core" title="Permanent link">¶</a></h2>
+<p><a href="https://nf-co.re/">nf-core</a> is a curated collection of over 100 community-built Nextflow
+pipelines for bioinformatics, all following the same conventions. They come with <code>singularity</code>
+profiles and sensible per-process resource requests, so in practice they need little from you
+beyond the executor configuration above.</p>
+<h2 id="epi2me">EPI2ME<a class="headerlink" href="#epi2me" title="Permanent link">¶</a></h2>
+<p><a href="https://labs.epi2me.io/">EPI2ME Desktop</a> is Oxford Nanopore's graphical front end for running
+their Nextflow pipelines, and it can import generic Nextflow workflows too. It is available
+through OnDemand — see
+<a href="../../../software/OnDemand/available_apps/#epi2me-desktop">Available Apps</a>.</p>
+<p>It was not designed for cluster use, and running pipelines from the command line as described
+above gives you far more control over how they reach the scheduler.</p>
+<div class="admonition related-pages">
+<p class="admonition-title">What's next?</p>
+<ul>
+<li>For whether you need a pipeline at all, see <a href="../">Workflows</a></li>
+<li>For the simpler alternative, see <a href="../../batch/slurm_examples/array-slurm/">Array Jobs</a></li>
+<li>For where the work directory should live, see <a href="../../../../storage/storage_options/">Storage Options</a></li>
+<li>For containers on the cluster, see <a href="../../../software/software_environments/apptainer/">Apptainer</a></li>
+<li>Stuck? Email the eResearch Support team at <strong><a href="mailto:rtis.support@otago.ac.nz">rtis.support@otago.ac.nz</a></strong></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.path", "navigation.indexes", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/general.js?h=b719a1f3"></script>
+      
+    
+  </body>
+</html>
