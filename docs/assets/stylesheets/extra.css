@@ -1,6 +1,6 @@
 .md-header {
     background-color: #060d87;
-};
+}
 
 /* Force figures to be left-aligned */
 figure {
@@ -182,6 +182,13 @@ li.md-nav__item--active:not(li.md-nav__item--nested) {
     
     height: 70px;
   }
+
+/* Match .md-main__inner so the header and the content share a left edge */
+.md-header__inner {
+  max-width: none;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
 
   
   :root {
