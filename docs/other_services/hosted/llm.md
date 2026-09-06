@@ -70,7 +70,7 @@ Currently, eResearch Solutions makes the following models available for inferenc
 
 |name                    |model                                                                     |parameters|quantisation |input                      |license|
 |------------------------|--------------------------------------------------------------------------|----------|-------------|---------------------------|-------|
-|ONCAMPUS/Qwen3.6-27B-FP8|[Qwen 3.6 27B FP8](https://huggingface.co/Qwen/Qwen3.6-27B-FP8)           |27B       |FP8          |text-only                  |[Apache-2.0](https://choosealicense.com/licenses/apache-2.0/)|
+|ONCAMPUS/Qwen3.8-27B-FP8|[Qwen 3.8 27B FP8](https://huggingface.co/Qwen/Qwen3.8-27B-FP8)           |27B       |FP8          |text-only                  |[Apache-2.0](https://choosealicense.com/licenses/apache-2.0/)|
 |ONCAMPUS/Qwen3.5-9B     |[Qwen 3.5 9B BF16](https://huggingface.co/Qwen/Qwen3.5-9B)                |9B        |BF16         |text-only                  |[Apache-2.0](https://choosealicense.com/licenses/apache-2.0/)|
 |ONCAMPUS/gemma-4-12B-it |[Google Gemma 4 12B IT BF16](https://huggingface.co/google/gemma-4-12B-it)|12B       |BF16         |multimodal                 |[Apache-2.0](https://choosealicense.com/licenses/apache-2.0/)|
 |ONCAMPUS/BAAI/bge-m3    |[BAAI/bge-m3](https://huggingface.co/BAAI/bge-m3)                         |0.568B    |FP16         |multilingual text embedding|[MIT](https://choosealicense.com/licenses/mit/)|
