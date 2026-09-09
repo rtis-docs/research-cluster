@@ -20,7 +20,7 @@ WhisperX is available on campus via:
 
 ### whisperx-web
 
-[https://whisper.uod.otago.ac.nz](https://whisper.uod.otago.ac.nz)
+[https://whisper.otago.ac.nz](https://whisper.otago.ac.nz) (on-campus access)
 
 This is a new, experimental web application currently being trialled and under active development.
 
