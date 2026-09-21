@@ -6,6 +6,9 @@ To request access to Globus please use this form. Once you have received confirm
 
 Please contact the eResearch Support team ({{support_email}}) if you have any questions.
 
-<iframe width="900px" height="1400px" src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=xe8lAv54KEmxV57ySAnpuklJ-oAsUjlEj9BHqdUHZWtUODRRTElSNUZBRlJTMTJVTU1IWThPUDFUWC4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+<iframe class="ms-form" height="1800px" loading="lazy"
+  src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=xe8lAv54KEmxV57ySAnpuklJ-oAsUjlEj9BHqdUHZWtUODRRTElSNUZBRlJTMTJVTU1IWThPUDFUWC4u&embed=true"
+  title="Microsoft Forms request form"
+  allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen></iframe>
 
 

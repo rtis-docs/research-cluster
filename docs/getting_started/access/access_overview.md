@@ -31,6 +31,11 @@ By default your University account will need to be provisioned for access. Pleas
   url: login_ssh.md
   image: ../../assets/images/icons/login_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
+- title: VS Code Remote
+  content: Develop on a compute node using VS Code and Slurm
+  url: vscode_remote.md
+  image: ../../assets/images/icons/desktop_cloud_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
+
 ::/cards::
 
 !!! related-pages "What next?"

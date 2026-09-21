@@ -1,10 +1,12 @@
-# Large Language Models (LLMs) & Generative AI (GenAI)
+# Large Language Models (LLMs)
 
 
 !!! info
     Please refer to the University's **[AI Governance Policy](https://www.otago.ac.nz/administration/policies/policy-collection/ai-governance-policy)** and related **[AI Tools Guidance](https://www.otago.ac.nz/__data/assets/pdf_file/0027/631836/AI-Tool-Guidance-V3.1-1st-Dec-25.pdf)** document for general advice on responsible use of AI across the University.
 
-This is a fast-moving field; We are currently trialling a number of different tools and deployment models for research-related LLM/genAI use.
+Large Language Models (LLMs) & Generative AI (GenAI) is a fast-moving field. The University is currently trialling a number of different deployment models and tools.
+
+eResearch Solutions makes available an LLM gateway that can provide access to a small selection of on-campus as well as cloud-hosted models for research-related LLM/genAI use.
 
 
 ## Access
@@ -15,8 +17,30 @@ The eResearch Solutions LLM gateway is exposed as an OpenAI-compatible endpoint.
 
 * API base URL: `https://llm.uod.otago.ac.nz/v1`
 
-Most OpenAI-compatible SDKs or tools should be able to interface with this. This is accessible on-campus/via VPN only. 
+This is accessible on-campus/via VPN only. 
 
+Most OpenAI-compatible SDKs or tools should be able to interface with this. 
+If you prefer a user-friendly, conversational-style web interface, take a look at our [ai.uod Open WebUI instance](openwebui.md).
+
+
+## LLM limitations and considerations
+
+LLMs have gained significant attention due to their impressive capabilities in some domains. However there is also a lot of confusion and marketing hype surrounding LLMs and GenAI. 
+
+These models excel in generating text that is contextually relevant by estimating the probability of different words or phrases occurring in a given context, allowing it to produce coherent and contextually relevant responses.
+
+However, it is crucial **not to anthropomorphise** LLMs' abilities. LLMs do not possess human-like reasoning or thinking capabilities. The [transformer architecture](https://en.wikipedia.org/wiki/Transformer_(deep_learning)) underlying these models allows them to **generate plausible text based on probabilistic pattern matching** but **does not enable genuine reasoning, introspection, intention or causal understanding**.
+
+Prompting an LLM model is essentially guiding a statistical text generator to produce outputs based on your prompts.
+
+The effectiveness of LLMs lies in their ability to generate the most plausible response to an input, showcasing strong performance on various tasks and emergent abilities. Nonetheless, it is essential to recognise and set realistic expectations for what LLMs can and cannot do, understanding their limitations.
+
+Other considerations
+
+* **LLMs may confidently produce plausible-sounding but factually incorrect or nonsensical responses**
+* LLMs are **costly**, **resource-intensive**, **ethically complex**, and carry a heavy **environmental** burden
+
+We trust our researchers to thoughtfully balance the use of our LLMs (and their associated cost) against the value they deliver to their work, the University, and the broader community.
 
 
 
@@ -25,15 +49,17 @@ Most OpenAI-compatible SDKs or tools should be able to interface with this. This
 ### Cloud models
 A selection of [cloud LLM models on MS Foundry](https://ai.azure.com/catalog/models) can be made available via our LLM gateway for research use cases. Please contact us to discuss your requirements.
 
-The current set includes `gpt-oss-120b`, `gpt-5.4`, `claude-opus-4-6`, `Kimi-K2.5`, `DeepSeek-V3.2`, `text-embedding-3-small`.
+The current set includes `gpt-oss-120b`, `gpt-5.4`, `Kimi-K2.5`, `DeepSeek-V3.2`, `text-embedding-3-small`, `claude-opus-4-6`, `claude-opus-5`. Additional models may be added on request.
 
 Cloud-hosted models should not be used for processing of any input/data that is considered sensitive, subject to data sovereignty, etc. Please refer to the **[AI Tools Guidance](https://www.otago.ac.nz/__data/assets/pdf_file/0027/631836/AI-Tool-Guidance-V3.1-1st-Dec-25.pdf)** document.
+
 
 ### Local on-campus models
 
 We have a few small models hosted entirely on-campus without dependencies on external cloud services, available for select research trial use cases.
 
 Running these models locally within the campus environment requires significant resources that are currently **limited** due to our present hardware capabilities. Therefore usage should focus on research scenarios where **on-campus processing** is absolutely necessary (e.g. sensitive data).
+
 
 #### Local Model list
 
@@ -91,21 +117,3 @@ Most models can be prompted to employ CoT reasoning (e.g. by adding "Let's think
 Note that this is a **simulated reasoning-like process** that quickly breaks down once confronted with out-of-domain logical problems that don't match the specific logical patterns found in the model's training data. (See 'Limitations' below)
 
 
-## LLM limitations and considerations
-
-Large language models (LLMs) have gained significant attention due to their impressive capabilities. However there is also a lot of confusion and marketing hype surrounding LLMs and GenAI. 
-
-These models excel in generating text that is contextually relevant by estimating the probability of different words or phrases occurring in a given context, allowing it to create coherent and contextually relevant responses.
-
-However, it is crucial **not to anthropomorphise** LLMs' abilities. LLMs do not possess human-like reasoning or thinking capabilities. The [transformer architecture](https://en.wikipedia.org/wiki/Transformer_(deep_learning)) underlying these models allows them to **generate plausible text based on probabilistic pattern matching** but **does not enable genuine reasoning, introspection, intention or causal understanding**.
-
-Prompting an LLM model is essentially guiding a statistical text generator to produce outputs based on your prompts.
-
-The effectiveness of LLMs lies in their ability to generate the most plausible response to an input, showcasing strong performance on various tasks and emergent abilities. Nonetheless, it is essential to recognise and set realistic expectations for what LLMs can and cannot do, understanding their limitations.
-
-Other considerations
-
-* **LLMs may confidently produce plausible-sounding but factually incorrect or nonsensical responses**
-* LLMs are **costly**, **resource-intensive**, **ethically complex**, and carry a heavy **environmental** burden
-
-We trust our researchers to thoughtfully balance the use of our LLMs (and their associated cost) against the value they deliver to their work, the University, and the broader community.

@@ -29,7 +29,7 @@ graph TD;
 | :----- | :-------------------------------------------- | :----------------------------------- | :----- |:---|
 | __Ideal Use__ | Storage of scripts and configuration files |Research data you are working on      | Workflows that require very high speed data reading/writing  | Long term storage of important research data
 |_Mount point_| `/home/<username>` | `/projects/<division>/<school>/<dept>/<group>/` | `/weka/users/<username>` | `/mnt/auto-hcs/<share name>`
-| _Backed up_| :material-check: | :material-close: | :material-close: | :material-check: |
+| __Backed up__ | :material-check:{ .backup-status .backup-yes } Yes | :material-close:{ .backup-status .backup-no } No | :material-close:{ .backup-status .backup-no } No | :material-check:{ .backup-status .backup-yes } Yes |
 | _Default quota_ | 40 GB | Set by request on group creation | 0 GB (needs to be requested) | (Managed by Core Digital. Contact AskOtago) |
  
  
@@ -40,7 +40,7 @@ graph TD;
  
 All users of the Otago Research Cluster have a home directory that is mounted  at ``/home/<username>``. Your home directory is intended for storing configuration files, scripts, and other smaller datasets that are used for computations.
  
-* Home directory advisory quotas are **30 GB**. You will receive an email at your Otago email address if your home directory reaches this threshold. 
+* Home directory advisory quotas are **40 GB**. You will receive an email at your Otago email address if your home directory reaches this threshold. 
 * Home directory hard quotas are **{{ home_quota }}**. When you reach this limit you will not be able to write any more data to your home directory. This hard quota allows for the backup of home directories.
 
 Home directories are backed up. One snapshot per day for the last 7 days, one per week for the last 4 weeks, and one per month for the last 6 months are retained; older snapshots are pruned.
@@ -58,7 +58,7 @@ Projects storage is organised per department and group ``/projects/<division>/<d
 The projects storage is high-performance and is ideal for temporarily storing data that is **in use** for individuals and sharing within groups using the research infrastructure.
 Note that this storage is not backed up and is the responsibility of the user to ensure their important data is backed up. We recommend having a copy of your data on HCS, and transferring a copy to `/projects/` for working on, then removing this working copy once finished and transferring results back to HCS.
  
-To apply for a projects directory, please fill out the [Storage Signup](../getting_started/access/signup.md) form.
+To apply for a projects directory, please fill out the [Storage Signup](storage_request.md) form.
  
  
 #### When to use /projects/ storage
