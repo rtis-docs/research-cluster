@@ -1,4 +1,4 @@
-#### Intoduction to Git
+#### Introduction to Git
 
 This online, hands-on Carpentries Version Control with Git workshop will introduce you to the fundamentals of version control and collaborative workflows using Git. You’ll learn by doing, with guided exercises and live support from certified instructors.
 
