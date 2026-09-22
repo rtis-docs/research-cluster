@@ -2,12 +2,27 @@
 
 
 
-## RStudio
+## RStudio Server
 
 RStudio server is available through [OnDemand as a versioned apptainer image](../OnDemand/available_apps.md#apps-on-the-current-portal). Each container has a slightly different configuration and availability of system libraries and pre-installed packages.
 
+### Versions
 
+Versions of RStudio Server within OnDemand are built for a version of R e.g 4.6.1, and to provide the needed system dependencies for common packages used in specific domain areas. If an R package doesn't install in a particular image it is worth trying in a different image of the same R major and minor version e.g. 4.6 as it may contain the needed system dependencies. Each image has a date of creation in the name.
 
+When requesting help for RStudio within OnDemand it is very helpful to include the image version that you are using.
+
+#### Bioconductor
+
+Versions labelled with "Bioconductor" are derived from [Bioconductor Docker](https://github.com/Bioconductor/bioconductor_docker) and contain the system dependencies that will enable you to install packages from the [Bioconductor](https://bioconductor.org) repository
+
+#### Geospatial
+
+Versions labelled with "Geospatial" contain the system dependencies needed for many R packages used for geospatial tasks.
+
+#### Bayesian modelling tools
+
+Versions labelled with "Bayesian modelling tools" contain the system dependencies for R packages used in Bayesian modelling tasks.
 
 ## R
 
