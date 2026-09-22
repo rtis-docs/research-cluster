@@ -1,0 +1,5110 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://rtis-docs.github.io/research-cluster/getting_started/running/batch/sbatch_options/">
+      
+      
+        <link rel="prev" href="../slurm_quickstart/">
+      
+      
+        <link rel="next" href="../slurm_examples/array-slurm/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/uoo-favicon-32x32.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Job Script Options - eResearch Support</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=wickliffe-sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"wickliffe-sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/neoteroi-mkdocs.css?h=74bf0588">
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css?h=abc75da2">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#job-script-options" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+<!-- Custom Banner -->
+<!-- <div class="banner">
+    <p style="color: red; font-weight: bold; display:inline;font-size: 160%;">This site is in early stages of development</p>
+</div> -->
+
+<!-- Original Header -->
+
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="eResearch Support" class="md-header__button md-logo" aria-label="eResearch Support" data-md-component="logo">
+      
+  <img src="../../../../assets/images/UoO_Logo_RGB_Horz_Gold-REV.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            eResearch Support
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Job Script Options
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/rtis-docs/research-cluster" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Cluster Documentation
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="eResearch Support" class="md-nav__button md-logo" aria-label="eResearch Support" data-md-component="logo">
+      
+  <img src="../../../../assets/images/UoO_Logo_RGB_Horz_Gold-REV.svg" alt="logo">
+
+    </a>
+    eResearch Support
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/rtis-docs/research-cluster" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Cluster Documentation
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Otago Research Computing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Research Cluster (Aoraki)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Access
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Access
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../access/access_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Access Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../access/signup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting an Account
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../access/login_ssh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SSH
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../access/ondemand_web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Logging in to OnDemand (Web)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../access/vscode_remote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VSCode on Aoraki
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../access/coldfront/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Account and Allocation Management
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_6" id="__nav_2_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Account and Allocation Management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../access/coldfront/manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../access/coldfront/user/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Viewing Current Status
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Cluster Traffic
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cluster Traffic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../current_utilisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Current Utilisation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../queue_and_availability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Queue and Availability
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../software/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Software
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Software
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    OnDemand
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            OnDemand
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/OnDemand/ondemand/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Open OnDemand Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/OnDemand/available_apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Available Apps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/OnDemand/hpc_desktop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OnDemand HPC Desktop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/OnDemand/ood_file_manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using the OnDemand File Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/OnDemand/ood_shell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Accessing the Shell through OnDemand
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../software/applications/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Applications
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4_3" id="__nav_2_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Applications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/4ti2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4ti2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/afni/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AFNI (Analysis of Functional NeuroImages)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/alphafold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AlphaFold
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/alphafold3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alphafold3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/ansys_fluent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ansys Fluent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/bohra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bohra
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/ccp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CCP4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/circulator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Circlator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/claritas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GLOBEClaritas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/colabfold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ColabFold
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/connectome_workbench/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Connectome Workbench
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/crystal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Crystal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/deeplabcut/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DeepLabCut
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/deepposekit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DeepPoseKit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/dorado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dorado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/fmriprep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    fMRIPrep (Containerised)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/fsl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FSL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/gaussian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gaussian
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/gubbins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gubbins
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/guppy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Guppy (GPU)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/humann/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HUMAnN 3.0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/macaulay2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Macaulay2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/mathematica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mathematica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/matlab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MATLAB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/ollama/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ollama
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/openpose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenPose
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/orca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ORCA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/pytorch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PyTorch via module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/r_rstudio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    R and RStudio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/samtools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Samtools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/spaceranger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Space Ranger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/tbprofiler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TBProfiler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/whisper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Whisper (speech-to-text)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/applications/xdsguI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    xdsguI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../software/software_environments/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Software environments
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4_4" id="__nav_2_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Software environments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/software_environments/apptainer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Apptainer (Singularity)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/software_environments/conda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conda/Mamba
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/software_environments/modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using Modules (LMOD)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/software_environments/renv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    renv (R Package Environments)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/software_environments/sbgrid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SBGrid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/software_environments/shells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shells (bash, zsh, fish, tcsh)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/software_environments/spack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Spack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/software_environments/venv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python virtual environments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Running Jobs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Running Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../running_jobs_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Running Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_2" id="__nav_2_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Interactive Jobs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Interactive Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interactive/interactive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interactive Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interactive/interactive_shell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interactive Sessions from the Command Line
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_3" id="__nav_2_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Batch Jobs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Batch Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slurm_quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slurm Quickstart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Job Script Options
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Job Script Options
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-sbatch-lines-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      How #SBATCH Lines Work
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-options-you-will-actually-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Options You Will Actually Use
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Options You Will Actually Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time Formats
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cores-tasks-and-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cores, Tasks and Nodes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-and-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output and Errors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#email-notification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Email Notification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job Dependencies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Array Jobs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpus" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPUs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful Environment Variables
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_3_3" id="__nav_2_5_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Example Job Scripts
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_5_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Example Job Scripts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slurm_examples/array-slurm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Array Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slurm_examples/gpu-slurm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using a GPU with Slurm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slurm_examples/dependent_jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dependent Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slurm_examples/python-slurm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using Python with Slurm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slurm_examples/r-slurm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using R with Slurm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slurm_examples/heterogeneous_jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Heterogeneous Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../workflows/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Workflows
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5_4" id="__nav_2_5_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Workflows
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/nextflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nextflow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../efficiency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Job Efficiency
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            General
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Announcements
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Announcements
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/announcements/2026-07-13-os-security-updates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    July 2026 Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/announcements/2026-04-29-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    April 2026 Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/announcements/2026-01-16-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    January 2026 Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/announcements/2025-09-05-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    September 2025 Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/announcements/2025-05-25-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    April 2025 Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/announcements/2024-11-09-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    November 2024 Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Guidelines
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Guidelines
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/guidelines/login_node_usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Login Node Usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/guidelines/reasonable_usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reasonable Usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/guidelines/storage_guidelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Storage Guidelines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../general/faq/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            FAQ
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/faq/access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Access and Login
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/faq/job_start_time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Why Is My Job Not Starting?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/faq/slurm_job_failures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Why Did My Job Fail?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/faq/gpu_jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GPU Questions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/faq/disk_usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Storage and Quotas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/faq/sharing_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sharing and Moving Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/faq/software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software and Environments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Storage
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Storage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/storage_options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Storage Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Data Locations
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Data Locations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_locations/homes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Homes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_locations/projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Projects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_locations/weka/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Weka
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_locations/hcs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Otago HCS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Data Transfer
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Data Transfer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_transfer/data_transfer_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Transfer Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_transfer/globus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Globus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_transfer/globus_registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Globus registration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_transfer/rclone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    rclone
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/data_transfer/rsync/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    scp or rsync
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/storage_request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Storage Request
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/file_permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    File Permissions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../other_services/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Other Services
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Other Services
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Hosted
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Hosted
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/cryosparc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CryoSPARC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/databases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database hosting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/llm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Large Language Models (LLMs)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/openwebui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ai.uod (Open WebUI)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/sas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SAS Studio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/shinyproxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shinyproxy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/stt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Audio/Video Speech-to-Text Transcription &amp; Translation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/hosted/translate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Translation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../other_services/cloudnative/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Cloud Native
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud Native
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/cloudnative/faas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function-as-a-Service (FaaS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Training
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Training
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../other_services/training/workshops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workshops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-sbatch-lines-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      How #SBATCH Lines Work
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-options-you-will-actually-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Options You Will Actually Use
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Options You Will Actually Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time Formats
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cores-tasks-and-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cores, Tasks and Nodes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-and-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output and Errors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#email-notification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Email Notification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job Dependencies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Array Jobs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpus" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPUs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful Environment Variables
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="job-script-options">Job Script Options<a class="headerlink" href="#job-script-options" title="Permanent link">¶</a></h1>
+<div class="admonition overview">
+<p class="admonition-title">On this Page</p>
+<ul>
+<li>How <code>#SBATCH</code> lines work, and how command-line options interact with them</li>
+<li>The options you are most likely to need, with their Aoraki defaults</li>
+<li>Requesting memory correctly</li>
+<li>Requesting cores, tasks and nodes for parallel work</li>
+<li>Output files, email notification and job dependencies</li>
+</ul>
+</div>
+<p>This page is the reference for what you can put in a job script. If you have not submitted a job before, start with the <a href="../slurm_quickstart/">Slurm Quickstart</a>.</p>
+<h2 id="how-sbatch-lines-work">How <code>#SBATCH</code> Lines Work<a class="headerlink" href="#how-sbatch-lines-work" title="Permanent link">¶</a></h2>
+<p>A job script is an ordinary bash script. The lines beginning <code>#SBATCH</code> are comments as far as bash is concerned, but Slurm reads them as your resource request:</p>
+<div class="admonition terminal">
+<p class="admonition-title">Terminal</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --job-name=analysis</span>
+<span class="c1">#SBATCH --cpus-per-task=8</span>
+<span class="c1">#SBATCH --mem=32G</span>
+<span class="c1">#SBATCH --time=04:00:00</span>
+
+module<span class="w"> </span>load<span class="w"> </span>R
+Rscript<span class="w"> </span>analysis.R
+</code></pre></div>
+</div>
+<p>Two rules:</p>
+<ul>
+<li><strong>They must appear before the first command.</strong> Slurm stops reading <code>#SBATCH</code> lines as soon as it hits a real line of script, so anything below your first <code>module load</code> or <code>echo</code> is silently ignored.</li>
+<li><strong>The command line overrides the script.</strong> <code>sbatch --time=08:00:00 my_job.sh</code> runs with an 8-hour limit whatever the script says. This is useful for re-running something with a different size without editing the file.</li>
+</ul>
+<p>The same options work as flags to <a href="../../interactive/interactive_shell/"><code>srun</code> and <code>salloc</code></a> for interactive sessions.</p>
+<h2 id="the-options-you-will-actually-use">The Options You Will Actually Use<a class="headerlink" href="#the-options-you-will-actually-use" title="Permanent link">¶</a></h2>
+<table id="_table-1">
+<caption style="caption-side:top"> Common <code>sbatch</code> options and what they default to on Aoraki</caption><thead>
+<tr>
+<th style="text-align: left;">Option</th>
+<th style="text-align: left;">Short</th>
+<th style="text-align: left;">Default on Aoraki</th>
+<th style="text-align: left;">What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>--job-name=</code></td>
+<td style="text-align: left;"><code>-J</code></td>
+<td style="text-align: left;">the script's filename</td>
+<td style="text-align: left;">A name you will recognise in <code>squeue</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--partition=</code></td>
+<td style="text-align: left;"><code>-p</code></td>
+<td style="text-align: left;"><code>aoraki</code></td>
+<td style="text-align: left;">Which group of nodes to run on</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--time=</code></td>
+<td style="text-align: left;"><code>-t</code></td>
+<td style="text-align: left;">8 hours (1 h on <code>aoraki_short</code>, 24 h on <code>aoraki_long</code>)</td>
+<td style="text-align: left;">Wall time limit. The job is killed when it runs out</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--cpus-per-task=</code></td>
+<td style="text-align: left;"><code>-c</code></td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Cores for each task</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--mem=</code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2 GB per allocated core</td>
+<td style="text-align: left;">Memory for the job on each node</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--mem-per-cpu=</code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Memory per core instead of a total</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--ntasks=</code></td>
+<td style="text-align: left;"><code>-n</code></td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Number of tasks (processes)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--nodes=</code></td>
+<td style="text-align: left;"><code>-N</code></td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Number of nodes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--output=</code></td>
+<td style="text-align: left;"><code>-o</code></td>
+<td style="text-align: left;"><code>slurm-%j.out</code></td>
+<td style="text-align: left;">Where standard output goes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--error=</code></td>
+<td style="text-align: left;"><code>-e</code></td>
+<td style="text-align: left;">merged into <code>--output</code></td>
+<td style="text-align: left;">Where errors go</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--chdir=</code></td>
+<td style="text-align: left;"><code>-D</code></td>
+<td style="text-align: left;">where you ran <code>sbatch</code></td>
+<td style="text-align: left;">Directory to start in</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--array=</code></td>
+<td style="text-align: left;"><code>-a</code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Run the script over a range of indices</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--dependency=</code></td>
+<td style="text-align: left;"><code>-d</code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Wait for another job first</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--mail-type=</code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">When to email you</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--mail-user=</code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Where to email you</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--gpus-per-node=</code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">GPUs per node, alongside a GPU partition</td>
+</tr>
+</tbody>
+</table>
+<p>The complete list is in the <a href="https://slurm.schedmd.com/sbatch.html">Slurm <code>sbatch</code> documentation</a>.</p>
+<div class="admonition note">
+<p class="admonition-title"><code>--account</code> is not needed</p>
+<p>Every Aoraki user has a default account, and every partition accepts it. If a script you copied from another cluster's documentation has <code>#SBATCH --account=...</code>, delete the line.</p>
+</div>
+<h3 id="time-formats">Time Formats<a class="headerlink" href="#time-formats" title="Permanent link">¶</a></h3>
+<p><code>--time</code> accepts several forms. The two worth remembering are <code>hh:mm:ss</code> and <code>days-hh:mm:ss</code>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">You write</th>
+<th style="text-align: left;">You get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>--time=30</code></td>
+<td style="text-align: left;">30 minutes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--time=04:00:00</code></td>
+<td style="text-align: left;">4 hours</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--time=2-00:00:00</code></td>
+<td style="text-align: left;">2 days</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--time=1-12:30:00</code></td>
+<td style="text-align: left;">1 day, 12 hours, 30 minutes</td>
+</tr>
+</tbody>
+</table>
+<p>You cannot ask for more than the partition's maximum — the job is rejected at submission. Maximum wall times per partition are in the <a href="../../../overview/">Cluster Overview</a>.</p>
+<h2 id="memory">Memory<a class="headerlink" href="#memory" title="Permanent link">¶</a></h2>
+<p>Memory is allocated to your job the same way cores are, and it is a hard limit: a job that tries to use more than it asked for is killed with <code>OUT_OF_MEMORY</code>.</p>
+<p><strong>If you do not ask, you get 2 GB per allocated core.</strong> So <code>--cpus-per-task=8</code> with no memory option gives your job 16 GB. That is often enough; when it is not, ask explicitly.</p>
+<p>There are two ways to ask, and you should use one or the other, not both:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Option</th>
+<th style="text-align: left;">Meaning</th>
+<th style="text-align: left;">Use when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>--mem=64G</code></td>
+<td style="text-align: left;">64 GB total, per node</td>
+<td style="text-align: left;">Almost always — it is the easiest to reason about</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--mem-per-cpu=4G</code></td>
+<td style="text-align: left;">4 GB for each core, so 8 cores gives 32 GB</td>
+<td style="text-align: left;">The memory your job needs scales with the number of cores</td>
+</tr>
+</tbody>
+</table>
+<p>Specify units — <code>G</code> for GB, <code>M</code> for MB. <code>--mem=4</code> means 4 <strong>megabytes</strong>, which is a common and confusing mistake.</p>
+<div class="admonition warning">
+<p class="admonition-title">Over-requesting memory is not free</p>
+<p>Nodes are shared, and Slurm treats memory as a consumable resource. If you reserve 500 GB and use 10 GB, the other 490 GB cannot be given to anyone else, and cores on that node sit idle because no job can fit alongside yours. Use <a href="../../efficiency/"><code>seff</code></a> after a job to find the right number.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Options that do not exist</p>
+<p><code>--mem-per-task</code> and <code>--mem-per-node</code> are not Slurm options, though they appear in some documentation. The real ones are <code>--mem</code>, <code>--mem-per-cpu</code> and <code>--mem-per-gpu</code>.</p>
+</div>
+<h2 id="cores-tasks-and-nodes">Cores, Tasks and Nodes<a class="headerlink" href="#cores-tasks-and-nodes" title="Permanent link">¶</a></h2>
+<p>Slurm distinguishes between <strong>tasks</strong> (separate processes) and <strong>cores</strong> (CPUs given to each of those processes). Which one you want depends entirely on how your software parallelises.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Option</th>
+<th style="text-align: left;">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>--nodes</code> / <code>-N</code></td>
+<td style="text-align: left;">How many nodes to spread across</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--ntasks-per-node</code></td>
+<td style="text-align: left;">How many processes to start on each node</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--ntasks</code> / <code>-n</code></td>
+<td style="text-align: left;">Total processes, letting Slurm choose the layout</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--cpus-per-task</code> / <code>-c</code></td>
+<td style="text-align: left;">Cores available to each process</td>
+</tr>
+</tbody>
+</table>
+<p>The rule of thumb:</p>
+<ul>
+<li><strong>Threaded software on one machine</strong> — OpenMP, R's <code>parallel</code>, Python's <code>multiprocessing</code>, most bioinformatics tools with a <code>--threads</code> option. Use <code>--nodes=1 --ntasks=1 --cpus-per-task=N</code>. This is the common case.</li>
+<li><strong>MPI software</strong> — use <code>--ntasks=N</code> (optionally with <code>--nodes</code>), and leave <code>--cpus-per-task=1</code> unless each rank is itself threaded.</li>
+<li><strong>Many independent runs</strong> — do not use tasks at all. Use an <a href="../slurm_examples/array-slurm/">array job</a>.</li>
+</ul>
+<p>An example of the threaded case, requesting 16 cores on one node:</p>
+<div class="admonition terminal">
+<p class="admonition-title">Terminal</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --job-name=threaded</span>
+<span class="c1">#SBATCH --partition=aoraki</span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#SBATCH --ntasks=1</span>
+<span class="c1">#SBATCH --cpus-per-task=16</span>
+<span class="c1">#SBATCH --mem=32G</span>
+<span class="c1">#SBATCH --time=02:00:00</span>
+
+<span class="c1"># Tell the software how many cores it has</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="nv">$SLURM_CPUS_PER_TASK</span>
+./my_program<span class="w"> </span>--threads<span class="w"> </span><span class="nv">$SLURM_CPUS_PER_TASK</span>
+</code></pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tell your software what it was given</p>
+<p>Slurm allocates the cores but does not make your program use them. Read <code>$SLURM_CPUS_PER_TASK</code> and pass it on, as above — that way changing the <code>#SBATCH</code> line is enough, and the two can never disagree.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">More cores is not always faster</p>
+<p>Very few programs scale linearly. A job asking for 64 cores and using 4 waits longer to start <em>and</em> finishes no sooner. Test at a couple of sizes and compare, then request what actually helps.</p>
+</div>
+<p>Note that GPU jobs and OnDemand sessions are limited to a <strong>single node</strong>, and each partition caps the cores a single job may request — see the <a href="../../../overview/">Cluster Overview</a>.</p>
+<h2 id="output-and-errors">Output and Errors<a class="headerlink" href="#output-and-errors" title="Permanent link">¶</a></h2>
+<p>By default everything your script prints, both normal output and errors, is combined into <code>slurm-&lt;jobid&gt;.out</code> in the directory you submitted from.</p>
+<p>To change that, use <code>--output</code> and <code>--error</code> with these placeholders:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Placeholder</th>
+<th style="text-align: left;">Becomes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>%j</code></td>
+<td style="text-align: left;">The job ID</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%x</code></td>
+<td style="text-align: left;">The job name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%A</code></td>
+<td style="text-align: left;">The array job's ID</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%a</code></td>
+<td style="text-align: left;">The array task index</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition terminal">
+<p class="admonition-title">Terminal</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --output=logs/%x-%j.out</span>
+<span class="c1">#SBATCH --error=logs/%x-%j.err</span>
+</code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">The directory must already exist</p>
+<p>Slurm will not create <code>logs/</code> for you. If the directory is missing the job fails immediately with no output to tell you why.</p>
+</div>
+<h2 id="email-notification">Email Notification<a class="headerlink" href="#email-notification" title="Permanent link">¶</a></h2>
+<div class="admonition terminal">
+<p class="admonition-title">Terminal</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --mail-user=your.name@otago.ac.nz</span>
+<span class="c1">#SBATCH --mail-type=END,FAIL</span>
+</code></pre></div>
+</div>
+<p><code>--mail-type</code> accepts <code>BEGIN</code>, <code>END</code>, <code>FAIL</code>, <code>TIME_LIMIT</code>, <code>ALL</code>, and <code>ARRAY_TASKS</code>. <code>END,FAIL</code> is the useful combination for most work.</p>
+<div class="admonition warning">
+<p class="admonition-title">Not with array jobs</p>
+<p>Adding <code>ARRAY_TASKS</code> to a 500-task array sends you 500 emails. Leave it off unless you have a specific reason.</p>
+</div>
+<h2 id="job-dependencies">Job Dependencies<a class="headerlink" href="#job-dependencies" title="Permanent link">¶</a></h2>
+<p><code>--dependency</code> holds a job in the queue until another one reaches a particular state:</p>
+<div class="admonition terminal">
+<p class="admonition-title">Terminal</p>
+<div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>--dependency<span class="o">=</span>afterok:12345<span class="w"> </span>second_stage.sh
+</code></pre></div>
+</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Condition</th>
+<th style="text-align: left;">Starts when the first job</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>afterok:&lt;jobid&gt;</code></td>
+<td style="text-align: left;">finished successfully</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>afterany:&lt;jobid&gt;</code></td>
+<td style="text-align: left;">finished, successfully or not</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>afternotok:&lt;jobid&gt;</code></td>
+<td style="text-align: left;">failed</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>singleton</code></td>
+<td style="text-align: left;">any earlier job of yours with the same name has finished</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="../slurm_examples/dependent_jobs/">Dependent Jobs</a> for chaining several stages together.</p>
+<h2 id="array-jobs">Array Jobs<a class="headerlink" href="#array-jobs" title="Permanent link">¶</a></h2>
+<p><code>--array</code> runs the same script many times with a different index each time, which is the right way to process many inputs:</p>
+<div class="admonition terminal">
+<p class="admonition-title">Terminal</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --array=1-100%10</span>
+</code></pre></div>
+</div>
+<p>That submits 100 tasks and lets at most 10 run at once. Each task sees its own index in <code>$SLURM_ARRAY_TASK_ID</code>. Arrays may have up to 100,000 tasks.</p>
+<div class="admonition tip">
+<p class="admonition-title">Always throttle with <code>%N</code></p>
+<p>Without the <code>%10</code>, all 100 tasks compete for resources at once. Throttling keeps the queue usable for everyone and rarely makes your work finish later. See <a href="../../../../general/guidelines/reasonable_usage/">Reasonable Usage</a>.</p>
+</div>
+<p>Worked examples are on the <a href="../slurm_examples/array-slurm/">Array Jobs</a> page.</p>
+<h2 id="gpus">GPUs<a class="headerlink" href="#gpus" title="Permanent link">¶</a></h2>
+<p>A GPU job needs both a GPU partition and a request for the GPU itself:</p>
+<div class="admonition terminal">
+<p class="admonition-title">Terminal</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --partition=aoraki_gpu_A100_40GB</span>
+<span class="c1">#SBATCH --gpus-per-node=1</span>
+<span class="c1">#SBATCH --cpus-per-task=8</span>
+</code></pre></div>
+</div>
+<p>The partition determines which GPU model you can get. Which one to choose, how to request a specific model, and how many cores to pair with a GPU are covered on the <a href="../slurm_examples/gpu-slurm/">GPU Jobs</a> page.</p>
+<h2 id="useful-environment-variables">Useful Environment Variables<a class="headerlink" href="#useful-environment-variables" title="Permanent link">¶</a></h2>
+<p>Inside a running job, Slurm sets variables describing what you were actually given. Read these rather than hard-coding numbers:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Contains</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>SLURM_JOB_ID</code></td>
+<td style="text-align: left;">This job's ID</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SLURM_JOB_NAME</code></td>
+<td style="text-align: left;">The job name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SLURM_CPUS_PER_TASK</code></td>
+<td style="text-align: left;">Cores allocated to each task</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SLURM_NTASKS</code></td>
+<td style="text-align: left;">Number of tasks</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SLURM_ARRAY_TASK_ID</code></td>
+<td style="text-align: left;">This task's index, in an array job</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SLURM_SUBMIT_DIR</code></td>
+<td style="text-align: left;">The directory you ran <code>sbatch</code> from</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Temporary files</p>
+<p>Each job gets its own private <code>/tmp</code>, <code>/var/tmp</code> and <code>/dev/shm</code>, isolated from every other job on the node and deleted when the job ends. Write scratch files there freely, but copy anything you want to keep back to <code>/projects</code> or <code>/weka</code> before the job finishes.</p>
+</div>
+<div class="admonition related-pages">
+<p class="admonition-title">What's next?</p>
+<ul>
+<li>To submit your first job, see the <a href="../slurm_quickstart/">Slurm Quickstart</a></li>
+<li>To check whether your request matched what the job used, see <a href="../../efficiency/">Job Efficiency</a></li>
+<li>For worked scripts, see <a href="../slurm_examples/array-slurm/">Array Jobs</a>, <a href="../slurm_examples/gpu-slurm/">GPU Jobs</a>, <a href="../slurm_examples/r-slurm/">R Jobs</a> and <a href="../slurm_examples/dependent_jobs/">Dependent Jobs</a></li>
+<li>For partitions, hardware and per-job limits, see the <a href="../../../overview/">Cluster Overview</a></li>
+<li>The complete option reference is at <a href="https://slurm.schedmd.com/sbatch.html">slurm.schedmd.com/sbatch.html</a></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.path", "navigation.indexes", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/general.js?h=b719a1f3"></script>
+      
+    
+  </body>
+</html>
