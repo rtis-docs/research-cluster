@@ -27,16 +27,43 @@ WhisperX is available on campus via:
     - For power-users wanting more control over the transcription process.
     - The app can be accessed via the [Open OnDemand Applications](https://ondemand.otago.ac.nz/pun/sys/dashboard/batch_connect/sys/ood_apptainer_whisper/).
 
-## Quickstart on Open OnDemand
+## Quickstart on WhisperX Web
+
+This web appplication can be accessed via [https://whisper.otago.ac.nz](https://whisper.otago.ac.nz).
+
+![whisperx-web](../../assets/images/whisper/whisperx-web.png){width=220}
+
+### Settings
+
+A number of settings are available under the `Settings` button;
+
+  * Mode – `Transcribe` (default) writes the speech down in the language it was spoken in. `Translate` uses Whisper's built-in speech translation, which always outputs English.
+  * Language – The main source language of the recording. Can be set to `Autodetect` to detect the language based on the first few seconds of audio, but defaults to English.
+  * Speaker diarisation – Identify and label the different speakers.
+    * Min speakers / max speakers are optional hints for diarisation. Leave blank to let the model detect the speaker count itself.
+  * Initial prompt – Add context to steer the transcript in a particular direction. This is useful to enforce particular spellings, use of specific words, or specify otherwise ambiguous styles.
+
+### Input
+* Most audio/video media file formats are supported. Audio quality, background noise, overlapping conversations, etc. will most likely lead to poorer transcription results.
+* Uploaded media files are deleted from disk as soon as they are processed.
+
+### Output
+Generated transcripts in plaintext format are automatically downloaded upon completion, and accessible via the unique random link for up to 7 days before being scrubbed.
+
+## Quickstart on WhisperX Open OnDemand
 
 In the Whisper app launch form, leave all options as default, and click the 'Launch' button.
 
 Wait for the session to get scheduled on one of the cluster nodes; then click the 'Connect' button to start your WhisperX interactive session.
 
-<figure markdown="span" style="display: block; margin-left: 0; margin-right: auto;">
-  ![Drop files](../../../assets/images/whisper/microphone-access.png){ width="300" }
-  <figcaption>Drop files.</figcaption>
-</figure>
+!!! info "Microphone Access"
+
+    Under the aadnk version, if prompted to allow microphone access, this can be blocked/disallowed if you are not planning to make live recordings using the microphone.
+
+    <figure markdown="span" style="display: block; margin-left: 0; margin-right: auto;">
+      ![Allow/Disallow microphone access](../../../assets/images/whisper/microphone-access.png){ width="300" }
+      <figcaption>Allow/Disallow microphone access.</figcaption>
+    </figure>
 
 ### Transcription quickstart
 
