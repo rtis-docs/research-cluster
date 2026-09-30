@@ -13,6 +13,8 @@ By the end of this workshop, you will be able to:
 Level: Novice/Beginner
 
 
-
+Not currently scheduled. Please email [rtis.training@otago.ac.nz](mailto:rtis.training@otago.ac.nz)
 
 ----
+
+
