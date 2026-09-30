@@ -31,7 +31,7 @@ WhisperX is available on campus via:
 
 This web appplication can be accessed via [https://whisper.otago.ac.nz](https://whisper.otago.ac.nz).
 
-![whisperx-web](../../assets/images/whisper/whisperx-web.png){width=220}
+![whisperx-web](../../../assets/images/whisper/whisperx-web.png){width=220}
 
 ### Settings
 
