@@ -8,6 +8,9 @@ We have deployed a basic web user interface using the Whisper model, available o
 
 The app can be accessed **[via the Open OnDemand Applications](https://ondemand.otago.ac.nz/pun/sys/dashboard/batch_connect/sys/ood_apptainer_whisper/).**
 
+!!! note
+    Looking for a user-friendly alternative to easily generate transcripts? Check out our whisperx-web web application that we're currently trialling at [https://whisper.otago.ac.nz](https://whisper.otago.ac.nz)
+
 ### Getting access
 
 1. Sign up for access to the eResearch Compute Cluster if you haven't already.
