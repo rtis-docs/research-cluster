@@ -14,8 +14,8 @@ We have opted to make [WhisperX](https://github.com/m-bain/whisperX) available; 
 
 WhisperX is available on campus via:
 
-  * whisperx-web – A basic, user-friendly web application, that allows anyone on-campus to easily drop a media file and get a resulting transcript returned
-  * a WhisperX OnDemand application on the eResearch OnDemand cluster – For power-users wanting more control over the transcription process
+  * whisperx-web - A basic, user-friendly web application, that allows anyone on-campus to easily drop a media file and get a resulting transcript returned
+  * a WhisperX OnDemand application on the eResearch OnDemand cluster; For power-users wanting more control over the transcription process
 
 
 ### whisperx-web
@@ -30,11 +30,11 @@ This is a new, experimental web application currently being trialled and under a
 
 A select number of settings is available under the `Settings` button;
 
-  * Mode – `Transcribe` (default) writes the speech down in the language it was spoken in. `Translate` uses Whisper's built-in speech translation, which always outputs English.
-  * Language – The main source language of the recording. Can be set to `Autodetect` to detect the language based on the first few seconds of audio, but defaults to English.
-  * Speaker diarisation – Identify and label the different speakers.
+  * Mode - `Transcribe` (default) writes the speech down in the language it was spoken in. `Translate` uses Whisper's built-in speech translation, which always outputs English.
+  * Language - The main source language of the recording. Can be set to `Autodetect` to detect the language based on the first few seconds of audio, but defaults to English.
+  * Speaker diarisation - Identify and label the different speakers.
     * Min speakers / max speakers are optional hints for diarisation. Leave blank to let the model detect the speaker count itself.
-  * Initial prompt – Add context to steer the transcript in a particular direction. This is useful to enforce particular spellings, use of specific words, or specify otherwise ambiguous styles.
+  * Initial prompt - Add context to steer the transcript in a particular direction. This is useful to enforce particular spellings, use of specific words, or specify otherwise ambiguous styles.
 
 
 #### Input
@@ -42,8 +42,7 @@ A select number of settings is available under the `Settings` button;
 * Uploaded media files are deleted from disk as soon as they are processed.
 
 #### Output
-Generated transcripts in plaintext format are automatically downloaded upon completion, and accessible via the unique random link for up to 7 days before being scrubbed.
-
+Generated transcripts in plaintext format are automatically downloaded upon completion, and accessible via the unique random link for up to 7 days before being scrubbed. The result page has a `Delete transcript` button that removes it from the server straight away, ahead of that schedule.
 
 
 ### Otago OnDemand application
