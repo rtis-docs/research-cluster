@@ -1,4 +1,4 @@
-# Audio/Video Speech-to-Text Transcription & Translation
+# Speech-to-Text Transcription & Translation (Whisper)
 
 
 **Offline** speech-to-text services may be necessary in situations where **privacy** is crucial, such as **sensitive** interviews or when working with **classified** information. This ensures that the data is not shared outside of the local University environment and does not rely on an external cloud-based service for processing.

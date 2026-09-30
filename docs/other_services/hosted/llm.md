@@ -49,7 +49,7 @@ We trust our researchers to thoughtfully balance the use of our LLMs (and their 
 ### Cloud models
 A selection of [cloud LLM models on MS Foundry](https://ai.azure.com/catalog/models) can be made available via our LLM gateway for research use cases. Please contact us to discuss your requirements.
 
-The current set includes `gpt-oss-120b`, `gpt-5.4`, `Kimi-K2.5`, `DeepSeek-V3.2`, `text-embedding-3-small`, `claude-opus-4-6`, `claude-opus-5`. Additional models may be added on request.
+The current set includes `gpt-oss-120b`, `gpt-5.4`, `Kimi-K2.5`, `DeepSeek-V3.2`, `text-embedding-3-small`, `claude-opus-4-6`, `claude-opus-5`, `claude-opus-5-5`. Additional models may be added on request.
 
 Cloud-hosted models should not be used for processing of any input/data that is considered sensitive, subject to data sovereignty, etc. Please refer to the **[AI Tools Guidance](https://www.otago.ac.nz/__data/assets/pdf_file/0027/631836/AI-Tool-Guidance-V3.1-1st-Dec-25.pdf)** document.
 
