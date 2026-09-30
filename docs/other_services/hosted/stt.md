@@ -51,7 +51,7 @@ Generated transcripts in plaintext format are automatically downloaded upon comp
 
 * [Sign up](https://ask.otago.ac.nz/otagoresearchcluster) for access to the eResearch Compute Cluster if you haven't already.
 
-* Once you are onboarded, browse to [Otago OnDemand](https://ondemand.otago.ac.nz) and find the `WhisperX (Speech-to-Text)` app (or follow this [direct link](https://ondemand.otago.ac.nz/pun/sys/dashboard/batch_connect/sys/ood_whisper-webui_apptainer)).
+* Once you are onboarded, browse to [Otago OnDemand](https://ondemand.otago.ac.nz) and find the `WhisperX (Speech-to-Text)` app (or follow this [direct link](https://ondemand.otago.ac.nz/pun/sys/dashboard/batch_connect/sys/ood_apptainer_whisper/)).
 
 * In the WhisperX app launch form, leave all options as default, and click the 'Launch' button
 
