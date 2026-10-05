@@ -4,9 +4,12 @@
     - How to connect VS Code to an Aoraki compute node via Slurm
     - How to configure SSH and VS Code settings
     - How to customise your Slurm resource allocation
+    - Where AI coding agents fit in, if you use one
 
 !!! warning
     You must be on campus or connected to the campus VPN to access Aoraki. You also need SSH key-based authentication set up — see [SSH](login_ssh.md) if you haven't done this yet.
+
+    Planning to use an AI coding agent in this session? Read [AI Coding Agents](../../general/guidelines/ai_agents.md) before you start one — it sets out what we require of you when an agent runs on the cluster.
 
 ## Overview
 
@@ -154,6 +157,15 @@ For example, to request a GPU with more memory:
 RemoteCommand module load vscode-remote; vscode-shell-proxy.py --salloc-arg=--time=10:00:00 --salloc-arg=--cpus-per-task=4 --salloc-arg=--mem=20G --salloc-arg=--partition=gpu --salloc-arg=--gres=gpu:1
 ```
 
+## Running an AI Coding Agent in This Session
+
+Connecting this way is also the tidiest place to run an AI coding agent (Copilot, Claude Code, Cline, Cursor and the like): the VS Code server and anything it spawns run on the **compute node** Slurm allocated, inside your resource limits, rather than on the shared login node.
+
+That removes one risk, not all of them. An agent still sends your code to a model provider, still installs packages, still writes files, and still invents Slurm flags that do not exist on Aoraki. Read [AI Coding Agents](../../general/guidelines/ai_agents.md) before you start one — it covers what we ask of you, what tends to go wrong, and a set of rules to give the agent so it works with the cluster rather than against it.
+
+!!! tip "Size the allocation for the agent too"
+    An agent that builds, tests, or runs your code uses the allocation you asked for in `RemoteCommand`. The 1 CPU and 10 GB in the example above is thin for that — raise `--cpus-per-task` and `--mem` if the agent will be doing real work.
+
 ## Ending your session
 
 Close the VS Code remote window. The SSH connection drops, which signals the proxy to terminate `salloc` and release your Slurm allocation.
@@ -184,5 +196,6 @@ ssh <otago-username>@aoraki-login.otago.ac.nz squeue -u <otago-username>
 
 !!! related-pages "What's next?"
     * Submit batch jobs from your VS Code terminal: [Slurm quickstart](../running/batch/slurm_quickstart.md)
+    * Using an AI coding agent responsibly on the cluster: [AI Coding Agents](../../general/guidelines/ai_agents.md)
     * Available software on the cluster: [Application Libraries](../software/applications/index.md)
     * Need help? Contact the [RTIS team](../../general/support.md)
