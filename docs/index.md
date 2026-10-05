@@ -142,6 +142,11 @@
   url: getting_started/running/batch/slurm_quickstart.md
   image: assets/images/icons/add_to_queue_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
 
+- title: AI Coding Agents
+  content: What we ask of you before running an AI agent on the cluster
+  url: general/guidelines/ai_agents.md
+  image: assets/images/icons/lock_open_right_60dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.svg
+
 ::/cards::
 
 

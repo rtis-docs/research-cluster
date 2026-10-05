@@ -2,7 +2,7 @@
 
 
 !!! info
-    Please refer to the University's **[AI Governance Policy](https://www.otago.ac.nz/administration/policies/policy-collection/ai-governance-policy)** and related **[AI Tools Guidance](https://www.otago.ac.nz/__data/assets/pdf_file/0027/631836/AI-Tool-Guidance-V3.1-1st-Dec-25.pdf)** document for general advice on responsible use of AI across the University.
+    Please refer to the University's **[AI Governance Policy](https://www.otago.ac.nz/administration/policies/policy-collection/ai-governance-policy)** and related **[AI Tools Guidance](https://www.otago.ac.nz/__data/assets/pdf_file/0027/631836/AI-Tool-Guidance.pdf)** document for general advice on responsible use of AI across the University.
 
 Large Language Models (LLMs) & Generative AI (GenAI) is a fast-moving field. The University is currently trialling a number of different deployment models and tools.
 
@@ -51,7 +51,7 @@ A selection of [cloud LLM models on MS Foundry](https://ai.azure.com/catalog/mod
 
 The current set includes `gpt-oss-120b`, `gpt-5.4`, `Kimi-K2.5`, `DeepSeek-V3.2`, `text-embedding-3-small`, `claude-opus-4-6`, `claude-opus-5`, `claude-opus-5-5`, `claude-sonnet-5-5`. Additional models may be added on request.
 
-Cloud-hosted models should not be used for processing of any input/data that is considered sensitive, subject to data sovereignty, etc. Please refer to the **[AI Tools Guidance](https://www.otago.ac.nz/__data/assets/pdf_file/0027/631836/AI-Tool-Guidance-V3.1-1st-Dec-25.pdf)** document.
+Cloud-hosted models should not be used for processing of any input/data that is considered sensitive, subject to data sovereignty, etc. Please refer to the **[AI Tools Guidance](https://www.otago.ac.nz/__data/assets/pdf_file/0027/631836/AI-Tool-Guidance.pdf)** document.
 
 
 ### Local on-campus models
