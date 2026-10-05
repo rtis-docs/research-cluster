@@ -4,6 +4,9 @@ on:
     branches:
       - master 
       - main
+  # Build (without deploying) on PRs, so a broken build or a bad internal
+  # link is caught while the PR is open rather than after it reaches main.
+  pull_request:
 permissions:
   contents: write
 jobs:
@@ -28,4 +31,9 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install -r requirements.txt 
+      # On a PR, only check that the site builds. Deployment happens on push
+      # to main, so gh-deploy must not run from a pull_request event.
+      - run: mkdocs build --strict
+        if: github.event_name == 'pull_request'
       - run: mkdocs gh-deploy --force
+        if: github.event_name == 'push'
