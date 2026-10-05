@@ -49,7 +49,7 @@ We trust our researchers to thoughtfully balance the use of our LLMs (and their 
 ### Cloud models
 A selection of [cloud LLM models on MS Foundry](https://ai.azure.com/catalog/models) can be made available via our LLM gateway for research use cases. Please contact us to discuss your requirements.
 
-The current set includes `gpt-oss-120b`, `gpt-5.4`, `Kimi-K2.5`, `DeepSeek-V3.2`, `text-embedding-3-small`, `claude-opus-4-6`, `claude-opus-5`, `claude-opus-5-5`. Additional models may be added on request.
+The current set includes `gpt-oss-120b`, `gpt-5.4`, `Kimi-K2.5`, `DeepSeek-V3.2`, `text-embedding-3-small`, `claude-opus-4-6`, `claude-opus-5`, `claude-opus-5-5`, `claude-sonnet-5-5`. Additional models may be added on request.
 
 Cloud-hosted models should not be used for processing of any input/data that is considered sensitive, subject to data sovereignty, etc. Please refer to the **[AI Tools Guidance](https://www.otago.ac.nz/__data/assets/pdf_file/0027/631836/AI-Tool-Guidance-V3.1-1st-Dec-25.pdf)** document.
 
@@ -64,24 +64,24 @@ Running these models locally within the campus environment requires significant 
 #### Local Model list
 
 Local models are prefixed with `ONCAMPUS/`.
-The selection of available models is subject to change, depending on specific demand, use cases and on available hardware resources.
+The selection of available models is **subject to change**, depending on new model availability, specific demand, use cases and on available hardware resources.
 
-Currently, eResearch Solutions makes the following models available for inference on-campus:
+Currently, eResearch Solutions makes the following self-hosted models available for inference on-campus:
 
 |name                    |model                                                                     |parameters|quantisation |input                      |license|
 |------------------------|--------------------------------------------------------------------------|----------|-------------|---------------------------|-------|
-|ONCAMPUS/Qwen3.8-27B-FP8|[Qwen 3.8 27B FP8](https://huggingface.co/Qwen/Qwen3.8-27B-FP8)           |27B       |FP8          |text-only                  |[Apache-2.0](https://choosealicense.com/licenses/apache-2.0/)|
-|ONCAMPUS/Qwen3.5-9B     |[Qwen 3.5 9B BF16](https://huggingface.co/Qwen/Qwen3.5-9B)                |9B        |BF16         |text-only                  |[Apache-2.0](https://choosealicense.com/licenses/apache-2.0/)|
-|ONCAMPUS/gemma-4-12B-it |[Google Gemma 4 12B IT BF16](https://huggingface.co/google/gemma-4-12B-it)|12B       |BF16         |multimodal                 |[Apache-2.0](https://choosealicense.com/licenses/apache-2.0/)|
+|ONCAMPUS/Qwen3.8-27B-FP8|[Qwen 3.8 27B FP8](https://huggingface.co/Qwen/Qwen3.8-27B-FP8)           |27B       |FP8          |text-only|[Apache-2.0](https://choosealicense.com/licenses/apache-2.0/)|
+|ONCAMPUS/Qwen3.5-9B     |[Qwen 3.5 9B BF16](https://huggingface.co/Qwen/Qwen3.5-9B)                |9B        |BF16         |text-only|[Apache-2.0](https://choosealicense.com/licenses/apache-2.0/)|
+|ONCAMPUS/gemma-4-12B-it |[Google Gemma 4 12B IT BF16](https://huggingface.co/google/gemma-4-12B-it)|12B       |BF16         |image-text-to-text|[Apache-2.0](https://choosealicense.com/licenses/apache-2.0/)|
 |ONCAMPUS/BAAI/bge-m3    |[BAAI/bge-m3](https://huggingface.co/BAAI/bge-m3)                         |0.568B    |FP16         |multilingual text embedding|[MIT](https://choosealicense.com/licenses/mit/)|
+|ONCAMPUS/TEST_qwen3.8-27b-int8-w8a16|[Qwen 3.8 27B W8A16](https://huggingface.co/lued/Qwen3.8-27B-INT8-W8A16-MTP)|27B|W8A16|image-text-to-text|[Apache-2.0](https://choosealicense.com/licenses/apache-2.0/)|
+|ONCAMPUS/TEST_Qwen-Image2.1|[Qwen Image 2.1](https://huggingface.co/Qwen/Qwen-Image-2.1)           |7B|BF16|image-text-to-image|[Qwen Research License Agreement](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/main/LICENSE)|
+
 
 
 
 ## Model features to consider
 
-### Modality
-
-LLM modality refers to the different types of data that LLMs can process, such as text, images, and audio. Multimodal LLMs integrate these modalities to enhance understanding and interaction, mimicking human-like comprehension of diverse information sources.
 
 ### Parameters
 
@@ -93,14 +93,17 @@ More parameters allow the model to capture more complex patterns in the data at 
 
 Quantisation is a model compression technique that reduces the precision of weights and activations, making LLMs more efficient. 
 
-A full-size model might use FP32 -i.e. 32 bits to represent each number inside the model-, which is great for accuracy but terrible for size. Quantization shrinks that down: 16 bits (FP16 and BF16), 8 bits (FP8), or even smaller in some cases (GGUF). The smaller the bit size, the lighter the model.
+A full-size model might use FP32 -i.e. 32 bits to represent each number inside the model-, which is great for accuracy but terrible for size. Quantization shrinks that down: 16 bits (FP16 and BF16), 8 bits (FP8), 8-bits weights and 16-bits activations (W8A16), or even smaller in some cases (GGUF). The smaller the bit size, the lighter the model.
 
 While quantised models can run more efficiently on less powerful hardware with reduced cost and environmental footprint, they **sacrifice some accuracy** compared to their full-precision counterparts. Advancements in quantisation techniques are helping to minimise this accuracy loss, making quantised models increasingly viable for various applications.
 
-
 ### License
 
-*Truly Open, Open-Weights, or Restricted-Weights Open Access?* All models labelled "open" are not equal. Some follow **open-source principles** by offering the full stack — code, weights, training methodology, documentation under an open-source license. Others only publish the trained model weights, often under **restrictive** conditions that limit their usage or redistribution; These are commonly referred to as "open-weight" models.
+*Truly Open, Open-Weights, or Restricted-Weights Open Access?* All models labelled "open" are not equal. Some follow **open-source principles** by offering the full stack -code, weights, training methodology, documentation under an open-source license. Others only publish the trained model weights, sometimes under **restrictive** conditions that limit their usage or redistribution; These are commonly referred to as "open-weight" models.
+
+### Modality
+
+LLM modality refers to the different types of data that LLMs can process, such as text, images, and audio. Multimodal LLMs integrate these modalities to enhance understanding and interaction, mimicking human-like comprehension of diverse information sources.
 
 ### Distillation
 
@@ -114,6 +117,6 @@ This method helps break down complex problems into manageable parts, often impro
 
 Most models can be prompted to employ CoT reasoning (e.g. by adding "Let's think step by step." to your prompt), but some 'reasoning'/'thinking' models are particularly well-trained for this and will apply Auto-CoT automatically.
 
-Note that this is a **simulated reasoning-like process** that quickly breaks down once confronted with out-of-domain logical problems that don't match the specific logical patterns found in the model's training data. (See 'Limitations' below)
+Note that this is a **simulated reasoning-like process** that quickly breaks down once confronted with out-of-domain logical problems that don't match the specific logical patterns found in the model's training data. (See 'LLM limitations and considerations')
 
 
