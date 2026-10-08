@@ -190,6 +190,21 @@ li.md-nav__item--active:not(li.md-nav__item--nested) {
   padding-right: 2rem;
 }
 
+/* Line the site title up with the body text. Inside that shared 2rem padding the
+   body text starts 16.2rem in - the 13rem sidebar, Material's 1.2rem content margin
+   and the 2rem .md-content__inner padding - so the logo button, with its .2rem
+   margins either side, is sized to fill exactly that and the title loses its own
+   margin. Desktop only: below 76.25em the logo and sidebar give way to the menu
+   button and drawer, and the title keeps Material's spacing. */
+@media screen and (min-width: 76.25em) {
+  .md-header__button.md-logo {
+    width: 15.8rem;
+  }
+
+  .md-header__button.md-logo ~ .md-header__title {
+    margin-left: 0;
+  }
+}
   
   :root {
     --md-admonition-icon--terminal: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 41.4 86.6zM288 416H576c17.7 0 32 14.3 32 32s-14.3 32-32 32H288c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg>');
