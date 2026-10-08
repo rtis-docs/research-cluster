@@ -36,6 +36,17 @@ figure {
     color: white;
 }
 
+/* Keep the site title in the header; don't swap to the page title on scroll */
+.md-header__title--active .md-header__topic {
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    z-index: 0;
+}
+.md-header__topic + .md-header__topic {
+    display: none;
+}
+
 .md-header__button.md-logo img {
     margin-top: 1.0rem;
     margin-bottom: 1.0rem;
