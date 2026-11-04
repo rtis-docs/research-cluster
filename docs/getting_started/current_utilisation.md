@@ -74,6 +74,16 @@ near zero here while still being unavailable to everyone else. For allocation, s
 
 <iframe class="grafana-panel grafana-panel--compact" loading="lazy" title="GPU utilisation on aoraki46" src="https://research-monitoring.otago.ac.nz/d-solo/Oxed_c6Wz/nvidia-dcgm-exporter?orgId=1&var-instance=rtis-hpc-r46.uod.otago.ac.nz%3A9400&var-gpu=All&from=now-7d&to=now&refresh=30s&theme=light&panelId=6&hideLogo=true"></iframe>
 
+### aoraki48 — 8x RTX6000 98GB
+
+<iframe class="grafana-panel grafana-panel--compact" loading="lazy" title="GPU utilisation on aoraki48" src="https://research-monitoring.otago.ac.nz/d-solo/Oxed_c6Wz/nvidia-dcgm-exporter?orgId=1&var-instance=rtis-hpc-r48.uod.otago.ac.nz%3A9400&var-gpu=All&from=now-7d&to=now&refresh=30s&theme=light&panelId=6&hideLogo=true"></iframe>
+
+### aoraki49 — 8x RTX6000 98GB
+
+<iframe class="grafana-panel grafana-panel--compact" loading="lazy" title="GPU utilisation on aoraki49" src="https://research-monitoring.otago.ac.nz/d-solo/Oxed_c6Wz/nvidia-dcgm-exporter?orgId=1&var-instance=rtis-hpc-r49.uod.otago.ac.nz%3A9400&var-gpu=All&from=now-7d&to=now&refresh=30s&theme=light&panelId=6&hideLogo=true"></iframe>
+
+
+
 !!! related-pages "What's next?"
     - [Queue and Availability](queue_and_availability.md) for waiting times and what is free
     - [Running Jobs Overview](running/running_jobs_overview.md)
