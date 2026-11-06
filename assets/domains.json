@@ -1,0 +1,188 @@
+{
+    "CCP4" : {"domains": [
+            "apptainer", 
+            "sbgrid"
+        ] },
+        
+    "4ti2":{
+       
+        "domains":[
+            "mathematics"
+        ]
+    },
+    "Crystal":{
+        
+        "domains":["chemistry", "physics"]
+        
+    },
+    "Gaussian":{
+       
+        "domains":["apptainer", "chemistry"]
+        
+    },
+    "Macaulay2":{ 
+        "domains":["apptainer",
+                    "mathematics"]
+    },
+     "Mathematica":{ 
+        
+        "domains":["mathematics"]
+    },
+
+    "AFNI (Analysis of Functional NeuroImages)":{ 
+        "domains":["apptainer"]
+    },
+
+    "Alphafold":{   
+        "domains":["apptainer", "biology"]
+    },
+    "Alphafold3":{ 
+       "domains":["apptainer", "biology"]
+    },
+    "Ansys Fluent":{ 
+        "domains":[""]
+    },"ORCA":{ 
+       "domains":["chemistry"]
+       
+    },"Pytorch":{ 
+       "domains":["apptainer"]
+    },
+    "Bohra": {
+        "domains": [
+            "apptainer",
+            "biology"
+        ]  
+    },
+    
+    "Circulator": {
+        "description": "",
+        "domains": [
+            "apptainer"
+        ]
+    },
+
+    "Claritas": {
+        "domains": [
+            "ondemand",
+            "apptainer"
+        ]
+    },
+
+
+    "ColabfFold": {
+        "domains": [
+            "apptainer"
+        ]
+    },
+
+    "Connectome Workbench": {
+        "domains": [
+            "apptainer",
+            "ondemand"
+        ]
+    },
+    "Deeplabcut": {
+
+        "domains": [
+            "ondemand"
+        ]
+    },
+    "DeepPoseKit": {
+        "domains": [
+            "ondemand",
+            "apptainer"
+        ]
+    },
+        "Dorado": {
+        "domains": [
+            "apptainer",
+            "biology"
+        ]
+    },
+    "fMRIPrep": {
+        "domains": [
+            "apptainer",
+            "biology"
+        ]
+    },
+    "FSL": {
+        "domains": [
+            "ondemand",
+            "apptainer",
+            "biology"
+        ]
+    },
+    "Gubbins": {
+        "domains": [
+            "apptainer",
+            "biology"
+        ]
+    },
+    "Guppy": {
+        "domains": [
+            "apptainer",
+            "biology"
+        ]
+    },
+    "HUMAnN": {
+        "domains": [
+            "apptainer",
+            "biology"
+        ]
+    },
+    "Matlab": {
+        "domains": [
+            "ondemand",
+            "apptainer"
+        ]
+    },
+    "Ollama": {
+        "domains": [
+
+        ]
+    },
+    "OpenPose": {
+        "domains": [
+            "ondemand",
+            "apptainer"
+        ]
+    },
+    "Samtools": {
+        "description": "",
+        "domains": [
+            "biology"
+        ]
+    },
+    "Space Ranger": {
+        "domains": [
+            "biology"
+        ]
+    },
+    "TBProfiler": {
+        "domains": [
+            "apptainer",
+            "biology"
+        ]
+    },
+    "Whisper": {
+        "domains": [
+            "ondemand"
+        ]
+    },
+    "XDSGUI": {
+        "domains": [
+            "ondemand",
+            "sbgrid",
+            "apptainer"
+        ]
+    },
+
+    "zstd": {
+        "domains": [
+            "lib"
+        ]
+    }
+
+}
+
+
