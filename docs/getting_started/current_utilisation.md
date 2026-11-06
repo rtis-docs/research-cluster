@@ -38,10 +38,6 @@ near zero here while still being unavailable to everyone else. For allocation, s
 
 <iframe class="grafana-panel grafana-panel--compact" loading="lazy" title="GPU utilisation on aoraki16" src="https://research-monitoring.otago.ac.nz/d-solo/Oxed_c6Wz/nvidia-dcgm-exporter?orgId=1&var-instance=rtis-hpc-r16.uod.otago.ac.nz%3A9400&var-gpu=All&from=now-7d&to=now&refresh=30s&theme=light&panelId=6&hideLogo=true"></iframe>
 
-### aoraki30 — 4x H100 96GB
-
-<iframe class="grafana-panel grafana-panel--compact" loading="lazy" title="GPU utilisation on aoraki30" src="https://research-monitoring.otago.ac.nz/d-solo/Oxed_c6Wz/nvidia-dcgm-exporter?orgId=1&var-instance=rtis-hpc-r30.uod.otago.ac.nz%3A9400&var-gpu=All&from=now-7d&to=now&refresh=30s&theme=light&panelId=6&hideLogo=true"></iframe>
-
 ### aoraki18 — 3x L40 48GB
 
 <iframe class="grafana-panel grafana-panel--compact" loading="lazy" title="GPU utilisation on aoraki18" src="https://research-monitoring.otago.ac.nz/d-solo/Oxed_c6Wz/nvidia-dcgm-exporter?orgId=1&var-instance=rtis-hpc-r18.uod.otago.ac.nz%3A9400&var-gpu=All&from=now-7d&to=now&refresh=30s&theme=light&panelId=6&hideLogo=true"></iframe>
@@ -61,6 +57,22 @@ near zero here while still being unavailable to everyone else. For allocation, s
 ### aoraki29 — 7x L4 24GB
 
 <iframe class="grafana-panel grafana-panel--compact" loading="lazy" title="GPU utilisation on aoraki29" src="https://research-monitoring.otago.ac.nz/d-solo/Oxed_c6Wz/nvidia-dcgm-exporter?orgId=1&var-instance=rtis-hpc-r29.uod.otago.ac.nz%3A9400&var-gpu=All&from=now-7d&to=now&refresh=30s&theme=light&panelId=6&hideLogo=true"></iframe>
+
+### aoraki30 — 4x H100 96GB
+
+<iframe class="grafana-panel grafana-panel--compact" loading="lazy" title="GPU utilisation on aoraki30" src="https://research-monitoring.otago.ac.nz/d-solo/Oxed_c6Wz/nvidia-dcgm-exporter?orgId=1&var-instance=rtis-hpc-r30.uod.otago.ac.nz%3A9400&var-gpu=All&from=now-7d&to=now&refresh=30s&theme=light&panelId=6&hideLogo=true"></iframe>
+
+### aoraki31 — 3x L40 48GB
+
+<iframe class="grafana-panel grafana-panel--compact" loading="lazy" title="GPU utilisation on aoraki31" src="https://research-monitoring.otago.ac.nz/d-solo/Oxed_c6Wz/nvidia-dcgm-exporter?orgId=1&var-instance=rtis-hpc-r31.uod.otago.ac.nz%3A9400&var-gpu=All&from=now-7d&to=now&refresh=30s&theme=light&panelId=6&hideLogo=true"></iframe>
+
+### aoraki32 — 3x L40 48GB
+
+<iframe class="grafana-panel grafana-panel--compact" loading="lazy" title="GPU utilisation on aoraki32" src="https://research-monitoring.otago.ac.nz/d-solo/Oxed_c6Wz/nvidia-dcgm-exporter?orgId=1&var-instance=rtis-hpc-r32.uod.otago.ac.nz%3A9400&var-gpu=All&from=now-7d&to=now&refresh=30s&theme=light&panelId=6&hideLogo=true"></iframe>
+
+### aoraki33 — 3x L40 48GB
+
+<iframe class="grafana-panel grafana-panel--compact" loading="lazy" title="GPU utilisation on aoraki33" src="https://research-monitoring.otago.ac.nz/d-solo/Oxed_c6Wz/nvidia-dcgm-exporter?orgId=1&var-instance=rtis-hpc-r33.uod.otago.ac.nz%3A9400&var-gpu=All&from=now-7d&to=now&refresh=30s&theme=light&panelId=6&hideLogo=true"></iframe>
 
 ### aoraki44 — 8x H200 144GB
 
