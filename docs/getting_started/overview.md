@@ -31,45 +31,45 @@ If you need software or a configuration that is not already available, ask the e
 graph LR;
     A["Your computer"] -->|"SSH or OnDemand"| B["Login node<br/>aoraki-login"]
     B -->|"sbatch or srun"| C{"Slurm<br/>scheduler"}
-    C -->|"allocates resources"| D["Compute nodes<br/>aoraki01–46"]
+    C -->|"allocates resources"| D["Compute nodes<br/>aoraki01–49"]
     B --- E[("Shared storage<br/>/home, /projects, /weka")]
     D --- E
 ```
 
-**Login node** — where you land when you connect over [SSH](access/login_ssh.md) or through [OnDemand](software/OnDemand/ondemand.md). Use it to edit scripts, move files around and submit work. It is shared by everyone, so it is not the place to run your analysis — see [Login Node Usage](../general/guidelines/login_node_usage.md).
+**Login Node** — This is where you land when you connect to the Aoraki cluster. As it is a shared landing platform, it is NOT the place to run your analysis. Only use this node to edit scripts, move files around and submit your work. See [Login Node Usage](../general/guidelines/login_node_usage.md).
 
-**Compute nodes** — where your work actually runs. You do not log in to them directly; you reach them by asking Slurm for an allocation.
+**Compute Nodes** —   This is where your run your analysis. You do not log in to them directly; you reach them by asking Slurm for an allocation.
 
-**Slurm** — the scheduler. You tell it how many cores, how much memory, how long, and whether you need a GPU, and it finds a node that can satisfy that request. See [Running Jobs](running/running_jobs_overview.md).
+**Slurm Scheduler** — This is a scheduler. You tell it how many cores, how much memory, how long, and whether you need a GPU, and it finds a compute node that can satisfy that request. See [Running Jobs](running/running_jobs_overview.md).
 
-**Shared storage** — every node sees the same files, so a job on any compute node can read the data you put in `/home`, `/projects` or `/weka`. See the [Storage Overview](../storage/storage_options.md).
+**Storage Nodes** — Every node sees the same files, so a job on any compute node can read the data stored in `/home`, `/projects` or `/weka`. See the [Storage Overview](../storage/storage_options.md).
 
 !!! tip "Getting started"
     If you have not used the cluster before, [get access](access/access_overview.md) first, then work through [Running Jobs](running/running_jobs_overview.md). You can also use most of the cluster from your browser through [OnDemand](software/OnDemand/ondemand.md), which writes the Slurm job for you.
 
 ## Partitions
 
-A **partition** is a named group of nodes with its own limits on job size and run time. Every job goes to a partition — if you do not name one, it goes to `aoraki`, the default.
+The Aoraki compute nodes are grouped into **partitions**. They each have its own job size and run time limits. Every job goes to a partition — if you do not name one, Slurm assigns your job to `aoraki`, the default.
 
 Choosing well matters: a partition with the hardware you need but a long queue may start later than a smaller one that is mostly idle.
 
-### Choosing a Partition
+### How to choose a partition?
 
-| If your job needs… | Use | Notes |
+| If your job needs… | Partitions | Notes |
 | :-- | :-- | :-- |
 | Nothing in particular | `aoraki` | The default. Balanced cores and memory, 27 nodes, so usually the quickest to start. |
 | Lots of cores | `aoraki_bigcpu` | Up to 252 cores on a node. |
 | Lots of memory | `aoraki_bigmem` | Up to 2000 GB on a node. |
 | Fast single-core performance | `aoraki_fastcore` | Fewer cores per node, but the highest clock speed on the cluster. |
 | To run for longer than 14 days | `aoraki_long` | Up to 30 days. |
-| A GPU | `aoraki_gpu` | The general GPU pool — whichever of its A100, H100 or L40 nodes is free first. Use a specific partition such as `aoraki_gpu_H100` when your work needs that model, or that much GPU memory. |
+| A GPU | `aoraki_gpu` | This partition with GPU consists of several sub-partitions, A100, H100 or L40 nodes. Use a specific sub-partition such as `aoraki_gpu_H100` when your work needs that model, or that much GPU memory. |
 | Very little, or not for long | `aoraki_small`, `aoraki_short` | These use the normally idle CPU cores on GPU nodes, so small and short jobs can start without waiting for a general-purpose node. |
 
 Before you submit, [Queue and Availability](queue_and_availability.md) shows how busy the cluster is right now, and how long jobs on each partition have recently waited before starting.
 
-### Partition Limits
+### Limits on Each Partition
 
-These are the *default* maximum resources a single job can request. If your work needs more, contact {{ support_email }} to discuss how it can be accommodated.
+These are the *default* maximum resources a single job can request from each partition. If your work needs more, contact {{ support_email }} to discuss how it can be accommodated.
 
 Table: Default per-job limits for each partition
 

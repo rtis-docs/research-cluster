@@ -1,8 +1,8 @@
 !!! overview "On this Page"
       
       - Sign up for Globus
-      - How to use Globus to transfer data between High Capacity Storage (HCS) and Research Storage (Ohau)
-      - Using Globus Conect Personal to transfer data between the Ohau and your desktop
+      - How to use Globus to transfer data between Otago High Capacity Storage (HCS) and Research Storage (Ohau)
+      - How to Transfer Data from Local Machine to Otago HCS and Cluster Storage (Ohau or Home) using Globus Connect Personal
 
 ## Before You Start
 
@@ -102,16 +102,34 @@ In this example, the **dotseq.sif** file is being transferred from the Otago HCS
 
 If you have any issues with Globus, please contact us at {{support_email}}.
 
-## How to Transfer Data between Ohau and Your Desktop using Globus Connect Personal
+## How to Transfer Data from Local Machine to Otago HCS and Research Storage (Ohau or Home) using Globus Connect Personal
 
-The University of Otago - RTIS endpoint works with [Globus Connect Personal](https://www.globus.org/globus-connect-personal) and will transfer data to and from your desktop or lab computer.
+The University of Otago - RTIS endpoint works with [Globus Connect Personal](https://www.globus.org/globus-connect-personal) and will transfer data to and from your local machine.
 
-To transfer data between your desktop and Ohau, you will need to install the Globus Connect Personal application on your desktop. Follow the instructions on the [Globus Connect Personal](https://www.globus.org/globus-connect-personal) page to install it.
+### Step 1: Install Globus Connect Personal 
 
-Once you have installed Globus Connect Personal, you can connect your desktop endpoint to the RTIS Globus endpoint and transfer data between your desktop and Ohau.
+Follow the instructions on the [Globus Connect Personal](https://www.globus.org/globus-connect-personal) page to install it.
+
+### Step 2: Open the Application on Your Local Machine
+
+Select "Web: Transfer Files" and this will open Globus in your browser.
+
+<figure markdown="span" style="display: block; margin-left: 0; margin-right: auto;">
+  ![Open Globus Connect Personal.](../../assets/images/globus_connect_personal_1.png){ width="800" }
+  <figcaption></figcaption>
+</figure>
+
+### Step 3: The Transfer
+
+Depending on your source and destination, refer to the paths below:
+
+<figure markdown="span" style="display: block; margin-left: 0; margin-right: auto;">
+  ![The transfer.](../../assets/images/globus_connect_personal_2.png){ width="800" }
+  <figcaption></figcaption>
+</figure>
 
 !!! note
-    Reminder - The **University of Otago - HCS** endpoint does not work with Globus Connect Personal on campus, but does allow you to share and receive data from other Globus users off campus*
+    Reminder - The **University of Otago - HCS** endpoint does **NOT** work with Globus Connect Personal on campus, but does allow you to share and receive data from other Globus users off campus*
 
 !!! related-pages "What's next?"
     - To transfer data between your desktop and Research Storage go to [Globus Connect Personal](https://www.globus.org/globus-connect-personal)
