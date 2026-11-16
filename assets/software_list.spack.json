@@ -1,0 +1,3642 @@
+{
+  "antlr": {
+    "description": "ANTLR (ANother Tool for Language Recognition) is a powerful parser generator for reading, processing, executing, or translating structured text or binary files. It's widely used to build languages, tools, and frameworks. From a grammar, ANTLR generates a parser that can build and walk parse trees.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.7.7"
+    ],
+    "default": "2.7.7",
+    "module": "antlr"
+  },
+  "autoconf": {
+    "description": "Autoconf -- system configuration part of autotools",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.69",
+      "2.72"
+    ],
+    "default": "2.72",
+    "module": "autoconf"
+  },
+  "autoconf-archive": {
+    "description": "The GNU Autoconf Archive is a collection of more than 500 macros for GNU Autoconf.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2023.02.20"
+    ],
+    "default": "2023.02.20",
+    "module": "autoconf-archive"
+  },
+  "automake": {
+    "description": "Automake -- make file builder part of autotools",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.16.5"
+    ],
+    "default": "1.16.5",
+    "module": "automake"
+  },
+  "bcl2fastq2": {
+    "description": "The bcl2fastq2 Conversion Software converts base call (BCL) files from a sequencing run into FASTQ files.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.20.0.422"
+    ],
+    "default": "2.20.0.422",
+    "module": "bcl2fastq2"
+  },
+  "bdftopcf": {
+    "description": "bdftopcf is a font compiler for the X server and font server. Fonts in Portable Compiled Format can be read by any architecture, although the file is structured to allow one particular architecture to read them directly without reformatting. This allows fast reading on the appropriate machine, but the files are still portable (but read more slowly) on other machines.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.1",
+      "1.1.1"
+    ],
+    "default": "1.1.1",
+    "module": "bdftopcf"
+  },
+  "berkeley-db": {
+    "description": "Oracle Berkeley DB",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "18.1.40"
+    ],
+    "default": "18.1.40",
+    "module": "berkeley-db"
+  },
+  "binutils": {
+    "description": "GNU binutils, which contain the linker, assembler, objdump and others",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.43.1"
+    ],
+    "default": "2.43.1",
+    "module": "binutils"
+  },
+  "bison": {
+    "description": "Bison is a general-purpose parser generator that converts an annotated context-free grammar into a deterministic LR or generalized LR (GLR) parser employing LALR(1) parser tables.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.8.2"
+    ],
+    "default": "3.8.2",
+    "module": "bison"
+  },
+  "boost": {
+    "description": "Boost provides free peer-reviewed portable C++ source libraries, emphasizing libraries that work well with the C++ Standard Library.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.55.0",
+      "1.78.0",
+      "1.81.0"
+    ],
+    "default": "1.81.0",
+    "module": "boost"
+  },
+  "bowtie": {
+    "description": "Bowtie is an ultrafast, memory-efficient short read aligner for short DNA sequences (reads) from next-gen sequencers.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.3.0"
+    ],
+    "default": "1.3.0",
+    "module": "bowtie"
+  },
+  "bowtie2": {
+    "description": "Bowtie 2 is an ultrafast and memory-efficient tool for aligning sequencing reads to long reference sequences",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.4.2",
+      "2.5.2"
+    ],
+    "default": "2.5.2",
+    "module": "bowtie2"
+  },
+  "bracken": {
+    "description": "Bracken (Bayesian Reestimation of Abundance with KrakEN) is a highly accurate statistical method that computes the abundance of species in DNA sequences from a metagenomics sample.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.9"
+    ],
+    "default": "2.9",
+    "module": "bracken"
+  },
+  "bwa": {
+    "description": "Burrow-Wheeler Aligner for pairwise alignment between DNA sequences.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.7.17"
+    ],
+    "default": "0.7.17",
+    "module": "bwa"
+  },
+  "bzip2": {
+    "description": "bzip2 is a freely available, patent free high-quality data compressor. It typically compresses files to within 10% to 15% of the best available techniques (the PPM family of statistical compressors), whilst being around twice as fast at compression and six times faster at decompression.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.0.8"
+    ],
+    "default": "1.0.8",
+    "module": "bzip2"
+  },
+  "c-blosc": {
+    "description": "Blosc, an extremely fast, multi-threaded, meta-compressor library",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.21.5"
+    ],
+    "default": "1.21.5",
+    "module": "c-blosc"
+  },
+  "ca-certificates-mozilla": {
+    "description": "The Mozilla CA certificate store in PEM format",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2023-01-10",
+      "2023-05-30"
+    ],
+    "default": "2023-05-30",
+    "module": "ca-certificates-mozilla"
+  },
+  "cmake": {
+    "description": "A cross-platform, open-source build system. CMake is a family of tools designed to build, test and package software.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.25.2",
+      "3.30.5"
+    ],
+    "default": "3.30.5",
+    "module": "cmake"
+  },
+  "cpio": {
+    "description": "GNU cpio copies files into or out of a cpio or tar archive and the file system. The archive can be another file on the disk, a magnetic tape, or a pipe.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.13"
+    ],
+    "default": "2.13",
+    "module": "cpio"
+  },
+  "cuda": {
+    "description": "CUDA is a parallel computing platform and programming model invented by NVIDIA. It enables dramatic increases in computing performance by harnessing the power of the graphics processing unit (GPU).",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "11.4.4",
+      "12.5.1",
+      "12.6.2"
+    ],
+    "default": "12.6.2",
+    "module": "cuda"
+  },
+  "curl": {
+    "description": "cURL is an open source command line tool and library for transferring data with URL syntax",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "7.88.1",
+      "8.10.1"
+    ],
+    "default": "8.10.1",
+    "module": "curl"
+  },
+  "cutensor": {
+    "description": "NVIDIA cuTENSOR Library is a GPU-accelerated tensor linear algebra library providing tensor contraction, reduction and elementwise operations.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.0.1.2"
+    ],
+    "default": "2.0.1.2",
+    "module": "cutensor"
+  },
+  "diffutils": {
+    "description": "GNU Diffutils is a package of several programs related to finding differences between files.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.8",
+      "3.10"
+    ],
+    "default": "3.10",
+    "module": "diffutils"
+  },
+  "docbook-xml": {
+    "description": "Docbook DTD XML files.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "4.5"
+    ],
+    "default": "4.5",
+    "module": "docbook-xml"
+  },
+  "docbook-xsl": {
+    "description": "DocBook XSLT 1.0 Stylesheets.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.79.2"
+    ],
+    "default": "1.79.2",
+    "module": "docbook-xsl"
+  },
+  "dsfmt": {
+    "description": "Double precision SIMD-oriented Fast Mersenne Twister",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.2.5"
+    ],
+    "default": "2.2.5",
+    "module": "dsfmt"
+  },
+  "eigen": {
+    "description": "Eigen is a C++ template library for linear algebra matrices, vectors, numerical solvers, and related algorithms.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.4.0"
+    ],
+    "default": "3.4.0",
+    "module": "eigen"
+  },
+  "elfutils": {
+    "description": "elfutils is a collection of various binary tools such as eu-objdump, eu-readelf, and other utilities that allow you to inspect and manipulate ELF files. Refer to Table 5.Tools Included in elfutils for Red Hat Developer for a complete list of binary tools that are distributed with the Red Hat Developer Toolset version of elfutils.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.191"
+    ],
+    "default": "0.191",
+    "module": "elfutils"
+  },
+  "expat": {
+    "description": "Expat is an XML parser library written in C.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.5.0",
+      "2.6.3"
+    ],
+    "default": "2.6.3",
+    "module": "expat"
+  },
+  "fastq-screen": {
+    "description": "FastQ Screen allows you to screen a library of sequences in FastQ format against a set of sequence databases so you can see if the composition of the library matches with what you expect.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.11.2"
+    ],
+    "default": "0.11.2",
+    "module": "fastq-screen"
+  },
+  "fastqc": {
+    "description": "A quality control tool for high throughput sequence data.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.11.9"
+    ],
+    "default": "0.11.9",
+    "module": "fastqc"
+  },
+  "findutils": {
+    "description": "The GNU Find Utilities are the basic directory searching utilities of the GNU operating system.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "4.9.0"
+    ],
+    "default": "4.9.0",
+    "module": "findutils"
+  },
+  "fixesproto": {
+    "description": "X Fixes Extension.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "5.0"
+    ],
+    "default": "5.0",
+    "module": "fixesproto"
+  },
+  "flex": {
+    "description": "Flex is a tool for generating scanners.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.6.3"
+    ],
+    "default": "2.6.3",
+    "module": "flex"
+  },
+  "font-util": {
+    "description": "X.Org font package creation/installation utilities and fonts.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.4.0",
+      "1.4.1"
+    ],
+    "default": "1.4.1",
+    "module": "font-util"
+  },
+  "fontconfig": {
+    "description": "Fontconfig is a library for configuring/customizing font access",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.14.2",
+      "2.15.0"
+    ],
+    "default": "2.15.0",
+    "module": "fontconfig"
+  },
+  "fontsproto": {
+    "description": "X Fonts Extension.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.1.3"
+    ],
+    "default": "2.1.3",
+    "module": "fontsproto"
+  },
+  "freetype": {
+    "description": "FreeType is a freely available software library to render fonts. It is written in C, designed to be small, efficient, highly customizable, and portable while capable of producing high-quality output (glyph images) of most vector and bitmap font formats.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.11.1",
+      "2.13.2"
+    ],
+    "default": "2.13.2",
+    "module": "freetype"
+  },
+  "fribidi": {
+    "description": "GNU FriBidi: The Free Implementation of the Unicode Bidirectional Algorithm.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.0.12"
+    ],
+    "default": "1.0.12",
+    "module": "fribidi"
+  },
+  "fxdiv": {
+    "description": "Header-only library for division via fixed-point multiplication by inverse.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2020-04-17"
+    ],
+    "default": "2020-04-17",
+    "module": "fxdiv"
+  },
+  "gawk": {
+    "description": "If you are like many computer users, you would frequently like to make changes in various text files wherever certain patterns appear, or extract data from parts of certain lines while discarding the rest. To write a program to do this in a language such as C or Pascal is a time-consuming inconvenience that may take many lines of code. The job is easy with awk, especially the GNU implementation: gawk.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "5.2.1",
+      "5.3.1"
+    ],
+    "default": "5.3.1",
+    "module": "gawk"
+  },
+  "gcc": {
+    "description": "The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "10.3.0",
+      "12.2.0"
+    ],
+    "default": "12.2.0",
+    "module": "gcc"
+  },
+  "gcc-runtime": {
+    "description": "Package for GCC compiler runtime libraries",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "11.4.1"
+    ],
+    "default": "11.4.1",
+    "module": "gcc-runtime"
+  },
+  "gdbm": {
+    "description": "GNU dbm (or GDBM, for short) is a library of database functions that use extensible hashing and work similar to the standard UNIX dbm. These routines are provided to a programmer needing to create and manipulate a hashed database.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.23"
+    ],
+    "default": "1.23",
+    "module": "gdbm"
+  },
+  "gettext": {
+    "description": "GNU internationalization (i18n) and localization (l10n) library.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.21.1",
+      "0.22.5"
+    ],
+    "default": "0.22.5",
+    "module": "gettext"
+  },
+  "git": {
+    "description": "Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.45.2"
+    ],
+    "default": "2.45.2",
+    "module": "git"
+  },
+  "glib": {
+    "description": "GLib provides the core application building blocks for libraries and applications written in C.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.78.3"
+    ],
+    "default": "2.78.3",
+    "module": "glib"
+  },
+  "glibc": {
+    "description": "The GNU C Library provides many of the low-level components used directly by programs written in the C or C++ languages.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.34"
+    ],
+    "default": "2.34",
+    "module": "glibc"
+  },
+  "glpk": {
+    "description": "The GLPK (GNU Linear Programming Kit) package is intended for solving large-scale linear programming (LP), mixed integer programming (MIP), and other related problems. It is a set of routines written in ANSI C and organized in the form of a callable library.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "5.0"
+    ],
+    "default": "5.0",
+    "module": "glpk"
+  },
+  "glproto": {
+    "description": "OpenGL Extension to the X Window System.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.4.17"
+    ],
+    "default": "1.4.17",
+    "module": "glproto"
+  },
+  "gmake": {
+    "description": "GNU Make is a tool which controls the generation of executables and other non-source files of a program from the program's source files.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "4.4.1"
+    ],
+    "default": "4.4.1",
+    "module": "gmake"
+  },
+  "gmp": {
+    "description": "GMP is a free library for arbitrary precision arithmetic, operating on signed integers, rational numbers, and floating-point numbers.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "6.2.1",
+      "6.3.0"
+    ],
+    "default": "6.3.0",
+    "module": "gmp"
+  },
+  "gperf": {
+    "description": "GNU gperf is a perfect hash function generator. For a given list of strings, it produces a hash function and hash table, in form of C or C++ code, for looking up a value depending on the input string. The hash function is perfect, which means that the hash table has no collisions, and the hash table lookup needs a single string comparison only.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.1"
+    ],
+    "default": "3.1",
+    "module": "gperf"
+  },
+  "gsl": {
+    "description": "The GNU Scientific Library (GSL) is a numerical library for C and C++ programmers. It is free software under the GNU General Public License. The library provides a wide range of mathematical routines such as random number generators, special functions and least-squares fitting. There are over 1000 functions in total with an extensive test suite.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.7.1"
+    ],
+    "default": "2.7.1",
+    "module": "gsl"
+  },
+  "gzip": {
+    "description": "GNU Gzip is a popular data compression program originally written by Jean-loup Gailly for the GNU project.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.12",
+      "1.13"
+    ],
+    "default": "1.13",
+    "module": "gzip"
+  },
+  "hisat2": {
+    "description": "HISAT2 is a fast and sensitive alignment program for mapping next-generation sequencing reads (whole-genome, transcriptome, and exome sequencing data) against the general human population (as well as against a single reference genome).",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.2.1"
+    ],
+    "default": "2.2.1",
+    "module": "hisat2"
+  },
+  "htslib": {
+    "description": "C library for high-throughput sequencing data formats.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.16",
+      "1.19.1"
+    ],
+    "default": "1.19.1",
+    "module": "htslib"
+  },
+  "hwloc": {
+    "description": "The Hardware Locality (hwloc) software project.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.9.0",
+      "2.11.1"
+    ],
+    "default": "2.11.1",
+    "module": "hwloc"
+  },
+  "icu4c": {
+    "description": "ICU is a mature, widely used set of C/C++ and Java libraries providing Unicode and Globalization support for software applications. ICU4C is the C/C++ interface.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "67.1",
+      "74.2"
+    ],
+    "default": "74.2",
+    "module": "icu4c"
+  },
+  "inputproto": {
+    "description": "X Input Extension.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.3.2"
+    ],
+    "default": "2.3.2",
+    "module": "inputproto"
+  },
+  "intel-mkl": {
+    "description": "Intel Math Kernel Library. This package has been replaced by intel-oneapi-mkl.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2020.4.304"
+    ],
+    "default": "2020.4.304",
+    "module": "intel-mkl"
+  },
+  "intel-oneapi-compilers": {
+    "description": "Intel oneAPI Compilers. Includes: icx, icpx, ifx, and ifort. Releases before 2024.0 include icc/icpc LICENSE INFORMATION: By downloading and using this software, you agree to the terms and conditions of the software license agreements at https://intel.ly/393CijO.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2021.4.0"
+    ],
+    "default": "2021.4.0",
+    "module": "intel-oneapi-compilers"
+  },
+  "intel-oneapi-mkl": {
+    "description": "Intel oneAPI Math Kernel Library (Intel oneMKL; formerly Intel Math Kernel Library or Intel MKL), is a library of optimized math routines for science, engineering, and financial applications. Core math functions include BLAS, LAPACK, ScaLAPACK, sparse solvers, fast Fourier transforms, and vector math.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2024.2.2"
+    ],
+    "default": "2024.2.2",
+    "module": "intel-oneapi-mkl"
+  },
+  "intel-tbb": {
+    "description": "Widely used C++ template library for task parallelism. Intel Threading Building Blocks (Intel TBB) lets you easily write parallel C++ programs that take full advantage of multicore performance, that are portable and composable, and that have future-proof scalability.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2021.7.0",
+      "2021.12.0"
+    ],
+    "default": "2021.12.0",
+    "module": "intel-tbb"
+  },
+  "intltool": {
+    "description": "intltool is a set of tools to centralize translation of many different file formats using GNU gettext-compatible PO files.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.51.0"
+    ],
+    "default": "0.51.0",
+    "module": "intltool"
+  },
+  "kbproto": {
+    "description": "X Keyboard Extension.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.0.7"
+    ],
+    "default": "1.0.7",
+    "module": "kbproto"
+  },
+  "kraken2": {
+    "description": "Kraken2 is a system for assigning taxonomic labels to short DNA sequences, usually obtained through metagenomic studies.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.1.2"
+    ],
+    "default": "2.1.2",
+    "module": "kraken2"
+  },
+  "krb5": {
+    "description": "Network authentication protocol",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.20.1",
+      "1.21.3"
+    ],
+    "default": "1.21.3",
+    "module": "krb5"
+  },
+  "libaec": {
+    "description": "Libaec provides fast lossless compression of 1 up to 32 bit wide signed or unsigned integers (samples). It implements Golomb-Rice compression method under the BSD license and includes a free drop-in replacement for the SZIP library.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.0.6"
+    ],
+    "default": "1.0.6",
+    "module": "libaec"
+  },
+  "libarchive": {
+    "description": "libarchive: C library and command-line tools for reading and writing tar, cpio, zip, ISO, and other archive formats.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.7.6"
+    ],
+    "default": "3.7.6",
+    "module": "libarchive"
+  },
+  "libblastrampoline": {
+    "description": "Using PLT trampolines to provide a BLAS and LAPACK demuxing library.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "5.11.0"
+    ],
+    "default": "5.11.0",
+    "module": "libblastrampoline"
+  },
+  "libbsd": {
+    "description": "This library provides useful functions commonly found on BSD systems, and lacking on others like GNU systems, thus making it easier to port projects with strong BSD origins, without needing to embed the same code over and over again on each project.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.11.7",
+      "0.12.2"
+    ],
+    "default": "0.12.2",
+    "module": "libbsd"
+  },
+  "libdeflate": {
+    "description": "Heavily optimized library for DEFLATE/zlib/gzip compression and decompression",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.10",
+      "1.18"
+    ],
+    "default": "1.18",
+    "module": "libdeflate"
+  },
+  "libedit": {
+    "description": "An autotools compatible port of the NetBSD editline library",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.1-20210216",
+      "3.1-20240808"
+    ],
+    "default": "3.1-20240808",
+    "module": "libedit"
+  },
+  "libevent": {
+    "description": "The libevent API provides a mechanism to execute a callback function when a specific event occurs on a file descriptor or after a timeout has been reached. Furthermore, libevent also support callbacks due to signals or regular timeouts.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.1.12"
+    ],
+    "default": "2.1.12",
+    "module": "libevent"
+  },
+  "libffi": {
+    "description": "The libffi library provides a portable, high level programming interface to various calling conventions. This allows a programmer to call any function specified by a call interface description at run time.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.4.4",
+      "3.4.6"
+    ],
+    "default": "3.4.6",
+    "module": "libffi"
+  },
+  "libfontenc": {
+    "description": "libfontenc - font encoding library.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.1.7",
+      "1.1.8"
+    ],
+    "default": "1.1.8",
+    "module": "libfontenc"
+  },
+  "libgcrypt": {
+    "description": "Cryptographic library based on the code from GnuPG.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.10.1",
+      "1.11.0"
+    ],
+    "default": "1.11.0",
+    "module": "libgcrypt"
+  },
+  "libgd": {
+    "description": "GD is an open source code library for the dynamic creation of images by programmers. GD is written in C, and 'wrappers' are available for Perl, PHP and other languages. GD creates PNG, JPEG, GIF, WebP, XPM, BMP images, among other formats. GD is commonly used to generate charts, graphics, thumbnails, and most anything else, on the fly. While not restricted to use on the web, the most common applications of GD involve website development.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.2.4"
+    ],
+    "default": "2.2.4",
+    "module": "libgd"
+  },
+  "libgit2": {
+    "description": "libgit2 is a portable, pure C implementation of the Git core methods provided as a re-entrant linkable library with a solid API, allowing you to write native speed custom Git applications in any language which supports C bindings.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.8.0"
+    ],
+    "default": "1.8.0",
+    "module": "libgit2"
+  },
+  "libgpg-error": {
+    "description": "Common error values for all GnuPG components.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.46",
+      "1.50"
+    ],
+    "default": "1.50",
+    "module": "libgpg-error"
+  },
+  "libiconv": {
+    "description": "GNU libiconv provides an implementation of the iconv() function and the iconv program for character set conversion.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.17"
+    ],
+    "default": "1.17",
+    "module": "libiconv"
+  },
+  "libidn2": {
+    "description": "Libidn2 is a free software implementation of IDNA2008, Punycode and TR46. Its purpose is to encode and decode internationalized domain names.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.3.4",
+      "2.3.7"
+    ],
+    "default": "2.3.7",
+    "module": "libidn2"
+  },
+  "libjpeg-turbo": {
+    "description": "libjpeg-turbo is a fork of the original IJG libjpeg which uses SIMD to accelerate baseline JPEG compression and decompression.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.1.4",
+      "3.0.3"
+    ],
+    "default": "3.0.3",
+    "module": "libjpeg-turbo"
+  },
+  "libmd": {
+    "description": "This library provides message digest functions found on BSD systems either on their libc (NetBSD, OpenBSD) or libmd (FreeBSD, DragonflyBSD, macOS, Solaris) libraries and lacking on others like GNU systems.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.0.4"
+    ],
+    "default": "1.0.4",
+    "module": "libmd"
+  },
+  "libnl": {
+    "description": "libnl - Netlink Protocol Library Suite",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.3.0"
+    ],
+    "default": "3.3.0",
+    "module": "libnl"
+  },
+  "libpciaccess": {
+    "description": "Generic PCI access library.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.17"
+    ],
+    "default": "0.17",
+    "module": "libpciaccess"
+  },
+  "libpng": {
+    "description": "libpng is the official PNG reference library.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.6.37",
+      "1.6.39"
+    ],
+    "default": "1.6.39",
+    "module": "libpng"
+  },
+  "libpthread-stubs": {
+    "description": "The libpthread-stubs package provides weak aliases for pthread functions not provided in libc or otherwise available by default.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.4",
+      "0.5"
+    ],
+    "default": "0.5",
+    "module": "libpthread-stubs"
+  },
+  "libsigsegv": {
+    "description": "GNU libsigsegv is a library for handling page faults in user mode.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.14"
+    ],
+    "default": "2.14",
+    "module": "libsigsegv"
+  },
+  "libssh2": {
+    "description": "libssh2 is a client-side C library implementing the SSH2 protocol",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.11.0"
+    ],
+    "default": "1.11.0",
+    "module": "libssh2"
+  },
+  "libtiff": {
+    "description": "LibTIFF - Tag Image File Format (TIFF) Library and Utilities.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "4.4.0",
+      "4.7.0"
+    ],
+    "default": "4.7.0",
+    "module": "libtiff"
+  },
+  "libtirpc": {
+    "description": "Libtirpc is a port of Suns Transport-Independent RPC library to Linux.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.3.3"
+    ],
+    "default": "1.3.3",
+    "module": "libtirpc"
+  },
+  "libtool": {
+    "description": "libtool -- library building part of autotools.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.4.7"
+    ],
+    "default": "2.4.7",
+    "module": "libtool"
+  },
+  "libunistring": {
+    "description": "This library provides functions for manipulating Unicode strings and for manipulating C strings according to the Unicode standard.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.1",
+      "1.2"
+    ],
+    "default": "1.2",
+    "module": "libunistring"
+  },
+  "libunwind": {
+    "description": "A portable and efficient C programming interface (API) to determine the call-chain of a program.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.6.2"
+    ],
+    "default": "1.6.2",
+    "module": "libunwind"
+  },
+  "libuv-julia": {
+    "description": "Multi-platform library with a focus on asynchronous IO",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.48.0"
+    ],
+    "default": "1.48.0",
+    "module": "libuv-julia"
+  },
+  "libwhich": {
+    "description": "Libwhich: the functionality of which for libraries.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.1.0"
+    ],
+    "default": "1.1.0",
+    "module": "libwhich"
+  },
+  "libx11": {
+    "description": "libX11 - Core X11 protocol client library.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.8.4"
+    ],
+    "default": "1.8.4",
+    "module": "libx11"
+  },
+  "libxau": {
+    "description": "The libXau package contains a library implementing the X11 Authorization Protocol. This is useful for restricting client access to the display.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.0.8",
+      "1.0.11"
+    ],
+    "default": "1.0.11",
+    "module": "libxau"
+  },
+  "libxcb": {
+    "description": "The X protocol C-language Binding (XCB) is a replacement for Xlib featuring a small footprint, latency hiding, direct access to the protocol, improved threading support, and extensibility.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.14"
+    ],
+    "default": "1.14",
+    "module": "libxcb"
+  },
+  "libxcrypt": {
+    "description": "libxcrypt is a modern library for one-way hashing of passwords.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "4.4.33",
+      "4.4.35"
+    ],
+    "default": "4.4.35",
+    "module": "libxcrypt"
+  },
+  "libxdmcp": {
+    "description": "libXdmcp - X Display Manager Control Protocol library.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.1.4",
+      "1.1.5"
+    ],
+    "default": "1.1.5",
+    "module": "libxdmcp"
+  },
+  "libxfont": {
+    "description": "libXfont provides the core of the legacy X11 font system, handling the index files (fonts.dir, fonts.alias, fonts.scale), the various font file formats, and rasterizing them. It is used by the X servers, the X Font Server (xfs), and some font utilities (bdftopcf for instance), but should not be used by normal X11 clients. X11 clients access fonts via either the new API's in libXft, or the legacy API's in libX11.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.5.4"
+    ],
+    "default": "1.5.4",
+    "module": "libxfont"
+  },
+  "libxml2": {
+    "description": "Libxml2 is the XML C parser and toolkit developed for the Gnome project (but usable outside of the Gnome platform), it is free software available under the MIT License.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.7.8",
+      "2.10.3"
+    ],
+    "default": "2.10.3",
+    "module": "libxml2"
+  },
+  "libxslt": {
+    "description": "Libxslt is the XSLT C library developed for the GNOME project. XSLT itself is a an XML language to define transformation for XML. Libxslt is based on libxml2 the XML C library developed for the GNOME project. It also implements most of the EXSLT set of processor-portable extensions functions and some of Saxon's evaluate and expressions extensions.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.1.26",
+      "1.1.42"
+    ],
+    "default": "1.1.42",
+    "module": "libxslt"
+  },
+  "libyaml": {
+    "description": "A C library for parsing and emitting YAML.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.2.5"
+    ],
+    "default": "0.2.5",
+    "module": "libyaml"
+  },
+  "lua": {
+    "description": "The Lua programming language interpreter and library.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "5.3.6"
+    ],
+    "default": "5.3.6",
+    "module": "lua"
+  },
+  "lz4": {
+    "description": "LZ4 is lossless compression algorithm, providing compression speed at 400 MB/s per core, scalable with multi-cores CPU. It also features an extremely fast decoder, with speed in multiple GB/s per core, typically reaching RAM speed limits on multi-core systems.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.9.4",
+      "1.10.0"
+    ],
+    "default": "1.10.0",
+    "module": "lz4"
+  },
+  "lzma": {
+    "description": "LZMA Utils are legacy data compression software with high compression ratio. LZMA Utils are no longer developed, although critical bugs may be fixed as long as fixing them doesn't require huge changes to the code.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "4.32.7"
+    ],
+    "default": "4.32.7",
+    "module": "lzma"
+  },
+  "lzo": {
+    "description": "Real-time data compression library",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.10"
+    ],
+    "default": "2.10",
+    "module": "lzo"
+  },
+  "m4": {
+    "description": "GNU M4 is an implementation of the traditional Unix macro processor.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.4.19"
+    ],
+    "default": "1.4.19",
+    "module": "m4"
+  },
+  "magma": {
+    "description": "The MAGMA project aims to develop a dense linear algebra library similar to LAPACK but for heterogeneous/hybrid architectures, starting with current 'Multicore+GPU' systems.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.8.0"
+    ],
+    "default": "2.8.0",
+    "module": "magma"
+  },
+  "mariadb-c-client": {
+    "description": "MariaDB turns data into structured information in a wide array of applications, ranging from banking to websites. It is an enhanced, drop-in replacement for MySQL. MariaDB is used because it is fast, scalable and robust, with a rich ecosystem of storage engines, plugins and many other tools make it very versatile for a wide variety of use cases. This package comprises only the standalone 'C Connector', which enables connections to MariaDB and MySQL servers.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.3.8"
+    ],
+    "default": "3.3.8",
+    "module": "mariadb-c-client"
+  },
+  "mbedtls": {
+    "description": "mbed TLS (formerly known as PolarSSL) makes it trivially easy for developers to include cryptographic and SSL/TLS capabilities in their (embedded) products, facilitating this functionality with a minimal coding footprint.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.28.8"
+    ],
+    "default": "2.28.8",
+    "module": "mbedtls"
+  },
+  "meson": {
+    "description": "Meson is a portable open source build system meant to be both extremely fast, and as user friendly as possible.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.5.1"
+    ],
+    "default": "1.5.1",
+    "module": "meson"
+  },
+  "metis": {
+    "description": "METIS is a set of serial programs for partitioning graphs, partitioning finite element meshes, and producing fill reducing orderings for sparse matrices.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "5.1.0"
+    ],
+    "default": "5.1.0",
+    "module": "metis"
+  },
+  "miniconda3": {
+    "description": "The minimalist bootstrap toolset for conda and Python3.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "24.7.1"
+    ],
+    "default": "24.7.1",
+    "module": "miniconda3"
+  },
+  "mkfontdir": {
+    "description": "mkfontdir creates the fonts.dir files needed by the legacy X server core font system. The current implementation is a simple wrapper script around the mkfontscale program, which must be built and installed first.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.0.7"
+    ],
+    "default": "1.0.7",
+    "module": "mkfontdir"
+  },
+  "mkfontscale": {
+    "description": "mkfontscale creates the fonts.scale and fonts.dir index files used by the legacy X11 font system.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.2.2",
+      "1.2.3"
+    ],
+    "default": "1.2.3",
+    "module": "mkfontscale"
+  },
+  "mpc": {
+    "description": "Gnu Mpc is a C library for the arithmetic of complex numbers with arbitrarily high precision and correct rounding of the result.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.3.1"
+    ],
+    "default": "1.3.1",
+    "module": "mpc"
+  },
+  "mpfr": {
+    "description": "The MPFR library is a C library for multiple-precision floating-point computations with correct rounding.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "4.2.0",
+      "4.2.1"
+    ],
+    "default": "4.2.1",
+    "module": "mpfr"
+  },
+  "nasm": {
+    "description": "NASM (Netwide Assembler) is an 80x86 assembler designed for portability and modularity. It includes a disassembler as well.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.15.05",
+      "2.16.03"
+    ],
+    "default": "2.16.03",
+    "module": "nasm"
+  },
+  "nccl": {
+    "description": "Optimized primitives for collective multi-GPU communication.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.22.3-1"
+    ],
+    "default": "2.22.3-1",
+    "module": "nccl"
+  },
+  "ncurses": {
+    "description": "The ncurses (new curses) library is a free software emulation of curses in System V Release 4.0, and more. It uses terminfo format, supports pads and color and multiple highlights and forms characters and function-key mapping, and has all the other SYSV-curses enhancements over BSD curses.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "6.4",
+      "6.5"
+    ],
+    "default": "6.5",
+    "module": "ncurses"
+  },
+  "netlib-lapack": {
+    "description": "LAPACK version 3.X is a comprehensive FORTRAN library that does linear algebra operations including matrix inversions, least squared solutions to linear sets of equations, eigenvector analysis, singular value decomposition, etc. It is a very comprehensive and reputable package that has found extensive use in the scientific community.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.11.0"
+    ],
+    "default": "3.11.0",
+    "module": "netlib-lapack"
+  },
+  "nextflow": {
+    "description": "Data-driven computational pipelines.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "22.10.4",
+      "23.04.3",
+      "24.04.3",
+      "25.04.6"
+    ],
+    "default": "25.04.6",
+    "module": "nextflow"
+  },
+  "nghttp2": {
+    "description": "nghttp2 is an implementation of HTTP/2 and its header compression algorithm HPACK in C.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.63.0"
+    ],
+    "default": "1.63.0",
+    "module": "nghttp2"
+  },
+  "ninja": {
+    "description": "Ninja is a small build system with a focus on speed. It differs from other build systems in two major respects: it is designed to have its input files generated by a higher-level build system, and it is designed to run builds as fast as possible.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.11.1",
+      "1.12.1"
+    ],
+    "default": "1.12.1",
+    "module": "ninja"
+  },
+  "numactl": {
+    "description": "NUMA support for Linux",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.0.14",
+      "2.0.18"
+    ],
+    "default": "2.0.18",
+    "module": "numactl"
+  },
+  "nvhpc": {
+    "description": "The NVIDIA HPC SDK is a comprehensive suite of compilers, libraries and tools essential to maximizing developer productivity and the performance and portability of HPC applications. The NVIDIA HPC SDK C, C++, and Fortran compilers support GPU acceleration of HPC modeling and simulation applications with standard C++ and Fortran, OpenACC directives, and CUDA. GPU-accelerated math libraries maximize performance on common HPC algorithms, and optimized communications libraries enable standards-based multi-GPU and scalable systems programming. Performance profiling and debugging tools simplify porting and optimization of HPC applications.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "24.9"
+    ],
+    "default": "24.9",
+    "module": "nvhpc"
+  },
+  "openblas": {
+    "description": "OpenBLAS: An optimized BLAS library",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.3.21",
+      "0.3.28"
+    ],
+    "default": "0.3.28",
+    "module": "openblas"
+  },
+  "openjdk": {
+    "description": "The free and opensource java implementation",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "11.0.17_8",
+      "17.0.11_9"
+    ],
+    "default": "17.0.11_9",
+    "module": "openjdk"
+  },
+  "openlibm": {
+    "description": "OpenLibm is an effort to have a high quality, portable, standalone C mathematical library",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.8.1"
+    ],
+    "default": "0.8.1",
+    "module": "openlibm"
+  },
+  "openmpi": {
+    "description": "An open source Message Passing Interface implementation.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "4.1.5",
+      "4.1.6"
+    ],
+    "default": "4.1.6",
+    "module": "openmpi"
+  },
+  "openssh": {
+    "description": "OpenSSH is the premier connectivity tool for remote login with the SSH protocol. It encrypts all traffic to eliminate eavesdropping, connection hijacking, and other attacks. In addition, OpenSSH provides a large suite of secure tunneling capabilities, several authentication methods, and sophisticated configuration options.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "9.3p1",
+      "9.8p1"
+    ],
+    "default": "9.8p1",
+    "module": "openssh"
+  },
+  "openssl": {
+    "description": "OpenSSL is an open source project that provides a robust, commercial-grade, and full-featured toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols. It is also a general-purpose cryptography library.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.1.1t",
+      "3.3.1"
+    ],
+    "default": "3.3.1",
+    "module": "openssl"
+  },
+  "p7zip": {
+    "description": "A Unix port of the 7z file archiver",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "17.05"
+    ],
+    "default": "17.05",
+    "module": "p7zip"
+  },
+  "parallel": {
+    "description": "GNU parallel is a shell tool for executing jobs in parallel using one or more computers. A job can be a single command or a small script that has to be run for each of the lines in the input.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "20220522",
+      "20240822"
+    ],
+    "default": "20240822",
+    "module": "parallel"
+  },
+  "patchelf": {
+    "description": "PatchELF is a small utility to modify the dynamic linker and RPATH of ELF executables.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.17.2"
+    ],
+    "default": "0.17.2",
+    "module": "patchelf"
+  },
+  "pcre": {
+    "description": "The PCRE package contains Perl Compatible Regular Expression libraries. These are useful for implementing regular expression pattern matching using the same syntax and semantics as Perl 5.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "8.45"
+    ],
+    "default": "8.45",
+    "module": "pcre"
+  },
+  "pcre2": {
+    "description": "The PCRE2 package contains Perl Compatible Regular Expression libraries. These are useful for implementing regular expression pattern matching using the same syntax and semantics as Perl 5.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "10.42",
+      "10.44"
+    ],
+    "default": "10.44",
+    "module": "pcre2"
+  },
+  "perl": {
+    "description": "Perl 5 is a highly capable, feature-rich programming language with over 27 years of development.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "5.36.0",
+      "5.40.0"
+    ],
+    "default": "5.40.0",
+    "module": "perl"
+  },
+  "perl-algorithm-diff": {
+    "description": "Compute 'intelligent' differences between two files / lists",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.1903"
+    ],
+    "default": "1.1903",
+    "module": "perl-algorithm-diff"
+  },
+  "perl-alien-build": {
+    "description": "This module provides tools for building external (non-CPAN) dependencies for CPAN. It is mainly designed to be used at install time of a CPAN client, and work closely with Alien::Base which is used at runtime.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.78"
+    ],
+    "default": "2.78",
+    "module": "perl-alien-build"
+  },
+  "perl-alien-build-plugin-download-gitlab": {
+    "description": "Alien::Build plugin to download from GitLab",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.01"
+    ],
+    "default": "0.01",
+    "module": "perl-alien-build-plugin-download-gitlab"
+  },
+  "perl-alien-libxml2": {
+    "description": "This module provides libxml2 for other modules to use.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.19"
+    ],
+    "default": "0.19",
+    "module": "perl-alien-libxml2"
+  },
+  "perl-bioperl": {
+    "description": "BioPerl is the product of a community effort to produce Perl code which is useful in biology. Examples include Sequence objects, Alignment objects and database searching objects. These objects not only do what they are advertised to do in the documentation, but they also interact - Alignment objects are made from the Sequence objects, Sequence objects have access to Annotation and SeqFeature objects and databases, Blast objects can be converted to Alignment objects, and so on. This means that the objects provide a coordinated and extensible framework to do computational biology.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.7.6"
+    ],
+    "default": "1.7.6",
+    "module": "perl-bioperl"
+  },
+  "perl-canary-stability": {
+    "description": "Canary to check perl compatibility for schmorp's modules",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2013"
+    ],
+    "default": "2013",
+    "module": "perl-canary-stability"
+  },
+  "perl-capture-tiny": {
+    "description": "Capture STDOUT and STDERR from Perl, XS or external programs",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.46",
+      "0.48"
+    ],
+    "default": "0.48",
+    "module": "perl-capture-tiny"
+  },
+  "perl-class-data-inheritable": {
+    "description": "For creating accessor/mutators to class data.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.09"
+    ],
+    "default": "0.09",
+    "module": "perl-class-data-inheritable"
+  },
+  "perl-clone": {
+    "description": "Clone - recursively copy Perl datatypes",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.46"
+    ],
+    "default": "0.46",
+    "module": "perl-clone"
+  },
+  "perl-common-sense": {
+    "description": "Save a tree AND a kitten, use common::sense!",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.75"
+    ],
+    "default": "3.75",
+    "module": "perl-common-sense"
+  },
+  "perl-data-dumper": {
+    "description": "Stringified perl data structures, suitable for both printing and eval",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.173"
+    ],
+    "default": "2.173",
+    "module": "perl-data-dumper"
+  },
+  "perl-data-stag": {
+    "description": "Structured Tags datastructures",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.14"
+    ],
+    "default": "0.14",
+    "module": "perl-data-stag"
+  },
+  "perl-devel-stacktrace": {
+    "description": "An object representing a stack trace.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.05"
+    ],
+    "default": "2.05",
+    "module": "perl-devel-stacktrace"
+  },
+  "perl-encode-locale": {
+    "description": "Determine the locale encoding",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.05"
+    ],
+    "default": "1.05",
+    "module": "perl-encode-locale"
+  },
+  "perl-error": {
+    "description": "The Error package provides two interfaces. Firstly Error provides a procedural interface to exception handling. Secondly Error is a base class for errors/exceptions that can either be thrown, for subsequent catch, or can simply be recorded.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.17029"
+    ],
+    "default": "0.17029",
+    "module": "perl-error"
+  },
+  "perl-exception-class": {
+    "description": "A module that allows you to declare real exception classes in Perl",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.45"
+    ],
+    "default": "1.45",
+    "module": "perl-exception-class"
+  },
+  "perl-exporter-tiny": {
+    "description": "An exporter with the features of Sub::Exporter but only core dependencies",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.006002"
+    ],
+    "default": "1.006002",
+    "module": "perl-exporter-tiny"
+  },
+  "perl-extutils-config": {
+    "description": "ExtUtils::Config - A wrapper for perl's configuration",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.010"
+    ],
+    "default": "0.010",
+    "module": "perl-extutils-config"
+  },
+  "perl-extutils-helpers": {
+    "description": "ExtUtils::Helpers - Various portability utilities for module builders",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.026"
+    ],
+    "default": "0.026",
+    "module": "perl-extutils-helpers"
+  },
+  "perl-extutils-installpaths": {
+    "description": "ExtUtils::InstallPaths - Build.PL install path logic made easy",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.013"
+    ],
+    "default": "0.013",
+    "module": "perl-extutils-installpaths"
+  },
+  "perl-extutils-makemaker": {
+    "description": "ExtUtils::MakeMaker - Create a module Makefile. This utility is designed to write a Makefile for an extension module from a Makefile.PL. It is based on the Makefile.SH model provided by Andy Dougherty and the perl5-porters.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "7.24",
+      "7.70"
+    ],
+    "default": "7.70",
+    "module": "perl-extutils-makemaker"
+  },
+  "perl-extutils-pkgconfig": {
+    "description": "simplistic interface to pkg-config",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.16"
+    ],
+    "default": "1.16",
+    "module": "perl-extutils-pkgconfig"
+  },
+  "perl-ffi-checklib": {
+    "description": "This module checks whether a particular dynamic library is available for FFI to use. It is modeled heavily on Devel::CheckLib, but will find dynamic libraries even when development packages are not installed. It also provides a find_lib function that will return the full path to the found dynamic library, which can be feed directly into FFI::Platypus or another FFI system.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.31"
+    ],
+    "default": "0.31",
+    "module": "perl-ffi-checklib"
+  },
+  "perl-file-chdir": {
+    "description": "Perl's chdir() has the unfortunate problem of being very, very, very global. If any part of your program calls chdir() or if any library you use calls chdir(), it changes the current working directory for the *whole* program.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.1011"
+    ],
+    "default": "0.1011",
+    "module": "perl-file-chdir"
+  },
+  "perl-file-listing": {
+    "description": "Parse directory listing",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "6.16"
+    ],
+    "default": "6.16",
+    "module": "perl-file-listing"
+  },
+  "perl-file-which": {
+    "description": "Perl implementation of the which utility as an API",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.27"
+    ],
+    "default": "1.27",
+    "module": "perl-file-which"
+  },
+  "perl-gd": {
+    "description": "Interface to Gd Graphics Library",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.53"
+    ],
+    "default": "2.53",
+    "module": "perl-gd"
+  },
+  "perl-gdgraph": {
+    "description": "Graph Plotting Module for Perl 5",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.4308"
+    ],
+    "default": "1.4308",
+    "module": "perl-gdgraph"
+  },
+  "perl-gdtextutil": {
+    "description": "Text utilities for use with GD",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.86"
+    ],
+    "default": "0.86",
+    "module": "perl-gdtextutil"
+  },
+  "perl-graph": {
+    "description": "Graph data structures and algorithms",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.9704"
+    ],
+    "default": "0.9704",
+    "module": "perl-graph"
+  },
+  "perl-html-parser": {
+    "description": "HTML parser class",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.72"
+    ],
+    "default": "3.72",
+    "module": "perl-html-parser"
+  },
+  "perl-html-tagset": {
+    "description": "Data tables useful in parsing HTML",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.24"
+    ],
+    "default": "3.24",
+    "module": "perl-html-tagset"
+  },
+  "perl-http-cookies": {
+    "description": "HTTP cookie jars",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "6.11"
+    ],
+    "default": "6.11",
+    "module": "perl-http-cookies"
+  },
+  "perl-http-daemon": {
+    "description": "A simple http server class",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "6.16"
+    ],
+    "default": "6.16",
+    "module": "perl-http-daemon"
+  },
+  "perl-http-date": {
+    "description": "Date conversion routines",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "6.06"
+    ],
+    "default": "6.06",
+    "module": "perl-http-date"
+  },
+  "perl-http-message": {
+    "description": "HTTP style message (base class)",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "6.45"
+    ],
+    "default": "6.45",
+    "module": "perl-http-message"
+  },
+  "perl-http-negotiate": {
+    "description": "Choose a variant to serve",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "6.01"
+    ],
+    "default": "6.01",
+    "module": "perl-http-negotiate"
+  },
+  "perl-io-html": {
+    "description": "Open an HTML file with automatic charset detection.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.004"
+    ],
+    "default": "1.004",
+    "module": "perl-io-html"
+  },
+  "perl-io-string": {
+    "description": "Emulate file interface for in-core strings",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.08"
+    ],
+    "default": "1.08",
+    "module": "perl-io-string"
+  },
+  "perl-io-stringy": {
+    "description": "This toolkit primarily provides modules for performing both traditional and object-oriented i/o) on things other than normal filehandles; in particular, IO::Scalar, IO::ScalarArray, and IO::Lines.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.113"
+    ],
+    "default": "2.113",
+    "module": "perl-io-stringy"
+  },
+  "perl-io-tty": {
+    "description": "IO::Tty is used internally by IO::Pty to create a pseudo-tty. You wouldn't want to use it directly except to import constants, use IO::Pty. For a list of importable constants, see IO::Tty::Constant.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.20"
+    ],
+    "default": "1.20",
+    "module": "perl-io-tty"
+  },
+  "perl-ipc-run": {
+    "description": "IPC::Run allows you to run and interact with child processes using files, pipes, and pseudo-ttys. Both system()-style and scripted usages are supported and may be mixed. Likewise, functional and OO API styles are both supported and may be mixed.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "20231003.0"
+    ],
+    "default": "20231003.0",
+    "module": "perl-ipc-run"
+  },
+  "perl-json": {
+    "description": "JSON (JavaScript Object Notation) encoder/decoder",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "4.10"
+    ],
+    "default": "4.10",
+    "module": "perl-json"
+  },
+  "perl-json-xs": {
+    "description": "JSON serialising/deserialising, done correctly and fast",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "4.03"
+    ],
+    "default": "4.03",
+    "module": "perl-json-xs"
+  },
+  "perl-libwww-perl": {
+    "description": "The libwww-perl collection is a set of Perl modules which provides a simple and consistent application programming interface to the World-Wide Web. The main focus of the library is to provide classes and functions that allow you to write WWW clients.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "6.68"
+    ],
+    "default": "6.68",
+    "module": "perl-libwww-perl"
+  },
+  "perl-libxml-perl": {
+    "description": "libxml-perl is a collection of smaller Perl modules, scripts, and documents for working with XML in Perl. libxml-perl software works in combination with XML::Parser, PerlSAX, XML::DOM, XML::Grove and others.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.08"
+    ],
+    "default": "0.08",
+    "module": "perl-libxml-perl"
+  },
+  "perl-list-moreutils": {
+    "description": "Provide the stuff missing in List::Util",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.430"
+    ],
+    "default": "0.430",
+    "module": "perl-list-moreutils"
+  },
+  "perl-list-moreutils-xs": {
+    "description": "List::MoreUtils::XS is a backend for List::MoreUtils. Even if it's possible (because of user wishes) to have it practically independent from List::MoreUtils, it technically depend on List::MoreUtils. Since it's only a backend, the API is not public and can change without any warning.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.430"
+    ],
+    "default": "0.430",
+    "module": "perl-list-moreutils-xs"
+  },
+  "perl-lwp-mediatypes": {
+    "description": "Guess media type for a file or a URL",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "6.04"
+    ],
+    "default": "6.04",
+    "module": "perl-lwp-mediatypes"
+  },
+  "perl-module-build": {
+    "description": "Module::Build is a system for building, testing, and installing Perl modules. It is meant to be an alternative to ExtUtils::MakeMaker. Developers may alter the behavior of the module through subclassing in a much more straightforward way than with MakeMaker. It also does not require a make on your system - most of the Module::Build code is pure-perl and written in a very cross-platform way.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.4224",
+      "0.4234"
+    ],
+    "default": "0.4234",
+    "module": "perl-module-build"
+  },
+  "perl-module-build-tiny": {
+    "description": "Module::Build::Tiny - A tiny replacement for Module::Build",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.048"
+    ],
+    "default": "0.048",
+    "module": "perl-module-build-tiny"
+  },
+  "perl-net-http": {
+    "description": "Low-level HTTP connection (client)",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "6.23"
+    ],
+    "default": "6.23",
+    "module": "perl-net-http"
+  },
+  "perl-path-tiny": {
+    "description": "This module provides a small, fast utility for working with file paths. It is friendlier to use than File::Spec and provides easy access to functions from several other core file handling modules. It aims to be smaller and faster than many alternatives on CPAN, while helping people do many common things in consistent and less error-prone ways.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.146"
+    ],
+    "default": "0.146",
+    "module": "perl-path-tiny"
+  },
+  "perl-readonly": {
+    "description": "Readonly - Facility for creating read-only scalars, arrays, hashes",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.05"
+    ],
+    "default": "2.05",
+    "module": "perl-readonly"
+  },
+  "perl-set-scalar": {
+    "description": "Set::Scalar - basic set operations",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.29"
+    ],
+    "default": "1.29",
+    "module": "perl-set-scalar"
+  },
+  "perl-sub-uplevel": {
+    "description": "apparently run a function in a higher stack frame",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.2800"
+    ],
+    "default": "0.2800",
+    "module": "perl-sub-uplevel"
+  },
+  "perl-term-table": {
+    "description": "Format a header and rows into a table",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.018"
+    ],
+    "default": "0.018",
+    "module": "perl-term-table"
+  },
+  "perl-test-deep": {
+    "description": "Extremely flexible deep comparison",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.204"
+    ],
+    "default": "1.204",
+    "module": "perl-test-deep"
+  },
+  "perl-test-differences": {
+    "description": "Test strings and data structures and show differences if not ok",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.71"
+    ],
+    "default": "0.71",
+    "module": "perl-test-differences"
+  },
+  "perl-test-exception": {
+    "description": "Test exception-based code",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.43"
+    ],
+    "default": "0.43",
+    "module": "perl-test-exception"
+  },
+  "perl-test-most": {
+    "description": "Most commonly needed test functions and features.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.38"
+    ],
+    "default": "0.38",
+    "module": "perl-test-most"
+  },
+  "perl-test-needs": {
+    "description": "Skip tests when modules not available.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.002010"
+    ],
+    "default": "0.002010",
+    "module": "perl-test-needs"
+  },
+  "perl-test-requiresinternet": {
+    "description": "Easily test network connectivity",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.05"
+    ],
+    "default": "0.05",
+    "module": "perl-test-requiresinternet"
+  },
+  "perl-test-warn": {
+    "description": "Perl extension to test methods for warnings",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.37"
+    ],
+    "default": "0.37",
+    "module": "perl-test-warn"
+  },
+  "perl-test2-suite": {
+    "description": "Distribution with a rich set of tools built upon the Test2 framework.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.000159"
+    ],
+    "default": "0.000159",
+    "module": "perl-test2-suite"
+  },
+  "perl-text-diff": {
+    "description": "Provides a basic set of services akin to the GNU diff utility.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.45"
+    ],
+    "default": "1.45",
+    "module": "perl-text-diff"
+  },
+  "perl-try-tiny": {
+    "description": "Minimal try/catch with proper preservation of $@",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.31"
+    ],
+    "default": "0.31",
+    "module": "perl-try-tiny"
+  },
+  "perl-types-serialiser": {
+    "description": "Simple data types for common serialisation formats",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.01"
+    ],
+    "default": "1.01",
+    "module": "perl-types-serialiser"
+  },
+  "perl-uri": {
+    "description": "Uniform Resource Identifiers (absolute and relative)",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "5.08"
+    ],
+    "default": "5.08",
+    "module": "perl-uri"
+  },
+  "perl-www-robotrules": {
+    "description": "Database of robots.txt-derived permissions",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "6.02"
+    ],
+    "default": "6.02",
+    "module": "perl-www-robotrules"
+  },
+  "perl-xml-dom": {
+    "description": "This module extends the XML::Parser module by Clark Cooper. The XML::Parser module is built on top of XML::Parser::Expat, which is a lower level interface to James Clark's expat library.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.46"
+    ],
+    "default": "1.46",
+    "module": "perl-xml-dom"
+  },
+  "perl-xml-dom-xpath": {
+    "description": "XML::DOM::XPath allows you to use XML::XPath methods to query a DOM. This is often much easier than relying only on getElementsByTagName.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.14"
+    ],
+    "default": "0.14",
+    "module": "perl-xml-dom-xpath"
+  },
+  "perl-xml-filter-buffertext": {
+    "description": "This is a very simple filter. One common cause of grief (and programmer error) is that XML parsers aren't required to provide character events in one chunk. They can, but are not forced to, and most don't. This filter does the trivial but oft-repeated task of putting all characters into a single event.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.01"
+    ],
+    "default": "1.01",
+    "module": "perl-xml-filter-buffertext"
+  },
+  "perl-xml-libxml": {
+    "description": "This module is an interface to libxml2, providing XML and HTML parsers with DOM, SAX and XMLReader interfaces, a large subset of DOM Layer 3 interface and a XML::XPath-like interface to XPath API of libxml2. The module is split into several packages which are not described in this section; unless stated otherwise, you only need to use XML::LibXML; in your programs.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.0210"
+    ],
+    "default": "2.0210",
+    "module": "perl-xml-libxml"
+  },
+  "perl-xml-namespacesupport": {
+    "description": "This module offers a simple to process namespaced XML names (unames) from within any application that may need them. It also helps maintain a prefix to namespace URI map, and provides a number of basic checks.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.12_9"
+    ],
+    "default": "1.12_9",
+    "module": "perl-xml-namespacesupport"
+  },
+  "perl-xml-parser": {
+    "description": "XML::Parser - A perl module for parsing XML documents",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.47"
+    ],
+    "default": "2.47",
+    "module": "perl-xml-parser"
+  },
+  "perl-xml-regexp": {
+    "description": "This package contains regular expressions for the following XML tokens: BaseChar, Ideographic, Letter, Digit, Extender, CombiningChar, NameChar, EntityRef, CharRef, Reference, Name, NmToken, and AttValue.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.04"
+    ],
+    "default": "0.04",
+    "module": "perl-xml-regexp"
+  },
+  "perl-xml-sax": {
+    "description": "XML::SAX is a SAX parser access API for Perl. It includes classes and APIs required for implementing SAX drivers, along with a factory class for returning any SAX parser installed on the user's system.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.02"
+    ],
+    "default": "1.02",
+    "module": "perl-xml-sax"
+  },
+  "perl-xml-sax-base": {
+    "description": "This module has a very simple task - to be a base class for PerlSAX drivers and filters. It's default behaviour is to pass the input directly to the output unchanged. It can be useful to use this module as a base class so you don't have to, for example, implement the characters() callback.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.09"
+    ],
+    "default": "1.09",
+    "module": "perl-xml-sax-base"
+  },
+  "perl-xml-sax-writer": {
+    "description": "A new XML Writer was needed to match the SAX2 effort because quite naturally no existing writer understood SAX2. My first intention had been to start patching XML::Handler::YAWriter as it had previously been my favourite writer in the SAX1 world.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.57"
+    ],
+    "default": "0.57",
+    "module": "perl-xml-sax-writer"
+  },
+  "perl-xml-simple": {
+    "description": "An API for simple XML files",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.25"
+    ],
+    "default": "2.25",
+    "module": "perl-xml-simple"
+  },
+  "perl-xml-twig": {
+    "description": "This module provides a way to process XML documents. It is build on top of XML::Parser.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.52"
+    ],
+    "default": "3.52",
+    "module": "perl-xml-twig"
+  },
+  "perl-xml-xpathengine": {
+    "description": "This module provides an XPath engine, that can be re-used by other module/classes that implement trees.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.14"
+    ],
+    "default": "0.14",
+    "module": "perl-xml-xpathengine"
+  },
+  "perl-yaml": {
+    "description": "This module has been released to CPAN as YAML::Old, and soon YAML.pm will be changed to just be a frontend interface module for all the various Perl YAML implementation modules, including YAML::Old",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.30"
+    ],
+    "default": "1.30",
+    "module": "perl-yaml"
+  },
+  "pigz": {
+    "description": "A parallel implementation of gzip for modern multi-processor, multi-core machines.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.7",
+      "2.8"
+    ],
+    "default": "2.8",
+    "module": "pigz"
+  },
+  "pkgconf": {
+    "description": "pkgconf is a program which helps to configure compiler and linker flags for development frameworks. It is similar to pkg-config from freedesktop.org, providing additional functionality while also maintaining compatibility.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.8.0",
+      "2.2.0"
+    ],
+    "default": "2.2.0",
+    "module": "pkgconf"
+  },
+  "plink": {
+    "description": "PLINK is a free, open-source whole genome association analysis toolset, designed to perform a range of basic, large-scale analyses in a computationally efficient manner.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.9-beta6.27"
+    ],
+    "default": "1.9-beta6.27",
+    "module": "plink"
+  },
+  "plink2": {
+    "description": "PLINK2: Whole genome association analysis toolset, designed to perform a range of basic, large-scale analyses in a computationally efficient manner.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.00a5.11"
+    ],
+    "default": "2.00a5.11",
+    "module": "plink2"
+  },
+  "pmix": {
+    "description": "The Process Management Interface (PMI) has been used for quite some time as a means of exchanging wireup information needed for interprocess communication. However, meeting the significant orchestration challenges presented by exascale systems requires that the process-to-system interface evolve to permit a tighter integration between the different components of the parallel application and existing and future SMS solutions.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "4.1.2",
+      "4.2.2"
+    ],
+    "default": "4.2.2",
+    "module": "pmix"
+  },
+  "popt": {
+    "description": "The popt library parses command line options.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.16",
+      "1.19"
+    ],
+    "default": "1.19",
+    "module": "popt"
+  },
+  "protobuf": {
+    "description": "Google's data interchange format.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.20.1"
+    ],
+    "default": "3.20.1",
+    "module": "protobuf"
+  },
+  "psimd": {
+    "description": "Portable 128-bit SIMD intrinsics.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2020-05-17"
+    ],
+    "default": "2020-05-17",
+    "module": "psimd"
+  },
+  "pthreadpool": {
+    "description": "pthreadpool is a portable and efficient thread pool implementation.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2021-04-13"
+    ],
+    "default": "2021-04-13",
+    "module": "pthreadpool"
+  },
+  "py-astunparse": {
+    "description": "An AST unparser for Python.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.6.3"
+    ],
+    "default": "1.6.3",
+    "module": "py-astunparse"
+  },
+  "py-certifi": {
+    "description": "Certifi: A carefully curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2022.12.7"
+    ],
+    "default": "2022.12.7",
+    "module": "py-certifi"
+  },
+  "py-charset-normalizer": {
+    "description": "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.0.12"
+    ],
+    "default": "2.0.12",
+    "module": "py-charset-normalizer"
+  },
+  "py-cython": {
+    "description": "The Cython compiler for writing C extensions for the Python language.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.29.33",
+      "3.0.11"
+    ],
+    "default": "3.0.11",
+    "module": "py-cython"
+  },
+  "py-docutils": {
+    "description": "Docutils is an open-source text processing system for processing plaintext documentation into useful formats, such as HTML, LaTeX, man-pages, open-document or XML. It includes reStructuredText, the easy to read, easy to use, what-you-see-is-what-you-get plaintext markup language.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.20.1"
+    ],
+    "default": "0.20.1",
+    "module": "py-docutils"
+  },
+  "py-filelock": {
+    "description": "A platform-independent file lock for Python.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.5.0"
+    ],
+    "default": "3.5.0",
+    "module": "py-filelock"
+  },
+  "py-flit-core": {
+    "description": "Distribution-building parts of Flit.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.7.1",
+      "3.9.0"
+    ],
+    "default": "3.9.0",
+    "module": "py-flit-core"
+  },
+  "py-idna": {
+    "description": "Internationalized Domain Names for Python (IDNA 2008 and UTS #46)",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.4"
+    ],
+    "default": "3.4",
+    "module": "py-idna"
+  },
+  "py-jinja2": {
+    "description": "Jinja2 is a template engine written in pure Python. It provides a Django inspired non-XML syntax but supports inline expressions and an optional sandboxed environment.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.1.2"
+    ],
+    "default": "3.1.2",
+    "module": "py-jinja2"
+  },
+  "py-mako": {
+    "description": "A super-fast templating language that borrows the best ideas from the existing templating languages.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.2.4"
+    ],
+    "default": "1.2.4",
+    "module": "py-mako"
+  },
+  "py-markupsafe": {
+    "description": "MarkupSafe is a library for Python that implements a unicode string that is aware of HTML escaping rules and can be used to implement automatic string escaping. It is used by Jinja 2, the Mako templating engine, the Pylons web framework and many more.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.1.1",
+      "2.1.3"
+    ],
+    "default": "2.1.3",
+    "module": "py-markupsafe"
+  },
+  "py-mpmath": {
+    "description": "A Python library for arbitrary-precision floating-point arithmetic.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.2.1"
+    ],
+    "default": "1.2.1",
+    "module": "py-mpmath"
+  },
+  "py-networkx": {
+    "description": "NetworkX is a Python package for the creation, manipulation, and study of the structure, dynamics, and functions of complex networks.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.7.1"
+    ],
+    "default": "2.7.1",
+    "module": "py-networkx"
+  },
+  "py-numpy": {
+    "description": "Fundamental package for array computing in Python.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.24.2"
+    ],
+    "default": "1.24.2",
+    "module": "py-numpy"
+  },
+  "py-packaging": {
+    "description": "Core utilities for Python packages.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "23.0",
+      "24.1"
+    ],
+    "default": "24.1",
+    "module": "py-packaging"
+  },
+  "py-pip": {
+    "description": "The PyPA recommended tool for installing Python packages.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "23.0",
+      "23.1.2"
+    ],
+    "default": "23.1.2",
+    "module": "py-pip"
+  },
+  "py-protobuf": {
+    "description": "Protocol buffers are Google's language-neutral, platform-neutral, extensible mechanism for serializing structured data - think XML, but smaller, faster, and simpler. You define how you want your data to be structured once, then you can use special generated source code to easily write and read your structured data to and from a variety of data streams and using a variety of languages.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.20.1"
+    ],
+    "default": "3.20.1",
+    "module": "py-protobuf"
+  },
+  "py-pybind11": {
+    "description": "pybind11 -- Seamless operability between C++11 and Python.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.10.1"
+    ],
+    "default": "2.10.1",
+    "module": "py-pybind11"
+  },
+  "py-pyyaml": {
+    "description": "PyYAML is a YAML parser and emitter for Python.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "6.0"
+    ],
+    "default": "6.0",
+    "module": "py-pyyaml"
+  },
+  "py-requests": {
+    "description": "Python HTTP for Humans.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.28.1"
+    ],
+    "default": "2.28.1",
+    "module": "py-requests"
+  },
+  "py-setuptools": {
+    "description": "A Python utility that aids in the process of downloading, building, upgrading, installing, and uninstalling Python packages.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "63.0.0",
+      "69.2.0"
+    ],
+    "default": "69.2.0",
+    "module": "py-setuptools"
+  },
+  "py-setuptools-scm": {
+    "description": "The blessed package to manage your versions by scm tags.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "7.0.5",
+      "8.0.4"
+    ],
+    "default": "8.0.4",
+    "module": "py-setuptools-scm"
+  },
+  "py-six": {
+    "description": "Python 2 and 3 compatibility utilities.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.16.0"
+    ],
+    "default": "1.16.0",
+    "module": "py-six"
+  },
+  "py-sympy": {
+    "description": "SymPy is a Python library for symbolic mathematics.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.11.1"
+    ],
+    "default": "1.11.1",
+    "module": "py-sympy"
+  },
+  "py-tomli": {
+    "description": "Tomli is a Python library for parsing TOML.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.0.1"
+    ],
+    "default": "2.0.1",
+    "module": "py-tomli"
+  },
+  "py-tqdm": {
+    "description": "A Fast, Extensible Progress Meter",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "4.64.1"
+    ],
+    "default": "4.64.1",
+    "module": "py-tqdm"
+  },
+  "py-typing-extensions": {
+    "description": "The typing_extensions module contains both backports of these changes as well as experimental types that will eventually be added to the typing module, such as Protocol (see PEP 544 for details about protocols and static duck typing).",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "4.3.0",
+      "4.12.2"
+    ],
+    "default": "4.12.2",
+    "module": "py-typing-extensions"
+  },
+  "py-urllib3": {
+    "description": "HTTP library with thread-safe connection pooling, file post, and more.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.26.12"
+    ],
+    "default": "1.26.12",
+    "module": "py-urllib3"
+  },
+  "py-wheel": {
+    "description": "A built-package format for Python.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.37.1",
+      "0.41.2"
+    ],
+    "default": "0.41.2",
+    "module": "py-wheel"
+  },
+  "python": {
+    "description": "The Python programming language.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.10.8",
+      "3.10.13",
+      "3.13.0"
+    ],
+    "default": "3.13.0",
+    "module": "python"
+  },
+  "python-venv": {
+    "description": "A Spack managed Python virtual environment",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.0"
+    ],
+    "default": "1.0",
+    "module": "python-venv"
+  },
+  "r": {
+    "description": "R is 'GNU S', a freely available language and environment for statistical computing and graphics which provides a wide variety of statistical and graphical techniques: linear and nonlinear modelling, statistical tests, time series analysis, classification, clustering, etc. Please consult the R project homepage for further information.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "4.2.2",
+      "4.3.3",
+      "4.4.0",
+      "4.4.1",
+      "4.4.3",
+      "4.5.1"
+    ],
+    "default": "4.5.1",
+    "module": "r"
+  },
+  "r-bit": {
+    "description": "Classes and Methods for Fast Memory-Efficient Boolean Selections.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "4.0.5"
+    ],
+    "default": "4.0.5",
+    "module": "r-bit"
+  },
+  "r-bit64": {
+    "description": "A S3 Class for Vectors of 64bit Integers.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "4.0.5"
+    ],
+    "default": "4.0.5",
+    "module": "r-bit64"
+  },
+  "r-blob": {
+    "description": "A Simple S3 Class for Representing Vectors of Binary Data ('BLOBS').",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.2.4"
+    ],
+    "default": "1.2.4",
+    "module": "r-blob"
+  },
+  "r-cli": {
+    "description": "Helpers for Developing Command Line Interfaces.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.6.1"
+    ],
+    "default": "3.6.1",
+    "module": "r-cli"
+  },
+  "r-cpp11": {
+    "description": "A C++11 Interface for R's C Interface.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.4.3"
+    ],
+    "default": "0.4.3",
+    "module": "r-cpp11"
+  },
+  "r-dbi": {
+    "description": "R Database Interface.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.1.3"
+    ],
+    "default": "1.1.3",
+    "module": "r-dbi"
+  },
+  "r-generics": {
+    "description": "Common S3 Generics not Provided by Base R Methods Related to Model Fitting.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.1.3"
+    ],
+    "default": "0.1.3",
+    "module": "r-generics"
+  },
+  "r-glue": {
+    "description": "Interpreted String Literals.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.6.2"
+    ],
+    "default": "1.6.2",
+    "module": "r-glue"
+  },
+  "r-hms": {
+    "description": "Pretty Time of Day.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.1.3"
+    ],
+    "default": "1.1.3",
+    "module": "r-hms"
+  },
+  "r-lifecycle": {
+    "description": "Manage the Life Cycle of your Package Functions.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.0.3"
+    ],
+    "default": "1.0.3",
+    "module": "r-lifecycle"
+  },
+  "r-lubridate": {
+    "description": "Make Dealing with Dates a Little Easier.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.9.2"
+    ],
+    "default": "1.9.2",
+    "module": "r-lubridate"
+  },
+  "r-pkgconfig": {
+    "description": "Private Configuration for 'R' Packages.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.0.3"
+    ],
+    "default": "2.0.3",
+    "module": "r-pkgconfig"
+  },
+  "r-plogr": {
+    "description": "The 'plog' C++ Logging Library.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.2.0"
+    ],
+    "default": "0.2.0",
+    "module": "r-plogr"
+  },
+  "r-rcpp": {
+    "description": "Seamless R and C++ Integration.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.0.12"
+    ],
+    "default": "1.0.12",
+    "module": "r-rcpp"
+  },
+  "r-rlang": {
+    "description": "Functions for Base Types and Core R and 'Tidyverse' Features.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.1.2"
+    ],
+    "default": "1.1.2",
+    "module": "r-rlang"
+  },
+  "r-rmariadb": {
+    "description": "Database Interface and 'MariaDB' Driver.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.2.2"
+    ],
+    "default": "1.2.2",
+    "module": "r-rmariadb"
+  },
+  "r-timechange": {
+    "description": "Efficient Manipulation of Date-Times.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.2.0"
+    ],
+    "default": "0.2.0",
+    "module": "r-timechange"
+  },
+  "r-vctrs": {
+    "description": "Vector Helpers.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.6.5"
+    ],
+    "default": "0.6.5",
+    "module": "r-vctrs"
+  },
+  "randrproto": {
+    "description": "X Resize and Rotate Extension (RandR).",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.5.0"
+    ],
+    "default": "1.5.0",
+    "module": "randrproto"
+  },
+  "rdma-core": {
+    "description": "RDMA core userspace libraries and daemons",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "52.0"
+    ],
+    "default": "52.0",
+    "module": "rdma-core"
+  },
+  "re2c": {
+    "description": "re2c: a free and open-source lexer generator for C and C++",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.2",
+      "3.1"
+    ],
+    "default": "3.1",
+    "module": "re2c"
+  },
+  "readline": {
+    "description": "The GNU Readline library provides a set of functions for use by applications that allow users to edit command lines as they are typed in. Both Emacs and vi editing modes are available. The Readline library includes additional functions to maintain a list of previously-entered command lines, to recall and perhaps reedit those lines, and perform csh-like history expansion on previous commands.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "8.2"
+    ],
+    "default": "8.2",
+    "module": "readline"
+  },
+  "recordproto": {
+    "description": "X Record Extension.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.14.2"
+    ],
+    "default": "1.14.2",
+    "module": "recordproto"
+  },
+  "renderproto": {
+    "description": "X Rendering Extension.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.11.1"
+    ],
+    "default": "0.11.1",
+    "module": "renderproto"
+  },
+  "rsync": {
+    "description": "An open source utility that provides fast incremental file transfer.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.2.7",
+      "3.3.0"
+    ],
+    "default": "3.3.0",
+    "module": "rsync"
+  },
+  "rust": {
+    "description": "The Rust programming language toolchain.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.81.0"
+    ],
+    "default": "1.81.0",
+    "module": "rust"
+  },
+  "rust-bootstrap": {
+    "description": "Binary bootstrap Rust compiler.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.81.0"
+    ],
+    "default": "1.81.0",
+    "module": "rust-bootstrap"
+  },
+  "samtools": {
+    "description": "SAM Tools provide various utilities for manipulating alignments in the SAM format, including sorting, merging, indexing and generating alignments in a per-position format",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.16.1",
+      "1.19.2"
+    ],
+    "default": "1.19.2",
+    "module": "samtools"
+  },
+  "shared-mime-info": {
+    "description": "Database of common MIME types.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.10"
+    ],
+    "default": "1.10",
+    "module": "shared-mime-info"
+  },
+  "snappy": {
+    "description": "A fast compressor/decompressor: https://code.google.com/p/snappy",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.2.1"
+    ],
+    "default": "1.2.1",
+    "module": "snappy"
+  },
+  "sqlite": {
+    "description": "SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "3.40.1",
+      "3.46.0"
+    ],
+    "default": "3.46.0",
+    "module": "sqlite"
+  },
+  "srcml": {
+    "description": "srcML is an XML format for source code. The XML markup identifies elements of the abstract syntax of the source-code language. The toolkit includes parsing supports conversion of C, C++, C#, and Java both to and from the srcML format. The format allows leveraging XML tools to support the various tasks of source code exploration, analysis, and manipulation.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.0.0"
+    ],
+    "default": "1.0.0",
+    "module": "srcml"
+  },
+  "suite-sparse": {
+    "description": "SuiteSparse is a suite of sparse matrix algorithms",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "7.7.0"
+    ],
+    "default": "7.7.0",
+    "module": "suite-sparse"
+  },
+  "swig": {
+    "description": "SWIG is an interface compiler that connects programs written in C and C++ with scripting languages such as Perl, Python, Ruby, and Tcl. It works by taking the declarations found in C/C++ header files and using them to generate the wrapper code that scripting languages need to access the underlying C/C++ code. In addition, SWIG provides a variety of customization features that let you tailor the wrapping process to suit your application.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "4.1.1"
+    ],
+    "default": "4.1.1",
+    "module": "swig"
+  },
+  "tar": {
+    "description": "GNU Tar provides the ability to create tar archives, as well as various other kinds of manipulation.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.34"
+    ],
+    "default": "1.34",
+    "module": "tar"
+  },
+  "texinfo": {
+    "description": "Texinfo is the official documentation format of the GNU project.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "7.0",
+      "7.1"
+    ],
+    "default": "7.1",
+    "module": "texinfo"
+  },
+  "trimmomatic": {
+    "description": "A flexible read trimming tool for Illumina NGS data.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.39"
+    ],
+    "default": "0.39",
+    "module": "trimmomatic"
+  },
+  "unixodbc": {
+    "description": "ODBC is an open specification for providing application developers with a predictable API with which to access Data Sources. Data Sources include SQL Servers and any Data Source with an ODBC Driver.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.3.12"
+    ],
+    "default": "2.3.12",
+    "module": "unixodbc"
+  },
+  "unzip": {
+    "description": "Unzip is a compression and file packaging/archive utility.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "6.0"
+    ],
+    "default": "6.0",
+    "module": "unzip"
+  },
+  "utf8proc": {
+    "description": "A clean C library for processing UTF-8 Unicode data: normalization, case-folding, graphemes, and more",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.9.0"
+    ],
+    "default": "2.9.0",
+    "module": "utf8proc"
+  },
+  "util-linux-uuid": {
+    "description": "Util-linux is a suite of essential utilities for any Linux system.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.38.1",
+      "2.40.2"
+    ],
+    "default": "2.40.2",
+    "module": "util-linux-uuid"
+  },
+  "util-macros": {
+    "description": "This is a set of autoconf macros used by the configure.ac scripts in other Xorg modular packages, and is needed to generate new versions of their configure scripts with autoconf.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.19.3",
+      "1.20.1"
+    ],
+    "default": "1.20.1",
+    "module": "util-macros"
+  },
+  "wget": {
+    "description": "GNU Wget is a free software package for retrieving files using HTTP, HTTPS and FTP, the most widely-used Internet protocols. It is a non-interactive commandline tool, so it may easily be called from scripts, cron jobs, terminals without X-Windows support, etc.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.21.3",
+      "1.24.5"
+    ],
+    "default": "1.24.5",
+    "module": "wget"
+  },
+  "which": {
+    "description": "GNU which - is a utility that is used to find which executable (or alias or shell function) is executed when entered on the shell prompt.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.21"
+    ],
+    "default": "2.21",
+    "module": "which"
+  },
+  "xcb-proto": {
+    "description": "xcb-proto provides the XML-XCB protocol descriptions that libxcb uses to generate the majority of its code and API.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.14.1",
+      "1.17.0"
+    ],
+    "default": "1.17.0",
+    "module": "xcb-proto"
+  },
+  "xextproto": {
+    "description": "X Protocol Extensions.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "7.3.0"
+    ],
+    "default": "7.3.0",
+    "module": "xextproto"
+  },
+  "xproto": {
+    "description": "X Window System Core Protocol.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "7.0.31"
+    ],
+    "default": "7.0.31",
+    "module": "xproto"
+  },
+  "xtrans": {
+    "description": "xtrans is a library of code that is shared among various X packages to handle network protocol transport in a modular fashion, allowing a single place to add new transport types. It is used by the X server, libX11, libICE, the X font server, and related components.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.3.5",
+      "1.5.0"
+    ],
+    "default": "1.5.0",
+    "module": "xtrans"
+  },
+  "xxhash": {
+    "description": "xxHash is an Extremely fast Hash algorithm, running at RAM speed limits. It successfully completes the SMHasher test suite which evaluates collision, dispersion and randomness qualities of hash functions. Code is highly portable, and hashes are identical on all platforms (little / big endian).",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "0.8.1",
+      "0.8.2"
+    ],
+    "default": "0.8.2",
+    "module": "xxhash"
+  },
+  "xz": {
+    "description": "XZ Utils is free general-purpose data compression software with high compression ratio. XZ Utils were written for POSIX-like systems, but also work on some not-so-POSIX systems. XZ Utils are the successor to LZMA Utils.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "5.4.1",
+      "5.4.6"
+    ],
+    "default": "5.4.6",
+    "module": "xz"
+  },
+  "yasm": {
+    "description": "Yasm is a complete rewrite of the NASM-2.11.06 assembler. It supports the x86 and AMD64 instruction sets, accepts NASM and GAS assembler syntaxes and outputs binary, ELF32 and ELF64 object formats.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.3.0"
+    ],
+    "default": "1.3.0",
+    "module": "yasm"
+  },
+  "zlib": {
+    "description": "A free, general-purpose, legally unencumbered lossless data-compression library.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.2.13"
+    ],
+    "default": "1.2.13",
+    "module": "zlib"
+  },
+  "zlib-ng": {
+    "description": "zlib replacement with optimizations for next generation systems.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "2.0.7",
+      "2.2.1"
+    ],
+    "default": "2.2.1",
+    "module": "zlib-ng"
+  },
+  "zstd": {
+    "description": "Zstandard, or zstd as short version, is a fast lossless compression algorithm, targeting real-time compression scenarios at zlib-level and better compression ratios.",
+    "domains": [],
+    "homepage": "",
+    "support": "",
+    "versions": [
+      "1.5.4",
+      "1.5.6"
+    ],
+    "default": "1.5.6",
+    "module": "zstd"
+  }
+}
