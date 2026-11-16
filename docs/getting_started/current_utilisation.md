@@ -17,7 +17,7 @@ raw hardware view.
 
 ## CPU Allocation Over the Last 7 Days
 
-<iframe class="grafana-panel grafana-panel--compact" loading="lazy" title="CPU allocation across the cluster over the last 7 days" src="https://research-monitoring.otago.ac.nz/d-solo/bX7jn6dZk/slurm-dashboard?orgId=1&from=now-7d&to=now&refresh=30s&theme=light&panelId=10&hideLogo=true"></iframe>
+<iframe class="grafana-panel grafana-panel--compact" loading="lazy" title="CPU allocation across the cluster over the last 7 days" src="https://research-monitoring.otago.ac.nz/d-solo/slurm-cpu-capacity/slurm-cpu-capacity?orgId=1&from=now-7d&to=now&refresh=1m&theme=light&panelId=6&hideLogo=true"></iframe>
 
 ## GPU Utilisation Over the Last 7 Days
 
