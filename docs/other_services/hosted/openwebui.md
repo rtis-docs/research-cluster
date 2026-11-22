@@ -29,11 +29,11 @@ Specific models are made available via the [eResearch LLM proxy](llm.md)
 ## Initial Setup
 On first login, the model list will be empty; You will need to connect your ai.uod profile with the eResearch LLM proxy using your **personal API access key** that will have been provided to you.
 
-  * Top right, click on profile > `Settings`
+  * Bottom left, click on the profile image > `Settings`
   * `Connections`
   * `+ Add Connection`
-    * URL: `https://llm.uod.otago.ac.nz/v1`
-    * Key: *(paste your API access key; This is a string starting with '`sk-....`')*
+    * URL (API Base URL): `https://llm.uod.otago.ac.nz/v1`
+    * Auth (keep set to Bearer), AI Key: *(paste your API access key; This is a string starting with '`sk-....`')*
   * Leave the rest default, and `Save`
 
 The model list should now be populated with the models that are accessible to you.
